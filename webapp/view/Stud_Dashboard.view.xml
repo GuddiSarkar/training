@@ -20,11 +20,6 @@
 											width="88%"
 											height="87%"
 											press="onPressAddStudent">
-											<tooltip></tooltip><!-- sap.ui.core.TooltipBase -->
-											<customData></customData><!-- sap.ui.core.CustomData -->
-											<layoutData></layoutData><!-- sap.ui.core.LayoutData -->
-											<dependents></dependents><!-- sap.ui.core.Control -->
-											<detailBox></detailBox><!-- sap.m.LightBox -->
 										</Image>
 									</l:BlockLayoutCell>
 									
@@ -34,11 +29,6 @@
 											width="95%"
 											height="96%"
 											press="onPressViewStudent">
-											<tooltip></tooltip><!-- sap.ui.core.TooltipBase -->
-											<customData></customData><!-- sap.ui.core.CustomData -->
-											<layoutData></layoutData><!-- sap.ui.core.LayoutData -->
-											<dependents></dependents><!-- sap.ui.core.Control -->
-											<detailBox></detailBox><!-- sap.m.LightBox -->
 										</Image>
 									</l:BlockLayoutCell>
 									
@@ -48,11 +38,6 @@
 											width="88%"
 											height="87%"
 											press="onPressUpdateStudent">
-											<tooltip></tooltip><!-- sap.ui.core.TooltipBase -->
-											<customData></customData><!-- sap.ui.core.CustomData -->
-											<layoutData></layoutData><!-- sap.ui.core.LayoutData -->
-											<dependents></dependents><!-- sap.ui.core.Control -->
-											<detailBox></detailBox><!-- sap.m.LightBox -->
 										</Image>
 									</l:BlockLayoutCell>
 									
@@ -62,11 +47,7 @@
 											width="90%"
 											height="90%"
 											press="onPressDeleteStudent">
-											<tooltip></tooltip><!-- sap.ui.core.TooltipBase -->
-											<customData></customData><!-- sap.ui.core.CustomData -->
-											<layoutData></layoutData><!-- sap.ui.core.LayoutData -->
-											<dependents></dependents><!-- sap.ui.core.Control -->
-											<detailBox></detailBox><!-- sap.m.LightBox -->
+
 										</Image>
 									</l:BlockLayoutCell>
 								</l:BlockLayoutRow>
