@@ -1,0 +1,237 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"id": "com.demoTMS",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_hcb", "sap_belize"]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.demoTMS.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.demoTMS.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewPath": "com.demoTMS.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide"
+			},
+			"routes": [{
+				"name": "home",
+				"pattern": "",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["home"]
+			}, {
+				"name": "dashboard",
+				"pattern": "db",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["dashboard"]
+			}, {
+				"name": "student",
+				"pattern": "st",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["student"]
+			}, {
+				"name": "course",
+				"pattern": "cr",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["course"]
+			}, {
+				"name": "payment",
+				"pattern": "py",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["payment"]
+			}, {
+				"name": "reminder",
+				"pattern": "rm",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["reminder"]
+			}, {
+				"name": "addStudent",
+				"pattern": "as",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["addStudent"]
+			}, {
+				"name": "addCourse",
+				"pattern": "acr",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["addCourse"]
+			}, {
+				"name": "addCash",
+				"pattern": "acs",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["addCash"]
+			}, {
+				"name": "addReminder",
+				"pattern": "ar",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["addReminder"]
+			}, {
+				"name": "stu_fac",
+				"pattern": "sf",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["stu_fac"]
+			}, {
+				"name": "facalty",
+				"pattern": "fc",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["facalty"]
+			}],
+			"targets": {
+				"home": {
+					"viewType": "XML",
+					"transition": "flip",
+					"clearAggregation": true,
+					"viewName": "Home",
+					"viewLevel": 1
+				},
+				"dashboard": {
+					"viewType": "XML",
+					"transition": "flip",
+					"clearAggregation": true,
+					"viewName": "Dashboard",
+					"viewLevel": 1
+				},
+				"student": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Stud_Dashboard",
+					"viewLevel": 1
+				},
+				"course": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Course_Dashboard",
+					"viewLevel": 1
+				},
+				"payment": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Pay_Dashboard",
+					"viewLevel": 1
+				},
+				"reminder": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Reminder_Dashboard",
+					"viewLevel": 1
+				},
+				"addStudent": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "addStudent",
+					"viewLevel": 1
+				},
+				"addCourse": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "addCourse",
+					"viewLevel": 1
+				},
+				"addCash": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "addCash",
+					"viewLevel": 1
+				},
+				"addReminder": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "addReminder",
+					"viewLevel": 1
+				},
+				"stu_fac": {
+					"viewType": "XML",
+					"transition": "flip",
+					"clearAggregation": true,
+					"viewName": "stu_facalty",
+					"viewLevel": 1
+				},
+				"facalty": {
+					"viewType": "XML",
+					"transition": "flip",
+					"clearAggregation": true,
+					"viewName": "facalty_dashboard",
+					"viewLevel": 1
+				}
+			}
+		}
+	}
+}

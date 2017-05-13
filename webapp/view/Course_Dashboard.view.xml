@@ -1,0 +1,86 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.Course_Dashboard"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" showHeader="false">
+				<content>
+					<HBox class="hb1-header" height="15%">
+						<VBox class="vb1">
+							<Label text="Training Management System" class="header-text" textAlign="Center"></Label>
+						</VBox>
+					</HBox>
+					
+					<HBox class="hb3" width="100%" height="75%">
+						<l:VerticalLayout id="containerLayout" width="100%">
+							<l:BlockLayout id="BlockLayout" background="{/selectedBackground}">
+								<l:BlockLayoutRow>
+									<l:BlockLayoutCell title="Student" titleAlignment="Center">
+										<Image
+											src="images/student.ico"
+											width="88%"
+											height="87%"
+											press="onPressStudent">
+											<tooltip></tooltip><!-- sap.ui.core.TooltipBase -->
+											<customData></customData><!-- sap.ui.core.CustomData -->
+											<layoutData></layoutData><!-- sap.ui.core.LayoutData -->
+											<dependents></dependents><!-- sap.ui.core.Control -->
+											<detailBox></detailBox><!-- sap.m.LightBox -->
+										</Image>
+									</l:BlockLayoutCell>
+									
+									<l:BlockLayoutCell title="Course" titleAlignment="Center">
+										<Image
+											src="images/course1.ico"
+											width="95%"
+											height="96%"
+											press="onPressCourse">
+											<tooltip></tooltip><!-- sap.ui.core.TooltipBase -->
+											<customData></customData><!-- sap.ui.core.CustomData -->
+											<layoutData></layoutData><!-- sap.ui.core.LayoutData -->
+											<dependents></dependents><!-- sap.ui.core.Control -->
+											<detailBox></detailBox><!-- sap.m.LightBox -->
+										</Image>
+									</l:BlockLayoutCell>
+									
+									<l:BlockLayoutCell title="Payment" titleAlignment="Center">
+										<Image
+											src="images/payment.ico"
+											width="88%"
+											height="87%"
+											press="onPressPayment">
+											<tooltip></tooltip><!-- sap.ui.core.TooltipBase -->
+											<customData></customData><!-- sap.ui.core.CustomData -->
+											<layoutData></layoutData><!-- sap.ui.core.LayoutData -->
+											<dependents></dependents><!-- sap.ui.core.Control -->
+											<detailBox></detailBox><!-- sap.m.LightBox -->
+										</Image>
+									</l:BlockLayoutCell>
+									
+									<l:BlockLayoutCell title="Reminder" titleAlignment="Center" >
+										<Image
+											src="images/reminder.png"
+											width="90%"
+											height="90%"
+											press="onPressReminder">
+											<tooltip></tooltip><!-- sap.ui.core.TooltipBase -->
+											<customData></customData><!-- sap.ui.core.CustomData -->
+											<layoutData></layoutData><!-- sap.ui.core.LayoutData -->
+											<dependents></dependents><!-- sap.ui.core.Control -->
+											<detailBox></detailBox><!-- sap.m.LightBox -->
+										</Image>
+									</l:BlockLayoutCell>
+								</l:BlockLayoutRow>
+							</l:BlockLayout>
+						</l:VerticalLayout>	
+					</HBox>
+					
+					<HBox class="hb1-header" height="10%">
+						<VBox>
+							<Label text="@Copyright: Innovador IT Solution" class="footer-text" textAlign="Begin"></Label>
+						</VBox>
+					</HBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
