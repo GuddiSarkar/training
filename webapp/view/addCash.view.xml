@@ -1,9 +1,22 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.addCash"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
 	<App>
 		<pages>
-			<Page title="Title">
-				<content></content>
+			<Page title="Training Management System" class="t">
+				<content>
+					<HBox height="100%" class="bg">
+						<Panel  width="auto" height="93%" class="sapUiResponsiveMargin">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="Add Cash" textAlign="Center" />
+								</Toolbar>
+							</headerToolbar>
+							<content>
+							
+							</content>
+						</Panel>
+					</HBox>
+				</content>
 			</Page>
 		</pages>
 	</App>

@@ -1,9 +1,156 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.addCourse"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:l="sap.ui.layout" 
+	xmlns:t="sap.ui.table" xmlns:cores="sap.ui.core.Item">
 	<App>
 		<pages>
-			<Page title="Title">
-				<content></content>
+			<Page title="Training Management System" class="t">
+				<content>
+				<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Add Courses"/>
+						</Toolbar>
+					</headerToolbar>
+					<content class="acr_pnl">
+						<l:VerticalLayout id="containerLayout2" width="100%">
+								<HBox>
+								<VBox class="acr_vb2">
+									<HBox>
+										<Label text="Course Name" width="200px"/>
+										<Input value="" class="acr_inp"/>
+									</HBox>
+									
+									<HBox>
+										<Label text="Course Fee" width="200px"/>
+										<Input value="" class="acr_inp"/>
+									</HBox>
+									
+									<HBox>
+										<Label text="Third Installment" width="200px"/>
+										<Input value="" class="acr_inp"/>
+									</HBox>
+								</VBox>
+								
+								<VBox class="acr_vb22">
+									<HBox>
+										<Label text="Course Type" width="200px"/>
+										<Input value="" class="acr_inp"/>
+									</HBox>
+									
+									<HBox>
+										<Label text="First Installment" width="200px"/>
+										<Input value="" class="acr_inp"/>
+									</HBox>
+									
+									<HBox>
+										<Label text="Second Installment" width="200px"/>
+										<Input value="" class="acr_inp"/>
+									</HBox>
+								</VBox>
+							</HBox>
+			</l:VerticalLayout>
+			<Toolbar class="acr_tiny_margin" width="0px"></Toolbar>
+					<HBox class="btn1">
+						<Button text="Add" width="100px" class="b1"/>
+					</HBox>
+		</content>
+	</Panel>
+	<Panel width="auto" class="sapUiResponsiveMargin hd2 acr_pnl">
+		<headerToolbar>
+			<Toolbar height="3rem">
+				<Title text="Courses"/>
+			</Toolbar>
+		</headerToolbar>
+		<content >
+		
+		<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1" inset="false" rows="{det>/Employee}" selectionMode="MultiToggle"  >
+				<t:columns>
+					<t:Column
+						id="name"
+						width="20%"
+						sortProperty="Username"
+						sorted="true"
+						visible="true"
+						>
+					
+						<Label text="Username" />
+				
+						<t:template>
+							<Button
+							icon="sap-icon://sort"
+							press="onSort"/>
+							<Text text="{det>Username}"/>
+						</t:template>
+					</t:Column>
+					<t:Column
+						id="role"
+						width="20%"
+						sortProperty="UserRole"
+						sorted="true"
+						visible="true"
+						>
+					
+						<Label text="User Role" />
+				
+						<t:template>
+							<Button
+							icon="sap-icon://sort"
+							press="onSort"/>
+							<Text text="{det>UserRole}"/>
+						</t:template>
+					</t:Column>
+					<t:Column
+						id="e_name"
+						width="20%"
+						sortProperty="EmployeeName"
+						sorted="true"
+						visible="true"
+						>
+						
+						<Label text="Employee Name" />
+					
+						<t:template>
+							<Button
+							icon="sap-icon://sort"
+							press="onSortQuantity"/>
+							<Text text="{det>EmployeeName}"/>
+						</t:template>
+					</t:Column>
+					<t:Column
+						id="productid"
+						width="20%"
+						sortProperty="Status"
+						sorted="true"
+						visible="true"
+						>
+						
+						<Label text="Status" />
+					
+						<t:template>
+							<Button
+							icon="sap-icon://sort"
+							press="onSortId"/>
+							<Label text="{det>Status}"/>
+						</t:template>
+					</t:Column>
+					<t:Column
+						id="action"
+						width="20%"
+						>
+						<Label text="Action" />
+						<t:template >
+							<Toolbar class="acr_toolbar" width="0px">
+							<Button icon="sap-icon://edit" width="85px"   class="b3"/>
+							<Button icon="sap-icon://delete" width="110px"  class="b4 btn2"/>
+							</Toolbar>
+						</t:template>
+					</t:Column>
+				</t:columns>
+							
+						</t:Table>
+					</content>
+				</Panel>
+				</content>
 			</Page>
 		</pages>
 	</App>
