@@ -28,7 +28,7 @@
 											src="images/Edit-stu.png"
 											width="95%"
 											height="96%"
-											press="onPressViewStudent">
+											press="onPressUpdateStudent">
 										</Image>
 									</l:BlockLayoutCell>
 									
@@ -37,7 +37,7 @@
 											src="images/view-stu.png"
 											width="88%"
 											height="87%"
-											press="onPressUpdateStudent">
+											press="onPressViewStudent">
 										</Image>
 									</l:BlockLayoutCell>
 									

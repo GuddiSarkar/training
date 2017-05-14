@@ -1,9 +1,187 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.viewCash"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:t="sap.ui.table" xmlns:cores="sap.ui.core.Item">
 	<App>
 		<pages>
-			<Page title="Title">
-				<content></content>
+			<Page title="Training Management System" class="t">
+				<content>
+					<HBox height="100%" class="bg">
+						<Panel  width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="View Course" textAlign="Center" />
+								</Toolbar>
+							</headerToolbar>
+							<content>
+								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1" inset="false" rows="{det>/Employee}" selectionMode="MultiToggle"  >
+									<t:columns>
+										<t:Column
+										id="sname"
+										width="20%"
+										sortProperty="Student Name"
+										sorted="true"
+										visible="true">
+											<Label text="Student Name" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>Username}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="cname"
+										width="20%"
+										sortProperty="Course Name"
+										sorted="true"
+										visible="true">
+											<Label text="Course Name" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>Username}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="ttype"
+										width="20%"
+										sortProperty="Transaction Type"
+										sorted="true"
+										visible="true">
+											<Label text="Transaction Type"/>
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="cqno"
+										width="20%"
+										sortProperty="cheque Number"
+										sorted="true"
+										visible="true">
+											<Label text="cheque Number" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="dscnt"
+										width="20%"
+										sortProperty="Discount"
+										sorted="true"
+										visible="true">
+											<Label text="Discount" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="amnt"
+										width="20%"
+										sortProperty="Amount"
+										sorted="true"
+										visible="true">
+											<Label text="Amount" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="rfee"
+										width="20%"
+										sortProperty="Registration Fee"
+										sorted="true"
+										visible="true">
+											<Label text="Registration Fee" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="tx"
+										width="20%"
+										sortProperty="Tax"
+										sorted="true"
+										visible="true">
+											<Label text="Tax" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="1inslmnt"
+										width="20%"
+										sortProperty="1st Installment"
+										sorted="true"
+										visible="true">
+											<Label text="1st Installment" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="2inslmnt"
+										width="20%"
+										sortProperty="2nd Installment"
+										sorted="true"
+										visible="true">
+											<Label text="2nd Installment" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="3inslmnt"
+										width="20%"
+										sortProperty="3rd Installment"
+										sorted="true"
+										visible="true">
+											<Label text="3rd Installment" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="action"
+										width="20%">
+											<Label text="Action" />
+											<t:template >
+												<Button icon="sap-icon://edit" width="85px"   class="b3"/>
+											</t:template>
+										</t:Column>
+									</t:columns>
+								</t:Table>
+							</content>
+						</Panel>
+					</HBox>
+				</content>
 			</Page>
 		</pages>
 	</App>

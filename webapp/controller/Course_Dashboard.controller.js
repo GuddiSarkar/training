@@ -14,7 +14,7 @@ sap.ui.define([
 		},
 		
 		onPressViewCourse: function(oEvent) {
-			this.getRouter().navTo("course");
+			this.getRouter().navTo("viewCourse");
 		},
 		
 		onPressUpdateCourse: function(oEvent) {

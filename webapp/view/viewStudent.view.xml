@@ -15,7 +15,7 @@
 								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1" inset="false" rows="{det>/Employee}" selectionMode="MultiToggle"  >
 									<t:columns>
 										<t:Column
-										id="name"
+										id="sname"
 										width="20%"
 										sortProperty="Student Name"
 										sorted="true"
@@ -29,7 +29,7 @@
 											</t:template>
 										</t:Column>
 										<t:Column
-										id="role"
+										id="gndr"
 										width="20%"
 										sortProperty="Gender"
 										sorted="true"
@@ -43,7 +43,7 @@
 											</t:template>
 										</t:Column>
 										<t:Column
-										id="amount"
+										id="dob"
 										width="20%"
 										sortProperty="D.O.B"
 										sorted="true"
@@ -57,7 +57,7 @@
 											</t:template>
 										</t:Column>
 										<t:Column
-										id="amount"
+										id="eml"
 										width="20%"
 										sortProperty="Email"
 										sorted="true"
@@ -71,7 +71,7 @@
 											</t:template>
 										</t:Column>
 										<t:Column
-										id="amount"
+										id="crsnme"
 										width="20%"
 										sortProperty="Course Name"
 										sorted="true"

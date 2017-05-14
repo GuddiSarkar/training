@@ -14,7 +14,7 @@ sap.ui.define([
 		},
 		
 		onPressViewCash: function(oEvent) {
-			this.getRouter().navTo("course");
+			this.getRouter().navTo("viewCash");
 		},
 		
 /*		onPressUpdateCash: function(oEvent) {
