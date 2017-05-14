@@ -1,6 +1,6 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.viewStudent"
-	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:t="sap.ui.table" xmlns:cores="sap.ui.core.Item">
-<App>
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.removeStudent"
+	xmlns:html="http://www.w3.org/1999/xhtml"  xmlns:t="sap.ui.table" xmlns:cores="sap.ui.core.Item">
+	<App>
 		<pages>
 			<Page title="Training Management System" class="t">
 				<content>
@@ -8,7 +8,7 @@
 						<Panel  width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
 							<headerToolbar>
 								<Toolbar>
-									<Title text="View Student" textAlign="Center" />
+									<Title text="Remove Student" textAlign="Center" />
 								</Toolbar>
 							</headerToolbar>
 							<content>
@@ -29,48 +29,6 @@
 											</t:template>
 										</t:Column>
 										<t:Column
-										id="gndr"
-										width="20%"
-										sortProperty="Gender"
-										sorted="true"
-										visible="true">
-											<Label text="Gender"/>
-											<t:template>
-												<Button
-												icon="sap-icon://sort"
-												press="onSort"/>
-												<Text text="{det>UserRole}"/>
-											</t:template>
-										</t:Column>
-										<t:Column
-										id="dob"
-										width="20%"
-										sortProperty="D.O.B"
-										sorted="true"
-										visible="true">
-											<Label text="D.O.B" />
-											<t:template>
-												<Button
-												icon="sap-icon://sort"
-												press="onSort"/>
-												<Text text="{det>UserRole}"/>
-											</t:template>
-										</t:Column>
-										<t:Column
-										id="eml"
-										width="20%"
-										sortProperty="Email"
-										sorted="true"
-										visible="true">
-											<Label text="Email" />
-											<t:template>
-												<Button
-												icon="sap-icon://sort"
-												press="onSort"/>
-												<Text text="{det>UserRole}"/>
-											</t:template>
-										</t:Column>
-										<t:Column
 										id="crsnme"
 										width="20%"
 										sortProperty="Course Name"
@@ -85,11 +43,24 @@
 											</t:template>
 										</t:Column>
 										<t:Column
+										id="pstus"
+										width="20%"
+										sortProperty="Pay Status"
+										sorted="true"
+										visible="true">
+											<Label text="Pay Status" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
 										id="action"
 										width="20%">
 											<Label text="Action" />
 											<t:template >
-												<Button icon="sap-icon://edit" width="85px"   class="b3"/>
 												<Button icon="sap-icon://delete" width="110px"  class="b4 btn2"/>
 											</t:template>
 										</t:Column>

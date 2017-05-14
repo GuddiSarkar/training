@@ -18,11 +18,11 @@ sap.ui.define([
 		},
 		
 		onPressUpdateCourse: function(oEvent) {
-			this.getRouter().navTo("payment");
+			this.getRouter().navTo("updateCourse");
 		},
 		
 		onPressDeleteCourse: function(oEvent) {
-			this.getRouter().navTo("reminder");
+			this.getRouter().navTo("removeCourse");
 		}
 
 	});

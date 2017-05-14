@@ -57,20 +57,6 @@
 											</t:template>
 										</t:Column>
 										<t:Column
-										id="eml"
-										width="20%"
-										sortProperty="Email"
-										sorted="true"
-										visible="true">
-											<Label text="Email" />
-											<t:template>
-												<Button
-												icon="sap-icon://sort"
-												press="onSort"/>
-												<Text text="{det>UserRole}"/>
-											</t:template>
-										</t:Column>
-										<t:Column
 										id="cdrtn"
 										width="20%"
 										sortProperty="Course Duration"
@@ -90,6 +76,7 @@
 											<Label text="Action" />
 											<t:template >
 												<Button icon="sap-icon://edit" width="85px"   class="b3"/>
+												<Button icon="sap-icon://delete" width="110px"  class="b4 btn2"/>
 											</t:template>
 										</t:Column>
 									</t:columns>

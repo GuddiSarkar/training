@@ -1,4 +1,4 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.viewStudent"
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.updateStudent"
 	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:t="sap.ui.table" xmlns:cores="sap.ui.core.Item">
 <App>
 		<pages>
@@ -8,7 +8,7 @@
 						<Panel  width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
 							<headerToolbar>
 								<Toolbar>
-									<Title text="View Student" textAlign="Center" />
+									<Title text="Update Student" textAlign="Center" />
 								</Toolbar>
 							</headerToolbar>
 							<content>
@@ -90,7 +90,6 @@
 											<Label text="Action" />
 											<t:template >
 												<Button icon="sap-icon://edit" width="85px"   class="b3"/>
-												<Button icon="sap-icon://delete" width="110px"  class="b4 btn2"/>
 											</t:template>
 										</t:Column>
 									</t:columns>

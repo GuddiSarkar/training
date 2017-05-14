@@ -163,6 +163,30 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["viewCash"]
+			}, {
+				"name": "updateStudent",
+				"pattern": "us",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["updateStudent"]
+			}, {
+				"name": "updateCourse",
+				"pattern": "uc",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["updateCourse"]
+			}, {
+				"name": "removeStudent",
+				"pattern": "rs",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["removeStudent"]
+			}, {
+				"name": "removeCourse",
+				"pattern": "rc",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["removeCourse"]
 			}],
 			"targets": {
 				"home": {
@@ -268,6 +292,34 @@
 					"transition": "flip",
 					"clearAggregation": true,
 					"viewName": "viewCash",
+					"viewLevel": 1
+				},
+				"updateStudent": {
+					"viewType": "XML",
+					"transition": "flip",
+					"clearAggregation": true,
+					"viewName": "updateStudent",
+					"viewLevel": 1
+				},
+				"updateCourse": {
+					"viewType": "XML",
+					"transition": "flip",
+					"clearAggregation": true,
+					"viewName": "updateCourse",
+					"viewLevel": 1
+				},
+				"removeStudent": {
+					"viewType": "XML",
+					"transition": "flip",
+					"clearAggregation": true,
+					"viewName": "removeStudent",
+					"viewLevel": 1
+				},
+				"removeCourse": {
+					"viewType": "XML",
+					"transition": "flip",
+					"clearAggregation": true,
+					"viewName": "removeCourse",
 					"viewLevel": 1
 				}
 			}
