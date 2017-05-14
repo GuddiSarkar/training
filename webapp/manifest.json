@@ -65,9 +65,7 @@
 				"uri": "css/style.css"
 			}]
 		},
-		"rules": {
-	"linebreak-style": 0,
-}
+		
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
