@@ -1,0 +1,104 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.viewStudent"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:t="sap.ui.table" xmlns:cores="sap.ui.core.Item">
+<App>
+		<pages>
+			<Page title="Training Management System" class="t">
+				<content>
+					<HBox height="100%" class="bg">
+						<Panel  width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="View Student" textAlign="Center" />
+								</Toolbar>
+							</headerToolbar>
+							<content>
+								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1" inset="false" rows="{det>/Employee}" selectionMode="MultiToggle"  >
+									<t:columns>
+										<t:Column
+										id="name"
+										width="20%"
+										sortProperty="Student Name"
+										sorted="true"
+										visible="true">
+											<Label text="Student Name" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>Username}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="role"
+										width="20%"
+										sortProperty="Gender"
+										sorted="true"
+										visible="true">
+											<Label text="Gender"/>
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="amount"
+										width="20%"
+										sortProperty="D.O.B"
+										sorted="true"
+										visible="true">
+											<Label text="D.O.B" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="amount"
+										width="20%"
+										sortProperty="Email"
+										sorted="true"
+										visible="true">
+											<Label text="Email" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="amount"
+										width="20%"
+										sortProperty="Course Name"
+										sorted="true"
+										visible="true">
+											<Label text="Course Name" />
+											<t:template>
+												<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+												<Text text="{det>UserRole}"/>
+											</t:template>
+										</t:Column>
+										<t:Column
+										id="action"
+										width="20%">
+											<Label text="Action" />
+											<t:template >
+												<Button icon="sap-icon://edit" width="85px"   class="b3"/>
+											</t:template>
+										</t:Column>
+									</t:columns>
+								</t:Table>
+							</content>
+						</Panel>
+					</HBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
