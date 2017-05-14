@@ -14,39 +14,39 @@
 						<l:VerticalLayout id="containerLayout" width="100%">
 							<l:BlockLayout id="BlockLayout" background="{/selectedBackground}">
 								<l:BlockLayoutRow>
-									<l:BlockLayoutCell title="Student" titleAlignment="Center">
+									<l:BlockLayoutCell title="Add Course" titleAlignment="Center">
 										<Image
 											src="images/student.ico"
 											width="88%"
 											height="87%"
-											press="onPressStudent">
+											press="onPressAddCourse">
 										</Image>
 									</l:BlockLayoutCell>
 									
-									<l:BlockLayoutCell title="Course" titleAlignment="Center">
+									<l:BlockLayoutCell title=" Update Course" titleAlignment="Center">
 										<Image
 											src="images/course1.ico"
 											width="95%"
 											height="96%"
-											press="onPressCourse">
+											press="onPressUpdateCourse">
 										</Image>
 									</l:BlockLayoutCell>
 									
-									<l:BlockLayoutCell title="Payment" titleAlignment="Center">
+									<l:BlockLayoutCell title="View Course" titleAlignment="Center">
 										<Image
 											src="images/payment.ico"
 											width="88%"
 											height="87%"
-											press="onPressPayment">
+											press="onPressViewCourse">
 										</Image>
 									</l:BlockLayoutCell>
 									
-									<l:BlockLayoutCell title="Reminder" titleAlignment="Center" >
+									<l:BlockLayoutCell title="Remove Course" titleAlignment="Center" >
 										<Image
 											src="images/reminder.png"
 											width="90%"
 											height="90%"
-											press="onPressReminder">
+											press="onPressDeleteCourse">
 										</Image>
 									</l:BlockLayoutCell>
 								</l:BlockLayoutRow>

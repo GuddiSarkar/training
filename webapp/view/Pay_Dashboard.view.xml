@@ -14,39 +14,21 @@
 						<l:VerticalLayout id="containerLayout" width="100%">
 							<l:BlockLayout id="BlockLayout" background="{/selectedBackground}">
 								<l:BlockLayoutRow>
-									<l:BlockLayoutCell title="Student" titleAlignment="Center">
+									<l:BlockLayoutCell title="Add Cash" titleAlignment="Center">
 										<Image
 											src="images/addcash.ico"
-											width="88%"
-											height="87%"
-											press="onPressStudent">
+											width="50%"
+											height="49%"
+											press="onPressAddCash">
 										</Image>
 									</l:BlockLayoutCell>
 									
-									<l:BlockLayoutCell title="Course" titleAlignment="Center">
+									<l:BlockLayoutCell title="View Cash" titleAlignment="Center">
 										<Image
 											src="images/viewcash.png"
-											width="95%"
-											height="96%"
-											press="onPressCourse">
-										</Image>
-									</l:BlockLayoutCell>
-									
-									<l:BlockLayoutCell title="Payment" titleAlignment="Center">
-										<Image
-											src="images/updatecash2.png"
-											width="88%"
-											height="87%"
-											press="onPressPayment">
-										</Image>
-									</l:BlockLayoutCell>
-									
-									<l:BlockLayoutCell title="Reminder" titleAlignment="Center" >
-										<Image
-											src="images/deletecash.ico"
-											width="90%"
-											height="90%"
-											press="onPressReminder">
+											width="50%"
+											height="49%"
+											press="onPressViewCash">
 										</Image>
 									</l:BlockLayoutCell>
 								</l:BlockLayoutRow>

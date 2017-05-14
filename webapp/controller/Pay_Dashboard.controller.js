@@ -17,14 +17,14 @@ sap.ui.define([
 			this.getRouter().navTo("course");
 		},
 		
-		onPressUpdateCash: function(oEvent) {
+/*		onPressUpdateCash: function(oEvent) {
 			this.getRouter().navTo("payment");
 		},
 		
 		onPressDeleteCash: function(oEvent) {
 			this.getRouter().navTo("reminder");
 		}
-
+*/
 	});
 
 });

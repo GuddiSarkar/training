@@ -321,21 +321,39 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 								<HBox>
 									<VBox>
 										<HBox>
-											<Label text="Registration Fee" width="200px"/>
-											<Input value="1000/-" editable="false"/>
+											<Label text="Course Fee" width="200px"/>
+											<Input value=""/>
 										</HBox>
+										
 										<HBox>
 											<Label text="Tax" width="200px"/>
 											<Input value="14.5%" editable="false"/>
 										</HBox>
+										<HBox>
+											<Label text="Registration Fee" width="200px"/>
+											<Input value="1000/-" editable="false"/>
+										</HBox>
+										<HBox>
+											<Label text="2nd Installment" width="200px"/>
+											<Input value=""/>
+										</HBox>
 									</VBox>
 									<VBox class="vb21">
 										<HBox>
-											<Label text="Course Fee" width="200px"/>
+											<Label text="Discount" width="200px"/>
 											<Input value=""/>
 										</HBox>
 										<HBox>
-											<Label text="Total Course Fee" width="200px"/>
+											<Label text="Total Payable Amount" width="200px"/>
+											<Input value=""/>
+										</HBox>
+										<HBox>
+											<Label text="1st Installment" width="200px"/>
+											<Input value=""/>
+										</HBox>
+										
+										<HBox>
+											<Label text="3rd Installment" width="200px"/>
 											<Input value=""/>
 										</HBox>
 									</VBox>

@@ -11,7 +11,7 @@
 							<Title text="Add Courses"/>
 						</Toolbar>
 					</headerToolbar>
-					<content class="acr_pnl">
+					<content>
 						<l:VerticalLayout id="containerLayout2" width="100%">
 								<HBox>
 								<VBox class="acr_vb2">
@@ -25,10 +25,6 @@
 										<Input value="" class="acr_inp"/>
 									</HBox>
 									
-									<HBox>
-										<Label text="Third Installment" width="200px"/>
-										<Input value="" class="acr_inp"/>
-									</HBox>
 								</VBox>
 								
 								<VBox class="acr_vb22">
@@ -37,15 +33,18 @@
 										<Input value="" class="acr_inp"/>
 									</HBox>
 									
-									<HBox>
-										<Label text="First Installment" width="200px"/>
-										<Input value="" class="acr_inp"/>
-									</HBox>
 									
-									<HBox>
-										<Label text="Second Installment" width="200px"/>
-										<Input value="" class="acr_inp"/>
-									</HBox>
+								<HBox>
+										<Label text="Course Duration" width="200px"/>
+											<Select width="195px" class="sel">
+												<items class="itm">
+													<core:Item text="--Select--"/>
+													<core:Item text="1 Month" />
+													<core:Item text="2 Month" />
+													<core:Item text="3 Month" />
+												</items>
+											</Select>
+										</HBox>
 								</VBox>
 							</HBox>
 			</l:VerticalLayout>
@@ -68,12 +67,12 @@
 					<t:Column
 						id="name"
 						width="20%"
-						sortProperty="Username"
+						sortProperty="Course Name"
 						sorted="true"
 						visible="true"
 						>
 					
-						<Label text="Username" />
+						<Label text="Course Name" />
 				
 						<t:template>
 							<Button
@@ -85,12 +84,12 @@
 					<t:Column
 						id="role"
 						width="20%"
-						sortProperty="UserRole"
+						sortProperty="Course Type"
 						sorted="true"
 						visible="true"
 						>
 					
-						<Label text="User Role" />
+						<Label text="Course Type" />
 				
 						<t:template>
 							<Button
@@ -102,12 +101,12 @@
 					<t:Column
 						id="e_name"
 						width="20%"
-						sortProperty="EmployeeName"
+						sortProperty="Course Fee"
 						sorted="true"
 						visible="true"
 						>
 						
-						<Label text="Employee Name" />
+						<Label text="Course Fee" />
 					
 						<t:template>
 							<Button
@@ -119,12 +118,12 @@
 					<t:Column
 						id="productid"
 						width="20%"
-						sortProperty="Status"
+						sortProperty="Course Duration"
 						sorted="true"
 						visible="true"
 						>
 						
-						<Label text="Status" />
+						<Label text="Course Duration" />
 					
 						<t:template>
 							<Button
