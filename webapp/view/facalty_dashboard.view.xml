@@ -17,25 +17,40 @@
 									<l:BlockLayoutCell title="Add Facalty" titleAlignment="Center">
 										<Image
 											src="images/faclty_add.png"
-											width="88%"
-											height="87%"
+											width="85%"
+											height="86%"
 											press="onPressAddFacalty">
+											<tooltip></tooltip><!-- sap.ui.core.TooltipBase -->
+											<customData></customData><!-- sap.ui.core.CustomData -->
+											<layoutData></layoutData><!-- sap.ui.core.LayoutData -->
+											<dependents></dependents><!-- sap.ui.core.Control -->
+											<detailBox></detailBox><!-- sap.m.LightBox -->
 										</Image>
 									</l:BlockLayoutCell>
 									<l:BlockLayoutCell title="View Faclty" titleAlignment="Center" >
 										<Image
-											src="images/Remove-stu.png"
+											src="images/seo.png"
 											width="90%"
 											height="90%"
 											press="onPressviewfacalty">
+											<tooltip></tooltip><!-- sap.ui.core.TooltipBase -->
+											<customData></customData><!-- sap.ui.core.CustomData -->
+											<layoutData></layoutData><!-- sap.ui.core.LayoutData -->
+											<dependents></dependents><!-- sap.ui.core.Control -->
+											<detailBox></detailBox><!-- sap.m.LightBox -->
 										</Image>
 									</l:BlockLayoutCell>
 									<l:BlockLayoutCell title="Payment Faclty" titleAlignment="Center" >
 										<Image
-											src="images/Remove-stu.png"
-											width="90%"
-											height="90%"
+											src="images/payment.ico"
+											width="85%"
+											height="86%"
 											press="onPresspaymentFacalty">
+											<tooltip></tooltip><!-- sap.ui.core.TooltipBase -->
+											<customData></customData><!-- sap.ui.core.CustomData -->
+											<layoutData></layoutData><!-- sap.ui.core.LayoutData -->
+											<dependents></dependents><!-- sap.ui.core.Control -->
+											<detailBox></detailBox><!-- sap.m.LightBox -->
 										</Image>
 									</l:BlockLayoutCell>
 								</l:BlockLayoutRow>
