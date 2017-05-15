@@ -17,12 +17,12 @@
 								<VBox class="acr_vb2">
 									<HBox>
 										<Label text="Course Name" width="200px"/>
-										<Input value="" class="acr_inp"/>
+										<Input value="" class="acr_inp" id="c_name"/>
 									</HBox>
 									
 									<HBox>
 										<Label text="Course Fee" width="200px"/>
-										<Input value="" class="acr_inp"/>
+										<Input value="" class="acr_inp" id="c_fee"/>
 									</HBox>
 									
 								</VBox>
@@ -30,13 +30,13 @@
 								<VBox class="acr_vb22">
 									<HBox>
 										<Label text="Course Type" width="200px"/>
-										<Input value="" class="acr_inp"/>
+										<Input value="" class="acr_inp" id="c_type"/>
 									</HBox>
 									
 									
 								<HBox>
 										<Label text="Course Duration" width="200px"/>
-											<Select width="195px" class="sel">
+											<Select width="195px" class="sel" id="c_dur" selectedKey="--Select--">
 												<items class="itm">
 													<core:Item text="--Select--"/>
 													<core:Item text="1 Month" />
@@ -50,7 +50,7 @@
 			</l:VerticalLayout>
 			<Toolbar class="acr_tiny_margin" width="0px"></Toolbar>
 					<HBox class="btn1">
-						<Button text="Add" width="100px" class="b1"/>
+						<Button text="Add" width="100px" class="b1" press="addCourse"/>
 					</HBox>
 		</content>
 	</Panel>
