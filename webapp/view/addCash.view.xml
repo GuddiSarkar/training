@@ -79,7 +79,7 @@
 										<t:Column
 										id="amount"
 										width="20%"
-										sortProperty="Course Name"
+										sortProperty="Amount"
 										sorted="true"
 										visible="true">
 											<Label text="Amount" />

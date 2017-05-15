@@ -72,6 +72,40 @@
 											</t:template>
 										</t:Column>
 										<t:Column
+						id="slry"
+						width="20%"
+						sortProperty="Salary"
+						sorted="true"
+						visible="true"
+						>
+						
+						<Label text="Salary" />
+					
+						<t:template>
+							<Button
+							icon="sap-icon://sort"
+							press="onSortId"/>
+							<Label text="{det>Status}"/>
+						</t:template>
+					</t:Column>
+										<t:Column
+												id="doj"
+												width="20%"
+												sortProperty="Date of Joining"
+												sorted="true"
+												visible="true"
+												>
+						
+												<Label text="Date of Joining" />
+					
+										<t:template>
+										<Button
+										icon="sap-icon://sort"
+										press="onSortId"/>
+										<Label text="{det>Status}"/>
+									</t:template>
+									</t:Column>
+										<t:Column
 										id="action"
 										width="20%">
 											<Label text="Action" />
