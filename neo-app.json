@@ -25,7 +25,7 @@
       "path": "/TMS",
       "target": {
         "type": "destination",
-        "name": "sample"
+        "name": "TMS"
         
       },
       "description": "training management system db"

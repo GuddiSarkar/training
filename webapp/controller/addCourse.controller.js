@@ -7,7 +7,7 @@ sap.ui.define([
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.addCourse", {
 
-<<<<<<< Upstream, based on fe3cd97aa492a2eb3e88c6ac1cdd49f66c761fb3
+
 			onSearch: function(oEvent){
 		    var oTable = this.getView().byId("table");
 			var oBinding = oTable.getBinding("rows");
@@ -18,8 +18,8 @@ sap.ui.define([
 			var oFilter4 = new Filter("Course Duration", FilterOperator.Contains, value);
 			var allFilter = new Filter([oFilter1, oFilter2,oFilter3,oFilter4], false); 
 			oBinding.filter(allFilter);
-		}
-=======
+		},
+
 		addCourse: function(oEvent)
 		{
 			var courseName = this.getView().byId("c_name").getValue();
@@ -60,8 +60,6 @@ sap.ui.define([
 			);
 			oModel.setRefreshAfterChange(true);
 		}
-
->>>>>>> 1f70dfc save course
 	});
 
 });
