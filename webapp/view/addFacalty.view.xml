@@ -61,7 +61,7 @@
 		<headerToolbar>
 			<Toolbar height="3rem">
 				<Title text="Facalty"/>
-				<SearchField width="30%" class="sapUiSmallMargin srch" search="onSearch" />
+				<SearchField width="30%" class="sapUiSmallMargin srch7" search="onSearch" />
 			</Toolbar>
 		</headerToolbar>
 		<content >
