@@ -20,6 +20,15 @@
         "version": "1.44.13"
       },
       "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/TMS",
+      "target": {
+        "type": "destination",
+        "name": "sample"
+        
+      },
+      "description": "training management system db"
     }
   ],
   "sendWelcomeFileRedirect": true
