@@ -10,7 +10,7 @@
 							<l:BlockLayout id="BlockLayout" background="{/selectedBackground}">
 								<l:BlockLayoutRow>
 									<l:BlockLayoutCell title="Add Follow Up" titleAlignment="Center">
-										<u:Calendar id="calendar2" legend="legend2"/>
+										<u:Calendar id="calendar2" legend="legend2" select="handleCalendarSelect"/>
 									</l:BlockLayoutCell>
 									
 									<l:BlockLayoutCell title="Today's Follow Up" titleAlignment="Center">
