@@ -11,15 +11,15 @@ sap.ui.define([
 		},
 		
 		onPressAddFacalty: function(oEvent) {
-			this.getRouter().navTo("addStudent");
+			this.getRouter().navTo("addFacalty");
 		},
 		
 		onPressviewfacalty: function(oEvent) {
-			this.getRouter().navTo("course");
+			this.getRouter().navTo("viewFacalty");
 		},
 		
 		onPresspaymentFacalty: function(oEvent) {
-			this.getRouter().navTo("payment");
+			this.getRouter().navTo("paymentFacalty");
 		}
 
 	});

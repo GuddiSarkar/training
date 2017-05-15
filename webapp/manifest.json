@@ -187,6 +187,24 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["removeCourse"]
+			}, {
+				"name": "addFacalty",
+				"pattern": "af",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["addFacalty"]
+			}, {
+				"name": "viewFacalty",
+				"pattern": "vf",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["viewFacalty"]
+			}, {
+				"name": "paymentFacalty",
+				"pattern": "pf",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["paymentFacalty"]
 			}],
 			"targets": {
 				"home": {
@@ -320,6 +338,27 @@
 					"transition": "flip",
 					"clearAggregation": true,
 					"viewName": "removeCourse",
+					"viewLevel": 1
+				},
+				"addFacalty": {
+					"viewType": "XML",
+					"transition": "flip",
+					"clearAggregation": true,
+					"viewName": "addFacalty",
+					"viewLevel": 1
+				},
+				"viewFacalty": {
+					"viewType": "XML",
+					"transition": "flip",
+					"clearAggregation": true,
+					"viewName": "viewFacalty",
+					"viewLevel": 1
+				},
+				"paymentFacalty": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "paymentFacalty",
 					"viewLevel": 1
 				}
 			}
