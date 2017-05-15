@@ -9,7 +9,7 @@
 							<headerToolbar>
 								<Toolbar>
 									<Title text="Update Course" textAlign="Center" />
-									<SearchField width="30%" class="sapUiSmallMargin srch" search="onSearch" />
+									<SearchField width="30%" class="sapUiSmallMargin srch4" search="onSearch" />
 								</Toolbar>
 							</headerToolbar>
 							<content>
