@@ -9,6 +9,7 @@
 							<headerToolbar>
 								<Toolbar>
 									<Title text="Remove Student" textAlign="Center" />
+									<SearchField width="30%" class="sapUiSmallMargin srch" search="onSearch" />
 								</Toolbar>
 							</headerToolbar>
 							<content>

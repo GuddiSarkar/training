@@ -58,6 +58,10 @@
 
 /* add student css */
 
+.srch{
+	left:58%;
+}
+
 .sapMFlexItemAlignAuto{
 	width:100%;
 }

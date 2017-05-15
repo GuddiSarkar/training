@@ -10,6 +10,7 @@
 							<headerToolbar>
 								<Toolbar>
 									<Title text="Add Cash" textAlign="Center" />
+									<SearchField width="30%" class="sapUiSmallMargin srch" search="onSearch" />
 								</Toolbar>
 							</headerToolbar>
 							<content>

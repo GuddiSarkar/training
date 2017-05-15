@@ -8,7 +8,8 @@
 						<Panel  width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
 							<headerToolbar>
 								<Toolbar>
-									<Title text="View Course" textAlign="Center" />
+									<Title text="View Cash" textAlign="Center" />
+									<SearchField width="30%" class="sapUiSmallMargin srch" search="onSearch" />
 								</Toolbar>
 							</headerToolbar>
 							<content>
