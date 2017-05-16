@@ -38,7 +38,10 @@ sap.ui.define([
 			{
 				success: function(oData)
 				{
-					
+					this.getView().byId("c_name").setValue("");
+					this.getView().byId("c_type").setValue("");
+					this.getView().byId("c_fee").setValue("");
+					this.getView().byId("c_dur").setValue("");
 				}.bind(this),
 				error: function(error)
 				{
