@@ -67,7 +67,12 @@
 				"settings": {
 					"bundleName": "com.demoTMS.i18n.i18n"
 				}
-			}
+			},
+			"course": {
+				"dataSource": "mainService"
+				
+				}
+			
 		},
 		"resources": {
 			"css": [{

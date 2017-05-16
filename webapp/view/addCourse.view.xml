@@ -36,12 +36,12 @@
 									
 								<HBox>
 										<Label text="Course Duration" width="200px"/>
-											<Select width="195px" class="sel" id="c_dur" selectedKey="--Select--">
+											<Select width="195px" class="sel" id="c_dur" selectedKey="{course>course_duration}">
 												<items class="itm">
-													<core:Item text="--Select--"/>
-													<core:Item text="1 Month" />
-													<core:Item text="2 Month" />
-													<core:Item text="3 Month" />
+													<core:Item text="--Select--" key="0"/>
+													<core:Item text="1 Month" key="1"/>
+													<core:Item text="2 Month" key="2"/>
+													<core:Item text="3 Month" key="3"/>
 												</items>
 											</Select>
 										</HBox>
@@ -63,10 +63,10 @@
 		</headerToolbar>
 		<content >
 		
-		<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1" inset="false" rows="{det>/Employee}" selectionMode="MultiToggle"  >
+		<t:Table id="idTable" class="acr_tbl"  visibleRowCount="5" inset="false" rows="{course>/tb_course}" selectionMode="MultiToggle"  >
 				<t:columns>
 					<t:Column
-						id="name"
+						id="cn"
 						width="20%"
 						sortProperty="Course Name"
 						sorted="true"
@@ -79,11 +79,11 @@
 							<Button
 							icon="sap-icon://sort"
 							press="onSort"/>
-							<Text text="{det>Username}"/>
+							<Text text="{course>course_name}"/>
 						</t:template>
 					</t:Column>
 					<t:Column
-						id="role"
+						id="ct"
 						width="20%"
 						sortProperty="Course Type"
 						sorted="true"
@@ -96,11 +96,11 @@
 							<Button
 							icon="sap-icon://sort"
 							press="onSort"/>
-							<Text text="{det>UserRole}"/>
+							<Text text="{course>course_type}"/>
 						</t:template>
 					</t:Column>
 					<t:Column
-						id="e_name"
+						id="cf"
 						width="20%"
 						sortProperty="Course Fee"
 						sorted="true"
@@ -113,11 +113,11 @@
 							<Button
 							icon="sap-icon://sort"
 							press="onSortQuantity"/>
-							<Text text="{det>EmployeeName}"/>
+							<Text text="{course>course_fee}"/>
 						</t:template>
 					</t:Column>
 					<t:Column
-						id="productid"
+						id="cd"
 						width="20%"
 						sortProperty="Course Duration"
 						sorted="true"
@@ -130,7 +130,7 @@
 							<Button
 							icon="sap-icon://sort"
 							press="onSortId"/>
-							<Label text="{det>Status}"/>
+							<Label text="{course>course_duration}"/>
 						</t:template>
 					</t:Column>
 					<t:Column
@@ -139,7 +139,7 @@
 						>
 						<Label text="Action" />
 						<t:template >
-							<Toolbar class="acr_toolbar" width="0px">
+							<Toolbar class="acr_toolbar">
 							<Button icon="sap-icon://edit" width="85px"   class="b3"/>
 							<Button icon="sap-icon://delete" width="110px"  class="b4 btn2"/>
 							</Toolbar>

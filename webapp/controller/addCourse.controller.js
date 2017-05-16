@@ -7,8 +7,12 @@ sap.ui.define([
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.addCourse", {
 
-
-			onSearch: function(oEvent){
+		onInit: function(){
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+		},
+		
+		onSearch: function(oEvent){
 		    var oTable = this.getView().byId("table");
 			var oBinding = oTable.getBinding("rows");
 			var value = oEvent.getParameter("query");
@@ -25,25 +29,39 @@ sap.ui.define([
 			var courseName = this.getView().byId("c_name").getValue();
 			var courseFee = this.getView().byId("c_fee").getValue();
 			var courseType = this.getView().byId("c_type").getValue();
-			var courseDuration = this.getView().byId("c_dur").getSelectedKey();
-			var oModel = this.getOwnerComponent().getModel();
+			//var selKey = this.getView().byId("c_dur").getSelectedKey();
+			var courseDuration = this.getView().byId("c_dur").getSelectedItem().getText();
+			var oEntry = {"course_name": courseName, "course_type": courseType, "course_fee": courseFee, "course_duration": courseDuration};
+			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
-			var oCatDef = $.Deferred();
-			oModel.read("/tb_course", 
+			oModel.create("/tb_course",oEntry,
+			{
+				success: function(oData)
+				{
+					
+				}.bind(this),
+				error: function(error)
+				{
+					
+				}.bind(this)
+			}
+			);
+			//var oCDef = $.Deferred();
+			/*oModel.read("/tb_course", 
 			{
 				success: function(oData) 
 				{
 					this.nextId = oData.results.length;
-					oCatDef.resolve();
+					oCDef.resolve();
 				}.bind(this),
 				error: function(oErr) 
 				{
 					this.nextId = null;
-					oCatDef.reject();
+					oCDef.reject();
 				}.bind(this)
 			});
 
-			$.when(oCatDef).then(
+			$.when(oCDef).then(
 				function() 
 				{
 					var oEntry = 
@@ -57,7 +75,7 @@ sap.ui.define([
 					oModel.create("/tb_course", oEntry);
 
 				}.bind(this)
-			);
+			);*/
 			oModel.setRefreshAfterChange(true);
 		}
 	});
