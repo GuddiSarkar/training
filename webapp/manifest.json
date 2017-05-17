@@ -70,8 +70,10 @@
 			},
 			"course": {
 				"dataSource": "mainService"
-				
-				}
+				},
+			"student":{
+				"dataSource": "mainService"
+			}	
 			
 		},
 		"resources": {

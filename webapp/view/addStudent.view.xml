@@ -26,11 +26,11 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 									<VBox>	
 										<HBox>
 											<Label text="First Name" width="200px" class="asi"/>
-											<Input value=""  />
+											<Input value="" id="f_name" />
 										</HBox>
 										<HBox>
 											<Label text="Gender" width="200px" />
-											<RadioButtonGroup columns="2" width="200px" class="sapUiMediumMarginBottom">
+											<RadioButtonGroup columns="2" width="200px" class="sapUiMediumMarginBottom" id="g_nder" >
 												<buttons>
 													<RadioButton id="RB1-1" text="Male"/>
 													<RadioButton id="RB1-2" text="Female"/>
@@ -41,11 +41,11 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 									<VBox class="vb21">
 										<HBox>									
 											<Label text="Last Name" width="200px" />
-											<Input value="" />
+											<Input value="" id="l_name"/>
 										</HBox>
 										<HBox>
 											<Label text="D.O.B" width="200px"/>
-											<Input value="" type ="Date" />
+											<Input value="" type ="Date" id="d_ob" />
 										</HBox>
 									</VBox>
 								</HBox>
@@ -59,13 +59,13 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 									<VBox>
 										<HBox>
 											<Label text="Phone" width="200px"/>
-											<Input value="" type="Tel"/>
+											<Input value="" type="Tel" id="p_hone"/>
 										</HBox>
 									</VBox>
 									<VBox class="vb21">
 										<HBox>
 											<Label text="Email" width="200px"/>
-											<Input value="" type="Email"/>
+											<Input value="" type="Email" id="e_ml"/>
 										</HBox>
 									</VBox>
 								</HBox>
@@ -78,30 +78,30 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 									<VBox>
 										<HBox>
 											<Label text="Address Street 1" width="200px"/>
-											<Input value=""/>
+											<Input value="" id="a_strt1"/>
 										</HBox>
 										<HBox>
 											<Label text="City" width="200px"/>
-											<Input value="" />
+											<Input value="" id="c_ty" />
 										</HBox>
 										<HBox>
 											<Label text="Zip/Postal Code" width="200px"/>
-											<Input value=""/>
+											<Input value="" id="zip_code"/>
 										</HBox>
 									</VBox>
 								
 									<VBox class="vb21">
 										<HBox>
 											<Label text="Address Street 2" width="200px" />
-											<Input value="" type="Tel"/>
+											<Input value="" type="Tel" id="a_strt2"/>
 										</HBox>
 										<HBox>
 											<Label text="State/Province" width="200px"/>
-											<Input value="" />
+											<Input value="" id="s_tate" />
 										</HBox>
 										<HBox>
 											<Label text="Country" width="200px"/>
-											<Select width="195px" class="sel">
+											<Select width="195px" class="sel" id="c_untry">
 												<items class="itm">
 													<core:Item text="--Select--"/>
 													<core:Item text="Germany" />
@@ -125,18 +125,18 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 									<VBox>
 										<HBox>
 											<Label text="Course Name" width="200px"/>
-											<Input value=""/>
+											<Input value="" id="c_name"/>
 										</HBox>
 										<HBox>
 											<Label text="Couse Fee" width="200px"/>
-											<Input value="" />
+											<Input value="" id="c_fee" />
 										</HBox>
 									</VBox>
 								
 									<VBox class="vb21">
 										<HBox>
 											<Label text="Course Type" width="200px"/>
-											<Select width="195px" class="sel">
+											<Select width="195px" class="sel" id="c_type">
 												<items class="itm">
 													<core:Item text="--Select--"/>
 													<core:Item text="Technical" />
@@ -146,7 +146,7 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 										</HBox>
 										<HBox>
 											<Label text="Start Date" width="200px"/>
-											<Input value="" type ="Date" />
+											<Input value="" type ="Date" id="s_date"/>
 										</HBox>
 									</VBox>
 								</HBox>
@@ -164,45 +164,45 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 									<VBox>
 										<HBox>
 											<Label text="Course Fee" width="200px"/>
-											<Input value=""/>
+											<Input value="" id="c_fee1"/>
 										</HBox>
 										
 										<HBox>
 											<Label text="Tax" width="200px"/>
-											<Input value="14.5%" editable="false"/>
+											<Input value="14.5%" editable="false" id="t_ax"/>
 										</HBox>
 										<HBox>
 											<Label text="Registration Fee" width="200px"/>
-											<Input value="1000/-" editable="false"/>
+											<Input value="1000/-" editable="false" id="r_fee"/>
 										</HBox>
 										<HBox>
 											<Label text="2nd Installment" width="200px"/>
-											<Input value=""/>
+											<Input value="" id="sec_instl"/>
 										</HBox>
 									</VBox>
 									<VBox class="vb21">
 										<HBox>
 											<Label text="Discount" width="200px"/>
-											<Input value=""/>
+											<Input value="" id="d_scunt"/>
 										</HBox>
 										<HBox>
 											<Label text="Total Payable Amount" width="200px"/>
-											<Input value=""/>
+											<Input value="" id="tp_amnt"/>
 										</HBox>
 										<HBox>
 											<Label text="1st Installment" width="200px"/>
-											<Input value=""/>
+											<Input value="" id="f_instl"/>
 										</HBox>
 										
 										<HBox>
 											<Label text="3rd Installment" width="200px"/>
-											<Input value=""/>
+											<Input value="" id="thrd_instl"/>
 										</HBox>
 									</VBox>
 								</HBox>
 								<HBox class="btn12">
 									<Button  text="Previous"  width="100px" class="b2"></Button>
-									<Button  text="Save"  width="130px" class="b1 btn2"></Button>
+									<Button  text="Save"  width="130px" class="b1 btn2" press="addStudent"></Button>
 								</HBox>
 							</l:VerticalLayout>
 						</IconTabFilter>

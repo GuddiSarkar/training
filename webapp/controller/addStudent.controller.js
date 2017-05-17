@@ -5,40 +5,63 @@ sap.ui.define([
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.addStudent", {
 
-		/**
-		 * Called when a controller is instantiated and its View controls (if available) are already created.
-		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-		 * @memberOf com.demoTMS.view.addStudent
-		 */
-		//	onInit: function() {
-		//
-		//	},
-
-		/**
-		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
-		 * (NOT before the first rendering! onInit() is used for that one!).
-		 * @memberOf com.demoTMS.view.addStudent
-		 */
-		//	onBeforeRendering: function() {
-		//
-		//	},
-
-		/**
-		 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
-		 * This hook is the same one that SAPUI5 controls get after being rendered.
-		 * @memberOf com.demoTMS.view.addStudent
-		 */
-		//	onAfterRendering: function() {
-		//
-		//	},
-
-		/**
-		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
-		 * @memberOf com.demoTMS.view.addStudent
-		 */
-		//	onExit: function() {
-		//
-		//	}
+	addStudent:function(oEvent)
+	{
+			var firstName = this.getView().byId("f_name").getValue();
+			var lastName = this.getView().byId("l_name").getValue();
+			var name = firstName+""+lastName;
+			var gender = this.getView().byId("g_nder").getValue();
+			var dob = this.getView().byId("d_ob").getValue();
+			var phone = this.getView().byId("p_hone").getValue();
+			var email = this.getView().byId("e_ml").getValue();
+			var addstreet1 = this.getView().byId("a_strt1").getValue();
+			var addstreet2 = this.getView().byId("a_strt2").getValue();
+			var address = addstreet1+""+addstreet2;
+			var city = this.getView().byId("c_ty").getValue();
+			var state = this.getView().byId("s_tate").getValue();
+			var zip = this.getView().byId("zip_code").getValue();
+			var courseName = this.getView().byId("c_name").getValue();
+			var courseType = this.getView().byId("c_type").getSelectedItem().getText();
+			var courseFee = this.getView().byId("c_fee").getValue();
+			var startDate = this.getView().byId("s_date").getValue();
+			var courseFee = this.getView().byId("c_fee1").getValue();
+			var discount = this.getView().byId("d_scunt").getValue();
+			var tax = this.getView().byId("t_ax").getValue();
+			var totalPaybleAmount = this.getView().byId("tp_amnt").getValue();
+			var registrationFee = this.getView().byId("r_fee").getValue();
+			var fstInstlment = this.getView().byId("f_instl").getValue();
+			var secondInstlment = this.getView().byId("sec_instl").getValue();
+			var thrdInstlment = this.getView().byId("thrd_instl").getValue();
+			var oEntry = {"stud_name": name, "stud_gender": gender, "stud_dob": dob, "stud_mob": phone,"stud_email":email,
+			"address_street":address,"address_city":city,"adress_state":state,"adress_zip":zip,"course_name": courseName,
+			"course_type": courseType,"course_fee": courseFee,
+			};
+			var oModel = this.getOwnerComponent().getModel("student");
+			oModel.setUseBatch(false);
+			oModel.create("/tb_student",oEntry,
+			{
+				success: function(oData)
+				{
+					this.getView().byId("f_name").setValue("");
+					this.getView().byId("l_name").setValue("");
+					this.getView().byId("g_nder").setValue("");
+					this.getView().byId("d_ob").setValue("");
+					this.getView().byId("p_hone").setValue("");
+					this.getView().byId("e_ml").setValue("");
+					this.getView().byId("a_strt1").setValue("");
+					this.getView().byId("a_strt2").setValue("");
+					this.getView().byId("c_ty").setValue("");
+					this.getView().byId("s_tate").setValue("");
+					this.getView().byId("zip_code").setValue("");
+				}.bind(this),
+				error: function(error)
+				{
+					
+				}.bind(this)
+			}
+			);
+			oModel.setRefreshAfterChange(true);
+	}
 
 	});
 
