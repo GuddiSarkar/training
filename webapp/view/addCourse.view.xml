@@ -30,8 +30,14 @@
 								<VBox class="acr_vb22">
 									<HBox>
 										<Label text="Course Type" width="200px"/>
-										<Input value="" class="acr_inp" id="c_type"/>
-									</HBox>
+											<Select width="195px" class="sel" id="c_type" selectedKey="{course>course_type}">
+												<items class="itm">
+													<core:Item text="--Select--" key="0"/>
+													<core:Item text="Technical" key="1"/>
+													<core:Item text="Functional" key="2"/>
+												</items>
+											</Select>
+										</HBox>
 									
 									
 								<HBox>
@@ -63,7 +69,7 @@
 		</headerToolbar>
 		<content >
 		
-		<t:Table id="idTable" class="acr_tbl"  visibleRowCount="5" inset="false" rows="{course>/tb_course}" selectionMode="MultiToggle"  >
+		<t:Table id="idTable" class="acr_tbl"  visibleRowCount="3" inset="false" rows="{course>/tb_course}" selectionMode="MultiToggle"  >
 				<t:columns>
 					<t:Column
 						id="cn"

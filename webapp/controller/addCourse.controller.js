@@ -28,8 +28,7 @@ sap.ui.define([
 		{
 			var courseName = this.getView().byId("c_name").getValue();
 			var courseFee = this.getView().byId("c_fee").getValue();
-			var courseType = this.getView().byId("c_type").getValue();
-			//var selKey = this.getView().byId("c_dur").getSelectedKey();
+			var courseType = this.getView().byId("c_type").getSelectedItem().getText();
 			var courseDuration = this.getView().byId("c_dur").getSelectedItem().getText();
 			var oEntry = {"course_name": courseName, "course_type": courseType, "course_fee": courseFee, "course_duration": courseDuration};
 			var oModel = this.getOwnerComponent().getModel("course");
