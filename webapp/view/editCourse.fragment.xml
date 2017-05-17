@@ -1,0 +1,49 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" displayBlock="true" xmlns:l="sap.ui.layout">
+	<Dialog id="editCourse" title="Edit Course">
+		<content>
+			<l:VerticalLayout id="containerLayout" width="100%">
+								<HBox>
+								<VBox class="acr_vb2">
+									<HBox>
+										<Label text="Course Name" width="200px"/>
+										<Input value="" class="acr_inp" id="c_nameEd"/>
+									</HBox>
+									
+									<HBox>
+										<Label text="Course Fee" width="200px"/>
+										<Input value="" class="acr_inp" id="c_feeEd"/>
+									</HBox>
+									
+								</VBox>
+								
+								<VBox class="acr_vb22">
+									<HBox>
+										<Label text="Course Type" width="200px"/>
+											<Select width="195px" class="sel" id="c_typeEd" selectedKey="{course>course_type}">
+												<items class="itm">
+													<core:Item text="--Select--" key="0"/>
+													<core:Item text="Technical" key="1"/>
+													<core:Item text="Functional" key="2"/>
+												</items>
+											</Select>
+										</HBox>
+									<HBox>
+										<Label text="Course Duration" width="200px"/>
+											<Select width="195px" class="sel" id="c_durEd" selectedKey="{course>course_duration}">
+												<items class="itm">
+													<core:Item text="--Select--" key="0"/>
+													<core:Item text="1 Month" key="1"/>
+													<core:Item text="2 Month" key="2"/>
+													<core:Item text="3 Month" key="3"/>
+												</items>
+											</Select>
+									</HBox>
+								</VBox>
+							</HBox>
+			</l:VerticalLayout>
+		</content>
+		<beginButton>
+			<Button text="{i18n>Close}" press="onCloseEdit"/>
+		</beginButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -79,7 +79,24 @@ sap.ui.define([
 				}.bind(this)
 			);*/
 			oModel.setRefreshAfterChange(true);
+		},
+		
+		onClickEdit: function(){
+			var oView = this.getView();
+			var oDialog = oView.byId("editCourse");
+			if(!oDialog)
+			{
+				oDialog = sap.ui.xmlfragment(oView.getId(),"com.demoTMS.view.editCourse",this);
+				oView.addDependent(oDialog);
+			}
+			oDialog.open();
+		},
+		
+		onCloseEdit:function(oEvent)
+		{
+			this.getView().byId("editCourse").close();
 		}
+
 	});
 
 });
