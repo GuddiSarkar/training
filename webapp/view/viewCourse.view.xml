@@ -13,11 +13,11 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-<<<<<<< Upstream, based on 766866677f1e52cc1c3778b4dc0c782ebee0810a
-								<t:Table id="Table" class="acr_tbl"  visibleRowCount="1" inset="false" rows="{course>/tb_course}" selectionMode="MultiToggle"  >
-=======
-								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1" inset="false" rows="{course>/tb_course}" selectionMode="MultiToggle"  >
->>>>>>> d87ecf0 add faculty view course
+
+								<t:Table id="Table" class="acr_tbl"  visibleRowCount="10" inset="false" rows="{course>/tb_course}" selectionMode="MultiToggle">
+
+				
+
 									<t:columns>
 										<t:Column
 										id="cname"
@@ -78,10 +78,12 @@
 										<t:Column
 										id="action"
 										width="20%">
-											<Label text="Action" />
+											<Label text="Action"/>
 											<t:template >
+												<Toolbar class="acr_toolbar">
 												<Button icon="sap-icon://edit" width="85px"   class="b3"/>
 												<Button icon="sap-icon://delete" width="110px"  class="b4 btn2"/>
+												</Toolbar>
 											</t:template>
 										</t:Column>
 									</t:columns>
