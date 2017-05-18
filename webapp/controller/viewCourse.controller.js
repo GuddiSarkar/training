@@ -17,6 +17,10 @@ sap.ui.define([
 			var oFilter4 = new Filter("Course Duration", FilterOperator.Contains, value);
 			var allFilter = new Filter([oFilter1, oFilter2,oFilter3,oFilter4], false); 
 			oBinding.filter(allFilter);
+		},
+		onInit: function(){
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
 		}
 	});
 

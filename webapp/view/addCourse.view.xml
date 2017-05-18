@@ -69,7 +69,7 @@
 		</headerToolbar>
 		<content >
 		
-		<t:Table id="idTable" class="acr_tbl"  visibleRowCount="3" inset="false" rows="{course>/tb_course}" selectionMode="MultiToggle"  >
+		<t:Table id="Table" class="acr_tbl"  visibleRowCount="3" inset="false" rows="{course>/tb_course}" selectionMode="MultiToggle"  >
 				<t:columns>
 					<t:Column
 						id="cn"

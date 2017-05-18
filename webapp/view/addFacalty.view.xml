@@ -177,8 +177,8 @@
 						<Label text="Action" />
 						<t:template >
 							<Toolbar class="acr_toolbar" width="0px">
-							<Button icon="sap-icon://edit" width="85px"   class="b3"/>
-							<Button icon="sap-icon://delete" width="110px"  class="b4 btn2"/>
+							<Button icon="sap-icon://edit" width="85px" class="b3" press="onClickEdit"/>
+							<Button icon="sap-icon://delete" width="110px" class="b4 btn2" press="onClickDelete"/>
 							</Toolbar>
 						</t:template>
 					</t:Column>
