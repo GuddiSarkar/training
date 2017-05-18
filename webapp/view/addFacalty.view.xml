@@ -17,17 +17,17 @@
 								<VBox class="acr_vb2">
 									<HBox>
 										<Label text="Facalty Name" width="200px"/>
-										<Input value="" class="acr_inp"/>
+										<Input value="" class="acr_inp" id="fac_name"/>
 									</HBox>
 									
 									<HBox>
 										<Label text="Phone Number" width="200px"/>
-										<Input value="" class="acr_inp"/>
+										<Input value="" class="acr_inp" id="phn_num"/>
 									</HBox>
 									
 									<HBox>
 										<Label text="Salary" width="200px"/>
-										<Input value="" class="acr_inp"/>
+										<Input value="" class="acr_inp" id="s_lary"/>
 									</HBox>
 									
 								</VBox>
@@ -35,17 +35,17 @@
 								<VBox class="acr_vb22">
 									<HBox>
 										<Label text="Email" width="200px"/>
-										<Input value="" class="acr_inp"/>
+										<Input value="" class="acr_inp" id="e_mil"/>
 									</HBox>
 									
 									<HBox>
 										<Label text="Course Name" width="200px"/>
-										<Input value="" class="acr_inp"/>
+										<Input value="" class="acr_inp" id="crs_name"/>
 									</HBox>
 									
 									<HBox>
 										<Label text="Date of Joining" width="200px"/>
-										<Input value="" type="Date" class="acr_inp"/>
+										<Input value="" type="Date" class="acr_inp" id="d_oj"/>
 									</HBox>
 							
 								</VBox>
@@ -53,7 +53,7 @@
 			</l:VerticalLayout>
 			<Toolbar class="acr_tiny_margin" width="0px"></Toolbar>
 					<HBox class="btn1">
-						<Button text="Add" width="100px" class="b1"/>
+						<Button text="Add" width="100px" class="b1" press="addFacalty"/>
 					</HBox>
 		</content>
 	</Panel>
@@ -82,7 +82,7 @@
 							<Button
 							icon="sap-icon://sort"
 							press="onSort"/>
-							<Text text="{det>Username}"/>
+							<Text text="{faculty>faculty_name}"/>
 						</t:template>
 					</t:Column>
 					<t:Column
@@ -99,7 +99,7 @@
 							<Button
 							icon="sap-icon://sort"
 							press="onSort"/>
-							<Text text="{det>UserRole}"/>
+							<Text text="{faculty>faculty_mob}"/>
 						</t:template>
 					</t:Column>
 					<t:Column
@@ -116,7 +116,7 @@
 							<Button
 							icon="sap-icon://sort"
 							press="onSortQuantity"/>
-							<Text text="{det>EmployeeName}"/>
+							<Text text="{faculty>faculty_email}"/>
 						</t:template>
 					</t:Column>
 					<t:Column
@@ -133,7 +133,7 @@
 							<Button
 							icon="sap-icon://sort"
 							press="onSortId"/>
-							<Label text="{det>Status}"/>
+							<Label text="{faculty>faculty_course}"/>
 						</t:template>
 					</t:Column>
 					<t:Column
@@ -150,7 +150,7 @@
 							<Button
 							icon="sap-icon://sort"
 							press="onSortId"/>
-							<Label text="{det>Status}"/>
+							<Label text="{faculty>faculty_salary}"/>
 						</t:template>
 					</t:Column>
 					<t:Column
@@ -167,7 +167,7 @@
 							<Button
 							icon="sap-icon://sort"
 							press="onSortId"/>
-							<Label text="{det>Status}"/>
+							<Label text="{faculty>faculty_doj}"/>
 						</t:template>
 					</t:Column>
 					<t:Column

@@ -73,7 +73,11 @@
 				},
 			"student":{
 				"dataSource": "mainService"
-			}	
+				},
+			"faculty":
+			{
+			"dataSource": "mainService"	
+			}
 			
 		},
 		"resources": {

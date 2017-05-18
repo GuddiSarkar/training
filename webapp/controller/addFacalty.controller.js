@@ -7,6 +7,11 @@ sap.ui.define([
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.addFacalty", {
 
+		onInit: function(){
+			var oModel = this.getOwnerComponent().getModel("faculty");
+			oModel.setUseBatch(false);
+		},
+
 		onSearch: function(oEvent){
 		    var oTable = this.getView().byId("table");
 			var oBinding = oTable.getBinding("rows");
@@ -19,7 +24,37 @@ sap.ui.define([
 			var oFilter6 = new Filter("Date of Joining", FilterOperator.Contains, value);
 			var allFilter = new Filter([oFilter1, oFilter2,oFilter3,oFilter4,oFilter5,oFilter6], false); 
 			oBinding.filter(allFilter);
-		}
+		},
+	addFacalty: function(oEvent)
+		{
+			var FacaltyName = this.getView().byId("fac_name").getValue();
+			var PhoneNumber = this.getView().byId("phn_num").getValue();
+			var Salary = this.getView().byId("s_lary").getValue();
+			var Email = this.getView().byId("e_mil").getValue();
+			var CourseName = this.getView().byId("crs_name").getValue();
+			var DateofJoining = this.getView().byId("d_oj").getValue();
+			var oEntry = {"faculty_name": FacaltyName, "faculty_mob": PhoneNumber, "faculty_salary": Salary, "faculty_email": Email,"faculty_course":CourseName,"faculty_doj":DateofJoining};
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+			oModel.create("/tb_faculty",oEntry,
+			{
+				success: function(oData)
+				{
+					this.getView().byId("fac_name").setValue("");
+					this.getView().byId("phn_num").setValue("");
+					this.getView().byId("s_lary").setValue("");
+					this.getView().byId("e_mil").setValue("");
+					this.getView().byId("crs_name").setValue("");
+					this.getView().byId("d_oj").setValue("");
+				}.bind(this),
+				error: function(error)
+				{
+					
+				}.bind(this)
+			}
+			);
+				oModel.setRefreshAfterChange(true);
+		},
 	});
 
 });
