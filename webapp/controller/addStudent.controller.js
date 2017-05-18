@@ -9,7 +9,7 @@ sap.ui.define([
 	{
 			var firstName = this.getView().byId("f_name").getValue();
 			var lastName = this.getView().byId("l_name").getValue();
-			var name = firstName+""+lastName;
+			var name = firstName+" "+lastName;
 			var gender = this.getView().byId("g_nder").getValue();
 			var dob = this.getView().byId("d_ob").getValue();
 			var phone = this.getView().byId("p_hone").getValue();
