@@ -108,10 +108,9 @@ sap.ui.define([
 				oModel.read("/tb_course",{
 					filters: [oAllFilters],
 					success: function(oData, oResponse) {
-						oData.results;
 						var cModel = new sap.ui.model.json.JSONModel();
 						sap.ui.getCore().setModel(cModel,"crsModel");
-						cModel.setData(oData);
+						cModel.setData(oData.results);
 				}
 				});
 			
