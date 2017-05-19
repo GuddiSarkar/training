@@ -125,11 +125,13 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 									<VBox>
 										<HBox>
 											<Label text="Course Name" width="200px"/>
-											<Select width="195px" class="sel" id="c_name" models="{path: 'course>/tb_course'}" change="onSelectCourse" selectedKey="{course>course_id}">
-												<items class="itm">
-													<core:Item text="{course>course_name}" key="{course>course_id}"/>
-												</items>
-											</Select>
+											<ComboBox width="195px" class="sel" id="c_name"
+												items="{
+													path: 'course>/tb_course',
+													sorter: { path: 'course_name' }
+												}" selectionChange="onSelectionchange">
+												<core:Item key="{course>course_id}" text="{course>course_name}" />
+											</ComboBox>
 										</HBox>
 										
 										<HBox>

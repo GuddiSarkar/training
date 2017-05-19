@@ -117,7 +117,7 @@ sap.ui.define([
 			
 	},
 	
-	onSelectCourse: function(oEvent){
+	onSelectionchange: function(oEvent){
 		var oData = sap.ui.getCore().getModel("crsModel").getData();
 		this.getView().byId("c_fee").setText(oData.course_fee);
 		this.getView().byId("c_type").setText(oData.course_type);
