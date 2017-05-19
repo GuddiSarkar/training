@@ -14,7 +14,7 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1" inset="false" rows="{det>/Employee}" selectionMode="MultiToggle"  >
+								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1"  rows="{det>/Employee}" selectionMode="MultiToggle"  >
 									<t:columns>
 										<t:Column
 						id="id"

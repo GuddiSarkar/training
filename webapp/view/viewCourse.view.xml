@@ -14,7 +14,7 @@
 							</headerToolbar>
 							<content>
 
-								<t:Table id="Table" class="acr_tbl"  visibleRowCount="10" inset="false" rows="{course>/tb_course}" selectionMode="MultiToggle">
+								<t:Table id="Table" class="acr_tbl"  visibleRowCount="10" rows="{course>/tb_course}" selectionMode="MultiToggle">
 								<t:columns>
 									<t:Column
 						id="id"

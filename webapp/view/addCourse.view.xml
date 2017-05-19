@@ -79,7 +79,7 @@
 						visible="true"
 						>
 					
-						<Label text="SL. NO." />
+						<Label text="SL.NO." />
 				
 						<t:template>
 							<Button

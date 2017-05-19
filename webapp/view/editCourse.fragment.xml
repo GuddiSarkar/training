@@ -42,8 +42,11 @@
 							</HBox>
 			</l:VerticalLayout>
 		</content>
-		<beginButton>
+			<Toolbar>
+			<Button text="{i18n>Ok}" press="onOkEdit"/>
+			<ToolbarSpacer></ToolbarSpacer>
 			<Button text="{i18n>Close}" press="onCloseEdit"/>
-		</beginButton>
+			
+			</Toolbar>
 	</Dialog>
 </core:FragmentDefinition>

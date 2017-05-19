@@ -81,18 +81,30 @@ sap.ui.define([
 			oModel.setRefreshAfterChange(true);
 		},
 
-		onClickEdit: function() {
+		onClickEdit: function(oEvent) {
 			var oView = this.getView();
 			var oDialog = oView.byId("editCourse");
+			var oTable = this.getView().byId("Table");
+			var path=oEvent.getSource().getParent().getBindingContext().getPath();
+			var model =oTable.getModel();
+			var property=model.getProperty(path);
 			if (!oDialog) {
 				oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.editCourse", this);
 				oView.addDependent(oDialog);
 			}
+			var CourseName = this.getView().byId("I2").setValue(property.Course+" "+Name);
+			var Name = this.getView().byId("I3").setValue(property.Name);
+			var Rating = this.getView().byId("I4").setValue(property.Rating);
+			var Price = this.getView().byId("I5").setValue(property.Price);
 			oDialog.open();
 		},
 
 		onCloseEdit: function(oEvent) {
 			this.getView().byId("editCourse").close();
+		},
+		onOkEdit:function(oEvent)
+		{
+			
 		},
 
 		onClickDelete: function(oEvent) {

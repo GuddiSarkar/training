@@ -82,7 +82,7 @@
 							<Button
 							icon="sap-icon://sort"
 							press="onSort"/>
-							<Text text="{course>course_id}"/>
+							<Text text="{faculty>faculty_id}"/>
 						</t:template>
 					</t:Column>
 					<t:Column
