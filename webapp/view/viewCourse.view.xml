@@ -15,10 +15,24 @@
 							<content>
 
 								<t:Table id="Table" class="acr_tbl"  visibleRowCount="10" inset="false" rows="{course>/tb_course}" selectionMode="MultiToggle">
-
+								<t:columns>
+									<t:Column
+						id="id"
+						width="10%"
+						sortProperty="Id"
+						sorted="true"
+						visible="true"
+						>
+					
+						<Label text="SL. NO." />
 				
-
-									<t:columns>
+						<t:template>
+							<Button
+							icon="sap-icon://sort"
+							press="onSort"/>
+							<Text text="{course>course_id}"/>
+						</t:template>
+					</t:Column>
 										<t:Column
 										id="cname"
 										width="20%"

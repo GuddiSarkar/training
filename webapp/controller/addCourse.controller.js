@@ -95,6 +95,43 @@ sap.ui.define([
 		onCloseEdit:function(oEvent)
 		{
 			this.getView().byId("editCourse").close();
+		},
+		
+		onClickDelete: function(oEvent)
+		{
+			var oView = this.getView();
+			var oDialog = oView.byId("deleteCourse");
+			if(!oDialog)
+			{
+				oDialog = sap.ui.xmlfragment(oView.getId(),"com.demoTMS.view.deleteCourse",this);
+				oView.addDependent(oDialog);
+			}
+			oDialog.open();
+		},
+		onCancel: function(oEvent)
+		{
+			this.getView().byId("deleteCourse").close();
+		},
+		onOkDelete: function(oEvent)
+		{
+			var oView = this.getView();
+			var oTable = this.getView().byId("Table");
+			var path=oEvent.getSource().getParent().getBindingContext().getRows();
+			var model =oTable.getModel();
+			var property=model.getProperty(path);
+			
+			var oModel = this.getOwnerComponent().getModel();
+			oModel.remove("/tb_course(" + property.id + ")", {
+				success: function(oData, oResponse) {
+					console.log(oData);
+					console.log(oResponse);
+				}.bind(this),
+				error: function(err) {
+					console.log(err);
+				}.bind(this)
+			});
+			oModel.setRefreshAfterChange(true);
+			this.getView().byId("deleteCourse").close();
 		}
 
 	});

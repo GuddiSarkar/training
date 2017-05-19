@@ -13,8 +13,25 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1" inset="false" rows="{faculty>/tb_faculty}" selectionMode="MultiToggle"  >
+								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="10" inset="false" rows="{faculty>/tb_faculty}" selectionMode="MultiToggle"  >
 									<t:columns>
+										<t:Column
+						id="id"
+						width="10%"
+						sortProperty="Id"
+						sorted="true"
+						visible="true"
+						>
+					
+						<Label text="SL. NO." />
+				
+						<t:template>
+							<Button
+							icon="sap-icon://sort"
+							press="onSort"/>
+							<Text text="{course>course_id}"/>
+						</t:template>
+					</t:Column>
 										<t:Column
 										id="fname"
 										width="20%"
@@ -26,7 +43,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>Username}"/>
+												<Text text="{faculty>faculty_name}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -40,7 +57,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>UserRole}"/>
+												<Text text="{faculty>faculty_mob}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -54,7 +71,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>UserRole}"/>
+												<Text text="{faculty>faculty_email}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -68,26 +85,24 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>UserRole}"/>
+												<Text text="{faculty>faculty_course}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
-						id="slry"
-						width="20%"
-						sortProperty="Salary"
-						sorted="true"
-						visible="true"
-						>
-						
-						<Label text="Salary" />
-					
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSortId"/>
-							<Label text="{det>Status}"/>
-						</t:template>
-					</t:Column>
+												id="slry"
+												width="20%"
+												sortProperty="Salary"
+												sorted="true"
+												visible="true"
+										>
+										<Label text="Salary" />
+										<t:template>
+										<Button
+												icon="sap-icon://sort"
+												press="onSortId"/>
+										<Label text="{faculty>faculty_salary}"/>
+										</t:template>
+										</t:Column>
 										<t:Column
 												id="doj"
 												width="20%"
@@ -95,16 +110,14 @@
 												sorted="true"
 												visible="true"
 												>
-						
-												<Label text="Date of Joining" />
-					
+										<Label text="Date of Joining" />
 										<t:template>
 										<Button
 										icon="sap-icon://sort"
 										press="onSortId"/>
-										<Label text="{det>Status}"/>
-									</t:template>
-									</t:Column>
+										<Label text="{faculty>faculty_doj}"/>
+										</t:template>
+										</t:Column>
 										<t:Column
 										id="action"
 										width="20%">

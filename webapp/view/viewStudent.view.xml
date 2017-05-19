@@ -17,6 +17,23 @@
 								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1" inset="false" rows="{det>/Employee}" selectionMode="MultiToggle"  >
 									<t:columns>
 										<t:Column
+						id="id"
+						width="10%"
+						sortProperty="Id"
+						sorted="true"
+						visible="true"
+						>
+					
+						<Label text="SL. NO." />
+				
+						<t:template>
+							<Button
+							icon="sap-icon://sort"
+							press="onSort"/>
+							<Text text="{course>course_id}"/>
+						</t:template>
+					</t:Column>
+										<t:Column
 										id="sname"
 										width="20%"
 										sortProperty="Student Name"

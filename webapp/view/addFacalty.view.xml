@@ -66,8 +66,25 @@
 		</headerToolbar>
 		<content >
 		
-		<t:Table id="idTable" class="acr_tbl"  visibleRowCount="3" inset="false" rows="{faculty>/tb_faculty}" selectionMode="MultiToggle"  >
+		<t:Table id="idTable" class="acr_tbl"  visibleRowCount="2" inset="false" rows="{faculty>/tb_faculty}" selectionMode="MultiToggle">
 				<t:columns>
+					<t:Column
+						id="id"
+						width="10%"
+						sortProperty="Id"
+						sorted="true"
+						visible="true"
+						>
+					
+						<Label text="SL. NO." />
+				
+						<t:template>
+							<Button
+							icon="sap-icon://sort"
+							press="onSort"/>
+							<Text text="{course>course_id}"/>
+						</t:template>
+					</t:Column>
 					<t:Column
 						id="name"
 						width="20%"
