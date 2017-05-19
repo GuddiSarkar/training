@@ -32,27 +32,29 @@ sap.ui.define([
 			var fstInstlment = this.getView().byId("f_instl").getValue();
 			var secondInstlment = this.getView().byId("sec_instl").getValue();
 			var thrdInstlment = this.getView().byId("thrd_instl").getValue();
-			var oEntry = {"stud_name": name, "stud_gender": gender, "stud_dob": dob, "stud_mob": phone,"stud_email":email,
-			"address_street":address,"address_city":city,"adress_state":state,"adress_zip":zip,"course_name": courseName,
-			"course_type": courseType,"course_fee": courseFee,
+			var oEntryStud = {
+				"stud_name": name, 
+				"stud_gender": gender, 
+				"stud_dob": dob, 
+				"stud_mob": phone,
+				"stud_email":email,
 			};
-			var oModel = this.getOwnerComponent().getModel("student");
-			oModel.setUseBatch(false);
-			oModel.create("/tb_student",oEntry,
+			var oEntryAdd = {
+				"address_street":address,
+				"address_city":city,
+				"adress_state":state,
+				"adress_zip":zip,
+			};
+			var oEntryStudPay = {
+				
+			}
+			var oModelStud = this.getOwnerComponent().getModel("student");
+			oModelStud.setUseBatch(false);
+			oModelStud.create("/tb_student",oEntryStud,
 			{
 				success: function(oData)
 				{
-					this.getView().byId("f_name").setValue("");
-					this.getView().byId("l_name").setValue("");
-					this.getView().byId("g_nder").setValue("");
-					this.getView().byId("d_ob").setValue("");
-					this.getView().byId("p_hone").setValue("");
-					this.getView().byId("e_ml").setValue("");
-					this.getView().byId("a_strt1").setValue("");
-					this.getView().byId("a_strt2").setValue("");
-					this.getView().byId("c_ty").setValue("");
-					this.getView().byId("s_tate").setValue("");
-					this.getView().byId("zip_code").setValue("");
+					
 				}.bind(this),
 				error: function(error)
 				{
@@ -60,7 +62,22 @@ sap.ui.define([
 				}.bind(this)
 			}
 			);
-			oModel.setRefreshAfterChange(true);
+			var oModelAdd = this.getOwnerComponent().getModel("address");
+			oModelAdd.setUseBatch(false);
+			oModelAdd.create("/tb_address",oEntryAdd,
+			{
+				success: function(oData)
+				{
+					
+				}.bind(this),
+				error: function(error)
+				{
+					
+				}.bind(this)
+			}
+			);
+			oModelStud.setRefreshAfterChange(true);
+			oModelAdd.setRefreshAfterChange(true);
 	}
 
 	});

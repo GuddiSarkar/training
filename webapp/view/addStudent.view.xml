@@ -125,8 +125,14 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 									<VBox>
 										<HBox>
 											<Label text="Course Name" width="200px"/>
-											<Input value="" id="c_name"/>
+											<Select width="195px" class="sel" id="c_name">
+												<items class="itm">
+													<core:Item text="--Select--"/>
+													<core:Item text="Technical" />
+												</items>
+											</Select>
 										</HBox>
+										
 										<HBox>
 											<Label text="Couse Fee" width="200px"/>
 											<Input value="" id="c_fee" />
