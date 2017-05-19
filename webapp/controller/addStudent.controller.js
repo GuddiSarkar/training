@@ -20,11 +20,8 @@ sap.ui.define([
 			var city = this.getView().byId("c_ty").getValue();
 			var state = this.getView().byId("s_tate").getValue();
 			var zip = this.getView().byId("zip_code").getValue();
-			var courseName = this.getView().byId("c_name").getValue();
-			var courseType = this.getView().byId("c_type").getSelectedItem().getText();
-			var courseFee = this.getView().byId("c_fee").getValue();
+			var crs_id = this.getView().byId("c_name").getSelectedKey();
 			var startDate = this.getView().byId("s_date").getValue();
-			var courseFee = this.getView().byId("c_fee1").getValue();
 			var discount = this.getView().byId("d_scunt").getValue();
 			var tax = this.getView().byId("t_ax").getValue();
 			var totalPaybleAmount = this.getView().byId("tp_amnt").getValue();
@@ -37,17 +34,24 @@ sap.ui.define([
 				"stud_gender": gender, 
 				"stud_dob": dob, 
 				"stud_mob": phone,
-				"stud_email":email,
+				"stud_email":email
 			};
 			var oEntryAdd = {
 				"address_street":address,
 				"address_city":city,
 				"adress_state":state,
-				"adress_zip":zip,
+				"adress_zip":zip
 			};
 			var oEntryStudPay = {
-				
-			}
+				"course_id":crs_id,
+				"stud_payment_disc":discount,
+				"stud_payment_tax":tax,
+				"stud_payment_fee":totalPaybleAmount,
+				"stud_payment_reg_fee":registrationFee,
+				"stud_payment_instal_1":fstInstlment,
+				"stud_payment_instal_2":secondInstlment,
+				"stud_payment_instal_3":thrdInstlment
+			};
 			var oModelStud = this.getOwnerComponent().getModel("student");
 			oModelStud.setUseBatch(false);
 			oModelStud.create("/tb_student",oEntryStud,
@@ -62,6 +66,8 @@ sap.ui.define([
 				}.bind(this)
 			}
 			);
+			oModelStud.setRefreshAfterChange(true);
+			
 			var oModelAdd = this.getOwnerComponent().getModel("address");
 			oModelAdd.setUseBatch(false);
 			oModelAdd.create("/tb_address",oEntryAdd,
@@ -76,8 +82,45 @@ sap.ui.define([
 				}.bind(this)
 			}
 			);
-			oModelStud.setRefreshAfterChange(true);
 			oModelAdd.setRefreshAfterChange(true);
+			
+			var oModelStudPay = this.getOwnerComponent().getModel("address");
+			oModelStudPay.setUseBatch(false);
+			oModelStudPay.create("/tb_stud_payment",oEntryStudPay,
+			{
+				success: function(oData)
+				{
+					
+				}.bind(this),
+				error: function(error)
+				{
+					
+				}.bind(this)
+			}
+			);
+			oModelStudPay.setRefreshAfterChange(true);
+			
+		
+				var filterid= new Filter("crs_id",FilterOperator.EQ,course_id);
+				var oFilter=new Filter({
+					filters: [filterid]
+				});
+				oModel.read("/tb_course",{
+					filters: [oAllFilters],
+					success: function(oData, oResponse) {
+						oData.results;
+						var cModel = new sap.ui.model.json.JSONModel();
+						sap.ui.getCore().setModel(cModel,"crsModel");
+						cModel.setData(oData);
+				}
+				});
+			
+	},
+	
+	onSelectCourse: function(oEvent){
+		var oData = sap.ui.getCore().getModel("crsModel").getData();
+		this.getView().byId("c_fee").setText(oData.course_fee);
+		this.getView().byId("c_type").setText(oData.course_type);
 	}
 
 	});

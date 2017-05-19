@@ -76,8 +76,13 @@
 			},
 			"faculty":{
 				"dataSource": "mainService"	
+			},
+			"address":{
+				"dataSource": "mainService"	
+			},
+			"Studentpay":{
+				"dataSource": "mainService"	
 			}
-			
 		},
 		"resources": {
 			"css": [{

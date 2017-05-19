@@ -125,30 +125,23 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 									<VBox>
 										<HBox>
 											<Label text="Course Name" width="200px"/>
-											<Select width="195px" class="sel" id="c_name">
+											<Select width="195px" class="sel" id="c_name" models="{path: 'course>/tb_course'}" change="onSelectCourse" selectedKey="{course>course_id}">
 												<items class="itm">
-													<core:Item text="--Select--"/>
-													<core:Item text="Technical" />
+													<core:Item text="{course>course_name}" key="{course>course_id}"/>
 												</items>
 											</Select>
 										</HBox>
 										
 										<HBox>
 											<Label text="Couse Fee" width="200px"/>
-											<Input value="" id="c_fee" />
+											<Input value="{course>course_name}" id="c_fee" />
 										</HBox>
 									</VBox>
 								
 									<VBox class="vb21">
 										<HBox>
 											<Label text="Course Type" width="200px"/>
-											<Select width="195px" class="sel" id="c_type">
-												<items class="itm">
-													<core:Item text="--Select--"/>
-													<core:Item text="Technical" />
-													<core:Item text="Functional" />
-												</items>
-											</Select>
+											<Input value="" id="c_type"/>
 										</HBox>
 										<HBox>
 											<Label text="Start Date" width="200px"/>
