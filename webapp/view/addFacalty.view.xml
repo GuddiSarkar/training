@@ -65,8 +65,9 @@
 			</Toolbar>
 		</headerToolbar>
 		<content >
-		
+
 		<t:Table id="idTable" class="acr_tbl"  visibleRowCount="2" rows="{faculty>/tb_faculty}" selectionMode="MultiToggle">
+
 				<t:columns>
 					<t:Column
 						id="id"
