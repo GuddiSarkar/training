@@ -16,7 +16,7 @@
 								<l:BlockLayoutRow>
 									<l:BlockLayoutCell title="Add Course" titleAlignment="Center">
 										<Image
-											src="images/student.ico"
+											src="images/addcourse1.png"
 											width="88%"
 											height="87%"
 											press="onPressAddCourse">
@@ -25,7 +25,7 @@
 									
 									<l:BlockLayoutCell title=" Update Course" titleAlignment="Center">
 										<Image
-											src="images/course1.ico"
+											src="images/editcourse.png"
 											width="95%"
 											height="96%"
 											press="onPressUpdateCourse">
@@ -34,7 +34,7 @@
 									
 									<l:BlockLayoutCell title="View Course" titleAlignment="Center">
 										<Image
-											src="images/payment.ico"
+											src="images/searchcourse.png"
 											width="88%"
 											height="87%"
 											press="onPressViewCourse">
@@ -43,7 +43,7 @@
 									
 									<l:BlockLayoutCell title="Remove Course" titleAlignment="Center" >
 										<Image
-											src="images/reminder.png"
+											src="images/deletecourse.png"
 											width="90%"
 											height="90%"
 											press="onPressDeleteCourse">

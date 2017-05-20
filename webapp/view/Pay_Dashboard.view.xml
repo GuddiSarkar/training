@@ -16,7 +16,7 @@
 								<l:BlockLayoutRow>
 									<l:BlockLayoutCell title="Add Cash" titleAlignment="Center">
 										<Image
-											src="images/addcash.ico"
+											src="images/addcash.png"
 											width="50%"
 											height="49%"
 											press="onPressAddCash">
@@ -25,7 +25,7 @@
 									
 									<l:BlockLayoutCell title="View Cash" titleAlignment="Center">
 										<Image
-											src="images/viewcash.png"
+											src="images/searchcash.png"
 											width="50%"
 											height="49%"
 											press="onPressViewCash">

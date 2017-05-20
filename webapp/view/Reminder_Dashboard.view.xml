@@ -16,7 +16,7 @@
 								<l:BlockLayoutRow>
 									<l:BlockLayoutCell title="Add Reminder" titleAlignment="Center">
 										<Image
-											src="images/addreminder.ico"
+											src="images/addreminder1.png"
 											width="88%"
 											height="87%"
 											press="onPressAddReminder">
@@ -25,7 +25,7 @@
 									
 									<l:BlockLayoutCell title="Update Reminder" titleAlignment="Center">
 										<Image
-											src="images/calendar-edit-1.png"
+											src="images/editremind.png"
 											width="88%"
 											height="87%"
 											class="ur"
@@ -35,7 +35,7 @@
 									
 									<l:BlockLayoutCell title="View Reminder" titleAlignment="Center">
 										<Image
-											src="images/viewevent.ico"
+											src="images/searchremind.png"
 											width="95%"
 											height="96%"
 											press="onPressViewReminder">
@@ -44,7 +44,7 @@
 									
 									<l:BlockLayoutCell title="Delete Reminder" titleAlignment="Center" >
 										<Image
-											src="images/remove_icon.png"
+											src="images/deletereminder.png"
 											width="90%"
 											height="90%"
 											press="onPressDeleteReminder">
