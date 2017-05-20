@@ -4,6 +4,11 @@ sap.ui.define([
 	"use strict";
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.addStudent", {
+	
+	onInit: function() {
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+		},
 
 	addStudent:function(oEvent)
 	{
