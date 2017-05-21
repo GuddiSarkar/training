@@ -125,7 +125,7 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 									<VBox>
 										<HBox>
 											<Label text="Course Name" width="200px"/>
-											<Select width="195px" class="sel" id="c_name" change="onSelectCourse" 
+											<Select width="195px" class="sel" id="c_name" change="onSelectCourse"  
 												items="{
 													path: 'course>/tb_course',
 													sorter: { path: 'course_name' }
@@ -171,12 +171,13 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 										</HBox>
 										
 										<HBox>
-											<Label text="Tax" width="200px"/>
-											<Input value="14.5%" editable="false" id="t_ax"/>
+											<Label text="Discount" width="200px"/>
+											<Input value="" id="d_scunt" liveChange="onChangeInput"/>
 										</HBox>
+										
 										<HBox>
 											<Label text="Registration Fee" width="200px"/>
-											<Input value="1000/-" editable="false" id="r_fee"/>
+											<Input value="" editable="false" id="r_fee"/>
 										</HBox>
 										<HBox>
 											<Label text="2nd Installment" width="200px"/>
@@ -185,9 +186,10 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 									</VBox>
 									<VBox class="vb21">
 										<HBox>
-											<Label text="Discount" width="200px"/>
-											<Input value="" id="d_scunt"/>
+											<Label text="Tax" width="200px"/>
+											<Input value="14.5%" editable="false" id="t_ax"/>
 										</HBox>
+										
 										<HBox>
 											<Label text="Total Payable Amount" width="200px"/>
 											<Input value="" id="tp_amnt"/>
