@@ -1,5 +1,5 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.addStudent"
-xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
 	<App>
 		<pages>
 			<Page title="Training Management System" class="t">
@@ -14,7 +14,7 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 						<content>
 						<IconTabBar id ="icontabbar" class="sapUiResponsiveContentPadding" >
 						<items>
-							<IconTabFilter text="Personal Detailes"  key="db">
+							<IconTabFilter text="Personal Detailes"  key="db" >
 						<ScrollContainer
 						height="100%"
 						width="100%"
@@ -100,21 +100,42 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 											<Input value="" id="s_tate" />
 										</HBox>
 										<HBox>
-											<Label text="Country" width="200px"/>
-											<Select width="195px" class="sel" id="c_untry">
-												<items class="itm">
-													<core:Item text="--Select--"/>
-													<core:Item text="Germany" />
-													<core:Item text="USA" />
-													<core:Item text="England" />
-												</items>
-											</Select>
+											<Label text="Image" width="200px"/>
+											<u:FileUploader
+												id="fileUploader"
+												name="myFileUpload"
+												uploadUrl="upload/"
+												width="400px"
+												tooltip="Upload your file to the local server"
+												uploadComplete="handleUploadComplete"
+												change="handleValueChange"
+												typeMissmatch="handleTypeMissmatch"
+												style="Emphasized"
+												fileType="jpg,jpeg,png"
+												placeholder="Choose a file for Upload...">
+												<u:parameters>
+													<u:FileUploaderParameter
+														name="param1"
+														value="Foo"/>
+													<u:FileUploaderParameter
+														name="param2"
+														value="bar"/>
+												</u:parameters>
+												<u:headerParameters>
+													<u:FileUploaderParameter
+														name="headerParam1"
+														value="Foo"/>
+													<u:FileUploaderParameter
+														name="headerParam2"
+														value="bar"/>
+													</u:headerParameters>
+											</u:FileUploader>
 										</HBox>
 									</VBox>
 								</HBox>
-								<HBox class="btn0">
+								<!--<HBox class="btn0">
 										<Button  text="Next"  width="100px" class="b1"></Button>
-								</HBox>
+								</HBox>-->
 							</l:VerticalLayout>
 							</ScrollContainer>
 							</IconTabFilter>
@@ -153,10 +174,10 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 										</HBox>
 									</VBox>
 								</HBox>
-								<HBox class="btn12">
+								<!--<HBox class="btn12">
 									<Button  text="Previous"  width="100px" class="b2"></Button>
 									<Button  text="Next"	width="130px" class="b1 btn2"></Button>
-								</HBox>
+								</HBox>-->
 							</l:VerticalLayout>
 			</IconTabFilter>
 		
@@ -206,7 +227,7 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:f="sap.ui.la
 									</VBox>
 								</HBox>
 								<HBox class="btn12">
-									<Button  text="Previous"  width="100px" class="b2"></Button>
+									<!--<Button  text="Previous"  width="100px" class="b2"></Button>-->
 									<Button  text="Save"  width="130px" class="b1 btn2" press="addStudent"></Button>
 								</HBox>
 							</l:VerticalLayout>

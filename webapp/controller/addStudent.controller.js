@@ -64,36 +64,13 @@ sap.ui.define([
 			var fstInstlment = this.getView().byId("f_instl").getValue();
 			var secondInstlment = this.getView().byId("sec_instl").getValue();
 			var thrdInstlment = this.getView().byId("thrd_instl").getValue();
-			var oEntryStud = {
-				"stud_name": name, 
-				"stud_gender": gender, 
-				"stud_dob": dob, 
-				"stud_mob": phone,
-				"stud_email":email,
-				"stud_strt_date":startDate
-			};
-			var oModelStud = this.getOwnerComponent().getModel("student");
-			oModelStud.setUseBatch(false);
-			oModelStud.create("/tb_student",oEntryStud,
-			{
-				success: function(oData)
-				{
-					
-				}.bind(this),
-				error: function(error)
-				{
-					
-				}.bind(this)
-			}
-			);
-			oModelStud.setRefreshAfterChange(true);
 			
 			
 			var oEntryAdd = {
 				"address_street":address,
 				"address_city":city,
-				"adress_state":state,
-				"adress_zip":zip
+				"address_state":state,
+				"address_zip":zip
 			};
 			var oModelAdd = this.getOwnerComponent().getModel("address");
 			oModelAdd.setUseBatch(false);
@@ -110,6 +87,33 @@ sap.ui.define([
 			}
 			);
 			oModelAdd.setRefreshAfterChange(true);
+			//oModelAdd.read("/tb_address",)
+			
+			var oEntryStud = {
+				"stud_name": name, 
+				"stud_gender": gender, 
+				"stud_dob": dob, 
+				"stud_mob": phone,
+				"stud_email":email,
+				"stud_strt_date":startDate,
+				//"add_id":
+				"course_id":crs_id
+			};
+			var oModelStud = this.getOwnerComponent().getModel("student");
+			oModelStud.setUseBatch(false);
+			oModelStud.create("/tb_student",oEntryStud,
+			{
+				success: function(oData)
+				{
+					
+				}.bind(this),
+				error: function(error)
+				{
+					
+				}.bind(this)
+			}
+			);
+			oModelStud.setRefreshAfterChange(true);
 			
 			
 			var oEntryStudPay = {
