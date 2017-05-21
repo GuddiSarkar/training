@@ -145,7 +145,7 @@
 											</t:template>
 										</t:Column>
 										<t:Column
-										id="1inslmnt"
+										id="frstinslmnt"
 										width="20%"
 										sortProperty="1st Installment"
 										sorted="true"
@@ -159,7 +159,7 @@
 											</t:template>
 										</t:Column>
 										<t:Column
-										id="2inslmnt"
+										id="secinslmnt"
 										width="20%"
 										sortProperty="2nd Installment"
 										sorted="true"
@@ -173,7 +173,7 @@
 											</t:template>
 										</t:Column>
 										<t:Column
-										id="3inslmnt"
+										id="thrdinslmnt"
 										width="20%"
 										sortProperty="3rd Installment"
 										sorted="true"
