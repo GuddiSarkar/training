@@ -7,7 +7,28 @@ sap.ui.define([
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.viewStudent", {
 
-			onSearch: function(oEvent){
+		onInit: function(){
+			
+			var oModel = this.getOwnerComponent().getModel("student");
+			oModel.setUseBatch(false);
+			/*var s_id = this.getView().byId("sid").getText();
+			this.getView().setModel(oModel);
+			var c_id;
+			oModel.read("/tb_student('" + s_id + "')",
+			{
+				success: function(oData, oResponse) {
+					var sData = oData.results;
+					c_id = sData.course-id;
+				}.bind(this),
+				error: function(error)
+				{
+					
+				}.bind(this)
+			});*/
+		},	
+
+
+		onSearch: function(oEvent){
 		    var oTable = this.getView().byId("table");
 			var oBinding = oTable.getBinding("rows");
 			var value = oEvent.getParameter("query");

@@ -10,12 +10,12 @@ sap.ui.define([
 			oModel.setUseBatch(false);
 		},
 
-		onSelectCourse: function(oEvent){
+	onSelectCourse: function(oEvent){
 		var crs_id = this.getView().byId("c_name").getSelectedKey();
 		var oModel = this.getOwnerComponent().getModel("course");
 		this.getView().setModel(oModel);
 		oModel.read("/tb_course('" + crs_id + "')",{
-					success: function(oData, oResponse) {
+				success: function(oData, oResponse) {
 						this.getView().byId("c_fee").setValue(oData.course_fee);
 						this.getView().byId("c_type").setValue(oData.course_type);
 						this.getView().byId("c_fee1").setValue(oData.course_fee);
@@ -24,7 +24,7 @@ sap.ui.define([
 				{
 					
 				}.bind(this)
-				});
+		});
 	},
 	
 	onChangeInput: function(oEvent){
