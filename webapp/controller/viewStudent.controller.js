@@ -9,22 +9,41 @@ sap.ui.define([
 
 		onInit: function(){
 			
-			var oModel = this.getOwnerComponent().getModel("student");
+			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
-			/*var s_id = this.getView().byId("sid").getText();
+/*			var s_id = this.getView().byId("sid").getText();
 			this.getView().setModel(oModel);
 			var c_id;
-			oModel.read("/tb_student('" + s_id + "')",
+*/			oModel.read("/tb_student",
 			{
 				success: function(oData, oResponse) {
 					var sData = oData.results;
-					c_id = sData.course-id;
+					for(var i = 0; i<sData.length; i++)
+					{
+						var c_id = [];
+						c_id[i] = sData[i].course_id;
+						oModel.read("/tb_course",
+						{
+							success: function(oData1, oResponse1){
+								var cData = oData1.results;
+								for(var j = 0; j<cData.length; j++)
+								{
+									var c_name = [];
+									c_name[j] = cData[c_id[j]].course_name;
+								}
+							}.bind(this),
+							error: function(error)
+							{
+								
+							}.bind(this)
+						});
+					}
 				}.bind(this),
 				error: function(error)
 				{
 					
 				}.bind(this)
-			});*/
+			});
 		},	
 
 

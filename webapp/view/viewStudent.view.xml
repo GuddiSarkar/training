@@ -14,7 +14,7 @@
 							</headerToolbar>
 							<content>
 								
-								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1"  rows="{student>/tb_student}" selectionMode="MultiToggle"  >
+								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="10"  rows="{course>/tb_student}" selectionMode="MultiToggle"  >
 									<t:columns>
 										<t:Column
 												id="id"
@@ -28,7 +28,7 @@
 										<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-										<Text text="{student>stud_id}"/>
+										<Text text="{course>stud_id}"/>
 										</t:template>
 										</t:Column>
 										<t:Column
@@ -42,7 +42,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{student>stud_name}"/>
+												<Text text="{course>stud_name}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -56,7 +56,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{student>stud_gender}"/>
+												<Text text="{course>stud_gender}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -70,7 +70,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{student>stud_dob}"/>
+												<Text text="{course>stud_dob}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -84,7 +84,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{student>stud_email}"/>
+												<Text text="{course>stud_email}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -98,7 +98,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{student>course_id}"/>
+												<Text text="{course>course_id}"/>
 											</t:template>
 										</t:Column>
 										<t:Column

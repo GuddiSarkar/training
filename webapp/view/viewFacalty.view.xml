@@ -123,8 +123,10 @@
 										width="20%">
 											<Label text="Action" />
 											<t:template >
-												<Button icon="sap-icon://edit" width="85px"   class="b3"/>
-												<Button icon="sap-icon://delete" width="110px"  class="b4 btn2"/>
+												<Toolbar>
+													<Button icon="sap-icon://edit" width="85px"   class="b3"/>
+													<Button icon="sap-icon://delete" width="110px"  class="b4 btn2"/>
+												</Toolbar>
 											</t:template>
 										</t:Column>
 									</t:columns>

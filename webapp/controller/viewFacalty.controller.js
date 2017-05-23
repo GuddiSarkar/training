@@ -5,9 +5,16 @@ sap.ui.define([
 ], function(Controller,Filter, FilterOperator) {
 	"use strict";
 /*eslint linebreak-style: ["error", "windows"]*/
+	
+
 	return Controller.extend("com.demoTMS.controller.viewFacalty", {
 
-			onSearch: function(oEvent){
+		onInit: function(){
+			var oModel = this.getOwnerComponent().getModel("faculty");
+			oModel.setUseBatch(false);
+		},
+			
+		onSearch: function(oEvent){
 		    var oTable = this.getView().byId("table");
 			var oBinding = oTable.getBinding("rows");
 			var value = oEvent.getParameter("query");

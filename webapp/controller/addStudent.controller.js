@@ -8,7 +8,7 @@ sap.ui.define([
 	onInit: function() {
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
-		},
+	},
 
 	onSelectCourse: function(oEvent){
 		var crs_id = this.getView().byId("c_name").getSelectedKey();
@@ -72,7 +72,7 @@ sap.ui.define([
 				"address_state":state,
 				"address_zip":zip
 			};
-			var oModelAdd = this.getOwnerComponent().getModel("address");
+			var oModelAdd = this.getOwnerComponent().getModel("course");
 			oModelAdd.setUseBatch(false);
 			oModelAdd.create("/tb_address",oEntryAdd,
 			{
@@ -99,7 +99,7 @@ sap.ui.define([
 				//"add_id":
 				"course_id":crs_id
 			};
-			var oModelStud = this.getOwnerComponent().getModel("student");
+			var oModelStud = this.getOwnerComponent().getModel("course");
 			oModelStud.setUseBatch(false);
 			oModelStud.create("/tb_student",oEntryStud,
 			{
@@ -126,7 +126,7 @@ sap.ui.define([
 				"stud_payment_instal_2":secondInstlment,
 				"stud_payment_instal_3":thrdInstlment
 			};
-			var oModelStudPay = this.getOwnerComponent().getModel("address");
+			var oModelStudPay = this.getOwnerComponent().getModel("course");
 			oModelStudPay.setUseBatch(false);
 			oModelStudPay.create("/tb_stud_payment",oEntryStudPay,
 			{
