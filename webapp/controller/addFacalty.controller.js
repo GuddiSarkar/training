@@ -8,7 +8,7 @@ sap.ui.define([
 	return Controller.extend("com.demoTMS.controller.addFacalty", {
 
 		onInit: function(){
-			var oModel = this.getOwnerComponent().getModel("faculty");
+			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
 		},
 

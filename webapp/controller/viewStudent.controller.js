@@ -20,8 +20,8 @@ sap.ui.define([
 					var sData = oData.results;
 					for(var i = 0; i<sData.length; i++)
 					{
-						var c_id = [];
-						c_id[i] = sData[i].course_id;
+						//var c_id = [];
+						//var c_id = sData[i].course_id;
 						oModel.read("/tb_course",
 						{
 							success: function(oData1, oResponse1){
