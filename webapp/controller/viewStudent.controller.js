@@ -18,26 +18,32 @@ sap.ui.define([
 			{
 				success: function(oData, oResponse) {
 					var sData = oData.results;
+					var c_id = [sData];
+					var cName = [sData];
 					for(var i = 0; i<sData.length; i++)
 					{
-						//var c_id = [];
-						//var c_id = sData[i].course_id;
-						oModel.read("/tb_course",
-						{
-							success: function(oData1, oResponse1){
-								var cData = oData1.results;
-								for(var j = 0; j<cData.length; j++)
-								{
-									var c_name = [];
-									c_name[j] = cData[c_id[j]].course_name;
-								}
-							}.bind(this),
-							error: function(error)
-							{
-								
-							}.bind(this)
-						});
+						c_id[i] = sData[i].course_id;
 					}
+					oModel.read("/tb_course",
+					{
+						success: function(oData1, oResponse1){
+								var cData = oData1.results;
+								for(var i = 0; i<c_id.length; i++)
+								{
+									cName[i] = cData[i].course_name;
+									if(c_id[i]===cData[i].course_id)
+									{
+										
+									}
+								}
+						}.bind(this),
+						error: function(error)
+						{
+								
+						}.bind(this)
+					});
+					
+					
 				}.bind(this),
 				error: function(error)
 				{
