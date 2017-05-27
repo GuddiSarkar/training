@@ -6,8 +6,14 @@ sap.ui.define([
 	"use strict";
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.removeCourse", {
+			onInit: function()
+			{
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+			},
 
-		onSearch: function(oEvent){
+		onSearch: function(oEvent)
+		{
 		    var oTable = this.getView().byId("table");
 			var oBinding = oTable.getBinding("rows");
 			var value = oEvent.getParameter("query");

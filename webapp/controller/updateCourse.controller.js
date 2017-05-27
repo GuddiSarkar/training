@@ -7,6 +7,13 @@ sap.ui.define([
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.updateCourse", {
 
+
+		onInit: function()
+			{
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+			},
+			
 		onSearch: function(oEvent){
 		    var oTable = this.getView().byId("table");
 			var oBinding = oTable.getBinding("rows");

@@ -9,11 +9,11 @@
 							<headerToolbar>
 								<Toolbar>
 									<Title text="Remove Course" textAlign="Center" />
-									<SearchField width="30%" class="sapUiSmallMargin srch" search="onSearch" />
+									<SearchField width="27%" class="sapUiSmallMargin srch" search="onSearch" />
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1"  rows="{course>/tb_course}" selectionMode="MultiToggle"  >
+								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="3"  rows="{course>/tb_course}" selectionMode="MultiToggle"  >
 									<t:columns>
 										<t:Column
 						id="id"

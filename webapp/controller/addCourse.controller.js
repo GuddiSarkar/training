@@ -14,7 +14,7 @@ sap.ui.define([
 		},
 
 		onSearch: function(oEvent) {
-			var oTable = this.getView().byId("table");
+			var oTable = this.getView().byId("Table");
 			var oBinding = oTable.getBinding("rows");
 			var value = oEvent.getParameter("query");
 			var oFilter1 = new Filter("Course Name", FilterOperator.Contains, value);
@@ -130,7 +130,7 @@ sap.ui.define([
 			this.getView().byId("deleteCourse").close();
 		},
 
-			onLogin: function(oEvent) {
+			/*onLogin: function(oEvent) {
 				var name=this.byId("name").getValue();
 				var pwd=this.byId("pwd").getValue();
 				var filtername= new Filter("name",FilterOperator.EQ,name);
@@ -146,7 +146,7 @@ sap.ui.define([
 				});
 				
 
-		}
+		}*/
 	});
 
 });
