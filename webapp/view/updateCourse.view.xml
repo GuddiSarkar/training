@@ -13,7 +13,7 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1"  rows="{det>/Employee}" selectionMode="MultiToggle"  >
+								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1"  rows="{course>/tb_course}" selectionMode="MultiToggle"  >
 									<t:columns>
 										<t:Column
 						id="id"
@@ -43,7 +43,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>Username}"/>
+												<Text text="{course>course_name}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -57,7 +57,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>UserRole}"/>
+												<Text text="{course>course_type}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -71,7 +71,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>UserRole}"/>
+												<Text text="{course>course_fee}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -85,7 +85,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>UserRole}"/>
+												<Text text="{course>course_duration}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
