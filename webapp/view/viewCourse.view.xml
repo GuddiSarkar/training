@@ -89,17 +89,6 @@
 												<Text text="{course>course_duration}"/>
 											</t:template>
 										</t:Column>
-										<t:Column
-										id="action"
-										width="20%">
-											<Label text="Action"/>
-											<t:template >
-												<Toolbar class="acr_toolbar">
-												<Button icon="sap-icon://edit" width="85px"   class="b3"/>
-												<Button icon="sap-icon://delete" width="110px"  class="b4 btn2"/>
-												</Toolbar>
-											</t:template>
-										</t:Column>
 									</t:columns>
 								</t:Table>
 							</content>

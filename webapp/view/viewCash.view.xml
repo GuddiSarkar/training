@@ -186,15 +186,6 @@
 												<Text text="{det>UserRole}"/>
 											</t:template>
 										</t:Column>
-										<t:Column
-										id="action"
-										width="20%">
-											<Label text="Action" />
-											<t:template >
-												<Button icon="sap-icon://edit" width="85px"   class="b3"/>
-												<Button icon="sap-icon://delete" width="110px"  class="b4 btn2"/>
-											</t:template>
-										</t:Column>
 									</t:columns>
 								</t:Table>
 							</content>

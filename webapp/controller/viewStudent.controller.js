@@ -54,14 +54,14 @@ sap.ui.define([
 
 
 		onSearch: function(oEvent){
-		    var oTable = this.getView().byId("table");
+		    var oTable = this.getView().byId("idTable");
 			var oBinding = oTable.getBinding("rows");
 			var value = oEvent.getParameter("query");
-			var oFilter1 = new Filter("Student Name", FilterOperator.Contains, value);
-			var oFilter2 = new Filter("Gender", FilterOperator.Contains, value);
-			var oFilter3 = new Filter("D.O.B", FilterOperator.Contains, value);
-			var oFilter4 = new Filter("Email", FilterOperator.Contains, value);
-			var oFilter5 = new Filter("Course Name", FilterOperator.Contains, value);
+			var oFilter1 = new Filter("stud_name", FilterOperator.Contains, value);
+			var oFilter2 = new Filter("stud_gender", FilterOperator.Contains, value);
+			var oFilter3 = new Filter("stud_dob", FilterOperator.Contains, value);
+			var oFilter4 = new Filter("stud_email", FilterOperator.Contains, value);
+			var oFilter5 = new Filter("course_name", FilterOperator.Contains, value);
 			var allFilter = new Filter([oFilter1, oFilter2,oFilter3,oFilter4,oFilter5], false); 
 			oBinding.filter(allFilter);
 		}
