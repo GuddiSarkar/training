@@ -17,13 +17,12 @@ sap.ui.define([
 		    var oTable = this.getView().byId("idTable");
 			var oBinding = oTable.getBinding("rows");
 			var value = oEvent.getParameter("query");
-			var oFilter1 = new Filter("Facalty Name", FilterOperator.Contains, value);
-			var oFilter2 = new Filter("Phone Number", FilterOperator.Contains, value);
-			var oFilter3 = new Filter("Email", FilterOperator.Contains, value);
-			var oFilter4 = new Filter("Course Name", FilterOperator.Contains, value);
-			var oFilter5 = new Filter("Salary", FilterOperator.Contains, value);
-			var oFilter6 = new Filter("Date of Joining", FilterOperator.Contains, value);
-			var allFilter = new Filter([oFilter1, oFilter2,oFilter3,oFilter4,oFilter5,oFilter6], false); 
+			var oFilter1 = new Filter("faculty_name", FilterOperator.Contains, value);
+			var oFilter2 = new Filter("faculty_mob", FilterOperator.Contains, value);
+			var oFilter3 = new Filter("faculty_email", FilterOperator.Contains, value);
+			var oFilter4 = new Filter("faculty_course", FilterOperator.Contains, value);
+			var oFilter5 = new Filter("faculty_salary", FilterOperator.Contains, value);
+			var allFilter = new Filter([oFilter1, oFilter2,oFilter3,oFilter4,oFilter5], false); 
 			oBinding.filter(allFilter);
 		},
 	addFacalty: function(oEvent)
