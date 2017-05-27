@@ -13,7 +13,7 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="2"  rows="{faculty>/tb_faculty}" selectionMode="MultiToggle"  >
+								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="2"  rows="{course>/tb_faculty}" selectionMode="MultiToggle"  >
 									<t:columns>
 										<t:Column
 						id="id"
@@ -29,7 +29,7 @@
 							<Button
 							icon="sap-icon://sort"
 							press="onSort"/>
-							<Text text="{faculty>faculty_id}"/>
+							<Text text="{course>faculty_id}"/>
 						</t:template>
 					</t:Column>
 										<t:Column
@@ -43,7 +43,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{faculty>faculty_name}"/>
+												<Text text="{course>faculty_name}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -57,7 +57,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{faculty>faculty_mob}"/>
+												<Text text="{course>faculty_mob}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -71,7 +71,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{faculty>faculty_email}"/>
+												<Text text="{course>faculty_email}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -85,7 +85,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{faculty>faculty_course}"/>
+												<Text text="{course>faculty_course}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -100,7 +100,7 @@
 										<Button
 												icon="sap-icon://sort"
 												press="onSortId"/>
-										<Label text="{faculty>faculty_salary}"/>
+										<Label text="{course>faculty_salary}"/>
 										</t:template>
 										</t:Column>
 										<t:Column
@@ -115,7 +115,7 @@
 										<Button
 										icon="sap-icon://sort"
 										press="onSortId"/>
-										<Label text="{faculty>faculty_doj}"/>
+										<Label text="{course>faculty_doj}"/>
 										</t:template>
 										</t:Column>
 										<t:Column
