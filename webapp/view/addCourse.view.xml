@@ -73,32 +73,32 @@
 							<columns height="20px">	
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight cellBorderLeft" demandPopin="true">
+									demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
 									<Text text="ID"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight" demandPopin="true">
+									demandPopin="true" styleClass="cellBorderRight">
 									<Text text="Course Name"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight" demandPopin="true">
+									demandPopin="true" styleClass="cellBorderRight">
 									<Text text="Course Type"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight" demandPopin="true">
+									demandPopin="true" styleClass="cellBorderRight">
 									<Text text="Course Fee"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight" demandPopin="true">
+									demandPopin="true" styleClass="cellBorderRight">
 									<Text text="Course Duration"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight" demandPopin="true">
+									demandPopin="true" styleClass="cellBorderRight">
 									<Text text="Action"/>
 								</Column>
 							</columns>
@@ -110,11 +110,10 @@
 										<Text text="{course>course_type}" />
 										<Text text="{course>course_fee}" />
 										<Text text="{course>course_duration}" />
-										<Button icon="sap-icon://edit"  class="b3" press="onClickEdit"/>
-										<!--<Toolbar>
+										<Toolbar>
 											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit"/>
 											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete"/>
-										</Toolbar>-->
+										</Toolbar>
 									</cells>
 								</ColumnListItem>
 							</items>	
