@@ -15,7 +15,7 @@ sap.ui.define([
 
 		onSearch: function(oEvent) {
 			var oTable = this.getView().byId("Table");
-			var oBinding = oTable.getBinding("rows");
+			var oBinding = oTable.getBinding("items");
 			var value = oEvent.getParameter("query");
 			var oFilter1 = new Filter("course_name", FilterOperator.Contains, value);
 			var oFilter2 = new Filter("course_type", FilterOperator.Contains, value);
@@ -100,7 +100,7 @@ sap.ui.define([
 			
 		},
 
-		onClickDelete: function(oEvent) {
+		/*onClickDelete: function(oEvent) {
 			var oView = this.getView();
 			var oDialog = oView.byId("deleteCourse");
 			if (!oDialog) {
@@ -112,15 +112,19 @@ sap.ui.define([
 		onCancel: function(oEvent) {
 			this.getView().byId("deleteCourse").close();
 		},
+		*/
 		
-		onSelectRow: function(oEvent)
+		onOkDelete: function(oEvent) 
 		{
+			var oView = this.getView();
+			//var oDialog = oView.byId("deleteCourse");
 			var oTable = this.getView().byId("Table");
-			sPath = oEvent.getParameter("rowContext").getPath();
-		},
-		onOkDelete: function(oEvent) {
-			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.remove(sPath, {
+			var path=oEvent.getSource().getParent().getBindingContext().getPath();
+			var model =oTable.getModel();
+			var property=model.getProperty(path);
+			
+			var oModel = this.getOwnerComponent().getModel();
+			oModel.remove("/tb_course(" + property.ID + ")", {
 				success: function(oData, oResponse) {
 					console.log(oData);
 					console.log(oResponse);
@@ -130,7 +134,7 @@ sap.ui.define([
 				}.bind(this)
 			});
 			oModel.setRefreshAfterChange(true);
-			this.getView().byId("deleteCourse").close();
+			//this.getView().byId("deleteCourse").close();
 		},
 
 			/*onLogin: function(oEvent) {
