@@ -110,7 +110,7 @@
 										<Text text="{course>course_type}" />
 										<Text text="{course>course_fee}" />
 										<Text text="{course>course_duration}" />
-										<Toolbar>
+										<Toolbar class="tbBorder">
 											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit"/>
 											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete"/>
 										</Toolbar>

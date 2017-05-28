@@ -299,3 +299,6 @@ span.sapMBtnInner.sapMBtnAccept{
 .TableBorderTop {
 	border-top: 1px solid lightgray;
 }
+.tbBorder{
+	border: 0px;
+}
