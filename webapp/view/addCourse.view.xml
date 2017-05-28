@@ -68,36 +68,37 @@
 						</Toolbar>
 					</headerToolbar>
 					<content>
-						<Table id="Table" items= "{course>/tb_course}" class="TableBorderTop" growing="true" growingDirection="Downwards" >
-							<columns>	
+						<Table id="Table" items= "{course>/tb_course}" class="TableBorderTop" growing="true" 
+						 growingThreshold="2" inset="false">
+							<columns height="20px">	
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+									demandPopin="true" styleClass="cellBorderRight cellBorderLeft" demandPopin="true">
 									<Text text="ID"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight">
+									demandPopin="true" styleClass="cellBorderRight" demandPopin="true">
 									<Text text="Course Name"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight">
+									demandPopin="true" styleClass="cellBorderRight" demandPopin="true">
 									<Text text="Course Type"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight">
+									demandPopin="true" styleClass="cellBorderRight" demandPopin="true">
 									<Text text="Course Fee"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight">
+									demandPopin="true" styleClass="cellBorderRight" demandPopin="true">
 									<Text text="Course Duration"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight">
+									demandPopin="true" styleClass="cellBorderRight" demandPopin="true">
 									<Text text="Action"/>
 								</Column>
 							</columns>
@@ -109,10 +110,11 @@
 										<Text text="{course>course_type}" />
 										<Text text="{course>course_fee}" />
 										<Text text="{course>course_duration}" />
-										<Toolbar>
+										<Button icon="sap-icon://edit"  class="b3" press="onClickEdit"/>
+										<!--<Toolbar>
 											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit"/>
 											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete"/>
-										</Toolbar>
+										</Toolbar>-->
 									</cells>
 								</ColumnListItem>
 							</items>	

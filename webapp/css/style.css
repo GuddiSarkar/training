@@ -293,11 +293,9 @@ span.sapMBtnInner.sapMBtnAccept{
 .sapMListTblCell.cellBorderRight {
 	border-right: 1px solid lightgray;
 }
- 
 .sapMListTblCell.cellBorderLeft {
 	border-left: 1px solid lightgray;
 }
-
 .TableBorderTop {
 	border-top: 1px solid lightgray;
 }
