@@ -68,7 +68,7 @@
 						</Toolbar>
 					</headerToolbar>
 					<content>
-						<Table id="Table" items= "{course>/tb_course}" class="TableBorderTop" growing="true" growingDirection="Downwards">
+						<Table id="Table" items= "{course>/tb_course}" class="TableBorderTop" growing="true" growingDirection="Downwards" >
 							<columns>	
 								<Column
 									minScreenWidth="Tablet"
