@@ -13,25 +13,23 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1"  rows="{det>/Employee}" selectionMode="MultiToggle"  >
+								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="5"  rows="{course>/tb_student}" selectionMode="MultiToggle"  >
 									<t:columns>
 										<t:Column
-						id="id"
-						width="10%"
-						sortProperty="Id"
-						sorted="true"
-						visible="true"
-						>
-					
-						<Label text="SL. NO." />
-				
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSort"/>
-							<Text text="{course>course_id}"/>
-						</t:template>
-					</t:Column>
+												id="id"
+												width="10%"
+												sortProperty="Id"
+												sorted="true"
+												visible="true"
+										>
+										<Label text="SL. NO." />
+										<t:template>
+										<Button
+												icon="sap-icon://sort"
+												press="onSort"/>
+										<Text text="{course>stud_id}"/>
+										</t:template>
+										</t:Column>
 										<t:Column
 										id="sname"
 										width="20%"
@@ -43,7 +41,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>Username}"/>
+												<Text text="{course>stud_name}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -57,7 +55,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>UserRole}"/>
+												<Text text="{course>stud_gender}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -71,7 +69,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>UserRole}"/>
+												<Text text="{course>stud_dob}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -85,7 +83,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>UserRole}"/>
+												<Text text="{course>stud_email}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -99,7 +97,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>UserRole}"/>
+												<Text text="{course>course_id}"/>
 											</t:template>
 										</t:Column>
 										<t:Column

@@ -13,7 +13,7 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="3"  rows="{course>/tb_course}" selectionMode="MultiToggle"  >
+								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="3"  rows="{course>/tb_course}" selectionMode="MultiToggle" rowSelectionChange="onSelectRow"  >
 									<t:columns>
 										<t:Column
 						id="id"
@@ -93,7 +93,7 @@
 										width="20%">
 											<Label text="Action" />
 											<t:template >
-												<Button icon="sap-icon://delete" width="110px"  class="b4 btn2"/>
+												<Button icon="sap-icon://delete" press="onDelete" width="110px"  class="b4 btn2"/>
 											</t:template>
 										</t:Column>
 									</t:columns>
