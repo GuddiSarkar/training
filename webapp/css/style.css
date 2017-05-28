@@ -120,7 +120,6 @@
 
 .btn2{
 	padding-left:25px;
-	width:40%;
 }
 
 .sel{
@@ -227,7 +226,7 @@ span.sapMBtnInner.sapMBtnAccept{
 	border-color: grey;
 }
 .b3 .sapMBtnInner {
-  background-color: grey;
+  background-color: #F8F8F8;
   color:white;
 }
 .b4 .sapMBtnInner {
@@ -289,4 +288,15 @@ span.sapMBtnInner.sapMBtnAccept{
 }
 .acr_pnl .sapMPanelBGTranslucent{
 	background-color: #f5f5f0;
+}
+
+.sapMListTblCell.cellBorderRight {
+	border-right: 1px solid lightgray;
+}
+ 
+.sapMListTblCell.cellBorderLeft {
+	border-left: 1px solid lightgray;
+}
+.TableBorderTop {
+	border-top: 1px solid lightgray;
 }

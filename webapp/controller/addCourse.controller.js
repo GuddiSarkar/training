@@ -55,8 +55,15 @@ sap.ui.define([
 
 		onClickEdit: function(oEvent) 
 		{
-			var oView = this.getView();
+				var oView = this.getView();
 			var oDialog = oView.byId("editCourse");
+				if (!oDialog) {
+				oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.editCourse", this);
+				oView.addDependent(oDialog);
+			}
+			
+			oDialog.open();
+		
 			var oTable = oView.byId("Table");
 			var path = sPath;
 			var name;
@@ -72,21 +79,17 @@ sap.ui.define([
 					console.log(name);
 					id = oData.course_id;
 					console.log(id);
+					var CourseName = this.getView().byId("c_nameEd").setValue(name);
+			console.log(CourseName);
+			var Id = this.getView().byId("c_feeEd").setValue(id);
+			console.log(Name);
 				}.bind(this),
 				error: function(oErr) 
 				{
 					
 				}.bind(this)
 			});
-			if (!oDialog) {
-				oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.editCourse", this);
-				oView.addDependent(oDialog);
-			}
-			var CourseName = this.getView().byId("c_nameEd").setValue(name);
-			console.log(CourseName);
-			var Name = this.getView().byId("c_feeEd").setValue(id);
-			console.log(Name);
-			oDialog.open();
+		
 		},
 
 		onCloseEdit: function(oEvent) {

@@ -13,7 +13,7 @@
 					</headerToolbar>
 					<content>
 						<l:VerticalLayout id="containerLayout2" width="100%">
-								<HBox>
+							<HBox>
 								<VBox class="acr_vb2">
 									<HBox>
 										<Label text="Course Name" width="200px"/>
@@ -30,150 +30,97 @@
 								<VBox class="acr_vb22">
 									<HBox>
 										<Label text="Course Type" width="200px"/>
-											<Select width="195px" class="sel" id="c_type" selectedKey="{course>course_type}">
-												<items class="itm">
-													<core:Item text="--Select--" key="0"/>
-													<core:Item text="Technical" key="1"/>
-													<core:Item text="Functional" key="2"/>
-												</items>
-											</Select>
-										</HBox>
+										<Select width="195px" class="sel" id="c_type" selectedKey="{course>course_type}">
+											<items class="itm">
+												<core:Item text="--Select--" key="0"/>
+												<core:Item text="Technical" key="1"/>
+												<core:Item text="Functional" key="2"/>
+											</items>
+										</Select>
+									</HBox>
 									
 									
-								<HBox>
+									<HBox>
 										<Label text="Course Duration" width="200px"/>
-											<Select width="195px" class="sel" id="c_dur" selectedKey="{course>course_duration}">
-												<items class="itm">
-													<core:Item text="--Select--" key="0"/>
-													<core:Item text="1 Month" key="1"/>
-													<core:Item text="2 Month" key="2"/>
-													<core:Item text="3 Month" key="3"/>
-												</items>
-											</Select>
-										</HBox>
+										<Select width="195px" class="sel" id="c_dur" selectedKey="{course>course_duration}">
+											<items class="itm">
+												<core:Item text="--Select--" key="0"/>
+												<core:Item text="1 Month" key="1"/>
+												<core:Item text="2 Month" key="2"/>
+												<core:Item text="3 Month" key="3"/>
+											</items>
+										</Select>
+									</HBox>
 								</VBox>
 							</HBox>
-			</l:VerticalLayout>
-			<Toolbar class="acr_tiny_margin" width="0px"></Toolbar>
-					<HBox class="btn1">
-						<Button text="Add" width="100px" class="b1" press="addCourse"/>
-					</HBox>
-		</content>
-	</Panel>
-	<Panel width="auto" class="sapUiResponsiveMargin hd2 acr_pnl">
-		<headerToolbar>
-			<Toolbar height="3rem">
-				<Title text="Courses"/>
-				<SearchField width="30%" class="sapUiSmallMargin srch3" search="onSearch" />
-			</Toolbar>
-		</headerToolbar>
-		<content >
-		<t:Table id="Table" class="acr_tbl"  visibleRowCount="3"  rows="{course>/tb_course}" selectionMode="MultiToggle" rowSelectionChange="onSelectRow">
-				<t:columns>
-					<t:Column
-						id="id"
-						width="10%"
-						sortProperty="Id"
-						sorted="true"
-						visible="true"
-						>
-					
-						<Label text="id" />
-				
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSort"/>
-							<Text text="{course>course_id}" id="cid"/>
-						</t:template>
-					</t:Column>
-					<t:Column
-						id="cn"
-						width="20%"
-						sortProperty="Course Name"
-						sorted="true"
-						visible="true"
-						>
-					
-						<Label text="Course Name" />
-				
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSort"/>
-							<Text text="{course>course_name}"/>
-						</t:template>
-					</t:Column>
-					<t:Column
-						id="ct"
-						width="20%"
-						sortProperty="Course Type"
-						sorted="true"
-						visible="true"
-						>
-					
-						<Label text="Course Type" />
-				
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSort"/>
-							<Text text="{course>course_type}"/>
-						</t:template>
-					</t:Column>
-					<t:Column
-						id="cf"
-						width="20%"
-						sortProperty="Course Fee"
-						sorted="true"
-						visible="true"
-						>
-						
-						<Label text="Course Fee" />
-					
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSortQuantity"/>
-							<Text text="{course>course_fee}"/>
-						</t:template>
-					</t:Column>
-					<t:Column
-						id="cd"
-						width="20%"
-						sortProperty="Course Duration"
-						sorted="true"
-						visible="true"
-						>
-						
-						<Label text="Course Duration" />
-					
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSortId"/>
-							<Label text="{course>course_duration}"/>
-						</t:template>
-					</t:Column>
-					<t:Column
-						id="action"
-						width="20%"
-						>
-						<Label text="Action" />
-						<t:template >
-							<Toolbar class="acr_toolbar">
-							<Button icon="sap-icon://edit" width="85px" class="b3" press="onClickEdit"/>
-							<Button icon="sap-icon://delete" width="110px" class="b4 btn2" press="onClickDelete"/>
-							</Toolbar>
-						</t:template>
-					</t:Column>
-				</t:columns>
-							
-						</t:Table>
+						</l:VerticalLayout>
+						<Toolbar class="acr_tiny_margin" width="0px"></Toolbar>
+						<HBox class="btn1">
+							<Button text="Add" width="100px" class="b1" press="addCourse"/>
+						</HBox>
+					</content>
+				</Panel>	
+				<Panel width="auto" class="sapUiResponsiveMargin hd2 acr_pnl">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Courses"/>
+							<SearchField width="30%" class="sapUiSmallMargin srch3" search="onSearch" />
+						</Toolbar>
+					</headerToolbar>
+					<content>
+						<Table id="Table" items= "{course>/tb_course}" class="TableBorderTop" growing="true" growingDirection="Downwards">
+							<columns>	
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+									<Text text="ID"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Course Name"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Course Type"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Course Fee"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Course Duration"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Action"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{course>course_id}" />
+						        		<Text text="{course>course_name}" />
+										<Text text="{course>course_type}" />
+										<Text text="{course>course_fee}" />
+										<Text text="{course>course_duration}" />
+										<Toolbar>
+											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit"/>
+											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete"/>
+										</Toolbar>
+									</cells>
+								</ColumnListItem>
+							</items>	
+						</Table>	
 					</content>
 				</Panel>
-				</content>
-			</Page>
-		</pages>
+			</content>
+		</Page>
+	</pages>
 	</App>
 </mvc:View>

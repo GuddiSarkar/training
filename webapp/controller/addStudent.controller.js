@@ -64,7 +64,8 @@ sap.ui.define([
 			var fstInstlment = this.getView().byId("f_instl").getValue();
 			var secondInstlment = this.getView().byId("sec_instl").getValue();
 			var thrdInstlment = this.getView().byId("thrd_instl").getValue();
-			
+			var paidAmnt = 0;
+			var dueAmnt = totalPaybleAmount;
 			
 			var oEntryAdd = {
 				"address_street":address,
@@ -124,7 +125,9 @@ sap.ui.define([
 				"stud_payment_reg_fee":registrationFee,
 				"stud_payment_instal_1":fstInstlment,
 				"stud_payment_instal_2":secondInstlment,
-				"stud_payment_instal_3":thrdInstlment
+				"stud_payment_instal_3":thrdInstlment,
+				"stud_payment_paid":paidAmnt,
+				"stud_payment_due":dueAmnt
 			};
 			var oModelStudPay = this.getOwnerComponent().getModel("course");
 			oModelStudPay.setUseBatch(false);
