@@ -92,6 +92,8 @@ sap.ui.define([
 		
 		},*/
 		
+		
+		
 		onClickEdit: function(oEvent)
 		{
 		var oView = this.getView();
