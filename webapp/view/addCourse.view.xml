@@ -114,7 +114,7 @@
 										<Text text="{course>course_duration}" />
 										<Toolbar class="tbBorder">
 											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
-											<Button icon="sap-icon://delete"  class="b4 btn2" press="onOkDelete" ariaLabelledBy="deleteButtonLabel"/>
+											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
 										</Toolbar>
 									</cells>
 								</ColumnListItem>

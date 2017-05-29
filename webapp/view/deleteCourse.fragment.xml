@@ -3,7 +3,7 @@
 		<content>
 			<l:VerticalLayout id="containerLayout" width="100%">
 								<HBox>
-									
+									<Input value="" class="acr_inp" id="c_idDel" visible="false"/>
 									<Text text="Are you sure that you want to delete this?"></Text>
 									
 								</HBox>
@@ -12,7 +12,7 @@
 		<Toolbar>
 			<Button text="{i18n>ok}" press="onOkDelete"/>
 			<ToolbarSpacer></ToolbarSpacer>
-			<Button text="{i18n>Cancel}" press="onCancel"/>
+			<Button text="{i18n>Cancel}" press="onCloseDelete"/>
 		</Toolbar>
 	</Dialog>
 </core:FragmentDefinition>

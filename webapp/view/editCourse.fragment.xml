@@ -3,6 +3,7 @@
 		<content>
 			<l:VerticalLayout id="containerLayout" width="100%">
 								<HBox>
+									<Input value="" class="acr_inp" id="c_idEd" visible="false"/>
 								<VBox class="acr_vb2">
 									<HBox>
 										<Label text="Course Name" width="200px"/>
