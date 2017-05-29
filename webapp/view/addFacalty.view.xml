@@ -66,143 +66,70 @@
 		</headerToolbar>
 		<content >
 
-		<t:Table id="idTable" class="acr_tbl"  visibleRowCount="2" rows="{course>/tb_faculty}" selectionMode="MultiToggle" rowSelectionChange="onSelectRow">
-
-				<t:columns>
-					<t:Column
-						id="id"
-						width="10%"
-						sortProperty="Id"
-						sorted="true"
-						visible="true"
-						>
-					
-						<Label text="SL. NO." />
-				
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSort"/>
-							<Text text="{course>faculty_id}"/>
-						</t:template>
-					</t:Column>
-					<t:Column
-						id="name"
-						width="20%"
-						sortProperty="Facalty Name"
-						sorted="true"
-						visible="true"
-						>
-					
-						<Label text="Facalty Name" />
-				
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSort"/>
-							<Text text="{course>faculty_name}"/>
-						</t:template>
-					</t:Column>
-					<t:Column
-						id="role"
-						width="20%"
-						sortProperty="Phone Number"
-						sorted="true"
-						visible="true"
-						>
-					
-						<Label text="Phone Number" />
-				
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSort"/>
-							<Text text="{course>faculty_mob}"/>
-						</t:template>
-					</t:Column>
-					<t:Column
-						id="e_name"
-						width="20%"
-						sortProperty="Email"
-						sorted="true"
-						visible="true"
-						>
-						
-						<Label text="Email" />
-					
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSortQuantity"/>
-							<Text text="{course>faculty_email}"/>
-						</t:template>
-					</t:Column>
-					<t:Column
-						id="cname"
-						width="20%"
-						sortProperty="Course Name"
-						sorted="true"
-						visible="true"
-						>
-						
-						<Label text="Course Name" />
-					
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSortId"/>
-							<Label text="{course>faculty_course}"/>
-						</t:template>
-					</t:Column>
-					<t:Column
-						id="slry"
-						width="20%"
-						sortProperty="Salary"
-						sorted="true"
-						visible="true"
-						>
-						
-						<Label text="Salary" />
-					
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSortId"/>
-							<Label text="{course>faculty_salary}"/>
-						</t:template>
-					</t:Column>
-					<t:Column
-						id="doj"
-						width="20%"
-						sortProperty="Date of Joining"
-						sorted="true"
-						visible="true"
-						>
-						
-						<Label text="Date of Joining" />
-					
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSortId"/>
-							<Label text="{faculty>faculty_doj}"/>
-						</t:template>
-					</t:Column>
-					<t:Column
-						id="action"
-						width="20%"
-						>
-						<Label text="Action" />
-						<t:template >
-							<Toolbar class="acr_toolbar">
-								<Button icon="sap-icon://edit" width="85px" class="b3" press="onClickEdit"/>
-								<Button icon="sap-icon://delete" width="110px" class="b4 btn2" press="onClickDelete"/>
-							</Toolbar>
-						</t:template>
-					</t:Column>
-				</t:columns>
+						<Table id="adCrsTable" items= "{course>/tb_faculty}" class="TableBorderTop" growing="true" 
+								growingThreshold="2">
 							
-						</t:Table>
+							<columns height="20px">	
+								<Column width="8%"
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+									<Text text="ID"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Facalty Name"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Phone Number"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Email"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Course Name"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Salary"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Date of Joining"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Action"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{course>faculty_id}" />
+										<Text text="{course>faculty_name}" />
+										<Text text="{course>faculty_mob}" />
+										<Text text="{course>faculty_email}" />
+										<Text text="{course>faculty_course}" />
+										<Text text="{course>faculty_salary}" />
+										<Text text="{course>faculty_doj}" />
+										<Toolbar class="tbBorder">
+											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
+											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
+										</Toolbar>
+									</cells>
+								</ColumnListItem>
+							</items>	
+						</Table>
 					</content>
 				</Panel>
 				</content>

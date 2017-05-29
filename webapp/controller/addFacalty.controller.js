@@ -14,8 +14,8 @@ sap.ui.define([
 		},
 
 		onSearch: function(oEvent){
-		    var oTable = this.getView().byId("idTable");
-			var oBinding = oTable.getBinding("rows");
+		    var oTable = this.getView().byId("adCrsTable");
+			var oBinding = oTable.getBinding("items");
 			var value = oEvent.getParameter("query");
 			var oFilter1 = new Filter("faculty_name", FilterOperator.Contains, value);
 			var oFilter2 = new Filter("faculty_mob", FilterOperator.Contains, value);

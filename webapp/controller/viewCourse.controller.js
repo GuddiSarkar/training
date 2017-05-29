@@ -8,8 +8,8 @@ sap.ui.define([
 	return Controller.extend("com.demoTMS.controller.viewCourse", {
 
 		onSearch: function(oEvent){
-		    var oTable = this.getView().byId("Table");
-			var oBinding = oTable.getBinding("rows");
+		    var oTable = this.getView().byId("adCrsTable");
+			var oBinding = oTable.getBinding("items");
 			var value = oEvent.getParameter("query");
 			var oFilter1 = new Filter("course_name", FilterOperator.Contains, value);
 			var oFilter2 = new Filter("course_type", FilterOperator.Contains, value);

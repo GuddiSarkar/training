@@ -13,77 +13,50 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="5"  rows="{course>/tb_student}" selectionMode="MultiToggle"  >
-									<t:columns>
-										<t:Column
-						id="id"
-						width="10%"
-						sortProperty="Id"
-						sorted="true"
-						visible="true"
-						>
-					
-						<Label text="SL. NO." />
-				
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSort"/>
-							<Text text="{course>course_id}"/>
-						</t:template>
-					</t:Column>
-										<t:Column
-										id="sname"
-										width="20%"
-										sortProperty="Student Name"
-										sorted="true"
-										visible="true">
-											<Label text="Student Name" />
-											<t:template>
-												<Button
-												icon="sap-icon://sort"
-												press="onSort"/>
-												<Text text="{course>stud_name}"/>
-											</t:template>
-										</t:Column>
-										<t:Column
-										id="crsnme"
-										width="20%"
-										sortProperty="Course Name"
-										sorted="true"
-										visible="true">
-											<Label text="Course Name" />
-											<t:template>
-												<Button
-												icon="sap-icon://sort"
-												press="onSort"/>
-												<Text text="{course>course_id}"/>
-											</t:template>
-										</t:Column>
-										<t:Column
-										id="pstus"
-										width="20%"
-										sortProperty="Pay Status"
-										sorted="true"
-										visible="true">
-											<Label text="Pay Status" />
-											<t:template>
-												<Button
-												icon="sap-icon://sort"
-												press="onSort"/>
-												<Text text="{course>UserRole}"/>
-											</t:template>
-										</t:Column>
-										<t:Column
-										id="action"
-										width="20%">
-											<Label text="Action" />
-											<t:template >
-												<Button icon="sap-icon://delete" width="110px"  class="b4 btn2"/>
-											</t:template>
-										</t:Column>
-									</t:columns>
-								</t:Table>
+								<Table id="Table" items= "{course>/tb_student}" class="TableBorderTop" growing="true" 
+						 growingThreshold="2" inset="false">
+							<columns height="20px">	
+								<Column width="10%"
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+									<Text text="ID"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Student Name"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Course Name"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Pay Status"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Action"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{course>stud_id}" />
+						        		<Text text="{course>stud_name}" />
+										<Text text="{course>stud_gender}" />
+										<Text text="{course>course_name}" />
+										<Toolbar class="tbBorder">
+											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
+											
+										</Toolbar>
+									</cells>
+								</ColumnListItem>
+							</items>	
+						</Table>	
 							</content>
 						</Panel>
 					</HBox>
