@@ -14,7 +14,7 @@ sap.ui.define([
 		},
 
 		onSearch: function(oEvent) {
-			var oTable = this.getView().byId("Table");
+			var oTable = this.getView().byId("adCrsTable");
 			var oBinding = oTable.getBinding("items");
 			var value = oEvent.getParameter("query");
 			var oFilter1 = new Filter("course_name", FilterOperator.Contains, value);
@@ -53,7 +53,7 @@ sap.ui.define([
 			oModel.setRefreshAfterChange(true);
 		},
 
-		onClickEdit: function(oEvent) 
+	/*	onClickEdit: function(oEvent) 
 		{
 				var oView = this.getView();
 			var oDialog = oView.byId("editCourse");
@@ -90,6 +90,29 @@ sap.ui.define([
 				}.bind(this)
 			});
 		
+		},*/
+		
+		onClickEdit: function(oEvent)
+		{
+		var oView = this.getView();
+		var oDialog = oView.byId("editCourse");
+		var oTable = this.getView().byId("adCrsTable");
+		var path=oEvent.getSource().getBindingContext().getPath();
+		var model =oTable.getModel();
+		var property=model.getProperty(path);
+		if(!oDialog)
+		{
+			oDialog = sap.ui.xmlfragment(oView.getId(),"com.demoTMS.view.editCourse",this);
+			oView.addDependent(oDialog);
+			
+	}
+		
+			var CourseName = this.getView().byId("c_nameEd").setValue(property.course_name);
+			var CourseFee = this.getView().byId("c_feeEd").setValue(property.course_fee);
+			var CourseType = this.getView().byId("c_typeEd").setValue(property.course_type);
+			var CourseDuration = this.getView().byId("c_durEd").setValue(property.course_duration);
+		
+		oDialog.open();
 		},
 
 		onCloseEdit: function(oEvent) {
@@ -97,7 +120,30 @@ sap.ui.define([
 		},
 		onOkEdit:function(oEvent)
 		{
-			
+		
+			var CourseName = this.getView().byId("c_nameEd").getValue();
+			var CourseFee = this.getView().byId("c_feeEd").getValue();
+			var CourseType = this.getView().byId("c_typeEd").getValue();
+			var CourseDuration = this.getView().byId("c_durEd").getValue();
+			var data = {
+				"ID": id,
+				"Description": description,
+				"Name": name,
+				"Rating": rating,
+				"Price": price
+			};
+			var oModel = this.getOwnerComponent().getModel();
+			oModel.update("/Products("+id+")", data, {
+				success: function(oData, oResponse) {
+					console.log(oData);
+					console.log(oResponse);
+				}.bind(this),
+				error: function(err) {
+					console.log(err);
+				}.bind(this)
+			});
+	oModel.setRefreshAfterChange(true);
+	this.getView().byId("dialog").close();
 		},
 
 		/*onClickDelete: function(oEvent) {
@@ -117,7 +163,7 @@ sap.ui.define([
 		onOkDelete: function(oEvent) 
 		{
 			var oView = this.getView();
-			//var oDialog = oView.byId("deleteCourse");
+			//var oDialog = oView.byId("dialog");
 			var oTable = this.getView().byId("Table");
 			var path=oEvent.getSource().getParent().getBindingContext().getPath();
 			var model =oTable.getModel();
