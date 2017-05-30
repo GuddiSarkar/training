@@ -24,11 +24,11 @@ sap.ui.define([
 			//var oFilter7 = new Filter("Amount", FilterOperator.Contains, value);
 			var allFilter = new Filter([oFilter1, oFilter2,oFilter3,oFilter4,oFilter5,oFilter6], false); 
 			oBinding.filter(allFilter);
-		},
-		xyz: function(){
+		}
+		/*xyz: function(){
 			read data
 			
-		}
+		}*/
 	});
 
 });
