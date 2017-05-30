@@ -15,6 +15,9 @@
 							</headerToolbar>
 							<content>
 <<<<<<< Upstream, based on d6db6989a398253c101adc8d6a72cf832b72aad3
+<<<<<<< Upstream, based on d6db6989a398253c101adc8d6a72cf832b72aad3
+=======
+>>>>>>> 61d9143 ghgh
 
 							<Table id="adCrsTable" items= "{course>/tb_course}" class="TableBorderTop" growing="true" 
 								growingThreshold="1">
