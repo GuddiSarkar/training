@@ -1,19 +1,17 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" displayBlock="true" xmlns:l="sap.ui.layout">
 	<Dialog id="editCourse" title="Edit Course">
 		<content>
-			<l:VerticalLayout
-		class="sapUiContentPadding"
-		width="100%">
+			<l:VerticalLayout class="sapUiContentPadding" width="100%">
 								<HBox>
 									<Input value="" class="acr_inp" id="c_idEd" visible="false"/>
 								<VBox class="acr_vb2">
 									<HBox>
-										<Label text="Course Name" width="200px"/>
+										<Label text="Course Name" width="100px"/>
 										<Input value="" class="acr_inp" id="c_nameEd"/>
 									</HBox>
 									
 									<HBox>
-										<Label text="Course Fee" width="200px"/>
+										<Label text="Course Fee" width="100px"/>
 										<Input value="" class="acr_inp" id="c_feeEd"/>
 									</HBox>
 									
@@ -21,8 +19,8 @@
 								
 								<VBox class="acr_vb22">
 									<HBox>
-										<Label text="Course Type" width="200px"/>
-											<Select width="195px" class="sel" id="c_typeEd" selectedKey="{course>course_type}">
+										<Label text="Course Type" width="120px"/>
+											<Select width="150px" class="sel" id="c_typeEd" selectedKey="{course>course_type}">
 												<items class="itm">
 													<core:Item text="--Select--" key="0"/>
 													<core:Item text="Technical" key="1"/>
@@ -31,8 +29,8 @@
 											</Select>
 										</HBox>
 									<HBox>
-										<Label text="Course Duration" width="200px"/>
-											<Select width="195px" class="sel" id="c_durEd" selectedKey="{course>course_duration}">
+										<Label text="Course Duration" width="120px"/>
+											<Select width="150px" class="sel" id="c_durEd" selectedKey="{course>course_duration}">
 												<items class="itm">
 													<core:Item text="--Select--" key="0"/>
 													<core:Item text="1 Month" key="1"/>
