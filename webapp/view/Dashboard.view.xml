@@ -6,7 +6,8 @@
 				<content>
 					<HBox class="hb1-header" height="15%">
 						<VBox>
-							<core:Icon src="sap-icon://nav-back" color="black" press="onPressBack" class="sapUiMediumMarginBottom"/>
+							<Button icon="sap-icon://arrow-left"  class="ib sapUiLargeMarginBottom" press="onPressBack" ariaLabelledBy="editButtonLabel"/>
+							<!--<core:Icon src="sap-icon://arrow-left" color="black" press="onPressBack" class="sapUiLargeMarginEnd"/>-->
 						</VBox>
 						<VBox class="vb1">
 							<Label text="Training Management System" class="header-text" textAlign="Center"></Label>

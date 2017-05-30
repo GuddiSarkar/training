@@ -225,6 +225,11 @@ span.sapMBtnInner.sapMBtnAccept{
 	border-radius: 5px;
 	border-color: grey;
 }
+.ib .sapMBtnInner {
+  background-color: transparent;
+  color:black;
+  padding-top:2%;
+}
 .b3 .sapMBtnInner {
   background-color: #F8F8F8;
   color:white;

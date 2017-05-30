@@ -1,7 +1,9 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" displayBlock="true" xmlns:l="sap.ui.layout">
 	<Dialog id="editCourse" title="Edit Course">
 		<content>
-			<l:VerticalLayout id="containerLayout" width="100%">
+			<l:VerticalLayout
+		class="sapUiContentPadding"
+		width="100%">
 								<HBox>
 									<Input value="" class="acr_inp" id="c_idEd" visible="false"/>
 								<VBox class="acr_vb2">
@@ -41,7 +43,7 @@
 									</HBox>
 								</VBox>
 							</HBox>
-			</l:VerticalLayout>
+			</l:VerticalLayout >
 		</content>
 			<Toolbar>
 			<Button text="{i18n>Ok}" press="onOkEdit"/>
