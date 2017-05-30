@@ -14,6 +14,7 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
+<<<<<<< Upstream, based on d6db6989a398253c101adc8d6a72cf832b72aad3
 
 							<Table id="adCrsTable" items= "{course>/tb_course}" class="TableBorderTop" growing="true" 
 								growingThreshold="1">
@@ -87,6 +88,9 @@
 						</Table>	
 =======
 								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1"  rows="{course>/tb_stud_payment}" selectionMode="MultiToggle"  >
+=======
+								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1"  rows="{course>/tb_student}" selectionMode="MultiToggle"  >
+>>>>>>> 57c09af ghgh
 									<t:columns>
 										<t:Column
 						id="id"
@@ -102,7 +106,7 @@
 							<Button
 							icon="sap-icon://sort"
 							press="onSort"/>
-							<Text text="{course>course_id}"/>
+							<Text text="{course>stud_id}"/>
 						</t:template>
 					</t:Column>
 										<t:Column
@@ -116,7 +120,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>Username}"/>
+												<Text text="{course>stud_name}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -130,7 +134,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>UserRole}"/>
+												<Text text="{course>stud_dob}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
@@ -176,7 +180,7 @@
 												<Button
 												icon="sap-icon://sort"
 												press="onSort"/>
-												<Text text="{det>UserRole}"/>
+												<Text text="{course>stud_mob}"/>
 											</t:template>
 										</t:Column>
 										<t:Column
