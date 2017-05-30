@@ -14,10 +14,7 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-<<<<<<< Upstream, based on d6db6989a398253c101adc8d6a72cf832b72aad3
-<<<<<<< Upstream, based on d6db6989a398253c101adc8d6a72cf832b72aad3
-=======
->>>>>>> 61d9143 ghgh
+
 
 							<Table id="adCrsTable" items= "{course>/tb_course}" class="TableBorderTop" growing="true" 
 								growingThreshold="1">
@@ -89,114 +86,8 @@
 								</ColumnListItem>
 							</items>	
 						</Table>	
-=======
-								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1"  rows="{course>/tb_stud_payment}" selectionMode="MultiToggle"  >
-=======
-								<t:Table id="idTable" class="acr_tbl"  visibleRowCount="1"  rows="{course>/tb_student}" selectionMode="MultiToggle"  >
->>>>>>> 57c09af ghgh
-									<t:columns>
-										<t:Column
-						id="id"
-						width="10%"
-						sortProperty="Id"
-						sorted="true"
-						visible="true"
-						>
-					
-						<Label text="SL. NO." />
-				
-						<t:template>
-							<Button
-							icon="sap-icon://sort"
-							press="onSort"/>
-							<Text text="{course>stud_id}"/>
-						</t:template>
-					</t:Column>
-										<t:Column
-										id="name"
-										width="20%"
-										sortProperty="Student Name"
-										sorted="true"
-										visible="true">
-											<Label text="Student Name" />
-											<t:template>
-												<Button
-												icon="sap-icon://sort"
-												press="onSort"/>
-												<Text text="{course>stud_name}"/>
-											</t:template>
-										</t:Column>
-										<t:Column
-										id="role"
-										width="20%"
-										sortProperty="Course Name"
-										sorted="true"
-										visible="true">
-											<Label text="Course Name" />
-											<t:template>
-												<Button
-												icon="sap-icon://sort"
-												press="onSort"/>
-												<Text text="{course>stud_dob}"/>
-											</t:template>
-										</t:Column>
-										<t:Column
-										id="e_name"
-										width="20%">
-											<Label text="Registration Fee" />
-											<t:template>
-												<Button icon="sap-icon://edit" width="85px"   class="b1"/>
-											</t:template>
-										</t:Column>
-										<t:Column
-										id="productid1"
-										width="20%">
-											<Label text="1st Installment" />
-											<t:template>
-												<Button icon="sap-icon://edit" width="85px"   class="b1"/>
-											</t:template>
-										</t:Column>
-										<t:Column
-										id="productid2"
-										width="20%">
-											<Label text="2nd Installment" />
-											<t:template>
-												<Button icon="sap-icon://edit" width="85px"   class="b1"/>
-											</t:template>
-										</t:Column>
-										<t:Column
-										id="productid3"
-										width="20%">
-											<Label text="3rd Installment" />
-											<t:template>
-												<Button icon="sap-icon://edit" width="85px"   class="b1"/>
-											</t:template>
-										</t:Column>
-										<t:Column
-										id="amount"
-										width="20%"
-										sortProperty="Amount"
-										sorted="true"
-										visible="true">
-											<Label text="Amount" />
-											<t:template>
-												<Button
-												icon="sap-icon://sort"
-												press="onSort"/>
-												<Text text="{course>stud_mob}"/>
-											</t:template>
-										</t:Column>
-										<t:Column
-										id="action"
-										width="20%">
-											<Label text="Action" />
-											<t:template >
-												<Button icon="sap-icon://edit" width="85px"   class="b3"/>
-											</t:template>
-										</t:Column>
-									</t:columns>
-								</t:Table>
->>>>>>> 91b1dbe changes
+
+							
 							</content>
 						</Panel>
 					</HBox>
