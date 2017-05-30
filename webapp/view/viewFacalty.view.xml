@@ -14,7 +14,7 @@
 							</headerToolbar>
 							<content>
 									<Table id="adCrsTable" items= "{course>/tb_faculty}" class="TableBorderTop" growing="true" 
-								growingThreshold="2">
+								growingThreshold="1">
 							
 							<columns height="20px">	
 								<Column width="8%"

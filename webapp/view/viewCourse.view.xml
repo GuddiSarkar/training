@@ -15,7 +15,7 @@
 							<content>
 
 								<Table id="Table" items= "{course>/tb_course}" class="TableBorderTop" growing="true" 
-						 growingThreshold="2" inset="false">
+						 growingThreshold="1" inset="false">
 							<columns height="20px">	
 								<Column width="10%"
 									minScreenWidth="Tablet"
