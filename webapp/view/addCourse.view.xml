@@ -71,35 +71,34 @@
 						<Table id="adCrsTable" items= "{course>/tb_course}" class="TableBorderTop" growing="true" 
 						 growingThreshold="1">
 							
-							<columns height="20px">	
-								<Column width="10%"
-									minScreenWidth="Tablet"
+							<columns>	
+								<Column 
+									
 									demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
 									<Text text="ID"/>
 								</Column>
 								<Column
-									minScreenWidth="Tablet"
 									
 									demandPopin="true" styleClass="cellBorderRight">
 									<Text text="Course Name"/>
 								</Column>
 								<Column
-									minScreenWidth="Tablet"
+									
 									demandPopin="true" styleClass="cellBorderRight">
 									<Text text="Course Type"/>
 								</Column>
 								<Column
-									minScreenWidth="Tablet"
+								
 									demandPopin="true" styleClass="cellBorderRight">
 									<Text text="Course Fee"/>
 								</Column>
 								<Column
-									minScreenWidth="Tablet"
+								
 									demandPopin="true" styleClass="cellBorderRight">
 									<Text text="Course Duration"/>
 								</Column>
 								<Column
-									minScreenWidth="Tablet"
+								
 									demandPopin="true" styleClass="cellBorderRight">
 									<Text text="Action"/>
 								</Column>
