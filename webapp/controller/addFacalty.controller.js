@@ -12,6 +12,8 @@ sap.ui.define([
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
 		},
+		
+	
 
 		onSearch: function(oEvent){
 		    var oTable = this.getView().byId("adCrsTable");
@@ -56,27 +58,93 @@ sap.ui.define([
 				oModel.setRefreshAfterChange(true);
 		},
 		
+		
+		onClickEdit: function(oEvent)
+		{
+		var oView = this.getView();
+		var oDialog = oView.byId("editFacalty");
+		var oTable = this.getView().byId("adCrsTable");
+		var path=oEvent.getSource().getBindingContext("course").getPath();
+		var model =oTable.getModel("course");
+		var property=model.getProperty(path);
+		if(!oDialog)
+		{
+			oDialog = sap.ui.xmlfragment(oView.getId(),"com.demoTMS.view.editFacalty",this);
+			oView.addDependent(oDialog);
+			
+		}
+			var id = this.getView().byId("f_idEd").setValue(property.faculty_id);
+			var FacaltyName = this.getView().byId("f_nameEd").setValue(property.faculty_name);
+			var PhoneNumber = this.getView().byId("f_phneEd").setValue(property.faculty_mob);
+			var Salary = this.getView().byId("f_salEd").setValue(property.faculty_salary);
+			var Email = this.getView().byId("f_emlEd").setValue(property.faculty_email);
+			var CourseName = this.getView().byId("f_crsnmeEd").setValue(property.faculty_course);
+			var DateofJoining = this.getView().byId("f_dojEd").setValue(property.faculty_doj);
+		
+		oDialog.open();
+		},
+
+		onCloseEdit: function(oEvent) {
+			this.getView().byId("editFacalty").close();
+		},
+		onOkEdit:function(oEvent)
+		{
+			var id = this.getView().byId("f_idEd").getValue();
+			var FacaltyName = this.getView().byId("f_nameEd").getValue();
+			var PhoneNumber = this.getView().byId("f_phneEd").getValue();
+			var Salary = this.getView().byId("f_salEd").getValue();
+			var Email = this.getView().byId("f_emlEd").getValue();
+			var CourseName = this.getView().byId("f_crsnmeEd").getValue();
+			var DateofJoining = this.getView().byId("f_dojEd").getValue();
+			var data = {
+				"faculty_id": id,
+				"faculty_name": FacaltyName,
+				"faculty_mob": PhoneNumber,
+				"faculty_salary": Salary,
+				"faculty_email": Email,
+				"faculty_course": CourseName,
+				"faculty_doj": DateofJoining
+			};
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.update("/tb_faculty("+id+")", data, {
+				success: function(oData, oResponse) {
+					console.log(oData);
+					console.log(oResponse);
+				}.bind(this),
+				error: function(err) {
+					console.log(err);
+				}.bind(this)
+			});
+	oModel.setRefreshAfterChange(true);
+	this.getView().byId("editFacalty").close();
+		},
+		
 		onClickDelete: function(oEvent) {
 			var oView = this.getView();
 			var oDialog = oView.byId("deleteFacalty");
+			var oTable = this.getView().byId("adCrsTable");
+			var path=oEvent.getSource().getBindingContext("course").getPath();
+			var model =oTable.getModel("course");
+			var property=model.getProperty(path);
 			if (!oDialog) {
 				oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.deleteFacalty", this);
 				oView.addDependent(oDialog);
 			}
+			var id = this.getView().byId("c_idDel1").setValue(property.faculty_id);
 			oDialog.open();
 		},
-		onCancel: function(oEvent) {
+		onCloseDelete: function(oEvent) {
 			this.getView().byId("deleteFacalty").close();
 		},
 		
-		onSelectRow: function(oEvent)
+		
+		onOkDelete: function(oEvent) 
 		{
-			var oTable = this.getView().byId("idTable");
-			sPath = oEvent.getParameter("rowContext").getPath();
-		},
-		onOkDelete: function(oEvent) {
+			var oView = this.getView();
+			var oDialog = oView.byId("deleteFacalty");
+			var id = this.getView().byId("c_idDel1").getValue();
 			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.remove(sPath, {
+			oModel.remove("/tb_faculty(" +id + ")", {
 				success: function(oData, oResponse) {
 					console.log(oData);
 					console.log(oResponse);
@@ -86,8 +154,8 @@ sap.ui.define([
 				}.bind(this)
 			});
 			oModel.setRefreshAfterChange(true);
-			this.getView().byId("deleteFacalty").close();
-		},
+			oDialog.close();
+		}
 	});
 
 });

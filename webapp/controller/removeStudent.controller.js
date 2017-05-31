@@ -20,6 +20,26 @@ sap.ui.define([
 			onInit: function(){
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
+		},
+		onClickDelete: function(oEvent)
+		{
+			var oView = this.getView();
+			var oTable = this.getView().byId("Table");
+			var path=oEvent.getSource().getBindingContext("course").getPath();
+			var model =oTable.getModel("course");
+			var property=model.getProperty(path);
+			
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.remove(path, {
+				success: function(oData, oResponse) {
+					console.log(oData);
+					console.log(oResponse);
+				}.bind(this),
+				error: function(err) {
+					console.log(err);
+				}.bind(this)
+			});
+			oModel.setRefreshAfterChange(true);
 		}
 
 	});

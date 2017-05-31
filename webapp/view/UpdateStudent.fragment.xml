@@ -1,0 +1,48 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" displayBlock="true" xmlns:l="sap.ui.layout">
+	<Dialog id="updateStudent" title="Updat Student">
+		<content>
+			<l:VerticalLayout class="sapUiContentPadding" width="100%">
+								<HBox>
+									<Input value="" class="acr_inp" id="s_idEd" visible="false"/>
+								<VBox class="acr_vb2">
+									<HBox>
+										<Label text="Student Name" width="100px"/>
+										<Input value="" class="acr_inp" id="s_nameEd"/>
+									</HBox>
+									
+									<HBox>
+										<Label text="Gender" width="100px"/>
+										<Input value="" class="acr_inp" id="s_gndrEd"/>
+									</HBox>
+									<HBox>
+										<Label text="D.O.B" width="100px"/>
+										<Input value="" class="acr_inp" id="s_dobEd"/>
+									</HBox>
+									
+								</VBox>
+								
+								<VBox class="acr_vb22">
+									<HBox>
+										<Label text="Email" width="100px"/>
+										<Input value="" class="acr_inp" id="s_emlEd"/>
+									</HBox>
+									<HBox>
+										<Label text="Phone No" width="100px"/>
+										<Input value="" class="acr_inp" id="s_phnEd"/>
+									</HBox>
+									<HBox>
+										<Label text="Course Name" width="100px"/>
+										<Input value="" class="acr_inp" id="s_crsEd"/>
+									</HBox>
+								</VBox>
+							</HBox>
+			</l:VerticalLayout >
+		</content>
+			<Toolbar>
+			<Button text="{i18n>Ok}" press="onOkEdit"/>
+			<ToolbarSpacer></ToolbarSpacer>
+			<Button text="{i18n>Close}" press="onCloseEdit"/>
+			
+			</Toolbar>
+	</Dialog>
+</core:FragmentDefinition>
