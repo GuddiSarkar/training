@@ -15,7 +15,7 @@ sap.ui.define([
 
 		onSearch: function(oEvent)
 		{
-		    var oTable = this.getView().byId("adCrsTable");
+		    var oTable = this.getView().byId("Table");
 			var oBinding = oTable.getBinding("items");
 			var value = oEvent.getParameter("query");
 			var oFilter1 = new Filter("course_name", FilterOperator.Contains, value);
@@ -25,16 +25,16 @@ sap.ui.define([
 			var allFilter = new Filter([oFilter1, oFilter2,oFilter3,oFilter4], false); 
 			oBinding.filter(allFilter);
 		},
-		onSelectRow: function(oEvent)
+		onClickDelete: function(oEvent)
 		{
-			var oTable = this.getView().byId("idTable");
-			sPath = oEvent.getParameter("rowContext").getPath();
-		},
-		
-		onDelete: function(oEvent)
-		{
+			var oView = this.getView();
+			var oTable = this.getView().byId("Table");
+			var path=oEvent.getSource().getBindingContext("course").getPath();
+			var model =oTable.getModel("course");
+			var property=model.getProperty(path);
+			
 			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.remove(sPath, {
+			oModel.remove(path, {
 				success: function(oData, oResponse) {
 					console.log(oData);
 					console.log(oResponse);
@@ -45,7 +45,6 @@ sap.ui.define([
 			});
 			oModel.setRefreshAfterChange(true);
 		}
-
 	});
 
 });

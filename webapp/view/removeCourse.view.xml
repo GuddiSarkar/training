@@ -14,7 +14,7 @@
 							</headerToolbar>
 							<content>
 								<Table id="Table" items= "{course>/tb_course}" class="TableBorderTop" growing="true" 
-						 growingThreshold="1" inset="false">
+						 growingThreshold="3" inset="false">
 							<columns height="20px">	
 								<Column width="10%"
 									minScreenWidth="Tablet"
@@ -56,7 +56,6 @@
 										<Text text="{course>course_fee}" />
 										<Text text="{course>course_duration}" />
 										<Toolbar class="tbBorder">
-							
 											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete"/>
 										</Toolbar>
 									</cells>
