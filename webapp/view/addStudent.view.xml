@@ -200,10 +200,6 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.un
 											<Label text="Registration Fee" width="200px"/>
 											<Input value="" editable="false" id="r_fee"/>
 										</HBox>
-										<HBox>
-											<Label text="2nd Installment" width="200px"/>
-											<Input value="" id="sec_instl"/>
-										</HBox>
 									</VBox>
 									<VBox class="vb21">
 										<HBox>
@@ -216,13 +212,17 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.un
 											<Input value="" id="tp_amnt"/>
 										</HBox>
 										<HBox>
-											<Label text="1st Installment" width="200px"/>
-											<Input value="" id="f_instl"/>
-										</HBox>
-										
-										<HBox>
-											<Label text="3rd Installment" width="200px"/>
-											<Input value="" id="thrd_instl"/>
+											<Label text="No. Of Installments" width="200px"/>
+											<Select width="195px" class="sel" id="noi" selectedKey="0">
+												<items class="itm">
+													<core:Item text="--Select--" key="0"/>
+													<core:Item text="1" key="1"/>
+													<core:Item text="2" key="2"/>
+													<core:Item text="3" key="3"/>
+													<core:Item text="4" key="4"/>
+													<core:Item text="5" key="5"/>
+												</items>
+											</Select>
 										</HBox>
 									</VBox>
 								</HBox>

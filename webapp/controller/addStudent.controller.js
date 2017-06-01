@@ -1,6 +1,7 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"sap/ui/core/mvc/Controller",
+	"sap/m/MessageBox"
+], function(Controller,MessageBox) {
 	"use strict";
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.addStudent", {
@@ -33,11 +34,6 @@ sap.ui.define([
 		var net_fee = parseInt(crs_fee-((crs_fee*discount)/100));
 		this.getView().byId("r_fee").setValue(1000);
 		this.getView().byId("tp_amnt").setValue(net_fee);
-		var instlmnt = parseInt((net_fee-1000)/3);
-		this.getView().byId("f_instl").setValue(instlmnt);
-		this.getView().byId("sec_instl").setValue(instlmnt);
-		this.getView().byId("thrd_instl").setValue(instlmnt);
-		
 	},
 
 	addStudent:function(oEvent)
@@ -55,40 +51,16 @@ sap.ui.define([
 			var city = this.getView().byId("c_ty").getValue();
 			var state = this.getView().byId("s_tate").getValue();
 			var zip = this.getView().byId("zip_code").getValue();
-			var crs_id = this.getView().byId("c_name").getSelectedKey();
+			var crs_name = this.getView().byId("c_name").getSelectedItem().getText();
 			var startDate = this.getView().byId("s_date").getValue();
 			var discount = this.getView().byId("d_scunt").getValue();
 			var tax = this.getView().byId("t_ax").getValue();
 			var totalPaybleAmount = this.getView().byId("tp_amnt").getValue();
 			var registrationFee = this.getView().byId("r_fee").getValue();
-			var fstInstlment = this.getView().byId("f_instl").getValue();
-			var secondInstlment = this.getView().byId("sec_instl").getValue();
-			var thrdInstlment = this.getView().byId("thrd_instl").getValue();
-			var paidAmnt = 0;
-			var dueAmnt = totalPaybleAmount;
-			
-			var oEntryAdd = {
-				"address_street":address,
-				"address_city":city,
-				"address_state":state,
-				"address_zip":zip
-			};
-			var oModelAdd = this.getOwnerComponent().getModel("course");
-			oModelAdd.setUseBatch(false);
-			oModelAdd.create("/tb_address",oEntryAdd,
-			{
-				success: function(oData)
-				{
-					
-				}.bind(this),
-				error: function(error)
-				{
-					
-				}.bind(this)
-			}
-			);
-			oModelAdd.setRefreshAfterChange(true);
-			//oModelAdd.read("/tb_address",)
+			var installments = this.getView().byId("noi").getSelectedItem().getText();
+			var paidAmnt = registrationFee;
+			var dueAmnt = totalPaybleAmount-paidAmnt;
+			var image = "";
 			
 			var oEntryStud = {
 				"stud_name": name, 
@@ -96,9 +68,14 @@ sap.ui.define([
 				"stud_dob": dob, 
 				"stud_mob": phone,
 				"stud_email":email,
+				"stud_photo":image,
 				"stud_strt_date":startDate,
-				//"add_id":
-				"course_id":crs_id
+				"stud_course_name":crs_name,
+				"stud_street": address,
+				"stud_city": city,
+				"stud_zip": zip,
+				"stud_state": state,
+				"stud_installment": installments
 			};
 			var oModelStud = this.getOwnerComponent().getModel("course");
 			oModelStud.setUseBatch(false);
@@ -106,28 +83,39 @@ sap.ui.define([
 			{
 				success: function(oData)
 				{
-					
+					var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
+					MessageBox.success(
+						"Data Saved Successfully",
+						{
+							styleClass: bCompact? "sapUiSizeCompact" : ""
+						}
+					);
 				}.bind(this),
 				error: function(error)
 				{
 					
 				}.bind(this)
+				
 			}
 			);
 			oModelStud.setRefreshAfterChange(true);
 			
 			
 			var oEntryStudPay = {
-				"course_id":crs_id,
-				"stud_payment_disc":discount,
-				"stud_payment_tax":tax,
-				"stud_payment_fee":totalPaybleAmount,
+				"stud_payment_name": name,
+				"stud_payment_course": crs_name,
+				"stud_payment_disc": discount,
+				"stud_payment_tax": tax,
 				"stud_payment_reg_fee":registrationFee,
-				"stud_payment_instal_1":fstInstlment,
-				"stud_payment_instal_2":secondInstlment,
-				"stud_payment_instal_3":thrdInstlment,
-				"stud_payment_paid":paidAmnt,
-				"stud_payment_due":dueAmnt
+				"stud_payment_instal_1": "0",
+				"stud_payment_instal_2": "0",
+				"stud_payment_instal_3": "0",
+				"stud_payment_instal_4": "0",
+				"stud_payment_instal_5": "0",
+				"stud_payment_fee": totalPaybleAmount,
+				"stud_payment_paid": paidAmnt,
+				"stud_payment_due": dueAmnt,
+				"stud_payment_installment": installments
 			};
 			var oModelStudPay = this.getOwnerComponent().getModel("course");
 			oModelStudPay.setUseBatch(false);

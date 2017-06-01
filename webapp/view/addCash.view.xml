@@ -16,7 +16,7 @@
 							<content>
 
 
-							<Table id="adCrsTable" items= "{course>/tb_course}" class="TableBorderTop" growing="true" 
+							<Table id="adCrsTable" items= "{course>/tb_stud_payment}" class="TableBorderTop" growing="true" 
 								growingThreshold="1">
 							
 							<columns height="20px">	
@@ -70,18 +70,24 @@
 							<items>
 								<ColumnListItem>
 									<cells>
-										<Text text="{course>course_id}" />
-						        		<Text text="{course>course_name}" />
-										<Text text="{course>course_type}" />
-										<Text text="{course>course_fee}" />
-										<Text text="{course>course_duration}" />
-										<Text text="{course>course_duration}" />
-										<Text text="{course>course_duration}" />
-										<Text text="{course>course_duration}" />
+										<Text text="{course>stud_payment_id}" />
+						        		<Text text="{course>stud_payment_name}" />
+										<Text text="{course>stud_payment_course}" />
+										<Text text="{course>stud_payment_reg_fee}" />
+										<HBox id="in1" visible="false">
+											<Text text="" id="t1" visible="false"/>
+											<Button text="PAY NOW" id="bt" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel" visible="false"/>
+										</HBox>
+										<Text text="{course>stud_payment_instal_2}" />
+										<Text text="{course>stud_payment_instal_3}" />
+										<Text text="{course>stud_payment_fee}" />
 										<Toolbar class="tbBorder">
 											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
 											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
 										</Toolbar>
+										<!--<HBox id="in2" visible="false">
+											<Text text="" id="t1" />
+										</HBox>-->
 									</cells>
 								</ColumnListItem>
 							</items>	
