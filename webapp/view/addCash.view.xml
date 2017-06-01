@@ -15,7 +15,6 @@
 							</headerToolbar>
 							<content>
 
-
 							<Table id="adCrsTable" items= "{course>/tb_stud_payment}" class="TableBorderTop" growing="true" 
 								growingThreshold="1">
 							
