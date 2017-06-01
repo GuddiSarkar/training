@@ -66,7 +66,7 @@
 										<Text text="{course>stud_dob}" />
 										<Text text="{course>stud_email}" />
 										<Text text="{course>stud_mob}" />
-										<Text text="{course>course_name}" />
+										<Text text="{course>stud_course_name}" />
 										<Toolbar class="tbBorder">
 											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit"/>
 											

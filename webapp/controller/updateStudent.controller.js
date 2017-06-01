@@ -68,7 +68,7 @@ sap.ui.define([
 				"stud_dob": DOB,
 				"stud_email": Email,
 				"stud_mob": Phoneno,
-				"course_name": CourseName
+				"stud_course_name": CourseName
 			};
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.update("/tb_student("+id+")", data, {

@@ -47,8 +47,8 @@
 									<cells>
 										<Text text="{course>stud_id}" />
 						        		<Text text="{course>stud_name}" />
-										<Text text="{course>stud_gender}" />
-										<Text text="{course>course_name}" />
+										<Text text="{course>}" />
+										<Text text="{course>stud_course_name}" />
 										<Toolbar class="tbBorder">
 											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
 											

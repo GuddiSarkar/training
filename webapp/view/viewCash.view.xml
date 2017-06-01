@@ -78,20 +78,35 @@
 									demandPopin="true" styleClass="cellBorderRight">
 									<Text text="3rd Installment"/>
 								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="4th Installment"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="5th Installment"/>
+								</Column>
 								
 							
 							</columns>
 							<items>
 								<ColumnListItem>
 									<cells>
-										<Text text="{course>course_id}" />
-						        		<Text text="{course>course_name}" />
-										<Text text="{course>course_type}" />
-										<Text text="{course>course_fee}" />
-										<Text text="{course>course_duration}" />
-										<Text text="{course>course_duration}" />
-										<Text text="{course>course_duration}" />
-										<Text text="{course>course_duration}" />
+										<Text text="{course>stud_payment_id}" />
+						        		<Text text="{course>stud_payment_name}" />
+										<Text text="{course>}" />
+										<Text text="{course>}" />
+										<Text text="{course>stud_payment_disc}" />
+										<Text text="{course>stud_payment_fee}" />
+										<Text text="{course>stud_payment_reg_fee}" />
+										<Text text="{course>stud_payment_tax}" />
+										<Text text="{course>stud_payment_instal_1}" />
+										<Text text="{course>stud_payment_instal_2}" />
+										<Text text="{course>stud_payment_instal_3}" />
+										<Text text="{course>stud_payment_instal_4}" />
+										<Text text="{course>stud_payment_instal_5}" />
 	
 									</cells>
 								</ColumnListItem>
