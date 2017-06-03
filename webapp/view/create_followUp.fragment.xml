@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" displayBlock="true" xmlns:l="sap.ui.layout">
+	<Dialog id="addFollowUp" title="Edit Course">
+		<content>
+			<l:VerticalLayout class="sapUiContentPadding" width="100%">
+							<HBox>
+								<Input value="" class="acr_inp" id="c_idEd" visible="false"/>
+								<VBox class="acr_vb2">
+									<HBox>
+										<Label text="Course Name" width="100px"/>
+										<Input value="" class="acr_inp" id="c_nameEd"/>
+									</HBox>
+									
+									<HBox>
+										<Label text="Course Fee" width="100px"/>
+										<Input value="" class="acr_inp" id="c_feeEd"/>
+									</HBox>
+								</VBox>
+							</HBox>
+			</l:VerticalLayout >
+		</content>
+			<Toolbar>
+			<Button text="{i18n>Ok}" press="onOkEdit"/>
+			<ToolbarSpacer></ToolbarSpacer>
+			<Button text="{i18n>Close}" press="onCloseFolowUp"/>
+			
+			</Toolbar>
+	</Dialog>
+</core:FragmentDefinition>

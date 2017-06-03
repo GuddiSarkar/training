@@ -45,7 +45,22 @@ sap.ui.define([
 				oLeg1.destroyItems();
 				oLeg2.destroyItems();
 			}
-		}
+		},
+		
+		handleCalendarSelect: function(oEvent){
+			var oView = this.getView();
+			var oDialog = oView.byId("addFollowUp");
+			if(!oDialog)
+			{
+				oDialog = sap.ui.xmlfragment(oView.getId(),"com.demoTMS.view.create_followUp",this);
+				oView.addDependent(oDialog);
+			}
+			oDialog.open();
+		},
+		
+		onCloseFolowUp: function(oEvent) {
+			this.getView().byId("addFollowUp").close();
+		},
 	});
 
 });

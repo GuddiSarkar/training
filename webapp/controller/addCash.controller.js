@@ -24,10 +24,8 @@ sap.ui.define([
 			//var oFilter7 = new Filter("Amount", FilterOperator.Contains, value);
 			var allFilter = new Filter([oFilter1, oFilter2,oFilter3,oFilter4,oFilter5,oFilter6], false); 
 			oBinding.filter(allFilter);
-		},
+		}/*,
 		 onAfterRendering: function(){
-		 		var btn = this.getView().byId("bt");
-		 			btn.setVisible(true);
 			var oTable = this.getView().byId("adCrsTable");
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.read("/tb_stud_payment",{
@@ -36,29 +34,23 @@ sap.ui.define([
 						var val = oData.results[i].stud_payment_instal_1;
 						if(val === "0")
 						{
-							//var cell = this.getView().byId("in1");
-							var btn = this.getView().byId("bt");
-							if(btn.getVisible())
-							{
-								btn.setVisible(true);
-							}
+							var link = this.getView().byId("lnk").setEnabled(true);
+							var link1 = this.getView().byId("lnk").setText("PAY NOW");
+							//var link2 = this.getView().byId("lnk1").setEnabled(false);
+							//var col = this.getView().byId("ins1").data("mykey", link1);
 						}
 						else{
-							/*var txt = this.getView().byId("t1");
-							if(txt.getVisible())
-							{
-								txt.setVisible(true);
-							}*/
+							var link3 = this.getView().byId("lnk").setEnabled(false);
+							var link4 = this.getView().byId("lnk").setText(val);
+							//var link = this.getView().byId("lnk").setEnabled(false);
+							//var col = this.getView().byId("ins1").data("mykey", link4);
 							console.log(oData.results[i].stud_payment_instal_1);
 						}
 					}	
 				}.bind(this)
 			});
-		 }
-		/*xyz: function(){
-			read data
-			
-		}*/
+		 }*/
+		
 	});
 
 });

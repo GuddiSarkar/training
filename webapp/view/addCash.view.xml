@@ -42,7 +42,7 @@
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight">
+									demandPopin="true" styleClass="cellBorderRight" id="ins1">
 									<Text text="1st Installment"/>
 								</Column>
 								<Column
@@ -73,10 +73,11 @@
 						        		<Text text="{course>stud_payment_name}" />
 										<Text text="{course>stud_payment_course}" />
 										<Text text="{course>stud_payment_reg_fee}" />
-										<HBox id="in1" visible="false">
+										<Link text="" enabled="true" emphasized="true" id="lnk"></Link>
+										<!--<HBox id="in1" visible="false">
 											<Text text="" id="t1" visible="false"/>
 											<Button text="PAY NOW" id="bt" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel" visible="false"/>
-										</HBox>
+										</HBox>-->
 										<Text text="{course>stud_payment_instal_2}" />
 										<Text text="{course>stud_payment_instal_3}" />
 										<Text text="{course>stud_payment_fee}" />
@@ -84,6 +85,8 @@
 											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
 											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
 										</Toolbar>
+										<Button text="PAY NOW" visible="false" id="btn"></Button>
+										<Link text="" enabled="" emphasized="true" id="lnk1"></Link>
 										<!--<HBox id="in2" visible="false">
 											<Text text="" id="t1" />
 										</HBox>-->
