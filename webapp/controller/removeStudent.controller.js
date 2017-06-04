@@ -1,12 +1,24 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"
-], function(Controller,Filter, FilterOperator) {
+	"sap/ui/model/FilterOperator",
+	"sap/ui/core/routing/History"
+], function(Controller,Filter, FilterOperator,History) {
 	"use strict";
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.removeStudent", {
-
+onPressBack: function(oEvent)
+		{
+			var oHistory, sPreviousHash;
+			oHistory = History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			}
+			else {
+				this.getRouter().navTo("student", {}, true /*no history*/);
+			}
+	},
 			onSearch: function(oEvent){
 		    var oTable = this.getView().byId("adCrsTable");
 			var oBinding = oTable.getBinding("items");

@@ -1,11 +1,25 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	'sap/ui/unified/CalendarLegendItem',
-	'sap/ui/unified/DateTypeRange'
-], function(Controller, CalendarLegendItem, DateTypeRange) {
+	'sap/ui/unified/DateTypeRange',
+	"sap/ui/core/routing/History"
+], function(Controller, CalendarLegendItem, DateTypeRange,History) {
 	"use strict";
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.addReminder", {
+		
+			onPressBack: function(oEvent)
+		{
+			var oHistory, sPreviousHash;
+			oHistory = History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			}
+			else {
+				this.getRouter().navTo("reminder", {}, true /*no history*/);
+			}
+	},
 		handleShowSpecialDays: function(oEvent) {
 			var oCal1 = this.getView().byId("calendar1");
 			var oLeg1 = this.getView().byId("legend1");

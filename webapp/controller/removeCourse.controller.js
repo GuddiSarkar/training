@@ -1,12 +1,26 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"
-], function(Controller,Filter, FilterOperator) {
+	"sap/ui/model/FilterOperator",
+	"sap/ui/core/routing/History"
+], function(Controller,Filter, FilterOperator,History) {
 	"use strict";
 /*eslint linebreak-style: ["error", "windows"]*/
 	var sPath;
 	return Controller.extend("com.demoTMS.controller.removeCourse", {
+		
+			onPressBack: function(oEvent)
+		{
+			var oHistory, sPreviousHash;
+			oHistory = History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			}
+			else {
+				this.getRouter().navTo("course", {}, true /*no history*/);
+			}
+	},
 			onInit: function()
 			{
 			var oModel = this.getOwnerComponent().getModel("course");

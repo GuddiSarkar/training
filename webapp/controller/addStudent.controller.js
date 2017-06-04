@@ -1,7 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageBox"
-], function(Controller,MessageBox) {
+	"sap/m/MessageBox",
+	"sap/ui/core/routing/History"
+], function(Controller,MessageBox,History) {
 	"use strict";
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.addStudent", {
@@ -10,7 +11,24 @@ sap.ui.define([
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
 	},
-
+	
+	getRouter: function(){
+			return sap.ui.core.UIComponent.getRouterFor(this);	
+	},
+		
+	onPressBack: function(oEvent)
+		{
+			var oHistory, sPreviousHash;
+			oHistory = History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			}
+			else {
+				this.getRouter().navTo("student", {}, true /*no history*/);
+			}
+	},
+		
 	onSelectCourse: function(oEvent){
 		var crs_id = this.getView().byId("c_name").getSelectedKey();
 		var oModel = this.getOwnerComponent().getModel("course");

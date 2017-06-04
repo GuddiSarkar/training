@@ -5,6 +5,9 @@
 			<Page title="{i18n>title}" showHeader="false">
 				<content>
 					<HBox class="hb1-header" height="15%">
+						<VBox>
+							<Button icon="sap-icon://arrow-left"  class="ib sapUiLargeMarginBottom" press="onPressBack" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
 						<VBox class="vb1">
 							<Label text="Training Management System" class="header-text" textAlign="Center"></Label>
 						</VBox>

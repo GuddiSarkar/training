@@ -6,12 +6,22 @@
 	padding-left:20%;
 	padding-top:2%;
 }
+.vb{
+	padding-left:20%;
+	padding-top:1%;
+}
+.header-text1{
+	font-size: 1rem;
+	color:white;	
+	padding-left:69%;
+	
+}
 .header-text{
 	font-size:50px;
 	font-weight:bold;
 	color:black;
 }
-.t .sapMBarPH{
+.t{
 	top:0;
 	background-color:brown;
 }

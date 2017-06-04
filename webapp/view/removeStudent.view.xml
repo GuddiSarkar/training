@@ -2,8 +2,17 @@
 	xmlns:html="http://www.w3.org/1999/xhtml"  xmlns:t="sap.ui.table" xmlns:cores="sap.ui.core.Item">
 	<App>
 		<pages>
-			<Page title="Training Management System" class="t">
+			<Page title="Training Management System" showHeader="false">
 				<content>
+					<HBox class="t" height="7%">
+						<VBox>
+							<Button icon="sap-icon://arrow-left"  class="ib sapUiLargeMarginBottom" press="onPressBack" ariaLabelledBy="editButtonLabel"/>
+							<!--<core:Icon src="sap-icon://arrow-left" color="black" press="onPressBack" class="sapUiLargeMarginEnd"/>-->
+						</VBox>
+						<VBox class="vb">
+							<Label text="Training Management System" class="header-text1" textAlign="Center" ></Label>
+						</VBox>
+					</HBox>
 					<HBox height="100%" class="bg">
 						<Panel  width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
 							<headerToolbar>
@@ -47,8 +56,8 @@
 									<cells>
 										<Text text="{course>stud_id}" />
 						        		<Text text="{course>stud_name}" />
-										<Text text="{course>}" />
 										<Text text="{course>stud_course_name}" />
+										<Text text="{course>}" />
 										<Toolbar class="tbBorder">
 											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
 											
