@@ -20,50 +20,27 @@ onPressBack: function(oEvent)
 				this.getRouter().navTo("student", {}, true /*no history*/);
 			}
 	},
-		onInit: function(){
+	
+	formatDate: function(sValue){
+			//var dt = this.getView().byId("date").getText();
+			var value = sValue.substring(6, 18); // maybe it's safer to work with regular expressions
+			jQuery.sap.require("sap.ui.core.format.DateFormat");
+
+			var oDateFormat = sap.ui.core.format.DateFormat.getDateInstance({
+				pattern: "dd-MMM-yyyy"
+			});
+            
+			console.log(oDateFormat.format(new Date(Number(value)))); // 2013/08/11
+			var date = oDateFormat.format(new Date(Number(value)));
+			return date;
+	},
+	
+	onInit: function(){
 			
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
-/*			var s_id = this.getView().byId("sid").getText();
-			this.getView().setModel(oModel);
-			var c_id;
-*/			oModel.read("/tb_student",
-			{
-				success: function(oData, oResponse) {
-					var sData = oData.results;
-					var c_id = [sData];
-					var cName = [sData];
-					for(var i = 0; i<sData.length; i++)
-					{
-						c_id[i] = sData[i].course_id;
-					}
-					oModel.read("/tb_course",
-					{
-						success: function(oData1, oResponse1){
-								var cData = oData1.results;
-								for(var i = 0; i<c_id.length; i++)
-								{
-									cName[i] = cData[i].course_name;
-									if(c_id[i]===cData[i].course_id)
-									{
-										
-									}
-								}
-						}.bind(this),
-						error: function(error)
-						{
-								
-						}.bind(this)
-					});
-					
-					
-				}.bind(this),
-				error: function(error)
-				{
-					
-				}.bind(this)
-			});
-		},	
+			
+	},	
 
 
 		onSearch: function(oEvent){

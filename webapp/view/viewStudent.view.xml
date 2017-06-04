@@ -64,7 +64,9 @@
 										<Text text="{course>stud_id}" />
 						        		<Text text="{course>stud_name}" />
 										<Text text="{course>stud_gender}" />
-										<Text text="{course>stud_dob}" />
+										<Text text="{
+											path:'course>stud_dob',
+											formatter: '.formatDate'}" id="date"/>
 										<Text text="{course>stud_email}" />
 										<Text text="{course>stud_course_name}" />
 										

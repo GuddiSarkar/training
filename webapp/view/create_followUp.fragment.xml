@@ -22,7 +22,6 @@
 			<Button text="{i18n>Ok}" press="onOkEdit"/>
 			<ToolbarSpacer></ToolbarSpacer>
 			<Button text="{i18n>Close}" press="onCloseFolowUp"/>
-			
 			</Toolbar>
 	</Dialog>
 </core:FragmentDefinition>
