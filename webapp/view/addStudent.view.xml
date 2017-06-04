@@ -13,7 +13,7 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.un
 							<Label text="Training Management System" class="header-text1" textAlign="Center" ></Label>
 						</VBox>
 					</HBox>
-					<HBox height="100%" class="bg">
+					<HBox height="93%" class="bg">
 						<Panel  width="auto" height="93%" class="sapUiResponsiveMargin">
 						<headerToolbar>
 							<Toolbar>

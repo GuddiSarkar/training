@@ -8,6 +8,10 @@
 						<VBox class="vb1">
 							<Label text="Training Management System" class="header-text" textAlign="Center"></Label>
 						</VBox>
+						
+						<VBox class="vb1">
+						<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiLargeMarginBottom" press="handleLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
 					</HBox>
 					
 					<HBox class="hb3" width="100%" height="75%">
