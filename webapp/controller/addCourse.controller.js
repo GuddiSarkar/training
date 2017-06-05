@@ -122,16 +122,18 @@ sap.ui.define([
 			oView.addDependent(oDialog);
 			
 		}
-			var data = {
+/*			var data = {
 				"course_type": property.course_type
 			}
-			var model = new sap.m.model.JSONModel();
-			var oModel = sap.ui.getCore().setModel(model,"mod");
+			var oModel =  new sap.ui.model.json.JSONModel();
+			sap.ui.getCore().setModel("mod",oModel);
 			oModel.setData(data);
+			sap.ui.getCore().getModel("mod").getData();*/
 			var id = this.getView().byId("c_idEd").setValue(property.course_id);
 			var CourseName = this.getView().byId("c_nameEd").setValue(property.course_name);
 			var CourseFee = this.getView().byId("c_feeEd").setValue(property.course_fee);
 			var CourseType = this.getView().byId("c_typeEd").setSelectedItem(property.course_type);
+			//this.getView().byId("c_typeEd").setSelectedKey(property.course_id);
 			var CourseDuration = this.getView().byId("c_durEd").setSelectedItem(property.course_duration);
 		
 		oDialog.open();

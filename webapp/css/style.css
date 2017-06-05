@@ -317,3 +317,12 @@ span.sapMBtnInner.sapMBtnAccept{
 .tbBorder{
 	border: 0px;
 }
+.icon
+{
+	padding-left:18%;
+	padding-top:.5%;
+}
+.p1popover
+{
+	width:30%;
+}

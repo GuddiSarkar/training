@@ -20,9 +20,9 @@
 								<VBox class="acr_vb22">
 									<HBox>
 										<Label text="Course Type" width="120px"/>
-											<Select width="150px" class="sel" id="c_typeEd" selectedKey="0">
+											<Select width="150px" class="sel" id="c_typeEd">
 												<items class="itm">
-													<core:Item text="{mod>/course_type}" key="0"/>
+													<core:Item text="--Select--" key="0"/>
 													<core:Item text="Technical" key="1"/>
 													<core:Item text="Functional" key="2"/>
 												</items>

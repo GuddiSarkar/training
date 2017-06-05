@@ -9,8 +9,12 @@
 							<Label text="Training Management System" class="header-text" textAlign="Center"></Label>
 						</VBox>
 						
-						<VBox class="vb1">
-						<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiLargeMarginBottom" press="handleLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						<VBox class="icon">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiLargeMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox >
+							
+						<Button icon="sap-icon://customer"  tooltip="customer" class="ib sapUiLargeMarginBottom" press="handleResponsivePopoverPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
 					
