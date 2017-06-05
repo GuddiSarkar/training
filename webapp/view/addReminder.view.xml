@@ -1,20 +1,21 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.addReminder"
-	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:l="sap.ui.layout" 
-	xmlns:cores="sap.ui.core.Item" xmlns:u="sap.ui.unified">
+	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:l="sap.ui.layout" xmlns:cores="sap.ui.core.Item"
+	xmlns:u="sap.ui.unified">
 	<App>
 		<pages>
 			<Page title="Training Management System" showHeader="false">
 				<content>
 					<HBox class="t" height="7%">
 						<VBox>
-							<Button icon="sap-icon://arrow-left"  class="ib sapUiLargeMarginBottom" press="onPressBack" ariaLabelledBy="editButtonLabel"/>
+							<Button icon="sap-icon://arrow-left" class="ib sapUiLargeMarginBottom" press="onPressBack" ariaLabelledBy="editButtonLabel"/>
 							<!--<core:Icon src="sap-icon://arrow-left" color="black" press="onPressBack" class="sapUiLargeMarginEnd"/>-->
 						</VBox>
 						<VBox class="vb">
-							<Label text="Training Management System" class="header-text1" textAlign="Center" ></Label>
+							<Label text="Training Management System" class="header-text1" textAlign="Center"></Label>
 						</VBox>
 					</HBox>
 					<HBox width="100%" height="93%">
+						<VBox>
 						<l:VerticalLayout id="containerLayout" width="100%">
 							<l:BlockLayout id="BlockLayout" background="{/selectedBackground}">
 								<l:BlockLayoutRow>
@@ -23,11 +24,38 @@
 									</l:BlockLayoutCell>
 									
 									<l:BlockLayoutCell title="Today's Follow Up" titleAlignment="Center">
-										
+										<l:content>
+										<Table id="adCrsTable" width="70%" items="{course>/tb_stud_payment}" class="TableBorderTop" growing="true" growingThreshold="3">
+											<columns height="20px">
+												<Column width="12%" minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+													<Text text="ID"/>
+												</Column>
+												<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+													<Text text="Student Name"/>
+												</Column>
+												<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+													<Text text="Course Name"/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Text text="{course>stud_payment_id}"/>
+														<Link text="{}" enabled="true" emphasized="true" id="lnk"></Link>
+														<Text text=""/>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</l:content>
 									</l:BlockLayoutCell>
 								</l:BlockLayoutRow>
 							</l:BlockLayout>
 						</l:VerticalLayout>
+						</VBox>
+						<VBox>
+							
+						</VBox>
 					</HBox>
 				</content>
 			</Page>

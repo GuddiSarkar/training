@@ -8,8 +8,8 @@ sap.ui.define([
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.viewStudent", {
 
-onPressBack: function(oEvent)
-		{
+	onPressBack: function(oEvent)
+	{
 			var oHistory, sPreviousHash;
 			oHistory = History.getInstance();
 			sPreviousHash = oHistory.getPreviousHash();

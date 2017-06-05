@@ -64,9 +64,12 @@ sap.ui.define([
 				jQuery.sap.require("sap.m.MessageBox");
 				MessageBox.alert("Please Enter all the fields");
 			}
-				
+		},
 		
+		handleLinkPress: function (evt) {
+			this.getRouter().navTo("complain");
 		}
+
 
 	});
 });

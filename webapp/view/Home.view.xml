@@ -8,6 +8,16 @@
 						<VBox class="vb1">
 							<Label text="Training Management System" class="header-text" textAlign="Center"></Label>
 						</VBox>
+						<VBox class="link">
+							<HBox>
+								<VBox class="icon">
+									<core:Icon src="sap-icon://sys-help-2" ></core:Icon>
+								</VBox>
+								<VBox>
+								<Link text="Complain" id="link"  emphasized="true" press="handleLinkPress" class="linkText"/>
+							</VBox>
+							</HBox>
+						</VBox>
 					</HBox>
 					
 					<HBox class="hb2" width="100%" height="75%">

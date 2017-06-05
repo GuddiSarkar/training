@@ -2,13 +2,18 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	'sap/ui/unified/CalendarLegendItem',
 	'sap/ui/unified/DateTypeRange',
+	"sap/m/MessageBox",
 	"sap/ui/core/routing/History"
-], function(Controller, CalendarLegendItem, DateTypeRange,History) {
+], function(Controller, CalendarLegendItem, DateTypeRange,History, MessageBox) {
 	"use strict";
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.addReminder", {
+	oFormatDdmmyyyy: null,
+	onInit: function() {
+		this.oFormatDdmmyyyy = sap.ui.core.format.DateFormat.getInstance({pattern: "dd-MM-yyyy", calendarType: sap.ui.core.CalendarType.Gregorian});
+	},
 		
-			onPressBack: function(oEvent)
+	onPressBack: function(oEvent)
 		{
 			var oHistory, sPreviousHash;
 			oHistory = History.getInstance();
@@ -62,6 +67,8 @@ sap.ui.define([
 		},
 		
 		handleCalendarSelect: function(oEvent){
+			var oCalendar = oEvent.oSource;
+			//this.updateText(oCalendar);
 			var oView = this.getView();
 			var oDialog = oView.byId("addFollowUp");
 			if(!oDialog)
@@ -69,12 +76,51 @@ sap.ui.define([
 				oDialog = sap.ui.xmlfragment(oView.getId(),"com.demoTMS.view.create_followUp",this);
 				oView.addDependent(oDialog);
 			}
+			var oText = this.getView().byId("date");
+			var aSelectedDates = oCalendar.getSelectedDates();
+			var oDate;
+			if (aSelectedDates.length > 0 ) {
+				oDate = aSelectedDates[0].getStartDate();
+				oText.setValue(this.oFormatDdmmyyyy.format(oDate));
+			} else {
+				oText.setValue("No Date Selected");
+			}
 			oDialog.open();
 		},
 		
 		onCloseFolowUp: function(oEvent) {
 			this.getView().byId("addFollowUp").close();
 		},
+		
+		OnClickSet: function(){
+			var  sDate = this.getView().byId("date").getValue();
+			var  sTitle = this.getView().byId("title").getValue();
+			var  sDesc = this.getView().byId("desc").getValue();
+			var oEntry = {
+				"reminder_description": sDesc,
+				"reminder_date": sDate,
+				"reminder_title": sTitle
+			};
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+			oModel.create("/tb_reminder", oEntry, {
+				success: function(oData,response) {
+					var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
+					MessageBox.success(
+						"Data Saved Successfully",
+						{
+							styleClass: bCompact? "sapUiSizeCompact" : ""
+						}
+					);
+				}.bind(this),
+				error: function(error) {
+
+				}.bind(this)
+			});
+		
+			oModel.setRefreshAfterChange(true);
+			this.getView().byId("addFollowUp").close();
+		}
 	});
 
 });

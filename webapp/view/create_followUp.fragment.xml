@@ -3,25 +3,31 @@
 		<content>
 			<l:VerticalLayout class="sapUiContentPadding" width="100%">
 							<HBox>
-								<Input value="" class="acr_inp" id="c_idEd" visible="false"/>
 								<VBox class="acr_vb2">
 									<HBox>
-										<Label text="Course Name" width="100px"/>
-										<Input value="" class="acr_inp" id="c_nameEd"/>
+										<Label text="Date" width="100px"/>
+										<Input value="" class="acr_inp" id="date"/>
 									</HBox>
 									
 									<HBox>
-										<Label text="Course Fee" width="100px"/>
-										<Input value="" class="acr_inp" id="c_feeEd"/>
+										<Label text="Title" width="100px"/>
+										<Input value="" class="acr_inp" id="title"/>
+									</HBox>
+									
+									<HBox>
+										<Label text="Description" width="100px"/>
+										<TextArea value="" growing="true" id="desc" growingMaxLines="3"/>
 									</HBox>
 								</VBox>
 							</HBox>
 			</l:VerticalLayout >
 		</content>
+	
 			<Toolbar>
-			<Button text="{i18n>Ok}" press="onOkEdit"/>
-			<ToolbarSpacer></ToolbarSpacer>
-			<Button text="{i18n>Close}" press="onCloseFolowUp"/>
+				<Button text="{i18n>Set}" press="OnClickSet"/>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button text="{i18n>Close}" press="onCloseFolowUp"/>
 			</Toolbar>
+	
 	</Dialog>
 </core:FragmentDefinition>

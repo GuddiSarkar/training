@@ -217,6 +217,12 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["paymentFacalty"]
+			}, {
+				"name": "complain",
+				"pattern": "cmp",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["complain"]
 			}],
 			"targets": {
 				"home": {
@@ -371,6 +377,13 @@
 					"transition": "slide",
 					"clearAggregation": true,
 					"viewName": "paymentFacalty",
+					"viewLevel": 1
+				},
+				"complain": {
+					"viewType": "XML",
+					"transition": "flip",
+					"clearAggregation": true,
+					"viewName": "complain",
 					"viewLevel": 1
 				}
 			}

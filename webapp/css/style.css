@@ -317,3 +317,14 @@ span.sapMBtnInner.sapMBtnAccept{
 .tbBorder{
 	border: 0px;
 }
+.link{
+	padding-top:4.5%;
+	padding-left:17%;
+}
+.linkText.sapMLnk:visited{
+	font-size:2rem;
+	color:black;
+}
+.icon{
+	padding-right:4%;
+}
