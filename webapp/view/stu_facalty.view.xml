@@ -9,7 +9,7 @@
 							<Label text="Training Management System" class="header-text" textAlign="Center"></Label>
 						</VBox>
 						
-						<VBox class="icon">
+						<VBox class="lg">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiLargeMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 						<VBox >

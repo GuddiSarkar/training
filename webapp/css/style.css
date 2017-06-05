@@ -317,7 +317,7 @@ span.sapMBtnInner.sapMBtnAccept{
 .tbBorder{
 	border: 0px;
 }
-<<<<<<< HEAD
+
 .link{
 	padding-top:4.5%;
 	padding-left:17%;
@@ -328,8 +328,8 @@ span.sapMBtnInner.sapMBtnAccept{
 }
 .icon{
 	padding-right:4%;
-=======
-.icon
+}
+.lg
 {
 	padding-left:18%;
 	padding-top:.5%;
@@ -337,5 +337,5 @@ span.sapMBtnInner.sapMBtnAccept{
 .p1popover
 {
 	width:30%;
->>>>>>> branch 'master' of https://github.com/GuddiSarkar/training.git
+
 }
