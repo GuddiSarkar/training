@@ -1,0 +1,70 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.Update_Reminder"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Training Management System" showHeader="false">
+				<content>
+					<HBox class="t" height="7%">
+						<VBox>
+							<Button icon="sap-icon://arrow-left" class="ib sapUiLargeMarginBottom" press="onPressBack" ariaLabelledBy="editButtonLabel"/>
+							<!--<core:Icon src="sap-icon://arrow-left" color="black" press="onPressBack" class="sapUiLargeMarginEnd"/>-->
+						</VBox>
+						<VBox class="vb">
+							<Label text="Training Management System" class="header-text1" textAlign="Center"></Label>
+						</VBox>
+					</HBox>
+					<HBox height="93%" class="bg">
+						<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="View Reminder" textAlign="Center"/>
+									<SearchField width="30%" class="sapUiSmallMargin srch" search="onSearch"/>
+								</Toolbar>
+							</headerToolbar>
+							<content>
+								<Table id="Table" items="{course>/tb_reminder}" class="TableBorderTop" growing="true" growingThreshold="3" inset="false">
+									<columns height="20px">
+										<Column width="10%" styleClass="cellBorderRight cellBorderLeft">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Title"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Description"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Date"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Attended"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Remarks"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Action"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>reminder_id}"/>
+												<Text text="{course>reminder_title}"/>
+												<Link text="{course>reminder_description}" press="onPressDescription"/>
+												<Text text="{course>reminder_date}"/>
+												<Text text="{course>reminder_attended}"/>
+												<Text text="{course>reminder_remarks}"/>
+												<Button icon="sap-icon://edit" class="b3" press="onClickEdit"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</content>
+						</Panel>
+					</HBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

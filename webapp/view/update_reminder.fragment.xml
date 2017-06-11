@@ -1,12 +1,13 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" displayBlock="true" xmlns:l="sap.ui.layout">
-	<Dialog id="addFollowUp" title="Set Follow Up">
+	<Dialog id="updateReminder" title="Edit Follow Up">
 		<content>
 			<l:VerticalLayout class="sapUiContentPadding" width="100%">
 							<HBox>
+								<Input value="" class="acr_inp" id="rem_id" visible="false"/>
 								<VBox class="acr_vb2">
 									<HBox>
 										<Label text="Date" width="100px"/>
-										<Input value="{formatter: '.formatDate'}" class="acr_inp" id="date"/>
+										<Input value="{formatter: '.formatDate'}" type="Date" class="acr_inp" id="date"/>
 									</HBox>
 									
 									<HBox>
@@ -24,10 +25,9 @@
 		</content>
 	
 			<Toolbar>
-				<Button text="{i18n>Set}" press="OnClickSet"/>
+				<Button text="{i18n>Edit}" press="onOkEdit"/>
 				<ToolbarSpacer></ToolbarSpacer>
-				<Button text="{i18n>Close}" press="onCloseFolowUp"/>
+				<Button text="{i18n>Cancel}" press="onCancelFolowUp"/>
 			</Toolbar>
-	
 	</Dialog>
 </core:FragmentDefinition>

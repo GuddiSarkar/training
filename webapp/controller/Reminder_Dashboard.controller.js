@@ -14,17 +14,17 @@ sap.ui.define([
 			this.getRouter().navTo("addReminder");
 		},
 		
-		/*onPressViewReminder: function(oEvent) {
-			this.getRouter().navTo("course");
+		onPressViewReminder: function(oEvent) {
+			this.getRouter().navTo("ViewRem");
 		},
 		
 		onPressUpdateReminder: function(oEvent) {
-			this.getRouter().navTo("payment");
+			this.getRouter().navTo("update_rem");
 		},
 		
 		onPressDeleteReminder: function(oEvent) {
-			this.getRouter().navTo("reminder");
-		},*/
+			this.getRouter().navTo("delete_rem");
+		},
 		
 		onPressBack: function(oEvent)
 		{

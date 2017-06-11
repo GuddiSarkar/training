@@ -223,6 +223,24 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["complain"]
+			}, {
+				"name": "ViewRem",
+				"pattern": "vr",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["ViewRem"]
+			}, {
+				"name": "update_rem",
+				"pattern": "ur",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["update_rem"]
+			}, {
+				"name": "delete_rem",
+				"pattern": "dr",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["delete_rem"]
 			}],
 			"targets": {
 				"home": {
@@ -385,6 +403,26 @@
 					"clearAggregation": true,
 					"viewName": "complain",
 					"viewLevel": 1
+				},
+				"ViewRem": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "View_Reminder",
+					"viewLevel": 1
+				},
+				"update_rem": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Update_Reminder",
+					"viewLevel": 1
+				},
+				"delete_rem": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "delete_Reminder"
 				}
 			}
 		}

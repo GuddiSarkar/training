@@ -1,14 +1,19 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
-	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator",
-	"sap/ui/core/routing/History"
-], function(Controller, Filter, FilterOperator, History) {
+	"sap/ui/core/mvc/Controller"
+], function(Controller) {
 	"use strict";
 	/*eslint linebreak-style: ["error", "windows"]*/
-	var sPath;
-	return Controller.extend("com.demoTMS.controller.removeCourse", {
+	return Controller.extend("com.demoTMS.controller.delete_Reminder", {
 
+		onInit: function() {
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+		},
+		
+		getRouter: function(){
+			return sap.ui.core.UIComponent.getRouterFor(this);	
+		},
+		
 		onPressBack: function(oEvent) {
 			var oHistory, sPreviousHash;
 			oHistory = History.getInstance();
@@ -16,25 +21,21 @@ sap.ui.define([
 			if (sPreviousHash !== undefined) {
 				window.history.go(-1);
 			} else {
-				this.getRouter().navTo("course", {}, true /*no history*/ );
+				this.getRouter().navTo("reminder", {}, true /*no history*/ );
 			}
 		},
-		onInit: function() {
-			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.setUseBatch(false);
-		},
-
+		
 		onSearch: function(oEvent) {
 			var oTable = this.getView().byId("Table");
 			var oBinding = oTable.getBinding("items");
 			var value = oEvent.getParameter("query");
-			var oFilter1 = new Filter("course_name", FilterOperator.Contains, value);
-			var oFilter2 = new Filter("course_type", FilterOperator.Contains, value);
-			var oFilter3 = new Filter("course_fee", FilterOperator.Contains, value);
-			var oFilter4 = new Filter("course_duration", FilterOperator.Contains, value);
-			var allFilter = new Filter([oFilter1, oFilter2, oFilter3, oFilter4], false);
+			var oFilter1 = new Filter("reminder_title", FilterOperator.Contains, value);
+			var oFilter2 = new Filter("reminder_date", FilterOperator.Contains, value);
+			var oFilter3 = new Filter("reminder_attended", FilterOperator.Contains, value);
+			var allFilter = new Filter([oFilter1, oFilter2, oFilter3], false);
 			oBinding.filter(allFilter);
 		},
+		
 		onClickDelete: function(oEvent) {
 			var oView = this.getView();
 			var oTable = this.getView().byId("Table");
@@ -54,6 +55,8 @@ sap.ui.define([
 			});
 			oModel.setRefreshAfterChange(true);
 		}
+
+
 	});
 
 });

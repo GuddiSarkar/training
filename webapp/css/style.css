@@ -337,5 +337,8 @@ span.sapMBtnInner.sapMBtnAccept{
 .p1popover
 {
 	width:30%;
-
+}
+.vbReminder{
+	width:60%;
+	padding-left:20%;
 }
