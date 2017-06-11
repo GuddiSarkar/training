@@ -20,11 +20,7 @@
 								<VBox class="acr_vb22">
 									<HBox>
 										<Label text="Course Type" width="120px"/>
-<<<<<<< HEAD
 											<Select width="150px" class="sel" id="c_typeEd" selectedKey="">
-=======
-											<Select width="150px" class="sel" id="c_typeEd">
->>>>>>> branch 'master' of https://github.com/GuddiSarkar/training.git
 												<items class="itm">
 													<core:Item text="--Select--" key="0"/>
 													<core:Item text="Technical" key="1"/>
