@@ -6,9 +6,11 @@ sap.ui.define([
 	'sap/ui/model/SimpleType',
 	'sap/ui/model/ValidateException',
 	"sap/ui/model/json/JSONModel",
-	"sap/ui/core/routing/History"
+	"sap/ui/core/routing/History",
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"
 
-], function(Controller, jQuery, MessageBox, MessageToast, SimpleType, ValidateException, JSONModel, History) {
+], function(Controller, jQuery, MessageBox, MessageToast, SimpleType, ValidateException, JSONModel, History,Filter, FilterOperator) {
 	"use strict";
 
 	return Controller.extend("com.demoTMS.controller.Home", {
@@ -25,7 +27,7 @@ sap.ui.define([
 					control.setValueState("Error");
 				}
 			});
-			
+
 			// attach handlers for validation success
 			sap.ui.getCore().attachValidationSuccess(function(evt) {
 				var control = evt.getParameter("element");
@@ -34,42 +36,44 @@ sap.ui.define([
 				}
 			});
 		},
-		getRouter : function () {
+		getRouter: function() {
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},
 		onPress: function(oEvent) {
-			var oView = this.getView();
-			var formInput = [
-				oView.byId("username"),
-				oView.byId("password")
-			];
-			jQuery.each(formInput, function(i, input) {
-				if (!input.getValue()) {
-					input.setValueState("Error");
-				}
-			});
-			var forward = true;
-			jQuery.each(formInput, function (i, input) {
-				if ("Error" === input.getValueState()) {
-					forward = false;
-					return false;
-				}
-			});
- 
-			// output result
-			if (forward) {
-				
-				this.getRouter().navTo("stu_fac");
-			} else {
-				jQuery.sap.require("sap.m.MessageBox");
-				MessageBox.alert("Please Enter all the fields");
-			}
-		},
-		
-		handleLinkPress: function (evt) {
-			this.getRouter().navTo("complain");
-		}
 
+			var uname = this.getView().byId("username").getValue();
+			var pwd = this.getView().byId("password").getValue();
+			var filtername = new Filter("user_name", FilterOperator.EQ, uname);
+			var filterpwd = new Filter("user_pwd", FilterOperator.EQ, pwd);
+			var oFilter = new Filter({
+				filters: [filtername, filterpwd],
+				bAnd: true
+			});
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+			oModel.read("/tb_user", {
+				filters: [oFilter],
+				success: function(oData, oResponse) {
+					window.sessionStorage.setItem("un", oData.results[0].user_name);
+					this.getRouter().navTo("stu_fac");
+				}.bind(this),
+				error: function(error) {
+					var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
+					MessageBox.error(
+						"Invalid Credentials", {
+							styleClass: bCompact ? "sapUiSizeCompact" : ""
+						}
+					);
+				}.bind(this)
+
+			});
+		},
+		handleLinkPress: function(evt) {
+			this.getRouter().navTo("complain");
+		},
+		handleLinkPressAdmin: function(evt) {
+			this.getRouter().navTo("admin_home");
+		}
 
 	});
 });

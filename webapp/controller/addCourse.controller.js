@@ -55,9 +55,9 @@ sap.ui.define([
 			oModel.create("/tb_course", oEntry, {
 				success: function(oData) {
 					this.getView().byId("c_name").setValue("");
-					this.getView().byId("c_type").setValue("");
+					this.getView().byId("c_type").setSelectedKey("");
 					this.getView().byId("c_fee").setValue("");
-					this.getView().byId("c_dur").setValue("");
+					this.getView().byId("c_dur").setSelectedKey("");
 				}.bind(this),
 				error: function(error) {
 
@@ -67,44 +67,7 @@ sap.ui.define([
 			oModel.setRefreshAfterChange(true);
 		},
 
-	/*	onClickEdit: function(oEvent) 
-		{
-				var oView = this.getView();
-			var oDialog = oView.byId("editCourse");
-				if (!oDialog) {
-				oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.editCourse", this);
-				oView.addDependent(oDialog);
-			}
-			
-			oDialog.open();
-		
-			var oTable = oView.byId("Table");
-			var path = sPath;
-			var name;
-			var id;
-			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.read(path, 
-			{
-				success: function(oData,oResponse) 
-				{
-					console.log(oData);
-					console.log(oResponse);
-					name = oData.course_name;
-					console.log(name);
-					id = oData.course_id;
-					console.log(id);
-					var CourseName = this.getView().byId("c_nameEd").setValue(name);
-			console.log(CourseName);
-			var Id = this.getView().byId("c_feeEd").setValue(id);
-			console.log(Name);
-				}.bind(this),
-				error: function(oErr) 
-				{
-					
-				}.bind(this)
-			});
-		
-		},*/
+	
 		
 		
 		
@@ -122,19 +85,33 @@ sap.ui.define([
 			oView.addDependent(oDialog);
 			
 		}
-/*			var data = {
-				"course_type": property.course_type
-			}
-			var oModel =  new sap.ui.model.json.JSONModel();
-			sap.ui.getCore().setModel("mod",oModel);
-			oModel.setData(data);
-			sap.ui.getCore().getModel("mod").getData();*/
+
 			var id = this.getView().byId("c_idEd").setValue(property.course_id);
 			var CourseName = this.getView().byId("c_nameEd").setValue(property.course_name);
 			var CourseFee = this.getView().byId("c_feeEd").setValue(property.course_fee);
-			var CourseType = this.getView().byId("c_typeEd").setSelectedItem(property.course_type);
-			//this.getView().byId("c_typeEd").setSelectedKey(property.course_id);
-			var CourseDuration = this.getView().byId("c_durEd").setSelectedItem(property.course_duration);
+			var CourseType= property.course_type;
+			var CourseDuration= property.course_duration;
+			
+			if(CourseType === "Functional"){
+				this.getView().byId("c_typeEd").setSelectedKey(2);
+			}
+			else{
+					this.getView().byId("c_typeEd").setSelectedKey(1);
+			}
+			
+			if(CourseDuration === "3 Month"){
+				this.getView().byId("c_durEd").setSelectedKey(3);
+			}
+			else if(CourseDuration === "2 Month"){
+				this.getView().byId("c_durEd").setSelectedKey(2);
+			}
+			else{
+				this.getView().byId("c_durEd").setSelectedKey(1);
+			}
+			
+			
+			
+			
 		
 		oDialog.open();
 		},

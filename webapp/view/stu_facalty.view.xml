@@ -10,11 +10,15 @@
 						</VBox>
 						
 						<VBox class="lg">
-							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiLargeMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+							
+								<Label text ="" id="user" textAlign="Left" class="" design="Bold" />
+							
+								<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+							
 						</VBox>
 						<VBox >
 							
-						<Button icon="sap-icon://customer"  tooltip="customer" class="ib sapUiLargeMarginBottom" press="handleResponsivePopoverPress" ariaLabelledBy="editButtonLabel"/>
+						
 						</VBox>
 					</HBox>
 					

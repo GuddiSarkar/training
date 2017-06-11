@@ -26,7 +26,20 @@ sap.ui.define([
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
 		},
-		
+		formatDate: function(sValue){
+			//var dt = this.getView().byId("date").getText();
+			var value = sValue.substring(6, 19); // maybe it's safer to work with regular expressions
+			jQuery.sap.require("sap.ui.core.format.DateFormat");
+
+			var oDateFormat = sap.ui.core.format.DateFormat.getDateInstance({
+				pattern: "dd-MMM-yyyy"
+			});
+            
+			console.log(oDateFormat.format(new Date(Number(value)))); // 2013/08/11
+			var date = oDateFormat.format(new Date(Number(value)));
+			return date;
+	},
+	
 	
 
 		onSearch: function(oEvent){

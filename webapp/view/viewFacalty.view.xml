@@ -73,7 +73,9 @@
 										<Text text="{course>faculty_email}" />
 										<Text text="{course>faculty_course}" />
 										<Text text="{course>faculty_salary}" />
-										<Text text="{course>faculty_doj}" />
+										<Text text="{
+											path:'course>faculty_doj'
+											}" id="date"/>
 										
 									</cells>
 								</ColumnListItem>

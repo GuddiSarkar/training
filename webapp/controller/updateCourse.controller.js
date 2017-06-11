@@ -57,8 +57,26 @@ sap.ui.define([
 			var id = this.getView().byId("c_idEd").setValue(property.course_id);
 			var CourseName = this.getView().byId("c_nameEd").setValue(property.course_name);
 			var CourseFee = this.getView().byId("c_feeEd").setValue(property.course_fee);
-			var CourseType = this.getView().byId("c_typeEd").setSelectedItem(property.course_type);
-			var CourseDuration = this.getView().byId("c_durEd").setSelectedItem(property.course_duration);
+			var CourseType =property.course_type;
+			var CourseDuration =property.course_duration;
+			
+			if(CourseType === "Functional"){
+				this.getView().byId("c_typeEd").setSelectedKey(2);
+			}
+			else{
+					this.getView().byId("c_typeEd").setSelectedKey(1);
+			}
+			
+			if(CourseDuration === "3 Month"){
+				this.getView().byId("c_durEd").setSelectedKey(3);
+			}
+			else if(CourseDuration === "2 Month"){
+				this.getView().byId("c_durEd").setSelectedKey(2);
+			}
+			else{
+				this.getView().byId("c_durEd").setSelectedKey(1);
+			}
+			
 		
 		oDialog.open();
 		},

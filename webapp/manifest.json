@@ -224,6 +224,7 @@
 				"greedy": false,
 				"target": ["complain"]
 			}, {
+
 				"name": "ViewRem",
 				"pattern": "vr",
 				"titleTarget": "",
@@ -241,6 +242,12 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["delete_rem"]
+			}, {
+				"name": "admin_home",
+				"pattern": "ah",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["admin_home"]
 			}],
 			"targets": {
 				"home": {
@@ -422,7 +429,15 @@
 					"viewType": "XML",
 					"transition": "slide",
 					"clearAggregation": true,
-					"viewName": "delete_Reminder"
+					"viewName": "delete_Reminder",
+					"viewLevel": 1
+				},
+				"admin_home": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "admin_home",
+					"viewLevel": 1
 				}
 			}
 		}

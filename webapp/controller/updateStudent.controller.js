@@ -3,13 +3,24 @@ sap.ui.define([
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
 	"sap/ui/core/routing/History"
-], function(Controller,Filter, FilterOperator,History) {
+], function(Controller, Filter, FilterOperator, History) {
 	"use strict";
-/*eslint linebreak-style: ["error", "windows"]*/
+	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.updateStudent", {
 
-		onSearch: function(oEvent){
-		    var oTable = this.getView().byId("adCrsTable");
+		formatDate: function(sValue) {
+			var value = sValue.substring(6, 19); // maybe it's safer to work with regular expressions
+			jQuery.sap.require("sap.ui.core.format.DateFormat");
+			var oDateFormat = sap.ui.core.format.DateFormat.getDateInstance({
+				pattern: "dd-MMM-yyyy"
+			});
+			console.log(oDateFormat.format(new Date(Number(value)))); // 2013/08/11
+			var date = oDateFormat.format(new Date(Number(value)));
+			return date;
+		},
+
+		onSearch: function(oEvent) {
+			var oTable = this.getView().byId("adCrsTable");
 			var oBinding = oTable.getBinding("items");
 			var value = oEvent.getParameter("query");
 			var oFilter1 = new Filter("stud_name", FilterOperator.Contains, value);
@@ -17,44 +28,41 @@ sap.ui.define([
 			var oFilter3 = new Filter("stud_dob", FilterOperator.Contains, value);
 			var oFilter4 = new Filter("stud_email", FilterOperator.Contains, value);
 			var oFilter5 = new Filter("course_name", FilterOperator.Contains, value);
-			var allFilter = new Filter([oFilter1, oFilter2,oFilter3,oFilter4,oFilter5], false); 
+			var allFilter = new Filter([oFilter1, oFilter2, oFilter3, oFilter4, oFilter5], false);
 			oBinding.filter(allFilter);
 		},
-			onInit: function(){
+		onInit: function() {
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
 		},
-		
-		onClickEdit: function(oEvent)
-		{
-		var oView = this.getView();
-		var oDialog = oView.byId("updateStudent");
-		var oTable = this.getView().byId("Table");
-		var path=oEvent.getSource().getBindingContext("course").getPath();
-		var model =oTable.getModel("course");
-		var property=model.getProperty(path);
-		if(!oDialog)
-		{
-			oDialog = sap.ui.xmlfragment(oView.getId(),"com.demoTMS.view.UpdateStudent",this);
-			oView.addDependent(oDialog);
-			
-		}
+
+		onClickEdit: function(oEvent) {
+			var oView = this.getView();
+			var oDialog = oView.byId("updateStudent");
+			var oTable = this.getView().byId("Table");
+			var path = oEvent.getSource().getBindingContext("course").getPath();
+			var model = oTable.getModel("course");
+			var property = model.getProperty(path);
+			if (!oDialog) {
+				oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.UpdateStudent", this);
+				oView.addDependent(oDialog);
+
+			}
 			var id = this.getView().byId("s_idEd").setValue(property.stud_id);
 			var StudentName = this.getView().byId("s_nameEd").setValue(property.stud_name);
 			var Gender = this.getView().byId("s_gndrEd").setValue(property.stud_gender);
 			var DOB = this.getView().byId("s_dobEd").setValue(property.stud_dob);
 			var Email = this.getView().byId("s_emlEd").setValue(property.stud_email);
 			var Phoneno = this.getView().byId("s_phnEd").setValue(property.stud_mob);
-			var CourseName = this.getView().byId("s_crsEd").setValue(property.course_name);
-		
-		oDialog.open();
+			var CourseName = this.getView().byId("s_crsEd").setValue(property.stud_course_name);
+
+			oDialog.open();
 		},
 
 		onCloseEdit: function(oEvent) {
 			this.getView().byId("updateStudent").close();
 		},
-		onOkEdit:function(oEvent)
-		{
+		onOkEdit: function(oEvent) {
 			var id = this.getView().byId("s_idEd").getValue();
 			var StudentName = this.getView().byId("s_nameEd").getValue();
 			var Gender = this.getView().byId("s_gndrEd").getValue();
@@ -72,7 +80,7 @@ sap.ui.define([
 				"stud_course_name": CourseName
 			};
 			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.update("/tb_student("+id+")", data, {
+			oModel.update("/tb_student(" + id + ")", data, {
 				success: function(oData, oResponse) {
 					console.log(oData);
 					console.log(oResponse);
@@ -81,22 +89,20 @@ sap.ui.define([
 					console.log(err);
 				}.bind(this)
 			});
-	oModel.setRefreshAfterChange(true);
-	this.getView().byId("updateStudent").close();
-		
+			oModel.setRefreshAfterChange(true);
+			this.getView().byId("updateStudent").close();
+
 		},
-		onPressBack: function(oEvent)
-		{
+		onPressBack: function(oEvent) {
 			var oHistory, sPreviousHash;
 			oHistory = History.getInstance();
 			sPreviousHash = oHistory.getPreviousHash();
 			if (sPreviousHash !== undefined) {
 				window.history.go(-1);
+			} else {
+				this.getRouter().navTo("student", {}, true /*no history*/ );
 			}
-			else {
-				this.getRouter().navTo("student", {}, true /*no history*/);
-			}
-	}
+		}
 
 	});
 

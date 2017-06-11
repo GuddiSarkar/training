@@ -16,7 +16,7 @@
 									</HBox>
 									<HBox>
 										<Label text="D.O.B" width="100px"/>
-										<Input value="" class="acr_inp" id="s_dobEd"/>
+										<Input value="{formatter: '.formatDate'}" type ="Date" class="acr_inp" id="s_dobEd"/>
 									</HBox>
 									
 								</VBox>

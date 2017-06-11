@@ -131,8 +131,8 @@
 										<Text text="{course>faculty_course}" />
 										<Text text="{course>faculty_salary}" />
 										<Text text="{
-													path:'course>faculty_doj',
-													formatter: '.formatDate'}" />
+											path:'course>faculty_doj'
+											}" id="date"/>
 										<Toolbar class="tbBorder">
 											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
 											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>

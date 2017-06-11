@@ -23,7 +23,7 @@ sap.ui.define([
 	
 	formatDate: function(sValue){
 			//var dt = this.getView().byId("date").getText();
-			var value = sValue.substring(6, 18); // maybe it's safer to work with regular expressions
+			var value = sValue.substring(6, 19); // maybe it's safer to work with regular expressions
 			jQuery.sap.require("sap.ui.core.format.DateFormat");
 
 			var oDateFormat = sap.ui.core.format.DateFormat.getDateInstance({

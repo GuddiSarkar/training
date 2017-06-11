@@ -113,6 +113,10 @@
 	font-size:12px;
 }
 
+.welcomeLabel{
+	padding-left: 10%;
+	
+}
 .sapUiResponsiveMargin{
 	padding-top:0px;
 	padding-bottom:0px;
@@ -240,6 +244,11 @@ span.sapMBtnInner.sapMBtnAccept{
   color:black;
   padding-top:2%;
 }
+
+.ib1 .sapMBtn{
+	padding-left:50%;
+}
+
 .b3 .sapMBtnInner {
   background-color: #F8F8F8;
   color:white;
@@ -331,8 +340,11 @@ span.sapMBtnInner.sapMBtnAccept{
 }
 .lg
 {
-	padding-left:18%;
+	padding-left:15%;
 	padding-top:.5%;
+}
+.hbWelcome{
+	padding-right: 50%;
 }
 .p1popover
 {

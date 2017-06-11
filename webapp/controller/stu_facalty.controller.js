@@ -5,7 +5,14 @@ sap.ui.define([
 	"use strict";
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.stu_facalty", {
-
+		onInit: function(){
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+			
+			var uname =  window.sessionStorage.getItem("un");
+			this.getView().byId("user").setText("Welcome "+uname);
+		},
+		
 		getRouter: function(){
 			return sap.ui.core.UIComponent.getRouterFor(this);	
 		},
@@ -34,7 +41,9 @@ sap.ui.define([
 		onLogoffPress: function(oEvent)
 		{
 		
-                                 
+              window.sessionStorage.removeItem("un");
+              this.getRouter().navTo("home");
+              
 
 		}
 
