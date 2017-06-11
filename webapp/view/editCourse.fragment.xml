@@ -38,42 +38,6 @@
 						</HBox>
 					</VBox>
 				</HBox>
-				<HBox>
-					<Input value="" class="acr_inp" id="c_idEd" visible="false"/>
-					<VBox class="acr_vb2">
-						<HBox>
-							<Label text="Course Name" width="100px"/>
-							<Input value="" class="acr_inp" id="c_nameEd"/>
-						</HBox>
-						<HBox>
-							<Label text="Course Fee" width="100px"/>
-							<Input value="" class="acr_inp" id="c_feeEd"/>
-						</HBox>
-					</VBox>
-					<VBox class="acr_vb22">
-						<HBox>
-							<Label text="Course Type" width="120px"/>
-							<Select width="150px" class="sel" id="c_typeEd" selectedKey="">
-								<items class="itm">
-									<core:Item text="--Select--" key="0"/>
-									<core:Item text="Technical" key="1"/>
-									<core:Item text="Functional" key="2"/>
-								</items>
-							</Select>
-						</HBox>
-						<HBox>
-							<Label text="Course Duration" width="120px"/>
-							<Select width="150px" class="sel" id="c_durEd" selectedKey="">
-								<items class="itm">
-									<core:Item text="--Select--" key="0"/>
-									<core:Item text="1 Month" key="1"/>
-									<core:Item text="2 Month" key="2"/>
-									<core:Item text="3 Month" key="3"/>
-								</items>
-							</Select>
-						</HBox>
-					</VBox>
-				</HBox>
 			</l:VerticalLayout>
 		</content>
 		<Toolbar>
