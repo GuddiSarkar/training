@@ -224,7 +224,6 @@
 				"greedy": false,
 				"target": ["complain"]
 			}, {
-
 				"name": "ViewRem",
 				"pattern": "vr",
 				"titleTarget": "",
@@ -248,6 +247,12 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["admin_home"]
+			}, {
+				"name": "login",
+				"pattern": "lg",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["login"]
 			}],
 			"targets": {
 				"home": {
@@ -437,6 +442,13 @@
 					"transition": "slide",
 					"clearAggregation": true,
 					"viewName": "admin_home",
+					"viewLevel": 1
+				},
+				"login": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "login",
 					"viewLevel": 1
 				}
 			}
