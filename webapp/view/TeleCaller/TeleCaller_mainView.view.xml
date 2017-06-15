@@ -1,0 +1,27 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.TeleCaller_mainView"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<SplitApp id="splitapps" initialDetail="addLead" initialMaster="master2" backgroundColor="White">
+		<detailPages>
+			<Page id="addLead" title="Add Lead Calls" class="sapUiStdPage">
+				<content>
+					<mvc:XMLView viewName="com.demoTMS.view.TeleCaller.add_Lead"/>
+				</content>
+			</Page>
+			<Page id="todysflwup" title="ToDay's FollwUp" class="sapUiStdPage" showNavButton="true" navButtonText="Back"
+				navButtonPress="onPressDetailBack">
+				<content>
+					<mvc:XMLView viewName="com.demoTMS.view.TeleCaller.t_follwup"/>
+				</content>
+			</Page>
+		</detailPages>
+		<masterPages>
+			<Page id="master2" showHeader="true" title="Master" class="sapUiStdPage" showNavButton="false" navButtonPress="onPressMasterBack">
+				<content>
+					<Tree id="Tree" items="{path: 'teleCaller>/'}" selectionChange="onListItemPress" mode="SingleSelectMaster" includeItemInSelection="true">
+						<StandardTreeItem title="{teleCaller>text}" icon="{teleCaller>ref}" type="Active" custom:to="{teleCaller>custom}"/>
+					</Tree>
+				</content>
+			</Page>
+		</masterPages>
+	</SplitApp>
+</mvc:View>

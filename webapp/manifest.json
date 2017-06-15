@@ -76,6 +76,10 @@
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "Faculty.json"
 			},
+			"teleCaller": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "TeleCaller.json"
+			},
 			"course": {
 				"dataSource": "mainService"
 			}
@@ -275,12 +279,19 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["admin"]
-			}, {
+			},{
 				"name": "backoffice",
 				"pattern": "split",
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["backoffice"]
+			},
+			{
+				"name": "telecaller",
+				"pattern": "splitapps",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["telecaller"]
 			}],
 			"targets": {
 				"home": {
@@ -498,6 +509,13 @@
 					"transition": "slide",
 					"clearAggregation": true,
 					"viewName": "BackOffice.BackOffice_MainView",
+					"viewLevel": 1
+				},
+				"telecaller": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "TeleCaller.TeleCaller_mainView",
 					"viewLevel": 1
 				}
 			}

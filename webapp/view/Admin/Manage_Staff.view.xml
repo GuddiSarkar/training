@@ -2,8 +2,54 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
-			<Page title="Title" showHeader="false">
-				<content></content>
+			<Page title="Training Management System" showHeader="false">
+				<content>
+					<HBox height="93%" class="bg">
+						<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
+							<headerToolbar>
+								<Toolbar class="pan">
+									<Title text="Manage Staff" textAlign="Center"/>
+									<SearchField width="30%" class="sapUiSmallMargin srch" search="onSearch"/>
+								</Toolbar>
+							</headerToolbar>
+							<content>
+								<Table id="Table" items="{course>/}" class="TableBorderTop" growing="true" growingThreshold="3" inset="false">
+									<columns height="20px">
+										<!--<Column width="10%" minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+											<Text text="ID"/>
+										</Column>-->
+										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+											<Text text="Name"/>
+										</Column>
+										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+											<Text text="Email"/>
+										</Column>
+										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+											<Text text="Role"/>
+										</Column>
+										<Column demandPopin="true" styleClass="cellBorderRight">
+											<Text text="Action"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>}"/>
+												<Text text="{course>}"/>
+												<Text text="{course>}"/>
+												<Text text="{course>}"/>
+												<Text text="{course>}"/>
+												<Toolbar class="tbBorder">
+													<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
+												</Toolbar>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</content>
+						</Panel>
+					</HBox>
+				</content>
 			</Page>
 		</pages>
 	</App>

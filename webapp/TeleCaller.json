@@ -1,0 +1,14 @@
+[
+
+	{
+		"text": "Add Lead Calls",
+		"ref": "sap-icon://user-settings",
+		"custom": "addLead"
+	}, 
+	{
+		"text": "ToDay's FollwUp",
+		"ref": "sap-icon://user-settings",
+		"custom": "todysflwup"
+	}
+
+]

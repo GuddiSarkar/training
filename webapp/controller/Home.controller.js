@@ -29,6 +29,7 @@ sap.ui.define([
 		{
 			this.getRouter().navTo("backoffice");
 		},
+
 		
 		onClickLogin: function(oEvent)
 		{
@@ -40,6 +41,10 @@ sap.ui.define([
 			}
 
 			oDialog.openBy(oEvent.getSource());
+		},
+		onPressTelecaller: function()
+		{
+			this.getRouter().navTo("telecaller");
 		}
 	});
 });

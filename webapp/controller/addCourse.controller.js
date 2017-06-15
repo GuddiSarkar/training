@@ -97,9 +97,9 @@ sap.ui.define([
 			}
 
 			oDialog.open();
-			var CourseType = this.getView().byId("c_typeEd").setSelectedItem(property.course_type);
+		/*	var CourseType = this.getView().byId("c_typeEd").setSelectedItem(property.course_type);
 			var CourseDuration = this.getView().byId("c_durEd").setSelectedItem(property.course_duration);
-			oDialog.open();
+			oDialog.open();*/
 		},
 
 		onCloseEdit: function(oEvent) {

@@ -1,0 +1,122 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.add_Lead"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout">
+	<App>
+	<pages>
+			<Page title="Training Management System" showHeader="false">
+				<content>
+					<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
+						<headerToolbar>
+							<Toolbar height="3rem" class="pan">
+								<Title text="Add Lead calls"/>
+							</Toolbar>
+						</headerToolbar>
+						<content>
+							<l:VerticalLayout id="containerLayout2" width="100%">
+								<HBox>
+									<VBox class="acr_vb2">
+										<HBox>
+											<Label text="Name" width="200px"/>
+											<Input value="" class="acr_inp" id="Lc_name"/>
+										</HBox>
+										<HBox>
+											<Label text="Mobile" width="200px"/>
+											<Input value="" class="acr_inp" id="Lc_mob"/>
+										</HBox>
+										<HBox>
+											<Label text="Address" width="200px"/>
+											<Input value="" class="acr_inp" id="Lc_add"/>
+										</HBox>
+									</VBox>
+									<VBox class="acr_vb22">
+										<HBox>
+											<Label text="Gender" width="200px"/>
+											<Select width="195px" class="sel" id="Lc_gnder" selectedKey="{course>course_type}">
+												<items class="itm">
+													<core:Item text="--Select--" key="0"/>
+													<core:Item text="Male" key="1"/>
+													<core:Item text="Female" key="2"/>
+												</items>
+											</Select>
+										</HBox>
+										<HBox>
+											<Label text="Email" width="200px"/>
+											<Input value="" class="acr_inp" id="Lc_eml"/>
+										</HBox>
+										<HBox>
+											<Label text="Course" width="200px"/>
+											<Input value="" class="acr_inp" id="Lc_crs"/>
+										</HBox>
+									</VBox>
+								</HBox>
+							</l:VerticalLayout>
+							<Toolbar class="acr_tiny_margin" width="0px"></Toolbar>
+							<HBox class="btn1">
+								<Button text="Add" width="100px" class="b1" press="addLeadCalls"/>
+							</HBox>
+						</content>
+					</Panel>
+					<Panel width="auto" class="sapUiResponsiveMargin hd2 acr_pnl">
+						<headerToolbar>
+							<Toolbar class="pan">
+								<Title text="Lead Calls"/>
+								<SearchField width="30%" class="sapUiSmallMargin srch9" search="onSearch"/>
+							</Toolbar>
+						</headerToolbar>
+						<content>
+							<Table id="adCrsTable" items="{course>/}" class="TableBorderTop" growing="true" growingThreshold="1">
+								<columns>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Name"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Mobile"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Gender"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Email"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Address"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Course"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Follow UP"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Remarks"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Action"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{course>}"/>
+											<Text text="{course>}"/>
+											<Text text="{course>}"/>
+											<Text text="{course>}"/>
+											<Text text="{course>}"/>
+											<Text text="{course>}"/>
+											<Text text="{course>}"/>
+											<Text text="{course>}"/>
+											<Text text="{course>}"/>
+											<Toolbar class="tbBorder">
+												<Button icon="sap-icon://edit" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
+												<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
+											</Toolbar>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
