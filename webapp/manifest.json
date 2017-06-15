@@ -262,14 +262,13 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["login"]
-<<<<<<< Upstream, based on 2fd7f38c23a3fc0ab86482d4898e70470def4a3e
 			}, {
 				"name": "register",
 				"pattern": "rg",
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["register"]
-=======
+
 			},{	
 				"name": "admin",
 				"pattern": "splitApp",
@@ -282,7 +281,6 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["backoffice"]
->>>>>>> a5718b2 fresh push
 			}],
 			"targets": {
 				"home": {
@@ -481,13 +479,13 @@
 					"viewName": "login",
 					"viewLevel": 1
 				},
-<<<<<<< Upstream, based on 2fd7f38c23a3fc0ab86482d4898e70470def4a3e
 				"register": {
 					"viewType": "XML",
 					"transition": "slide",
 					"clearAggregation": true,
 					"viewName": "register",
-=======
+					"viewLevel": 1
+				},
 				"admin": {
 					"viewType": "XML",
 					"transition": "slide",
@@ -500,7 +498,6 @@
 					"transition": "slide",
 					"clearAggregation": true,
 					"viewName": "BackOffice.BackOffice_MainView",
->>>>>>> a5718b2 fresh push
 					"viewLevel": 1
 				}
 			}
