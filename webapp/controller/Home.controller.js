@@ -14,13 +14,13 @@ sap.ui.define([
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},
 		
-		onClickLogin: function(evt) {
+/*		onClickLogin: function(evt) {
 			this.getRouter().navTo("login");
 		},
 		onClickRegister: function(evt) {
 			this.getRouter().navTo("register");
 		},
-		onPressAdmin: function()
+*/		onPressAdmin: function()
 		{
 			this.getRouter().navTo("admin");
 		},
@@ -28,6 +28,18 @@ sap.ui.define([
 		onPressBackOffice: function()
 		{
 			this.getRouter().navTo("backoffice");
+		},
+		
+		onClickLogin: function(oEvent)
+		{
+			var oView = this.getView();
+			var oDialog = oView.byId("login");
+			if (!oDialog) {
+				oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.loginPopover", this);
+				oView.addDependent(oDialog);
+			}
+
+			oDialog.openBy(oEvent.getSource());
 		}
 	});
 });

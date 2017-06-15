@@ -2,15 +2,14 @@
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core">
 	<ResponsivePopover
-	
 		class="sapUiPopupWithPadding p1popover"
-		placement="Bottom">
-
+		placement="Bottom" id="login">
 		<content>
-			<StandardListItem title = "{Admin}" />
-			<StandardListItem title = "{BackOffice}" />
-			<StandardListItem title = "{Telecaller}"/>
+			<List id="loginList">
+				<StandardListItem title = "Admin" />
+				<StandardListItem title = "BackOffice" />
+				<StandardListItem title = "Telecaller"/>
+			</List>
 		</content>
-		
 	</ResponsivePopover>
 </core:FragmentDefinition>
