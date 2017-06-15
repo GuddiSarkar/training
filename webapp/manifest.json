@@ -253,6 +253,12 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["login"]
+			}, {
+				"name": "register",
+				"pattern": "rg",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["register"]
 			}],
 			"targets": {
 				"home": {
@@ -449,6 +455,13 @@
 					"transition": "slide",
 					"clearAggregation": true,
 					"viewName": "login",
+					"viewLevel": 1
+				},
+				"register": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "register",
 					"viewLevel": 1
 				}
 			}

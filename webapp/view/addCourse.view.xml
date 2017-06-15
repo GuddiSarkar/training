@@ -33,7 +33,6 @@
 										<Label text="Course Fee" width="200px"/>
 										<Input value="" class="acr_inp" id="c_fee"/>
 									</HBox>
-									
 								</VBox>
 								
 								<VBox class="acr_vb22">

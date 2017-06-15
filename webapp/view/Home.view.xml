@@ -4,7 +4,8 @@
 		<pages>
 			<Page title="Title">
 				<content>
-					<Link text="login page" press="onLogin"></Link>
+					<Link text="login page" press="onClickLogin"></Link>
+					<Link text="register page" press="onClickRegister"></Link>
 				</content>
 			</Page>
 		</pages>

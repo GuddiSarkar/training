@@ -19,8 +19,13 @@
 	font-size: 1rem;
 	color:white;	
 	padding-left:69%;
-	
 }
+
+.regLabel.sapMLabel{
+	padding-left:30%;
+	padding-top:5%;
+}
+
 .header-text{
 	font-size:50px;
 	font-weight:bold;
@@ -65,8 +70,19 @@
 	height:40%;
 	opacity:1.0;
 	background-color: rgba(255, 255, 255, 0.9);
-	border-radius:5%;
+	/*border-radius:5%;*/
 }
+
+.vbreg.sapMFlexBoxAlignContentStretch{
+	position:absolute;
+	top:33%;
+	left:33%;
+	border:solid 2px;
+	border-radius:5%;
+	background-color: ;
+}
+
+
 .t1 .sapMInputBase, .sapMInputBaseInner, .sapMInputBasePlaceholder{
 	border-radius:5px;
 	padding-left:5%;
@@ -74,7 +90,7 @@
 	
 }
 .login{
-	margin-left:35%;
+	margin-left:40%;
 }
 .sapUiBlockCellTitle{
 	color:white;

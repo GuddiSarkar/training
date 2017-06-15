@@ -14,8 +14,12 @@ sap.ui.define([
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},
 		
-		onLogin: function(evt) {
+		onClickLogin: function(evt) {
 			this.getRouter().navTo("login");
+		},
+		onClickRegister: function(evt) {
+			this.getRouter().navTo("register");
 		}
+		
 	});
 });

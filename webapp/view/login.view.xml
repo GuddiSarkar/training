@@ -30,22 +30,21 @@
 							<Label text="Telecaller Login" design="Bold" class="login-header-text" textAlign="Center"></Label>
 						</VBox>
 					</HBox>
-					<HBox  width="100%" height="60%">
+					<HBox width="100%" height="60%">
 						<VBox class="vb2">
-							<f:SimpleForm  minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="3"
-								labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+							<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+								emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
 								<f:content>
 									<core:Icon src="sap-icon://log" color="#031E48" class="sapUiMediumMarginBottom"/>
 									<HBox class="vb00" id="uname">
 										<Label text="Username" width="50%" textAlign="Right"/>
-										<Input id="username" type="Text" placeholder="Enter Username"
-										valueStateText="Name must not be empty. Maximum 5 characters."
-										value="{ path : '/username', type : 'sap.ui.model.type.String', constraints : { minLength: 3, maxLength: 20 } }"/>
+										<Input id="username" type="Text" placeholder="Enter Username" valueStateText="Name must not be empty. Maximum 5 characters."
+											value="{ path : '/username', type : 'sap.ui.model.type.String', constraints : { minLength: 3, maxLength: 20 } }"/>
 									</HBox>
 									<HBox class="vb00" id="pwd">
 										<Label text="Password" width="50%" textAlign="Right"/>
 										<Input id="password" type="Password" placeholder="Enter Password" valueStateText="Password must not be empty"
-										value="{ path : '/password', type : 'sap.ui.model.type.String', constraints : { minLength: 3, maxLength: 20 } }"/>
+											value="{ path : '/password', type : 'sap.ui.model.type.String', constraints : { minLength: 3, maxLength: 20 } }"/>
 									</HBox>
 									<Button text="Log In" type="Emphasized" press="onPress" class="sapUiSmallMarginEnd sapUiSmallMarginTop login" width="30%"/>
 								</f:content>
