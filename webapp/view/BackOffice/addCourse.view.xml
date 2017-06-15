@@ -5,18 +5,18 @@
 		<pages>
 			<Page title="Training Management System" showHeader="false">
 				<content>
-					<HBox class="t" height="7%">
+					<!--<HBox class="t" height="7%">
 						<VBox>
 							<Button icon="sap-icon://arrow-left"  class="ib sapUiLargeMarginBottom" press="onPressBack" ariaLabelledBy="editButtonLabel"/>
-							<!--<core:Icon src="sap-icon://arrow-left" color="black" press="onPressBack" class="sapUiLargeMarginEnd"/>-->
+				
 						</VBox>
 						<VBox class="vb">
 							<Label text="Training Management System" class="header-text1" textAlign="Center" ></Label>
 						</VBox>
-					</HBox>
+					</HBox>-->
 				<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
 					<headerToolbar>
-						<Toolbar height="3rem">
+						<Toolbar height="3rem" class="pan">
 							<Title text="Add Courses"/>
 						</Toolbar>
 					</headerToolbar>
@@ -68,10 +68,12 @@
 							<Button text="Add" width="100px" class="b1" press="addCourse"/>
 						</HBox>
 					</content>
-				</Panel>	
+				</Panel>
+				
+				
 				<Panel width="auto" class="sapUiResponsiveMargin hd2 acr_pnl">
 					<headerToolbar>
-						<Toolbar height="3rem">
+						<Toolbar  class="pan">
 							<Title text="Courses"/>
 							<SearchField width="30%" class="sapUiSmallMargin srch3" search="onSearch" />
 						</Toolbar>

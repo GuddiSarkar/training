@@ -62,20 +62,8 @@
 			},
 			{
 				"text": "View Reminder",
-				"ref": "sap-icon://education",
-				"nodes":
-				[
-					{
-					"text": "View by Date",
-					"ref": "sap-icon://text-formatting",
-					"custom": "view1"
-					},
-					{
-					"text": "View by Title",
-					"ref": "sap-icon://text-formatting",
-					"custom": "view2"
-					}
-				]
+				"ref": "sap-icon://education"
+				
 			}
 		]
 	}
