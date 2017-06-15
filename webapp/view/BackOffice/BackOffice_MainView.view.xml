@@ -54,7 +54,7 @@
 			<Page id="master2" showHeader="true" title="BackOffice" class="sapUiStdPage" showNavButton="false" navButtonPress="onPressMasterBack">
 				<content>
 					<Tree id="Tree" items="{path: 'fac>/'}" selectionChange="onListItemPress" mode="SingleSelectMaster" includeItemInSelection="true">
-						<StandardTreeItem title="{fac>text}" icon="{fac>ref}" iconDensityAware="false" type="Active" custom:to="{fac>custom}"/>
+						<StandardTreeItem title="{fac>text}" icon="{fac>ref}"  type="Active" custom:to="{fac>custom}"/>
 					</Tree>
 				</content>
 			</Page>
