@@ -1,0 +1,82 @@
+[
+	{
+		"text": "Student",
+		"ref": "sap-icon://crm-service-manager",
+		"nodes":
+		[
+			{
+				"text": "Add Student",
+				"ref": "sap-icon://user-settings",
+				"custom": "stu"
+			},
+			{
+				"text": "View Student",
+				"ref": "sap-icon://user-settings",
+				"custom": "stu1"
+			}
+			]
+	},
+	{
+		"text": "Course",
+		"ref": "sap-icon://work-history",
+		"nodes":
+		[
+			{
+				"text": "Add Course",
+				"ref": "sap-icon://business-card",
+				"custom": "course1"
+			},
+			{
+				"text": "View Course",
+				"ref": "sap-icon://simple-payment",
+				"custom": "course2"
+			}
+		]
+	},
+		{
+		"text": "Faculty",
+		"ref": "sap-icon://building",
+		"nodes":
+		[
+			{
+				"text": "Add Faculty",
+				"ref": "sap-icon://message-information",
+				"custom": "fac1"
+			},
+			{
+				"text": "Payment Faculty",
+				"ref": "sap-icon://locate-me",
+				"custom": "fac2"
+			}
+		]
+	},
+		{
+		"text": "Reminder",
+		"ref": "sap-icon://study-leave",
+		"nodes":
+		[
+			{
+				"text": "Add Reminder",
+				"ref": "sap-icon://attachment-e-pub",
+				"custom": "add1"
+			},
+			{
+				"text": "View Reminder",
+				"ref": "sap-icon://education",
+				"nodes":
+				[
+					{
+					"text": "View by Date",
+					"ref": "sap-icon://text-formatting",
+					"custom": "view1"
+					},
+					{
+					"text": "View by Title",
+					"ref": "sap-icon://text-formatting",
+					"custom": "view2"
+					}
+				]
+			}
+		]
+	}
+]

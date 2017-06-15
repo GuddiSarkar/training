@@ -35,6 +35,32 @@
 											</List>
 										</l:content>
 									</l:BlockLayoutCell>
+									<!--<l:BlockLayoutCell title="Today's Follow Up" class="rem" titleAlignment="Center">-->
+									<!--	<l:content>-->
+									<!--		<Table id="adCrsTable" width="70%" items="{course>/tb_stud_payment}" class="TableBorderTop" growing="true" growingThreshold="3">-->
+									<!--			<columns height="20px">-->
+									<!--				<Column width="12%" minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight cellBorderLeft">-->
+									<!--					<Text text="ID"/>-->
+									<!--				</Column>-->
+									<!--				<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">-->
+									<!--					<Text text="Student Name"/>-->
+									<!--				</Column>-->
+									<!--				<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">-->
+									<!--					<Text text="Course Name"/>-->
+									<!--				</Column>-->
+									<!--			</columns>-->
+									<!--			<items>-->
+									<!--				<ColumnListItem>-->
+									<!--					<cells>-->
+									<!--						<Text text="{course>stud_payment_id}"/>-->
+									<!--						<Link text="{}" enabled="true" emphasized="true" id="lnk"></Link>-->
+									<!--						<Text text=""/>-->
+									<!--					</cells>-->
+									<!--				</ColumnListItem>-->
+									<!--			</items>-->
+									<!--		</Table>-->
+									<!--	</l:content>-->
+									<!--</l:BlockLayoutCell>-->
 								</l:BlockLayoutRow>
 							</l:BlockLayout>
 						</l:VerticalLayout>

@@ -34,6 +34,24 @@ sap.ui.define([
 			var date = oDateFormat.format(new Date(Number(value)));
 			return date;
 		},
+
+	
+	// onInit: function() {
+	// 	this.oFormatDdmmyyyy = sap.ui.core.format.DateFormat.getInstance({pattern: "dd-MM-yyyy", calendarType: sap.ui.core.CalendarType.Gregorian});
+	// },
+		
+	onPressBack: function(oEvent)
+		{
+			var oHistory, sPreviousHash;
+			oHistory = History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			}
+			else {
+				this.getRouter().navTo("Reminder_Dashboard", {}, true /*no history*/);
+			}
+	},
 		handleShowSpecialDays: function(oEvent) {
 			var oCal1 = this.getView().byId("calendar1");
 			var oLeg1 = this.getView().byId("legend1");
@@ -218,17 +236,6 @@ sap.ui.define([
 			});
 			oModel.setRefreshAfterChange(true);
 			this.getView().byId("set_rem").close();
-		},
-
-		onPressBack: function(oEvent) {
-			var oHistory, sPreviousHash;
-			oHistory = History.getInstance();
-			sPreviousHash = oHistory.getPreviousHash();
-			if (sPreviousHash !== undefined) {
-				window.history.go(-1);
-			} else {
-				this.getRouter().navTo("reminder", {}, true /*no history*/ );
-			}
 		}
 	});
 

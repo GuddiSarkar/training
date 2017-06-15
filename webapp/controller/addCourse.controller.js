@@ -3,25 +3,23 @@ sap.ui.define([
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
 	"sap/ui/core/routing/History"
-], function(Controller, Filter, FilterOperator,History) {
+], function(Controller, Filter, FilterOperator, History) {
 	"use strict";
 	/*eslint linebreak-style: ["error", "windows"]*/
 	var sPath;
 	return Controller.extend("com.demoTMS.controller.addCourse", {
-		
-		onPressBack: function(oEvent)
-		{
+
+		onPressBack: function(oEvent) {
 			var oHistory, sPreviousHash;
 			oHistory = History.getInstance();
 			sPreviousHash = oHistory.getPreviousHash();
 			if (sPreviousHash !== undefined) {
 				window.history.go(-1);
+			} else {
+				this.getRouter().navTo("course", {}, true /*no history*/ );
 			}
-			else {
-				this.getRouter().navTo("course", {}, true /*no history*/);
-			}
-	},
-		
+		},
+
 		onInit: function() {
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
@@ -63,64 +61,52 @@ sap.ui.define([
 
 				}.bind(this)
 			});
-		
+
 			oModel.setRefreshAfterChange(true);
 		},
 
-	
-		
-		
-		
-		onClickEdit: function(oEvent)
-		{
-		var oView = this.getView();
-		var oDialog = oView.byId("editCourse");
-		var oTable = this.getView().byId("adCrsTable");
-		var path=oEvent.getSource().getBindingContext("course").getPath();
-		var model =oTable.getModel("course");
-		var property=model.getProperty(path);
-		if(!oDialog)
-		{
-			oDialog = sap.ui.xmlfragment(oView.getId(),"com.demoTMS.view.editCourse",this);
-			oView.addDependent(oDialog);
-			
-		}
-
+		onClickEdit: function(oEvent) {
+			var oView = this.getView();
+			var oDialog = oView.byId("editCourse");
+			var oTable = this.getView().byId("adCrsTable");
+			var path = oEvent.getSource().getBindingContext("course").getPath();
+			var model = oTable.getModel("course");
+			var property = model.getProperty(path);
+			if (!oDialog) {
+				oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.editCourse", this);
+				oView.addDependent(oDialog);
+			}
 			var id = this.getView().byId("c_idEd").setValue(property.course_id);
 			var CourseName = this.getView().byId("c_nameEd").setValue(property.course_name);
 			var CourseFee = this.getView().byId("c_feeEd").setValue(property.course_fee);
-			var CourseType= property.course_type;
-			var CourseDuration= property.course_duration;
-			
-			if(CourseType === "Functional"){
+			var CourseType = property.course_type;
+			var CourseDuration = property.course_duration;
+
+			if (CourseType === "Functional") {
 				this.getView().byId("c_typeEd").setSelectedKey(2);
+			} else {
+				this.getView().byId("c_typeEd").setSelectedKey(1);
 			}
-			else{
-					this.getView().byId("c_typeEd").setSelectedKey(1);
-			}
-			
-			if(CourseDuration === "3 Month"){
+
+			if (CourseDuration === "3 Month") {
 				this.getView().byId("c_durEd").setSelectedKey(3);
-			}
-			else if(CourseDuration === "2 Month"){
+			} else if (CourseDuration === "2 Month") {
 				this.getView().byId("c_durEd").setSelectedKey(2);
-			}
-			else{
+			} else {
 				this.getView().byId("c_durEd").setSelectedKey(1);
 			}
-			
-			
-			
-			
-		
-		oDialog.open();
+
+			oDialog.open();
+			var CourseType = this.getView().byId("c_typeEd").setSelectedItem(property.course_type);
+			var CourseDuration = this.getView().byId("c_durEd").setSelectedItem(property.course_duration);
+			oDialog.open();
 		},
 
 		onCloseEdit: function(oEvent) {
 			this.getView().byId("editCourse").close();
 		},
-		onOkEdit:function(oEvent)
-		{
+
+		onOkEdit: function(oEvent) {
 			var id = this.getView().byId("c_idEd").getValue();
 			var CourseName = this.getView().byId("c_nameEd").getValue();
 			var CourseFee = this.getView().byId("c_feeEd").getValue();
@@ -134,7 +120,7 @@ sap.ui.define([
 				"course_duration": CourseDuration
 			};
 			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.update("/tb_course("+id+")", data, {
+			oModel.update("/tb_course(" + id + ")", data, {
 				success: function(oData, oResponse) {
 					console.log(oData);
 					console.log(oResponse);
@@ -143,17 +129,17 @@ sap.ui.define([
 					console.log(err);
 				}.bind(this)
 			});
-	oModel.setRefreshAfterChange(true);
-	this.getView().byId("editCourse").close();
+			oModel.setRefreshAfterChange(true);
+			this.getView().byId("editCourse").close();
 		},
 
 		onClickDelete: function(oEvent) {
 			var oView = this.getView();
 			var oDialog = oView.byId("deleteCourse");
 			var oTable = this.getView().byId("adCrsTable");
-			var path=oEvent.getSource().getBindingContext("course").getPath();
-			var model =oTable.getModel("course");
-			var property=model.getProperty(path);
+			var path = oEvent.getSource().getBindingContext("course").getPath();
+			var model = oTable.getModel("course");
+			var property = model.getProperty(path);
 			if (!oDialog) {
 				oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.deleteCourse", this);
 				oView.addDependent(oDialog);
@@ -164,15 +150,13 @@ sap.ui.define([
 		onCloseDelete: function(oEvent) {
 			this.getView().byId("deleteCourse").close();
 		},
-		
-		
-		onOkDelete: function(oEvent) 
-		{
+
+		onOkDelete: function(oEvent) {
 			var oView = this.getView();
 			var oDialog = oView.byId("deleteCourse");
 			var id = this.getView().byId("c_idDel").getValue();
 			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.remove("/tb_course(" +id + ")", {
+			oModel.remove("/tb_course(" + id + ")", {
 				success: function(oData, oResponse) {
 					console.log(oData);
 					console.log(oResponse);
@@ -185,7 +169,7 @@ sap.ui.define([
 			oDialog.close();
 		},
 
-			/*onLogin: function(oEvent) {
+		/*onLogin: function(oEvent) {
 				var name=this.byId("name").getValue();
 				var pwd=this.byId("pwd").getValue();
 				var filtername= new Filter("name",FilterOperator.EQ,name);

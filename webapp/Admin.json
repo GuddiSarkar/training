@@ -1,0 +1,19 @@
+[
+
+	{
+		"text": "Approve",
+		"ref": "sap-icon://user-settings",
+		"custom": "approve"
+	}, 
+	{
+		"text": "Manage Staff",
+		"ref": "sap-icon://user-settings",
+		"custom": "mnjstf"
+	}, 
+	{
+		"text": "Monitor Staff",
+		"ref": "sap-icon://user-settings",
+		"custom": "mntstf"
+	}
+
+]

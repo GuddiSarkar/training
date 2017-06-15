@@ -68,6 +68,14 @@
 					"bundleName": "com.demoTMS.i18n.i18n"
 				}
 			},
+			"": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "Admin.json"
+			},
+			"fac": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "Faculty.json"
+			},
 			"course": {
 				"dataSource": "mainService"
 			}
@@ -83,7 +91,8 @@
 				"viewPath": "com.demoTMS.view",
 				"controlId": "app",
 				"controlAggregation": "pages",
-				"transition": "slide"
+				"transition": "slide",
+				"viewLevel": 1
 			},
 			"routes": [{
 				"name": "home",
@@ -253,12 +262,27 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["login"]
+<<<<<<< Upstream, based on 2fd7f38c23a3fc0ab86482d4898e70470def4a3e
 			}, {
 				"name": "register",
 				"pattern": "rg",
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["register"]
+=======
+			},{	
+				"name": "admin",
+				"pattern": "splitApp",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["admin"]
+			}, {
+				"name": "backoffice",
+				"pattern": "split",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["backoffice"]
+>>>>>>> a5718b2 fresh push
 			}],
 			"targets": {
 				"home": {
@@ -457,11 +481,26 @@
 					"viewName": "login",
 					"viewLevel": 1
 				},
+<<<<<<< Upstream, based on 2fd7f38c23a3fc0ab86482d4898e70470def4a3e
 				"register": {
 					"viewType": "XML",
 					"transition": "slide",
 					"clearAggregation": true,
 					"viewName": "register",
+=======
+				"admin": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Admin.MainView",
+					"viewLevel": 1
+				},
+				"backoffice": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "BackOffice.BackOffice_MainView",
+>>>>>>> a5718b2 fresh push
 					"viewLevel": 1
 				}
 			}

@@ -1,0 +1,32 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.MainView"
+ xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:html="http://www.w3.org/1999/xhtml">
+	<SplitApp id="split" initialDetail="approve" initialMaster="master2" backgroundColor="White">
+		<detailPages>
+			<Page id="approve" title="Approve" class="sapUiStdPage">
+				<content>
+					<mvc:XMLView viewName="com.demoTMS.view.Admin.Approve" />
+				</content>
+			</Page>
+			<Page id="mnjstf" title="Manage Staff" class="sapUiStdPage" showNavButton="false" navButtonText="Back"
+				navButtonPress="onPressDetailBack">
+				<content>
+					<mvc:XMLView viewName="com.demoTMS.view.Admin.Manage_Staff" />
+				</content>
+			</Page>
+			<Page id="mntstf" title="Monitor Staff" class="sapMPage" showNavButton="false" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+				<content>
+					<mvc:XMLView viewName="com.demoTMS.view.Admin.Monitor_Staff" />
+				</content>
+			</Page>
+			</detailPages>
+		<masterPages>
+			<Page id="master2" showHeader="true" title="Master" class="sapUiStdPage" showNavButton="false" navButtonPress="onPressMasterBack">
+				<content>
+					<Tree id="Tree" items="{path: '/'}" selectionChange="onListItemPress" mode="SingleSelectMaster" includeItemInSelection="true">
+						<StandardTreeItem title="{text}" icon="{ref}" type="Active" custom:to="{custom}"/>
+					</Tree>
+				</content>
+			</Page>
+		</masterPages>
+	</SplitApp>
+</mvc:View>

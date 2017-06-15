@@ -34,8 +34,8 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.un
 								<HBox>
 									<VBox>	
 										<HBox>
-											<Label text="First Name" width="200px" class="asi"/>
-											<Input value="" id="f_name" />
+											<Label text="First Name" width="200px"/>
+											<Input value="" id="f_name" liveChange="onChangeFName"/>
 										</HBox>
 										<HBox>
 											<Label text="Gender" width="200px" />
@@ -53,7 +53,7 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.un
 											<Input value="" id="l_name"/>
 										</HBox>
 										<HBox>
-											<Label text="D.O.B" width="200px"/>
+											<Label text="D.O.B" width="200px" />
 											<Input value="" type ="Date" id="d_ob" />
 										</HBox>
 									</VBox>
@@ -67,14 +67,14 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.un
 								<HBox>	
 									<VBox>
 										<HBox>
-											<Label text="Phone" width="200px"/>
-											<Input value="" type="Tel" id="p_hone"/>
+											<Label text="Phone" width="200px" />
+											<Input value="" type="Tel" id="p_hone" change="onChangePhone"/>
 										</HBox>
 									</VBox>
-									<VBox class="vb21">
+									<VBox class="vb22">
 										<HBox>
-											<Label text="Email" width="200px"/>
-											<Input value="" type="Email" id="e_ml"/>
+											<Label text="Email" width="200px" />
+											<Input value="" type="Email" id="e_ml" change="onChangeEmail"/>
 										</HBox>
 									</VBox>
 								</HBox>
@@ -82,7 +82,7 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.un
 							
 							<Toolbar class="sapUiTinyMargin"></Toolbar>
 							
-	    					<l:VerticalLayout id="containerLayout2" width="100%" >
+	    					<l:VerticalLayout id="containerLayout2"  >
 								<HBox>
 									<VBox>
 										<HBox>
@@ -99,10 +99,10 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.un
 										</HBox>
 									</VBox>
 								
-									<VBox class="vb21">
+									<VBox class="vb23">
 										<HBox>
-											<Label text="Address Street 2" width="200px" />
-											<Input value="" type="Tel" id="a_strt2"/>
+											<Label text="Address Street 2" width="200px"/>
+											<Input value=""  id="a_strt2"/>
 										</HBox>
 										<HBox>
 											<Label text="State/Province" width="200px"/>
@@ -114,7 +114,7 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.un
 												id="fileUploader"
 												name="myFileUpload"
 												uploadUrl="upload/"
-												width="400px"
+												width="200px"
 												tooltip="Upload your file to the local server"
 												uploadComplete="handleUploadComplete"
 												change="handleValueChange"
@@ -139,7 +139,13 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.un
 														value="bar"/>
 													</u:headerParameters>
 											</u:FileUploader>
-										</HBox>
+											</HBox>
+											<Toolbar class="tool"/>
+											<Toolbar class="tool"><ToolbarSpacer/>
+										<HBox>
+										<Button type="Accept" text="Next" press="onSubmit"  width="100px"></Button>
+									</HBox></Toolbar>
+										
 									</VBox>
 								</HBox>
 								<!--<HBox class="btn0">
@@ -160,7 +166,7 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.un
 													path: 'course>/tb_course',
 													sorter: { path: 'course_name' }
 												}">
-												<items class="itm">
+												<items class="itm" id="course">
 													<core:Item text="{course>course_name}" key="{course>course_id}"/>
 												</items>
 											</Select>
@@ -181,6 +187,11 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.un
 											<Label text="Start Date" width="200px"/>
 											<Input value="" type ="Date" id="s_date"/>
 										</HBox>
+										<Toolbar class="tool"/>
+											<Toolbar class="tool"><ToolbarSpacer/>
+										<HBox>
+										<Button type="Accept" text="Next" press="onPress"  width="100px"></Button>
+									</HBox></Toolbar>
 									</VBox>
 								</HBox>
 								<!--<HBox class="btn12">
@@ -235,9 +246,10 @@ xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns:u="sap.ui.un
 										</HBox>
 									</VBox>
 								</HBox>
+								<Toolbar class="tool"/><ToolbarSpacer/>
 								<HBox class="btn12">
 									<!--<Button  text="Previous"  width="100px" class="b2"></Button>-->
-									<Button  text="Save"  width="130px" class="b1 btn2" press="addStudent"></Button>
+									<Button  text="Save"  width="130px" class="b1 btn2" press="onSave"></Button>
 								</HBox>
 							</l:VerticalLayout>
 						</IconTabFilter>

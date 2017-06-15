@@ -26,12 +26,12 @@
 								<VBox class="acr_vb2">
 									<HBox>
 										<Label text="Facalty Name" width="200px"/>
-										<Input value="" class="acr_inp" id="fac_name"/>
+										<Input value="" class="acr_inp" id="fac_name" liveChange="onChangeFName"/>
 									</HBox>
 									
 									<HBox>
 										<Label text="Phone Number" width="200px"/>
-										<Input value="" class="acr_inp" id="phn_num"/>
+										<Input value="" class="acr_inp" id="phn_num" change="onChangePhone"/>
 									</HBox>
 									
 									<HBox>
@@ -44,7 +44,7 @@
 								<VBox class="acr_vb22">
 									<HBox>
 										<Label text="Email" width="200px"/>
-										<Input value="" class="acr_inp" id="e_mil"/>
+										<Input value="" class="acr_inp" id="e_mil" change="onChangeEmail"/>
 									</HBox>
 									
 									<HBox>

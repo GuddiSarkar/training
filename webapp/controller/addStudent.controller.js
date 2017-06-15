@@ -31,7 +31,11 @@ sap.ui.define([
 			var crs_id = this.getView().byId("c_name").getSelectedKey();
 			var oModel = this.getOwnerComponent().getModel("course");
 			this.getView().setModel(oModel);
+
 			oModel.read("/tb_course(" + crs_id + ")", {
+
+		
+
 				success: function(oData, oResponse) {
 					this.getView().byId("c_fee").setValue(oData.course_fee);
 					this.getView().byId("c_type").setValue(oData.course_type);
@@ -143,9 +147,11 @@ sap.ui.define([
 			oModelStudPay.setUseBatch(false);
 			oModelStudPay.create("/tb_stud_payment", oEntryStudPay, {
 				success: function(oData) {
+
 					this.getView().byId("d_scunt").setValue("");
 					this.getView().byId("tp_amnt").setValue("");
 					this.getView().byId("r_fee").setValue("");
+
 				}.bind(this),
 				error: function(error) {
 
@@ -153,7 +159,140 @@ sap.ui.define([
 			});
 			oModelStudPay.setRefreshAfterChange(true);
 
+		},
+		onSave: function(oEvent) {
+			var oView = this.getView();
+			var formInput = [
+				// oView.byId("select"),
+				oView.byId("c_fee1"),
+				oView.byId("d_scunt"),
+				oView.byId("tp_amnt"),
+			];
+			jQuery.each(formInput, function(i, input) {
+				if (!input.getValue()) {
+					input.setValueState("Error");
+				}
+			});
+			var forward = true;
+			jQuery.each(formInput, function(i, input) {
+				if ("Error" === input.getValueState()) {
+					forward = false;
+					return false;
+				}
+			});
+
+			// output result
+			if (forward) {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Success");
+
+				// this.getRouter().navTo("stu_fac");
+			} else {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Please Enter all the fields");
+			}
+		},
+		onSubmit: function(oEvent) {
+			var oView = this.getView();
+			var formInput = [
+				// oView.byId("select"),
+				oView.byId("f_name"),
+				oView.byId("l_name"),
+				oView.byId("d_ob"),
+				oView.byId("p_hone"),
+				oView.byId("e_ml"),
+				oView.byId("a_strt1"),
+				oView.byId("c_ty"),
+				oView.byId("zip_code"),
+				oView.byId("s_tate"),
+				oView.byId("fileUploader"),
+			];
+			jQuery.each(formInput, function(i, input) {
+				if (!input.getValue()) {
+					input.setValueState("Error");
+				}
+			});
+			var forward = true;
+			jQuery.each(formInput, function(i, input) {
+				if ("Error" === input.getValueState()) {
+					forward = false;
+					return false;
+				}
+			});
+
+			// output result
+			if (forward) {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Success");
+
+				// this.getRouter().navTo("stu_fac");
+			} else {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Please Enter all the fields");
+			}
+		},
+		onPress: function(oEvent) {
+			var oView = this.getView();
+			var formInput = [
+				// oView.byId("select"),
+				oView.byId("c_fee"),
+				oView.byId("c_type"),
+				oView.byId("s_date")
+			];
+			jQuery.each(formInput, function(i, input) {
+				if (!input.getValue()) {
+					input.setValueState("Error");
+				}
+			});
+			var forward = true;
+			jQuery.each(formInput, function(i, input) {
+				if ("Error" === input.getValueState()) {
+					forward = false;
+					return false;
+				}
+			});
+
+			// output result
+			if (forward) {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Success");
+
+				// this.getRouter().navTo("stu_fac");
+			} else {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Please Enter all the fields");
+			}
+		},
+
+		onChangePhone: function phonenumber(inputtxt) {
+			var x = this.getView().byId("p_hone").getValue();
+			var phoneno = /^\d{10}$/;
+			if (x.match(phoneno)) {
+				return true;
+			} else {
+				alert("Phone Number should contain only Number between 0-9");
+				return false;
+			}
+		},
+		onChangeEmail: function validateForm() {
+			var x = this.getView().byId("e_ml").getValue();
+			var atpos = x.indexOf("@");
+			var dotpos = x.lastIndexOf(".");
+			if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+				alert("Not a valid e-mail address");
+				return false;
+			}
+		},
+		
+		onChangeFName: function validateForm() {
+			var x = this.getView().byId("f_name").getValue();
+			
+			if (x == "") {
+				alert("This field cannot be empty");
+				return false;
+			}
 		}
+
 	});
 
 });

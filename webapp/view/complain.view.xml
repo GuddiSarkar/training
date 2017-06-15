@@ -15,8 +15,8 @@
 							<HBox>
 								<VBox>
 									<HBox class="vb00">
-										<Label text="You are..." width="80px" required="true"/>
-										<Select width="195px" class="">
+										<Label text="Your Issue" width="100px" required="true"/>
+										<Select width="195px" id="select" class="" change="onChange">
 											<items class="itm">
 												<core:Item text="--Select--"/>
 												<core:Item text="Student"/>
@@ -24,19 +24,29 @@
 											</items>
 										</Select>
 									</HBox>
+									<HBox class="vb00" visible="false" id="vis1">
+										<Label text="Student Name" width="120px" required="true"/>
+										<Input value="" type="Text" id="s_name" class="textbox" placeholder="Type student name" valueStateText="Subject must not be empty"/>
+									</HBox>
+									<HBox class="vb00" visible="false" id="vis2">
+										<Label text="Faculty Name" width="120px" required="true"/>
+										<Input value="" type="Text" id="f_name" class="textbox" placeholder="Type faculty name" valueStateText="Subject must not be empty"/>
+									</HBox>
 									<!--<Toolbar class="sapUiTinyMargin"></Toolbar>-->
 									<HBox class="hb00">
 										<Label text="Subject" width="80px" required="true"/>
-										<Input value="" type="Tel" class="textbox"/>
+										<Input value="" type="Text" id="sub" class="textbox" placeholder="Type for Hints" valueStateText="Subject must not be empty"/>
 									</HBox>
-									<!--	</HBox>-->
-									<!--	<HBox>-->
-									<!--	<Label text="Note" width="200px"/>-->
-									<!--	<TextArea id="TypeHere" value="" growing="false" rows="10" cols="50" />-->
-									<!--	</HBox>-->
-									<!--	<HBox>-->
-									<!--	<Button type="Accept" text="Submit"  width="100px"></Button>-->
-									<!--</HBox>-->
+									<HBox>
+										<Label text="Your Complain" width="200px" required="true"/>
+										<TextArea id="descriptn" value="" growing="false" rows="10" cols="50" placeholder="Type Here...."
+											valueStateText="Field must not be empty."/>
+									</HBox>
+									<Toolbar class="tool"><ToolbarSpacer/>
+										<HBox>
+											<Button type="Accept" text="Submit" press="onSubmit" width="100px"></Button>
+										</HBox>
+									</Toolbar>
 								</VBox>
 							</HBox>
 						</VBox>

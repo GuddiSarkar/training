@@ -5,11 +5,11 @@ sap.ui.define([
 	'sap/ui/model/ValidateException',
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/routing/History",
-
-], function(Controller) {
+], function(Controller, History) {
 	"use strict";
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.Home", {
+
 		getRouter: function() {
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},
@@ -19,7 +19,15 @@ sap.ui.define([
 		},
 		onClickRegister: function(evt) {
 			this.getRouter().navTo("register");
-		}
+		},
+		onPressAdmin: function()
+		{
+			this.getRouter().navTo("admin");
+		},
 		
+		onPressBackOffice: function()
+		{
+			this.getRouter().navTo("backoffice");
+		}
 	});
 });

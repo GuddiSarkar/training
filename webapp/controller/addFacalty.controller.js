@@ -182,6 +182,34 @@ sap.ui.define([
 			});
 			oModel.setRefreshAfterChange(true);
 			oDialog.close();
+		},
+		onChangePhone: function phonenumber(inputtxt) {
+			var x = this.getView().byId("phn_num").getValue();
+			var phoneno = /^\d{10}$/;
+			if (x.match(phoneno)) {
+				return true;
+			} else {
+				alert("Phone Number should contain only Number between 0-9");
+				return false;
+			}
+		},
+		onChangeEmail: function validateForm() {
+			var x = this.getView().byId("e_mil").getValue();
+			var atpos = x.indexOf("@");
+			var dotpos = x.lastIndexOf(".");
+			if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+				alert("Not a valid e-mail address");
+				return false;
+			}
+		},
+		
+		onChangeFName: function validateForm() {
+			var x = this.getView().byId("fac_name").getValue();
+			
+			if (x == "") {
+				alert("This field cannot be empty");
+				return false;
+			}
 		}
 	});
 
