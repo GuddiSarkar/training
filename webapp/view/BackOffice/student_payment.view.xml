@@ -1,0 +1,114 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.student_payment"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:cores="sap.ui.core.Item">
+	<App>
+		<pages>
+			<Page title="Training Management System" showHeader="false">
+				<content>
+					<HBox height="100%" class="bg">
+						<Panel  width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
+							<headerToolbar>
+								<Toolbar class="pan">
+									<Title text="Student Payment" textAlign="Center" />
+									<SearchField width="30%" class="sapUiSmallMargin srch12" search="onSearch" />
+								</Toolbar>
+							</headerToolbar>
+							<content>
+								<Table id="adCrsTable" items= "{course>/tb_stud_payment}" class="TableBorderTop" growing="true" 
+								growingThreshold="1">
+							
+								<columns height="20px">	
+								<Column width="8%"
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+									<Text text="ID"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Student Name"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Course Name"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Registration Fee"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight" id="ins1">
+									<Text text="1st Installment"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="2nd Installment"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="3rd Installment"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="4th Installment"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="5th Installment"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Amount"/>
+								</Column>
+								<Column
+									minScreenWidth="Tablet"
+									demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Action"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{course>stud_payment_id}" />
+						        		<Text text="{course>stud_payment_name}" />
+										<Text text="{course>stud_payment_course}" />
+										<Text text="{course>stud_payment_reg_fee}" />
+										<Link text="" enabled="true" emphasized="true" id="lnk"></Link>
+										<!--<HBox id="in1" visible="false">
+											<Text text="" id="t1" visible="false"/>
+											<Button text="PAY NOW" id="bt" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel" visible="false"/>
+										</HBox>-->
+										<Text text="{course>stud_payment_instal_2}" />
+										<Text text="{course>stud_payment_instal_3}" />
+										<Text text="{course>stud_payment_instal_4}" />
+										<Text text="{course>stud_payment_instal_5}" />
+										<Text text="{course>stud_payment_fee}" />
+										<Toolbar class="tbBorder">
+											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
+											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
+										</Toolbar>
+										<Button text="PAY NOW" visible="false" id="btn"></Button>
+										<Link text="" enabled="" emphasized="true" id="lnk1"></Link>
+										<!--<HBox id="in2" visible="false">
+											<Text text="" id="t1" />
+										</HBox>-->
+									</cells>
+								</ColumnListItem>
+							</items>	
+						</Table>
+							</content>
+						</Panel>
+					</HBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

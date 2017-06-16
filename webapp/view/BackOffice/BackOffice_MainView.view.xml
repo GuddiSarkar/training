@@ -31,7 +31,7 @@
 			
 			<Page id="fac2" title=" BackOffice" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.paymentFacalty" />
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewFaculty" />
 				</content>
 			</Page>
 			<Page id="add1" title=" Reminder" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
@@ -39,14 +39,29 @@
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.addReminder" />
 				</content>
 			</Page>
-			<Page id="view1" title="View by Date" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+			<Page id="vwrmdr" title="View Reminder" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.view_by_date" />
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.View_Reminder" />
 				</content>
 			</Page>
-			<Page id="view2" title="View by Title" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+			<Page id="stupymnt" title="Student Payment" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.view_by_title" />
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.student_payment" />
+				</content>
+			</Page>
+			<Page id="vstupymnt" title="View Student Payment" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+				<content>
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewStudent_Payment" />
+				</content>
+			</Page>
+			<Page id="fclpymnt" title="Faculty Payment" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+				<content>
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.Facalty_Payment" />
+				</content>
+			</Page>
+			<Page id="vfclpymnt" title="View Faculty Payment" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+				<content>
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewFacalty_Payment" />
 				</content>
 			</Page>
 		</detailPages>
