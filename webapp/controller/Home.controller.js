@@ -30,6 +30,10 @@ sap.ui.define([
 			this.getRouter().navTo("backoffice");
 		},
 
+		onPressTelecaller: function()
+		{
+			this.getRouter().navTo("telecaller");
+		},
 		
 		onClickLogin: function(oEvent)
 		{
@@ -42,9 +46,18 @@ sap.ui.define([
 
 			oDialog.openBy(oEvent.getSource());
 		},
-		onPressTelecaller: function()
+		
+		onClickRegister: function(oEvent)
 		{
-			this.getRouter().navTo("telecaller");
+			var oView = this.getView();
+			var oDialog = oView.byId("register");
+			if (!oDialog) {
+				oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.rgstrPopover", this);
+				oView.addDependent(oDialog);
+			}
+
+			oDialog.openBy(oEvent.getSource());
 		}
+		
 	});
 });

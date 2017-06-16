@@ -18,7 +18,7 @@
 								<!--			<core:Icon src="sap-icon://visits"></core:Icon>-->
 								<!--		</VBox>-->
 								<VBox>
-									<Link text="Register" id="link1" emphasized="true" press="onPressRegister" class="linkText1"/>
+									<Link text="Register" id="link1" emphasized="true" press="onClickRegister" class="linkText1"/>
 								</VBox>
 							</HBox>
 						</VBox>
