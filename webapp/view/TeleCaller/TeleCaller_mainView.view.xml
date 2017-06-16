@@ -1,16 +1,16 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.TeleCaller_mainView"
 	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<SplitApp id="splitapps" initialDetail="addLead" initialMaster="master2" backgroundColor="White">
+	<SplitApp id="split" initialDetail="addLead" initialMaster="master2" backgroundColor="White">
 		<detailPages>
 			<Page id="addLead" title="Add Lead Calls" class="sapUiStdPage">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.TeleCaller.add_Lead"/>
+					<mvc:XMLView viewName="com.demoTMS.view.TeleCaller.add_Lead" />
 				</content>
 			</Page>
-			<Page id="todysflwup" title="ToDay's FollwUp" class="sapUiStdPage" showNavButton="true" navButtonText="Back"
+			<Page id="tdyflwup" title="Follow Up" class="sapUiStdPage" showNavButton="true" navButtonText="Back"
 				navButtonPress="onPressDetailBack">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.TeleCaller.t_follwup"/>
+					<mvc:XMLView viewName="com.demoTMS.view.TeleCaller.t_follwup" />
 				</content>
 			</Page>
 		</detailPages>
