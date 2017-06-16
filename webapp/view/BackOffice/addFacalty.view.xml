@@ -11,106 +11,97 @@
 							</Toolbar>
 						</headerToolbar>
 						<content>
-							<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
-								<headerToolbar>
-									<Toolbar class="pan">
-										<Title text="Add Facalty"/>
-									</Toolbar>
-								</headerToolbar>
-								<content>
-									<l:VerticalLayout id="containerLayout2" width="100%">
+							<l:VerticalLayout id="containerLayout2" width="100%">
+								<HBox>
+									<VBox class="acr_vb2">
 										<HBox>
-											<VBox class="acr_vb2">
-												<HBox>
-													<Label text="Facalty Name" width="200px"/>
-													<Input value="" class="acr_inp" id="fac_name" liveChange="onChangeFName"/>
-												</HBox>
-												<HBox>
-													<Label text="Phone Number" width="200px"/>
-													<Input value="" class="acr_inp" id="phn_num" change="onChangePhone"/>
-												</HBox>
-												<HBox>
-													<Label text="Salary" width="200px"/>
-													<Input value="" class="acr_inp" id="s_lary"/>
-												</HBox>
-											</VBox>
-											<VBox class="acr_vb22">
-												<HBox>
-													<Label text="Email" width="200px"/>
-													<Input value="" class="acr_inp" id="e_mil" change="onChangeEmail"/>
-												</HBox>
-												<HBox>
-													<Label text="Course Name" width="200px"/>
-													<Input value="" class="acr_inp" id="crs_name"/>
-												</HBox>
-												<HBox>
-													<Label text="Date of Joining" width="200px"/>
-													<Input value="" type="Date" class="acr_inp" id="d_oj"/>
-												</HBox>
-											</VBox>
+											<Label text="Facalty Name" width="200px"/>
+											<Input value="" class="acr_inp" id="fac_name" liveChange="onChangeFName"/>
 										</HBox>
-									</l:VerticalLayout>
-									<Toolbar class="acr_tiny_margin" width="0px"></Toolbar>
-									<HBox class="btn1">
-										<Button text="Add" width="100px" class="b1" press="addFacalty"/>
-									</HBox>
-								</content>
-							</Panel>
-							<Panel width="auto" class="sapUiResponsiveMargin hd2 acr_pnl">
-								<headerToolbar>
-									<Toolbar class="pan">
-										<Title text="Facalty"/>
-										<SearchField width="30%" class="sapUiSmallMargin srch7" search="onSearch"/>
-									</Toolbar>
-								</headerToolbar>
-								<content >
-									<Table id="adCrsTable" items="{course>/tb_faculty}" class="TableBorderTop" growing="true" growingThreshold="1">
-										<columns height="20px">
-											<Column width="8%" minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
-												<Text text="ID"/>
-											</Column>
-											<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
-												<Text text="Facalty Name"/>
-											</Column>
-											<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
-												<Text text="Phone Number"/>
-											</Column>
-											<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
-												<Text text="Email"/>
-											</Column>
-											<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
-												<Text text="Course Name"/>
-											</Column>
-											<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
-												<Text text="Salary"/>
-											</Column>
-											<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
-												<Text text="Date of Joining"/>
-											</Column>
-											<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
-												<Text text="Action"/>
-											</Column>
-										</columns>
-										<items>
-											<ColumnListItem>
-												<cells>
-													<Text text="{course>faculty_id}"/>
-													<Text text="{course>faculty_name}"/>
-													<Text text="{course>faculty_mob}"/>
-													<Text text="{course>faculty_email}"/>
-													<Text text="{course>faculty_course}"/>
-													<Text text="{course>faculty_salary}"/>
-													<Text text="{ path:'course>faculty_doj' }" id="date"/>
-													<Toolbar class="tbBorder">
-														<Button icon="sap-icon://edit" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
-														<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
-													</Toolbar>
-												</cells>
-											</ColumnListItem>
-										</items>
-									</Table>
-								</content>
-							</Panel>
+										<HBox>
+											<Label text="Phone Number" width="200px"/>
+											<Input value="" class="acr_inp" id="phn_num" change="onChangePhone"/>
+										</HBox>
+										<HBox>
+											<Label text="Salary" width="200px"/>
+											<Input value="" class="acr_inp" id="s_lary"/>
+										</HBox>
+									</VBox>
+									<VBox class="acr_vb22">
+										<HBox>
+											<Label text="Email" width="200px"/>
+											<Input value="" class="acr_inp" id="e_mil" change="onChangeEmail"/>
+										</HBox>
+										<HBox>
+											<Label text="Course Name" width="200px"/>
+											<Input value="" class="acr_inp" id="crs_name"/>
+										</HBox>
+										<HBox>
+											<Label text="Date of Joining" width="200px"/>
+											<Input value="" type="Date" class="acr_inp" id="d_oj"/>
+										</HBox>
+									</VBox>
+								</HBox>
+							</l:VerticalLayout>
+							<Toolbar class="acr_tiny_margin" width="0px"></Toolbar>
+							<HBox class="btn1">
+								<Button text="Add" width="100px" class="b1" press="addFacalty"/>
+							</HBox>
+						</content>
+					</Panel>
+					<Panel width="auto" class="sapUiResponsiveMargin hd2 acr_pnl">
+						<headerToolbar>
+							<Toolbar class="pan">
+								<Title text="Facalty"/>
+								<SearchField width="30%" class="sapUiSmallMargin srch7" search="onSearch"/>
+							</Toolbar>
+						</headerToolbar>
+						<content >
+							<Table id="adCrsTable" items="{course>/tb_faculty}" class="TableBorderTop" growing="true" growingThreshold="1">
+								<columns height="20px">
+									<Column width="8%" minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+										<Text text="ID"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Facalty Name"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Phone Number"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Email"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Course Name"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Salary"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Date of Joining"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Action"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{course>faculty_id}"/>
+											<Text text="{course>faculty_name}"/>
+											<Text text="{course>faculty_mob}"/>
+											<Text text="{course>faculty_email}"/>
+											<Text text="{course>faculty_course}"/>
+											<Text text="{course>faculty_salary}"/>
+											<Text text="{ path:'course>faculty_doj' }" id="date"/>
+											<Toolbar class="tbBorder">
+												<Button icon="sap-icon://edit" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
+												<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
+											</Toolbar>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
 						</content>
 					</Panel>
 				</content>

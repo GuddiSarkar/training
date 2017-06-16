@@ -1,122 +1,82 @@
 [{
-		"text": "Student",
-		"ref": "sap-icon://crm-service-manager",
-		"nodes": [{
-			"text": "Add Student",
-			"ref": "sap-icon://study-leave",
-			"custom": "stu"
-		}, {
-			"text": "View Student",
-			"ref": "sap-icon://my-view",
-			"custom": "stu1"
-		}]
+"text": "Student",
+"ref": "sap-icon://crm-service-manager",
+"nodes": [{
+	"text": "Add Student",
+	"ref": "sap-icon://study-leave",
+	"nodes": [{
+		"text": "Personal Details",
+		"ref": "sap-icon://business-card",
+		"custom": "per_det"
 	}, {
-		"text": "Course",
-		"ref": "sap-icon://overview-chart",
-		"nodes": [{
-			"text": "Add Course",
-			"ref": "sap-icon://business-card",
-			"custom": "course1"
-		}, {
-			"text": "View Course",
-			"ref": "sap-icon://switch-classes",
-			"custom": "course2"
-		}]
-	}, {
-		"text": "Faculty",
-		"ref": "sap-icon://factory",
-		"nodes": [{
-			"text": "Add Faculty",
-			"ref": "sap-icon://message-information",
-			"custom": "fac1"
-		}, {
-			"text": "Payment Faculty",
-			"ref": "sap-icon://payment-approval",
-			"custom": "fac2"
-		}]
-	}, {
-		"text": "Reminder",
-		"ref": "sap-icon://pushpin-off",
-		"nodes": [{
-			"text": "Add Reminder",
-			"ref": "sap-icon://pushpin-on",
-			"custom": "add1"
-		}, {
-			"text": "View Reminder",
-			"ref": "sap-icon://education"
-
-		}]
-	},
-	[{
-		"text": "Student",
-		"ref": "sap-icon://crm-service-manager",
-		"nodes": [{
-			"text": "Add Student",
-			"ref": "sap-icon://user-settings",
-			"custom": "stu"
-		}, {
-			"text": "View Student",
-			"ref": "sap-icon://user-settings",
-			"custom": "stu1"
-		}]
-	}, {
-		"text": "Course",
-		"ref": "sap-icon://work-history",
-		"nodes": [{
-			"text": "Add Course",
-			"ref": "sap-icon://business-card",
-			"custom": "course1"
-		}, {
-			"text": "View Course",
-			"ref": "sap-icon://simple-payment",
-			"custom": "course2"
-		}]
-	}, {
-		"text": "Faculty",
-		"ref": "sap-icon://building",
-		"nodes": [{
-			"text": "Add Faculty",
-			"ref": "sap-icon://message-information",
-			"custom": "fac1"
-		}, {
-			"text": "View Faculty",
-			"ref": "sap-icon://locate-me",
-			"custom": "fac2"
-		}]
-	}, {
-		"text": "Reminder",
-		"ref": "sap-icon://study-leave",
-		"nodes": [{
-			"text": "Add Reminder",
-			"ref": "sap-icon://attachment-e-pub",
-			"custom": "add1"
-		}, {
-			"text": "View Reminder",
-			"ref": "sap-icon://education",
-			"custom": "vwrmdr"
-
-		}]
-	}, {
-		"text": "Payment",
-		"ref": "sap-icon://study-leave",
-		"nodes": [{
-				"text": "Student Payment",
-				"ref": "sap-icon://user-settings",
-				"custom": "stupymnt"
-			}, {
-				"text": "View Student Payment",
-				"ref": "sap-icon://user-settings",
-				"custom": "vstupymnt"
-			}, {
-				"text": "Faculty payment",
-				"ref": "sap-icon://user-settings",
-				"custom": "fclpymnt"
-			}, {
-				"text": "View Faculty payment",
-				"ref": "sap-icon://user-settings",
-				"custom": "vfclpymnt"
-			}
-
-		]
+		"text": "Admission Details",
+		"ref": "sap-icon://switch-classes",
+		"custom": "admn_det"
+	},{
+		"text": "Fee Details",
+		"ref": "sap-icon://switch-classes",
+		"custom": "fee_det"
 	}]
-	]
+}, {
+	"text": "View Student",
+	"ref": "sap-icon://my-view",
+	"custom": "stu1"
+}]
+}, {
+"text": "Course",
+"ref": "sap-icon://overview-chart",
+"nodes": [{
+	"text": "Add Course",
+	"ref": "sap-icon://business-card",
+	"custom": "course1"
+}, {
+	"text": "View Course",
+	"ref": "sap-icon://switch-classes",
+	"custom": "course2"
+}]
+}, {
+"text": "Faculty",
+"ref": "sap-icon://factory",
+"nodes": [{
+	"text": "Add Faculty",
+	"ref": "sap-icon://message-information",
+	"custom": "fac1"
+}, {
+	"text": "Payment Faculty",
+	"ref": "sap-icon://payment-approval",
+	"custom": "fac2"
+}]
+}, {
+"text": "Reminder",
+"ref": "sap-icon://pushpin-off",
+"nodes": [{
+	"text": "Add Reminder",
+	"ref": "sap-icon://pushpin-on",
+	"custom": "add1"
+}, {
+	"text": "View Reminder",
+	"ref": "sap-icon://education"
+}]
+}, {
+"text": "Payment",
+"ref": "sap-icon://study-leave",
+"nodes": [{
+		"text": "Student Payment",
+		"ref": "sap-icon://user-settings",
+		"custom": "stupymnt"
+	}, {
+		"text": "View Student Payment",
+		"ref": "sap-icon://user-settings",
+		"custom": "vstupymnt"
+	}, {
+		"text": "Faculty payment",
+		"ref": "sap-icon://user-settings",
+		"custom": "fclpymnt"
+	}, {
+		"text": "View Faculty payment",
+		"ref": "sap-icon://user-settings",
+		"custom": "vfclpymnt"
+	}
+
+]
+}]

@@ -265,6 +265,11 @@ span.sapMBtnInner.sapMBtnAccept{
   color:white;
 }
 
+.b11 .sapMBtnInner {
+  background-color: blue;
+  color:white;
+}
+
 .b2 .sapMBtnInner {
   background-color: #13c2f7;
   color:white;

@@ -1,75 +1,293 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.BackOffice_MainView"
-	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:html="http://www.w3.org/1999/xhtml">
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
 	<SplitApp id="split" initialDetail="stu" initialMaster="master2" backgroundColor="White">
 		<detailPages>
-			<Page id="stu" title=" Student"  class="sapUiStdPage">
+			<Page id="per_det" title=" Student" class="sapUiStdPage">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.addStudent" />
+					<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
+						<headerToolbar>
+							<Toolbar height="3rem" class="pan">
+								<Title text="Add Student"/>
+							</Toolbar>
+						</headerToolbar>
+						<content>
+							<l:VerticalLayout id="containerLayout" width="100%">
+								<HBox>
+									<VBox class="acr_vb2">
+										<HBox>
+											<Label text="First Name" width="200px"/>
+											<Input value="" id="f_name" liveChange="onChangeFName"/>
+										</HBox>
+										<HBox>
+											<Label text="Gender" width="200px"/>
+											<RadioButtonGroup columns="2" width="200px" class="sapUiMediumMarginBottom" id="g_nder">
+												<buttons>
+													<RadioButton id="RB1-1" text="Male"/>
+													<RadioButton id="RB1-2" text="Female"/>
+												</buttons>
+											</RadioButtonGroup>
+										</HBox>
+									</VBox>
+									<VBox class="acr_vb22">
+										<HBox>
+											<Label text="Last Name" width="200px"/>
+											<Input value="" id="l_name"/>
+										</HBox>
+										<HBox>
+											<Label text="D.O.B" width="200px"/>
+											<Input value="" type="Date" id="d_ob"/>
+										</HBox>
+									</VBox>
+								</HBox>
+								<Toolbar class="sapUiTinyMargin"></Toolbar>
+								<HBox>
+									<VBox class="acr_vb2">
+										<HBox>
+											<Label text="Phone" width="200px"/>
+											<Input value="" type="Tel" id="p_hone" change="onChangePhone"/>
+										</HBox>
+									</VBox>
+									<VBox class="acr_vb22">
+										<HBox>
+											<Label text="Email" width="200px"/>
+											<Input value="" type="Email" id="e_ml" change="onChangeEmail"/>
+										</HBox>
+									</VBox>
+								</HBox>
+								<Toolbar class="sapUiTinyMargin"></Toolbar>
+								<HBox>
+									<VBox class="acr_vb2">
+										<HBox>
+											<Label text="Address Street 1" width="200px"/>
+											<Input value="" id="a_strt1"/>
+										</HBox>
+										<HBox>
+											<Label text="City" width="200px"/>
+											<Input value="" id="c_ty"/>
+										</HBox>
+										<HBox>
+											<Label text="Zip/Postal Code" width="200px"/>
+											<Input value="" id="zip_code"/>
+										</HBox>
+									</VBox>
+									<VBox class="acr_vb22">
+										<HBox>
+											<Label text="Address Street 2" width="200px"/>
+											<Input value="" id="a_strt2"/>
+										</HBox>
+										<HBox>
+											<Label text="State/Province" width="200px"/>
+											<Input value="" id="s_tate"/>
+										</HBox>
+										<HBox>
+											<Label text="Image" width="200px"/>
+											<u:FileUploader id="fileUploader" name="myFileUpload" uploadUrl="upload/" width="200px" tooltip="Upload your file to the local server"
+												uploadComplete="handleUploadComplete" change="handleValueChange" typeMissmatch="handleTypeMissmatch" style="Emphasized"
+												fileType="jpg,jpeg,png" placeholder="Choose a file for Upload...">
+												<u:parameters>
+													<u:FileUploaderParameter name="param1" value="Foo"/>
+													<u:FileUploaderParameter name="param2" value="bar"/>
+												</u:parameters>
+												<u:headerParameters>
+													<u:FileUploaderParameter name="headerParam1" value="Foo"/>
+													<u:FileUploaderParameter name="headerParam2" value="bar"/>
+												</u:headerParameters>
+											</u:FileUploader>
+										</HBox>
+									</VBox>
+								</HBox>
+								<Toolbar class="tool"/><ToolbarSpacer/>
+								<Toolbar>
+									<ToolbarSpacer/>
+									<Button text="Next" id="nxt" class="b1" press="onPressNext1"/>
+									<ToolbarSpacer/>
+								</Toolbar>
+							</l:VerticalLayout>
+						</content>
+					</Panel>
 				</content>
 			</Page>
-			<Page id="stu1" title=" Student" class="sapUiStdPage" showNavButton="true" navButtonText="Back"
-				navButtonPress="onPressDetailBack">
+			<Page id="admn_det" title=" Student" class="sapUiStdPage">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewStudent" />
+					<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
+						<headerToolbar>
+							<Toolbar height="3rem" class="pan">
+								<Title text="Add Student"/>
+							</Toolbar>
+						</headerToolbar>
+						<content>
+							<l:VerticalLayout id="containerLayout6" width="100%">
+								<HBox>
+									<VBox class="acr_vb2">
+										<HBox>
+											<Label text="Course Name" width="200px"/>
+											<Select width="195px" class="sel" id="c_name" change="onSelectCourse" items="{ path: 'course>/tb_course', sorter: { path: 'course_name' } }">
+												<items class="itm" id="course">
+													<core:Item text="{course>course_name}" key="{course>course_id}"/>
+												</items>
+											</Select>
+										</HBox>
+										<HBox>
+											<Label text="Couse Fee" width="200px"/>
+											<Input value="" id="c_fee"/>
+										</HBox>
+									</VBox>
+									<VBox class="acr_vb22">
+										<HBox>
+											<Label text="Course Type" width="200px"/>
+											<Input value="" id="c_type"/>
+										</HBox>
+										<HBox>
+											<Label text="Start Date" width="200px"/>
+											<Input value="" type="Date" id="s_date"/>
+										</HBox>
+									</VBox>
+								</HBox>
+								<Toolbar class="tool"/><ToolbarSpacer/>
+								<Toolbar>
+									<ToolbarSpacer/>
+									<Button id="prev" text="Prev" class="b11" press="onPressBack"/>
+									<Button text="Next" id="next" class="b1" press="onPressNext2"/>
+									<ToolbarSpacer/>
+								</Toolbar>
+							</l:VerticalLayout>
+						</content>
+					</Panel>
 				</content>
 			</Page>
-			<Page id="course1" title="Course" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+			<Page id="fee_det" title=" Student" class="sapUiStdPage">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.addCourse" />
+					<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
+						<headerToolbar>
+							<Toolbar height="3rem" class="pan">
+								<Title text="Add Student"/>
+							</Toolbar>
+						</headerToolbar>
+						<content>
+							<l:VerticalLayout id="containerLayout7" width="100%">
+								<HBox>
+									<VBox class="acr_vb2">
+										<HBox>
+											<Label text="Course Fee" width="200px"/>
+											<Input value="" id="c_fee1"/>
+										</HBox>
+										<HBox>
+											<Label text="Discount" width="200px"/>
+											<Input value="" id="d_scunt" liveChange="onChangeInput"/>
+										</HBox>
+										<HBox>
+											<Label text="Registration Fee" width="200px"/>
+											<Input value="" editable="false" id="r_fee"/>
+										</HBox>
+									</VBox>
+									<VBox class="acr_vb22">
+										<HBox>
+											<Label text="Tax" width="200px"/>
+											<Input value="14.5%" editable="false" id="t_ax"/>
+										</HBox>
+										<HBox>
+											<Label text="Total Payable Amount" width="200px"/>
+											<Input value="" id="tp_amnt"/>
+										</HBox>
+										<HBox>
+											<Label text="No. Of Installments" width="200px"/>
+											<Select width="195px" class="sel" id="noi" selectedKey="0">
+												<items class="itm">
+													<core:Item text="--Select--" key="0"/>
+													<core:Item text="1" key="1"/>
+													<core:Item text="2" key="2"/>
+													<core:Item text="3" key="3"/>
+													<core:Item text="4" key="4"/>
+													<core:Item text="5" key="5"/>
+												</items>
+											</Select>
+										</HBox>
+									</VBox>
+								</HBox>
+								<Toolbar class="tool"/><ToolbarSpacer/>
+								<Toolbar>
+									<ToolbarSpacer/>
+									<Button id="back" text="Prev" class="b11" press="onPressBack"/>
+									<Button text="Save" id="save" class="b1" press="onPressNavToDetail"/>
+									<ToolbarSpacer/>
+								</Toolbar>
+							</l:VerticalLayout>
+						</content>
+					</Panel>
 				</content>
 			</Page>
-			<Page id="course2" title=" Course" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+			<Page id="stu1" title=" Student" class="sapUiStdPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewCourse" />
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewStudent"/>
 				</content>
 			</Page>
-			<Page id="fac1" title=" BackOffice" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+			<Page id="course1" title="Course" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+				enableScrolling="true">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.addFacalty" />
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.addCourse"/>
 				</content>
 			</Page>
-			
-			<Page id="fac2" title=" BackOffice" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+			<Page id="course2" title=" Course" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+				enableScrolling="true">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewFaculty" />
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewCourse"/>
 				</content>
 			</Page>
-			<Page id="add1" title=" Reminder" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+			<Page id="fac1" title=" BackOffice" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+				enableScrolling="true">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.addReminder" />
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.addFacalty"/>
 				</content>
 			</Page>
-			<Page id="vwrmdr" title="View Reminder" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+			<Page id="fac2" title=" BackOffice" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+				enableScrolling="true">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.View_Reminder" />
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewFaculty"/>
 				</content>
 			</Page>
-			<Page id="stupymnt" title="Student Payment" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+			<Page id="add1" title=" Reminder" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+				enableScrolling="true">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.student_payment" />
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.addReminder"/>
 				</content>
 			</Page>
-			<Page id="vstupymnt" title="View Student Payment" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+			<Page id="vwrmdr" title="View Reminder" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+				enableScrolling="true">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewStudent_Payment" />
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.View_Reminder"/>
 				</content>
 			</Page>
-			<Page id="fclpymnt" title="Faculty Payment" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+			<Page id="stupymnt" title="Student Payment" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+				enableScrolling="true">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.Facalty_Payment" />
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.student_payment"/>
 				</content>
 			</Page>
-			<Page id="vfclpymnt" title="View Faculty Payment" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+			<Page id="vstupymnt" title="View Student Payment" class="sapMPage" showNavButton="true" navButtonText="Back"
+				navButtonPress="onPressDetailBack" enableScrolling="true">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewFacalty_Payment" />
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewStudent_Payment"/>
+				</content>
+			</Page>
+			<Page id="fclpymnt" title="Faculty Payment" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+				enableScrolling="true">
+				<content>
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.Facalty_Payment"/>
+				</content>
+			</Page>
+			<Page id="vfclpymnt" title="View Faculty Payment" class="sapMPage" showNavButton="true" navButtonText="Back"
+				navButtonPress="onPressDetailBack" enableScrolling="true">
+				<content>
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewFacalty_Payment"/>
 				</content>
 			</Page>
 		</detailPages>
 		<masterPages>
-			<Page id="master2" showHeader="true" title="BackOffice" class="sapUiStdPage" showNavButton="false" navButtonPress="onPressMasterBack">
+			<Page id="master2" showHeader="true" title="BackOffice" class="sapUiStdPage">
 				<content>
 					<Tree id="Tree" items="{path: 'fac>/'}" selectionChange="onListItemPress" mode="SingleSelectMaster" includeItemInSelection="true">
-						<StandardTreeItem title="{fac>text}" icon="{fac>ref}"  type="Active" custom:to="{fac>custom}"/>
+						<StandardTreeItem title="{fac>text}" icon="{fac>ref}" type="Active" custom:to="{fac>custom}"/>
 					</Tree>
 				</content>
 			</Page>
