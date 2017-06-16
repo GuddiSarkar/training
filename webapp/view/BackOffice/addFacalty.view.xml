@@ -5,15 +5,7 @@
 		<pages>
 			<Page title="Training Management System" showHeader="false">
 				<content>
-					<!--<HBox class="t" height="7%">
-						<VBox>
-							<Button icon="sap-icon://arrow-left"  class="ib sapUiLargeMarginBottom" press="onPressBack" ariaLabelledBy="editButtonLabel"/>
-						
-						</VBox>
-						<VBox class="vb">
-							<Label text="Training Management System" class="header-text1" textAlign="Center" ></Label>
-						</VBox>
-					</HBox>-->
+					
 				<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
 					<headerToolbar>
 						<Toolbar  class="pan">

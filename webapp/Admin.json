@@ -2,17 +2,17 @@
 
 	{
 		"text": "Approve",
-		"ref": "sap-icon://user-settings",
+		"ref": "sap-icon://accept",
 		"custom": "approve"
 	}, 
 	{
 		"text": "Manage Staff",
-		"ref": "sap-icon://user-settings",
+		"ref": "sap-icon://add-favorite",
 		"custom": "mnjstf"
 	}, 
 	{
 		"text": "Monitor Staff",
-		"ref": "sap-icon://user-settings",
+		"ref": "sap-icon://begin",
 		"custom": "mntstf"
 	}
 

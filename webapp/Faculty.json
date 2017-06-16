@@ -6,19 +6,19 @@
 		[
 			{
 				"text": "Add Student",
-				"ref": "sap-icon://user-settings",
+				"ref": "sap-icon://study-leave",
 				"custom": "stu"
 			},
 			{
 				"text": "View Student",
-				"ref": "sap-icon://user-settings",
+				"ref": "sap-icon://my-view",
 				"custom": "stu1"
 			}
 			]
 	},
 	{
 		"text": "Course",
-		"ref": "sap-icon://work-history",
+		"ref": "sap-icon://overview-chart",
 		"nodes":
 		[
 			{
@@ -28,14 +28,14 @@
 			},
 			{
 				"text": "View Course",
-				"ref": "sap-icon://simple-payment",
+				"ref": "sap-icon://switch-classes",
 				"custom": "course2"
 			}
 		]
 	},
 		{
 		"text": "Faculty",
-		"ref": "sap-icon://building",
+		"ref": "sap-icon://factory",
 		"nodes":
 		[
 			{
@@ -45,19 +45,19 @@
 			},
 			{
 				"text": "Payment Faculty",
-				"ref": "sap-icon://locate-me",
+				"ref": "sap-icon://payment-approval",
 				"custom": "fac2"
 			}
 		]
 	},
 		{
 		"text": "Reminder",
-		"ref": "sap-icon://study-leave",
+		"ref": "sap-icon://pushpin-off",
 		"nodes":
 		[
 			{
 				"text": "Add Reminder",
-				"ref": "sap-icon://attachment-e-pub",
+				"ref": "sap-icon://pushpin-on",
 				"custom": "add1"
 			},
 			{
