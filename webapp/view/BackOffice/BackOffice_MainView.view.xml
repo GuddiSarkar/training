@@ -97,8 +97,8 @@
 										</HBox>
 									</VBox>
 								</HBox>
-								<Toolbar class="tool"/><ToolbarSpacer/>
-								<Toolbar>
+								
+								<Toolbar class="tbBorder">
 									<ToolbarSpacer/>
 									<Button text="Next" id="nxt" class="b1" press="onPressNext1"/>
 									<ToolbarSpacer/>
@@ -145,7 +145,7 @@
 									</VBox>
 								</HBox>
 								<Toolbar class="tool"/><ToolbarSpacer/>
-								<Toolbar>
+								<Toolbar class="tbBorder">
 									<ToolbarSpacer/>
 									<Button id="prev" text="Prev" class="b11" press="onPressBack"/>
 									<Button text="Next" id="next" class="b1" press="onPressNext2"/>
@@ -206,7 +206,7 @@
 									</VBox>
 								</HBox>
 								<Toolbar class="tool"/><ToolbarSpacer/>
-								<Toolbar>
+								<Toolbar class="tbBorder">
 									<ToolbarSpacer/>
 									<Button id="back" text="Prev" class="b11" press="onPressBack"/>
 									<Button text="Save" id="save" class="b1" press="onPressNavToDetail"/>
