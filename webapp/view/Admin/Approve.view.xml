@@ -33,7 +33,7 @@
 									</HBox>
 									
 									<HBox>
-										<Label text="set Password" width="200px"/>
+										<Label text="Set Password" width="200px"/>
 										<Input value="" class="acr_inp" id="a_pwd"/>
 									</HBox>
 								</VBox>
