@@ -1,14 +1,12 @@
-<core:FragmentDefinition
-	xmlns="sap.m"
-	xmlns:core="sap.ui.core">
-	<ResponsivePopover
-		class="p1popover"
-		placement="Bottom" id="login">
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ResponsivePopover class="p1popover" placement="Bottom" id="login">
 		<content>
-			<List id="loginList">
-				<StandardListItem title = "Admin" />
-				<StandardListItem title = "BackOffice" />
-				<StandardListItem title = "Telecaller"/>
+			<List id="loginList" itemPress="onItemSelect">
+				<items>
+					<StandardListItem title="Admin" type="Active"/>
+					<StandardListItem title="BackOffice" type="Active"/>
+					<StandardListItem title="Telecaller" type="Active"/>
+				</items>
 			</List>
 		</content>
 	</ResponsivePopover>

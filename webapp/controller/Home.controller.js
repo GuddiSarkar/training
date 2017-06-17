@@ -57,6 +57,12 @@ sap.ui.define([
 			}
 
 			oDialog.openBy(oEvent.getSource());
+		},
+		
+		onItemSelect: function()
+		{
+			var oItem = oEvent.getParameter("listItem");
+			var oSelected = oItem.getTitle();
 		}
 		
 	});
