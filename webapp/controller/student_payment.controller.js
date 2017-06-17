@@ -1,44 +1,73 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"sap/ui/core/mvc/Controller",
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator",
+	"sap/ui/core/routing/History"
+], function(Controller, Filter, FilterOperator, History) {
 	"use strict";
-
+	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.student_payment", {
 
-		/**
-		 * Called when a controller is instantiated and its View controls (if available) are already created.
-		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-		 * @memberOf com.demoTMS.view.student_payment
-		 */
-		//	onInit: function() {
-		//
-		//	},
+		onPressBack: function(oEvent) {
+			var oHistory, sPreviousHash;
+			oHistory = History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				this.getRouter().navTo("payment", {}, true /*no history*/ );
+			}
+		},
 
-		/**
-		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
-		 * (NOT before the first rendering! onInit() is used for that one!).
-		 * @memberOf com.demoTMS.view.student_payment
-		 */
-		//	onBeforeRendering: function() {
-		//
-		//	},
-
-		/**
-		 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
-		 * This hook is the same one that SAPUI5 controls get after being rendered.
-		 * @memberOf com.demoTMS.view.student_payment
-		 */
-		//	onAfterRendering: function() {
-		//
-		//	},
-
-		/**
-		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
-		 * @memberOf com.demoTMS.view.student_payment
-		 */
-		//	onExit: function() {
-		//
-		//	}
+		onInit: function() {
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+		},
+		onSearch: function(oEvent) {
+			var oTable = this.getView().byId("adCrsTable");
+			var oBinding = oTable.getBinding("items");
+			var value = oEvent.getParameter("query");
+			var oFilter1 = new Filter("stud_name", FilterOperator.Contains, value);
+			var oFilter2 = new Filter("course_name", FilterOperator.Contains, value);
+			var oFilter3 = new Filter("stud_payment_reg_fee", FilterOperator.Contains, value);
+			var oFilter4 = new Filter("stud_payment_instal_1", FilterOperator.Contains, value);
+			var oFilter5 = new Filter("stud_payment_instal_2", FilterOperator.Contains, value);
+			var oFilter6 = new Filter("stud_payment_instal_3", FilterOperator.Contains, value);
+			//var oFilter7 = new Filter("Amount", FilterOperator.Contains, value);
+			var allFilter = new Filter([oFilter1, oFilter2, oFilter3, oFilter4, oFilter5, oFilter6], false);
+			oBinding.filter(allFilter);
+		},
+		
+		formatPay: function(){
+			
+		},
+		
+		onAfterRendering: function() {
+			var oTable = this.getView().byId("adCrsTable");
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.read("/tb_stud_payment", {
+				success: function(oData, oResponse) {
+					for (var i = 0; i < oData.results.length; i++) {
+						var val = oData.results[i].stud_payment_instal_1;
+						if (val === "0") {
+							var link = this.getView().byId("lnk").setEnabled(true);
+							
+							var link1 = this.getView().byId("lnk").setText("PAY NOW");
+							alert(this.getView().byId("lnk").getText());
+							//oTable.getColumns()[4].setVisible(false);
+							//var link2 = this.getView().byId("lnk1").setEnabled(false);
+							//var col = this.getView().byId("ins1").data("mykey", link1);
+						} else {
+							var link3 = this.getView().byId("lnk").setEnabled(false);
+							var link4 = this.getView().byId("lnk").setText(val);
+							//var link = this.getView().byId("lnk").setEnabled(false);
+							//var col = this.getView().byId("ins1").data("mykey", link4);
+							console.log(oData.results[i].stud_payment_instal_1);
+						}
+					}
+				}.bind(this)
+			});
+		}
 
 	});
 

@@ -5,7 +5,7 @@
 			<Page title="Training Management System" showHeader="false">
 				<content>
 					<HBox height="100%" class="bg">
-						<Panel  width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
+						<Panel  width="auto"  class="sapUiResponsiveMargin hd1 acr_pnl">
 							<headerToolbar>
 								<Toolbar class="pan">
 									<Title text="Student Payment" textAlign="Center" />
@@ -13,8 +13,9 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
+								<Link text="" enabled="true" emphasized="true" id="lnk"></Link>
 								<Table id="adCrsTable" items= "{course>/tb_stud_payment}" class="TableBorderTop" growing="true" 
-								growingThreshold="1">
+								growingThreshold="25">
 							
 								<columns height="20px">	
 								<Column width="8%"
@@ -81,11 +82,13 @@
 						        		<Text text="{course>stud_payment_name}" />
 										<Text text="{course>stud_payment_course}" />
 										<Text text="{course>stud_payment_reg_fee}" />
-										<Link text="" enabled="true" emphasized="true" id="lnk"></Link>
-										<!--<HBox id="in1" visible="false">
-											<Text text="" id="t1" visible="false"/>
+										<Link text="" enabled="true" emphasized="true" id="lnks"></Link>
+										
+											<!--<Toolbar class="tbBorder">
+											<Text text="{= ${course>stud_payment_instal_1} === 0 ? true : false, formatter: '.formatPay}" id="t1" visible="true"/>
 											<Button text="PAY NOW" id="bt" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel" visible="false"/>
-										</HBox>-->
+											</Toolbar>-->
+										
 										<Text text="{course>stud_payment_instal_2}" />
 										<Text text="{course>stud_payment_instal_3}" />
 										<Text text="{course>stud_payment_instal_4}" />
