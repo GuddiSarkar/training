@@ -123,7 +123,7 @@
 /* add student css */
 
 .srch{
-	left:23%;
+	left:24.5%;
 }
 
 .srch1{
@@ -134,9 +134,9 @@
 	left:25%;
 }
 
-/*.srch3{*/
-/*	left:32.5%;*/
-/*}*/
+.srch3{
+	left:29.5%;
+}
 
 .srch4{
 	left:56.5%;
@@ -150,34 +150,35 @@
 	left:59.5%;
 }
 
-/*.srch7{*/
-/*	left:33%;*/
-/*}*/
+.srch7{
+	left:30.5%;
+}
 
 .srch8{
 	left:58.3%;
 }
 .srch9{
-	left:4%;
+	left:30%;
 }
 .srch10{
 	left:30%;
 }
 .srch11{
-	left:26%;
+	left:22.5%;
 }
-/*.srch12{*/
-/*	left:24%;*/
-/*}*/
-/*.srch13{*/
-/*	left:19%;*/
-/*}*/
+.srch12{
+	left:21%;
+}
+.srch13{
+	left:16%;
+}
 .srch14{
-	left:24%;
+	left:21%;
 }
 .srch15{
-	left:24%;
+	left:16.5%;
 }
+
 
 
 .sapMFlexItemAlignAuto{

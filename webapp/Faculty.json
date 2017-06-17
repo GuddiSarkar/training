@@ -42,7 +42,7 @@
 	"ref": "sap-icon://message-information",
 	"custom": "fac1"
 }, {
-	"text": "Payment Faculty",
+	"text": "View Faculty",
 	"ref": "sap-icon://payment-approval",
 	"custom": "fac2"
 }]
@@ -55,7 +55,8 @@
 	"custom": "add1"
 }, {
 	"text": "View Reminder",
-	"ref": "sap-icon://education"
+	"ref": "sap-icon://education",
+	"custom": "vwrmdr"
 }]
 }, {
 "text": "Payment",
