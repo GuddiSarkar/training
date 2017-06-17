@@ -62,19 +62,19 @@
 "ref": "sap-icon://study-leave",
 "nodes": [{
 		"text": "Student Payment",
-		"ref": "sap-icon://user-settings",
+		"ref": "sap-icon://lead",
 		"custom": "stupymnt"
 	}, {
 		"text": "View Student Payment",
-		"ref": "sap-icon://user-settings",
+		"ref": "sap-icon://customer-view",
 		"custom": "vstupymnt"
 	}, {
 		"text": "Faculty payment",
-		"ref": "sap-icon://user-settings",
+		"ref": "sap-icon://batch-payments",
 		"custom": "fclpymnt"
 	}, {
 		"text": "View Faculty payment",
-		"ref": "sap-icon://user-settings",
+		"ref": "sap-icon://simple-payment",
 		"custom": "vfclpymnt"
 	}
 

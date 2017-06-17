@@ -53,7 +53,7 @@
 						<headerToolbar>
 							<Toolbar class="pan">
 								<Title text="Facalty"/>
-								<SearchField width="30%" class="sapUiSmallMargin srch7" search="onSearch"/>
+								<SearchField width="30%" class="sapUiSmallMargin srch" search="onSearch"/>
 							</Toolbar>
 						</headerToolbar>
 						<content >

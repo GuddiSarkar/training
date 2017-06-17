@@ -33,15 +33,15 @@
 					<l:VerticalLayout class="slideTilesLayout">
 						<SlideTile class="firsttile" transitionTime="200" displayTime="2500">
 							<tiles>
-								<GenericTile backgroundImage="images/DibyaSir.jpg" frameType="TwoByOne" press="onPressAdmin">
-									<tileContent>
-										<TileContent footer="Innovador">
-											<content>
-												<NewsContent contentText="Admin Portal" subheader="Click here to go inside Admin Portal" press="onPressAdmin"></NewsContent>
-											</content>
-										</TileContent>
-									</tileContent>
-								</GenericTile>
+								<!--<GenericTile backgroundImage="images/DibyaSir.jpg" frameType="TwoByOne" press="onPressAdmin">-->
+								<!--	<tileContent>-->
+								<!--		<TileContent footer="Innovador">-->
+								<!--			<content>-->
+								<!--				<NewsContent contentText="Admin Portal" subheader="Click here to go inside Admin Portal" press="onPressAdmin"></NewsContent>-->
+								<!--			</content>-->
+								<!--		</TileContent>-->
+								<!--	</tileContent>-->
+								<!--</GenericTile>-->
 								<GenericTile backgroundImage="images/Team-Office-Administration_23878_image.jpg" frameType="TwoByOne" press="onPressAdmin">
 									<tileContent>
 										<TileContent footer="Innovador">
@@ -55,15 +55,15 @@
 						</SlideTile>
 						<SlideTile class="secondtile" transitionTime="200" displayTime="2580">
 							<tiles>
-								<GenericTile backgroundImage="images/faculty.jpg" frameType="TwoByOne" press="onPressBackOffice">
-									<tileContent>
-										<TileContent footer="Innovador">
-											<content>
-												<NewsContent contentText="Faculty Portal" subheader="Click here to go inside Faculty Portal" press="onPressBackOffice"></NewsContent>
-											</content>
-										</TileContent>
-									</tileContent>
-								</GenericTile>
+								<!--<GenericTile backgroundImage="images/faculty.jpg" frameType="TwoByOne" press="onPressBackOffice">-->
+								<!--	<tileContent>-->
+								<!--		<TileContent footer="Innovador">-->
+								<!--			<content>-->
+								<!--				<NewsContent contentText="Faculty Portal" subheader="Click here to go inside Faculty Portal" press="onPressBackOffice"></NewsContent>-->
+								<!--			</content>-->
+								<!--		</TileContent>-->
+								<!--	</tileContent>-->
+								<!--</GenericTile>-->
 								<GenericTile backgroundImage="images/faculty2.jpg" frameType="TwoByOne" state="Loaded" press="onPressBackOffice">
 									<tileContent>
 										<TileContent footer="Innovador">
@@ -77,15 +77,15 @@
 						</SlideTile>
 						<SlideTile class="thirdtile" transitionTime="300" displayTime="2500">
 							<tiles>
-								<GenericTile backgroundImage="images/k19709931.jpg" frameType="TwoByOne" press="onPressTelecaller">
-									<tileContent>
-										<TileContent footer="Innovador">
-											<content>
-												<NewsContent contentText="Student Counsellors Portal" subheader="Click here to go inside Staffs Portal" press="onPressTelecaller"></NewsContent>
-											</content>
-										</TileContent>
-									</tileContent>
-								</GenericTile>
+								<!--<GenericTile backgroundImage="images/k19709931.jpg" frameType="TwoByOne" press="onPressTelecaller">-->
+								<!--	<tileContent>-->
+								<!--		<TileContent footer="Innovador">-->
+								<!--			<content>-->
+								<!--				<NewsContent contentText="Student Counsellors Portal" subheader="Click here to go inside Staffs Portal" press="onPressTelecaller"></NewsContent>-->
+								<!--			</content>-->
+								<!--		</TileContent>-->
+								<!--	</tileContent>-->
+								<!--</GenericTile>-->
 								<GenericTile backgroundImage="images/images.jpg" frameType="TwoByOne" state="Loaded" press="onPressTelecaller">
 									<tileContent>
 										<TileContent footer="Innovador">

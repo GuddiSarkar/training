@@ -98,6 +98,13 @@
 .pan.sapMIBar .sapMBarChild:first-child
 {
 	padding-top:2%;
+	padding-left: 2%;
+}
+/*SAnjit*/
+.pan1.sapMIBar .sapMBarChild:first-child {
+    /*color: black;*/
+    /*padding-right: 245px;*/
+    padding-bottom: 0%;
 }
 .t1 .sapMInputBase, .sapMInputBaseInner, .sapMInputBasePlaceholder{
 	border-radius:5px;
@@ -116,7 +123,7 @@
 /* add student css */
 
 .srch{
-	left:28%;
+	left:23%;
 }
 
 .srch1{
@@ -127,9 +134,9 @@
 	left:25%;
 }
 
-.srch3{
-	left:32.5%;
-}
+/*.srch3{*/
+/*	left:32.5%;*/
+/*}*/
 
 .srch4{
 	left:56.5%;
@@ -143,15 +150,15 @@
 	left:59.5%;
 }
 
-.srch7{
-	left:33%;
-}
+/*.srch7{*/
+/*	left:33%;*/
+/*}*/
 
 .srch8{
 	left:58.3%;
 }
 .srch9{
-	left:30%;
+	left:4%;
 }
 .srch10{
 	left:30%;
@@ -159,12 +166,12 @@
 .srch11{
 	left:26%;
 }
-.srch12{
-	left:24%;
-}
-.srch13{
-	left:19%;
-}
+/*.srch12{*/
+/*	left:24%;*/
+/*}*/
+/*.srch13{*/
+/*	left:19%;*/
+/*}*/
 .srch14{
 	left:24%;
 }
@@ -441,7 +448,7 @@ span.sapMBtnInner.sapMBtnAccept{
 }
 .p1popover
 {
-	width:30%;
+	width:10%;
 }
 .vbReminder{
 	width:60%;
@@ -506,7 +513,10 @@ span.sapMBtnInner.sapMBtnAccept {
 /*    background: linear-gradient(to right, #7b82d4 0, #0bec91 100%);*/
 /*}*/
 .sapMIBar .sapMBarChild:first-child {
-    color: black;
+    color: black; 
+    padding-right: 245px;
+    padding-left: 24%;
+    padding-bottom: 2%;
 }
 /*sanjit*/
 /*.btnc.sapMBtn .sapMBtnContent {*/
@@ -593,4 +603,10 @@ span.sapMBtnInner.sapMBtnAccept {
 }
 .sapContrast.sapMIBar-CTX.sapMFooter-CTX .sapMLabel {
     color: black;
+    padding-left: 2%;
+}
+.sapMPopover .sapMIBar.sapMHeader-CTX {
+    background-color: #092B66;
+    box-shadow: inset 0 -1px #ebebeb;
+    width: 100%;
 }

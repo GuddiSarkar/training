@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-	<ResponsivePopover class="sapUiPopupWithPadding p1popover" placement="Bottom" id="register">
+	<ResponsivePopover class="p1popover" placement="Bottom" id="register">
 		<content>
 			<List id="registerList">
 				<StandardListItem title="Admin"/>

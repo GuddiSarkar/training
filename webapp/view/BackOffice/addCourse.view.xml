@@ -58,7 +58,7 @@
 						<headerToolbar>
 							<Toolbar class="pan">
 								<Title text="Courses"/>
-								<SearchField width="30%" class="sapUiSmallMargin srch3" search="onSearch"/>
+								<SearchField width="30%" class="sapUiSmallMargin srch" search="onSearch"/>
 							</Toolbar>
 						</headerToolbar>
 						<content>
