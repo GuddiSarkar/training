@@ -10,12 +10,27 @@ sap.ui.define([
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator"
 
-], function(Controller, jQuery, MessageBox, MessageToast, SimpleType, ValidateException, JSONModel, History,Filter, FilterOperator) {
+], function(Controller, jQuery, MessageBox, MessageToast, SimpleType, ValidateException, JSONModel, History, Filter, FilterOperator) {
 	"use strict";
-/*eslint linebreak-style: ["error", "windows"]*/
+	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.login", {
 
 		onInit: function() {
+			var oData = sap.ui.getCore().getModel("myModel").getData();
+			if (oData.role === "Admin") {
+				this.getView().byId("admin").setVisible(true);
+				this.getView().byId("backOffice").setVisible(false);
+				this.getView().byId("teleCaller").setVisible(false);
+			} else if (oData.role === "BackOffice") {
+				this.getView().byId("admin").setVisible(false);
+				this.getView().byId("backOffice").setVisible(true);
+				this.getView().byId("teleCaller").setVisible(false);
+			} else {
+				this.getView().byId("admin").setVisible(false);
+				this.getView().byId("backOffice").setVisible(false);
+				this.getView().byId("teleCaller").setVisible(true);
+			}
+
 			this.getView().setModel(new JSONModel({
 				username: "",
 				password: ""
@@ -36,6 +51,7 @@ sap.ui.define([
 					control.setValueState("None");
 				}
 			});
+
 		},
 		getRouter: function() {
 			return sap.ui.core.UIComponent.getRouterFor(this);
@@ -44,7 +60,7 @@ sap.ui.define([
 
 			var uname = this.getView().byId("username").getValue();
 			var pwd = this.getView().byId("password").getValue();
-			var filtername = new Filter("user_name", FilterOperator.EQ, uname);
+			var filtername = new Filter("user_username", FilterOperator.EQ, uname);
 			var filterpwd = new Filter("user_pwd", FilterOperator.EQ, pwd);
 			var oFilter = new Filter({
 				filters: [filtername, filterpwd],
@@ -56,7 +72,15 @@ sap.ui.define([
 				filters: [oFilter],
 				success: function(oData, oResponse) {
 					window.sessionStorage.setItem("un", oData.results[0].user_name);
-					this.getRouter().navTo("stu_fac");
+					var oData = sap.ui.getCore().getModel("myModel").getData();
+					if (oData.role === "BackOffice") 
+					{
+						this.getRouter().navTo("backoffice");
+					} 
+					else 
+					{
+						this.getRouter().navTo("telecaller");
+					}
 				}.bind(this),
 				error: function(error) {
 					var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
@@ -68,6 +92,19 @@ sap.ui.define([
 				}.bind(this)
 
 			});
+			if (uname === "admin" && pwd === "admin") {
+				this.getRouter().navTo("admin");
+			} 
+			else 
+			{
+				var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
+				MessageBox.error(
+					"Invalid Credentials", {
+						styleClass: bCompact ? "sapUiSizeCompact" : ""
+					}
+				);
+			}
+
 		},
 		handleLinkPress: function(evt) {
 			this.getRouter().navTo("complain");
@@ -75,7 +112,6 @@ sap.ui.define([
 		handleLinkPressAdmin: function(evt) {
 			this.getRouter().navTo("admin_home");
 		}
-
 
 	});
 

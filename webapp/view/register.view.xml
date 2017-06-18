@@ -31,11 +31,11 @@
 											<items class="itm">
 												<core:Item text="--Select--" key="0"/>
 												<core:Item text="Back Office Staff" key="1"/>
-												<core:Item text="Admission Staff" key="2"/>
+												<core:Item text="Telecaller Staff" key="2"/>
 											</items>
 										</Select>
 							</HBox>
-							<Button text="Log In" type="Emphasized" press="onPress" class="sapUiSmallMarginEnd sapUiSmallMarginTop login" width="20%"/>
+							<Button text="Register" type="Emphasized" press="onRegister" class="sapUiSmallMarginEnd sapUiSmallMarginTop login" width="20%"/>
 						</VBox>
 					</HBox>
 					<HBox class="hb1-header" height="10%">

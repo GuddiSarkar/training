@@ -47,7 +47,7 @@
 												<Text text="{course>reminder_date}"/>
 												<Text text="{course>reminder_id}"/>
 												<Text text="{course>reminder_title}"/>
-												<Link text="{course>reminder_description}" press="onPressDescription"/>
+												<Link text="{course>reminder_description}"/>
 												<Text text="{course>reminder_attended}"/>
 												<Text text="{course>reminder_remarks}"/>
 												<!--<Toolbar class="tbBorder">

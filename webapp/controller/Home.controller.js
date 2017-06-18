@@ -59,11 +59,32 @@ sap.ui.define([
 			oDialog.openBy(oEvent.getSource());
 		},
 		
-		onItemSelect: function()
+		onItemSelect: function(oEvent)
 		{
 			var oItem = oEvent.getParameter("listItem");
 			var oSelected = oItem.getTitle();
+			var data = {
+				"role": oSelected
+			};
+			var oModel =new sap.ui.model.json.JSONModel();
+			oModel.setData(data);
+			sap.ui.getCore().setModel(oModel,"myModel");
+			this.getRouter().navTo("login");
+		},
+		
+		onItemSelected: function(oEvent)
+		{
+			var oItem = oEvent.getParameter("listItem");
+			var oSelected = oItem.getTitle();
+			var data = {
+				"role": oSelected
+			};
+			var oModel =new sap.ui.model.json.JSONModel();
+			oModel.setData(data);
+			sap.ui.getCore().setModel(oModel,"regModel");
+			this.getRouter().navTo("register");
 		}
+
 		
 	});
 });

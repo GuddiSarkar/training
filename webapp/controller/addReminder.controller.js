@@ -20,6 +20,11 @@ sap.ui.define([
 			});
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
+
+			var today = new Date();
+			var someday = new Date(2100, 11, 24);
+			console.log(today);
+			console.log(someday);
 		},
 
 		formatDate: function(sValue) {
@@ -35,23 +40,49 @@ sap.ui.define([
 			return date;
 		},
 
-	
-	// onInit: function() {
-	// 	this.oFormatDdmmyyyy = sap.ui.core.format.DateFormat.getInstance({pattern: "dd-MM-yyyy", calendarType: sap.ui.core.CalendarType.Gregorian});
-	// },
-		
-	onPressBack: function(oEvent)
-		{
+		todaysEvent: function() {
+			var today = new Date();
+			var remdata;
+			jQuery.sap.require("sap.ui.core.format.DateFormat");
+			var oDateFormat = sap.ui.core.format.DateFormat.getDateInstance({
+				pattern: "yyyy-MM-dd"
+			});
+			console.log(oDateFormat.format(new Date(Number(today)))); // 2013/08/11
+			var date = oDateFormat.format(new Date(Number(today)));
+			var filterTitle = new sap.ui.model.Filter("reminder_date", sap.ui.model.FilterOperator.EQ, date);
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+			oModel.read("/tb_reminder", {
+				filters: [filterTitle],
+				success: function(oData, oResponse) {
+					// for(var i = 0; i<oData.results.length; i++){
+					// 	var val = oData.results[i].reminder_title;
+					// 	var link = this.getView().byId("title").setText(true);
+					// }
+					var nModel = new sap.ui.model.json.JSONModel();
+					nModel.setData({
+						title: oData.reminder_title
+					});
+					sap.ui.getCore().setModel(nModel, "remTitle");
+					remdata = sap.ui.getCore().getModel("remTitle").getData();
+				}.bind(this),
+				error: function(error) {
+					alert("in error block");
+				}.bind(this)
+			});
+			return remdata.title;
+		},
+
+		onPressBack: function(oEvent) {
 			var oHistory, sPreviousHash;
 			oHistory = History.getInstance();
 			sPreviousHash = oHistory.getPreviousHash();
 			if (sPreviousHash !== undefined) {
 				window.history.go(-1);
+			} else {
+				this.getRouter().navTo("Reminder_Dashboard", {}, true /*no history*/ );
 			}
-			else {
-				this.getRouter().navTo("Reminder_Dashboard", {}, true /*no history*/);
-			}
-	},
+		},
 		handleShowSpecialDays: function(oEvent) {
 			var oCal1 = this.getView().byId("calendar1");
 			var oLeg1 = this.getView().byId("legend1");

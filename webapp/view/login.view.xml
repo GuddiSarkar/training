@@ -10,7 +10,7 @@
 							<Label text="Training Management System" class="header-text" textAlign="Center"></Label>
 						</VBox>
 					</HBox>
-					<HBox height="15%" id="admin">
+					<HBox height="15%" id="admin" visible="false">
 						<VBox class="vblg">
 							<Label text="Admin Login" design="Bold" class="login-header-text" textAlign="Center"></Label>
 						</VBox>
@@ -31,24 +31,18 @@
 						</VBox>
 					</HBox>
 					<HBox width="100%" height="60%">
-						<VBox class="vb2">
-							<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
-								emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
-								<f:content>
-									<core:Icon src="sap-icon://log" color="#031E48" class="sapUiMediumMarginBottom"/>
-									<HBox class="vb00" id="uname">
-										<Label text="Username" width="50%" textAlign="Right"/>
-										<Input id="username" type="Text" placeholder="Enter Username" valueStateText="Name must not be empty. Maximum 5 characters."
-											value="{ path : '/username', type : 'sap.ui.model.type.String', constraints : { minLength: 3, maxLength: 20 } }"/>
-									</HBox>
-									<HBox class="vb00" id="pwd">
-										<Label text="Password" width="50%" textAlign="Right"/>
-										<Input id="password" type="Password" placeholder="Enter Password" valueStateText="Password must not be empty"
-											value="{ path : '/password', type : 'sap.ui.model.type.String', constraints : { minLength: 3, maxLength: 20 } }"/>
-									</HBox>
-									<Button text="Log In" type="Emphasized" press="onPress" class="sapUiSmallMarginEnd sapUiSmallMarginTop login" width="30%"/>
-								</f:content>
-							</f:SimpleForm>
+						<VBox class="vblog" width="32%" height="40%" backgroundDesign="Solid">
+							<HBox class="sapUiMediumMarginTop sapUiMediumMarginEnd">
+								<Label text="Name" class="regLabel" width="38%" textAlign="Center" design="Bold"/>
+								<Input width="75%" id="username" type="Text" placeholder="Enter Username" valueStateText="Name must not be empty. Maximum 5 characters."
+									value="{ path : '/username', type : 'sap.ui.model.type.String', constraints : { minLength: 3, maxLength: 20 } }"/>
+							</HBox>
+							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
+								<Label text="Email" class="regLabel" width="27%" textAlign="Right" design="Bold"/>
+								<Input width="75%" id="password" type="Password" placeholder="Enter Password" valueStateText="Password must not be empty"
+									value="{ path : '/password', type : 'sap.ui.model.type.String', constraints : { minLength: 3, maxLength: 20 } }"/>
+							</HBox>
+							<Button text="Log In" type="Emphasized" press="onPress" class="sapUiSmallMarginEnd sapUiSmallMarginTop login" width="20%"/>
 						</VBox>
 					</HBox>
 					<!--</l:VerticalLayout>-->

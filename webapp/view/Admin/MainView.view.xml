@@ -2,7 +2,7 @@
  xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:html="http://www.w3.org/1999/xhtml">
 	<SplitApp id="split" initialDetail="approve" initialMaster="master2" backgroundColor="White">
 		<detailPages>
-			<Page id="approve" title="Approve" class="sapUiStdPage">
+			<Page id="approve" title="Approve" class="sapUiStdPage" showHeader="false">
 				<content>
 					<mvc:XMLView viewName="com.demoTMS.view.Admin.Approve" />
 				</content>
