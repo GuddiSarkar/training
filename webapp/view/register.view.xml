@@ -30,8 +30,8 @@
 								<Select width="75%" class="sel" id="role" selectedKey="">
 											<items class="itm">
 												<core:Item text="--Select--" key="0"/>
-												<core:Item text="Back Office Staff" key="1"/>
-												<core:Item text="Telecaller Staff" key="2"/>
+												<core:Item text="BackOffice" key="1"/>
+												<core:Item text="Telecaller" key="2"/>
 											</items>
 										</Select>
 							</HBox>

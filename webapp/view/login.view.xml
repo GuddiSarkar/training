@@ -15,17 +15,17 @@
 							<Label text="Admin Login" design="Bold" class="login-header-text" textAlign="Center"></Label>
 						</VBox>
 					</HBox>
-					<HBox height="15%" id="faculty" visible="false">
+					<HBox height="15%" id="Faculty" visible="false">
 						<VBox class="vblg">
 							<Label text="Faculty Login" design="Bold" class="login-header-text" textAlign="Center"></Label>
 						</VBox>
 					</HBox>
-					<HBox height="15%" id="backOffice" visible="false">
+					<HBox height="15%" id="BackOffice" visible="false">
 						<VBox class="vblg">
 							<Label text="Back Office Login" design="Bold" class="login-header-text" textAlign="Center"></Label>
 						</VBox>
 					</HBox>
-					<HBox height="15%" id="teleCaller" visible="false">
+					<HBox height="15%" id="Telecaller" visible="false">
 						<VBox class="vblg">
 							<Label text="Telecaller Login" design="Bold" class="login-header-text" textAlign="Center"></Label>
 						</VBox>
