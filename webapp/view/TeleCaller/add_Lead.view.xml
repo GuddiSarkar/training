@@ -57,8 +57,8 @@
 					</Panel>
 					<Panel width="auto" class="sapUiResponsiveMargin hd2 acr_pnl">
 						<headerToolbar>
-							<Toolbar>
-								<Title text="Lead Calls" class="pan1"/>
+							<Toolbar class="pan">
+								<Title text="Lead Calls" />
 								<SearchField width="30%" class="sapUiSmallMargin srch9" search="onSearch"/>
 							</Toolbar>
 						</headerToolbar>

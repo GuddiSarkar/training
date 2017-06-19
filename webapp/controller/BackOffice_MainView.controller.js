@@ -10,7 +10,17 @@ sap.ui.define([
 	return Controller.extend("com.demoTMS.controller.BackOffice_MainView", {
 		_ListCount: 0,
 		_selectIndex: null,
-		
+
+		onLogoffPress: function(oEvent) {
+
+			//window.sessionStorage.removeItem("un");
+			this.getRouter().navTo("home");
+
+		},
+		getRouter: function() {
+			return sap.ui.core.UIComponent.getRouterFor(this);
+		},
+
 		onPressDetailBack: function() {
 			this.getSplitAppObj().backDetail();
 		},
@@ -160,20 +170,18 @@ sap.ui.define([
 				}
 			}
 		},
-		
+
 		onInit: function() {
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
 		},
-		
-				onSelectCourse: function(oEvent) {
+
+		onSelectCourse: function(oEvent) {
 			var crs_id = this.getView().byId("c_name").getSelectedKey();
 			var oModel = this.getOwnerComponent().getModel("course");
 			this.getView().setModel(oModel);
 
 			oModel.read("/tb_course(" + crs_id + ")", {
-
-		
 
 				success: function(oData, oResponse) {
 					this.getView().byId("c_fee").setValue(oData.course_fee);
@@ -422,10 +430,10 @@ sap.ui.define([
 				return false;
 			}
 		},
-		
+
 		onChangeFName: function validateForm() {
 			var x = this.getView().byId("f_name").getValue();
-			
+
 			if (x == "") {
 				alert("This field cannot be empty");
 				return false;

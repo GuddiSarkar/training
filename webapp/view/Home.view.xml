@@ -46,7 +46,7 @@
 									<tileContent>
 										<TileContent footer="Innovador">
 											<content>
-												<NewsContent contentText="Admin Portal" subheader="Click here to go inside Admin Portal" press="onPressAdmin"></NewsContent>
+												<NewsContent contentText="Admin" subheader="Click here to go inside Admin Portal" press="onPressAdmin"></NewsContent>
 											</content>
 										</TileContent>
 									</tileContent>
@@ -68,7 +68,7 @@
 									<tileContent>
 										<TileContent footer="Innovador">
 											<content>
-												<NewsContent contentText="Faculty Portal" subheader="Click here to go inside Faculty Portal" press="onPressBackOffice"></NewsContent>
+												<NewsContent contentText="Backoffice" subheader="Click here to go inside Faculty Portal" press="onPressBackOffice"></NewsContent>
 											</content>
 										</TileContent>
 									</tileContent>
@@ -90,7 +90,7 @@
 									<tileContent>
 										<TileContent footer="Innovador">
 											<content>
-												<NewsContent contentText="Student Counsellors Portal" subheader="Click here to go inside Staffs Portal" press="onPressTelecaller"></NewsContent>
+												<NewsContent contentText="Telecaller" subheader="Click here to go inside Staffs Portal" press="onPressTelecaller"></NewsContent>
 											</content>
 										</TileContent>
 									</tileContent>

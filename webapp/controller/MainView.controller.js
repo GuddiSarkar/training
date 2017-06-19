@@ -38,7 +38,19 @@ sap.ui.define([
 				jQuery.sap.log.info("SplitApp object can't be found");
 			}
 			return result;
+		},
+			onLogoffPress: function(oEvent)
+		{
+		
+              //window.sessionStorage.removeItem("un");
+              this.getRouter().navTo("home");
+              
+
+		},
+				getRouter: function(){
+			return sap.ui.core.UIComponent.getRouterFor(this);	
 		}
+
 
 
 	});

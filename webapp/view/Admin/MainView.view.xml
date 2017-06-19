@@ -1,24 +1,54 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.MainView"
- xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:html="http://www.w3.org/1999/xhtml">
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:html="http://www.w3.org/1999/xhtml">
 	<SplitApp id="split" initialDetail="approve" initialMaster="master2" backgroundColor="White">
 		<detailPages>
 			<Page id="approve" title="Approve" class="sapUiStdPage" showHeader="false">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.Admin.Approve" />
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb">
+							<Label text="Approve" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
+					<mvc:XMLView viewName="com.demoTMS.view.Admin.Approve"/>
 				</content>
 			</Page>
-			<Page id="mnjstf" title="Manage Staff" class="sapUiStdPage" showNavButton="false" navButtonText="Back"
-				navButtonPress="onPressDetailBack">
+			<Page id="mnjstf" title="Manage Staff" class="sapUiStdPage" showHeader="false" showNavButton="false" navButtonText="Back" navButtonPress="onPressDetailBack">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.Admin.Manage_Staff" />
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack" ariaLabelledBy="editButtonLabel"/>	
+						</VBox>
+						<VBox class="admin_vb1">
+							<Label text="Manage Staff" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
+					<mvc:XMLView viewName="com.demoTMS.view.Admin.Manage_Staff"/>
 				</content>
 			</Page>
-			<Page id="mntstf" title="Monitor Staff" class="sapMPage" showNavButton="false" navButtonText="Back" navButtonPress="onPressDetailBack" enableScrolling="true">
+			<Page id="mntstf" title="Monitor Staff" class="sapMPage" showNavButton="false" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
+				enableScrolling="true">
 				<content>
-					<mvc:XMLView viewName="com.demoTMS.view.Admin.Monitor_Staff" />
+						<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack" ariaLabelledBy="editButtonLabel"/>	
+						</VBox>
+						<VBox class="admin_vb1">
+							<Label text="Monitor Staff" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
+					<mvc:XMLView viewName="com.demoTMS.view.Admin.Monitor_Staff"/>
 				</content>
 			</Page>
-			</detailPages>
+		</detailPages>
 		<masterPages>
 			<Page id="master2" showHeader="true" title="Master" class="sapUiStdPage" showNavButton="false" navButtonPress="onPressMasterBack">
 				<content>

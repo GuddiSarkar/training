@@ -3,8 +3,16 @@
 	xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
 	<SplitApp id="split" initialDetail="stu" initialMaster="master2" backgroundColor="White">
 		<detailPages>
-			<Page id="per_det" title=" Student" class="sapUiStdPage">
+			<Page id="per_det" title=" Student" class="sapUiStdPage" showHeader="false">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb">
+							<Label text="Approve" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
 						<headerToolbar>
 							<Toolbar height="3rem" class="pan">
@@ -97,7 +105,6 @@
 										</HBox>
 									</VBox>
 								</HBox>
-								
 								<Toolbar class="tbBorder">
 									<ToolbarSpacer/>
 									<Button text="Next" id="nxt" class="b1" press="onPressNext1"/>
@@ -108,8 +115,16 @@
 					</Panel>
 				</content>
 			</Page>
-			<Page id="admn_det" title=" Student" class="sapUiStdPage">
+			<Page id="admn_det" title=" Student" class="sapUiStdPage" showHeader="false">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb">
+							<Label text="Approve" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
 						<headerToolbar>
 							<Toolbar height="3rem" class="pan">
@@ -156,8 +171,16 @@
 					</Panel>
 				</content>
 			</Page>
-			<Page id="fee_det" title=" Student" class="sapUiStdPage">
+			<Page id="fee_det" title=" Student" class="sapUiStdPage" showHeader="false">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb">
+							<Label text="Approve" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
 						<headerToolbar>
 							<Toolbar height="3rem" class="pan">
@@ -217,68 +240,200 @@
 					</Panel>
 				</content>
 			</Page>
-			<Page id="stu1" title=" Student" class="sapUiStdPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack">
+			<Page id="stu1" title=" Student" class="sapUiStdPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="admin_vb1">
+							<Label text="Student" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewStudent"/>
 				</content>
 			</Page>
-			<Page id="course1" title="Course" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+			<Page id="course1" title="Course" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
 				enableScrolling="true">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="admin_vb1">
+							<Label text="Course" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.addCourse"/>
 				</content>
 			</Page>
-			<Page id="course2" title=" Course" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+			<Page id="course2" title=" Course" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
 				enableScrolling="true">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="admin_vb1">
+							<Label text="Course" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewCourse"/>
 				</content>
 			</Page>
-			<Page id="fac1" title=" BackOffice" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+			<Page id="fac1" title=" BackOffice" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
 				enableScrolling="true">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="admin_vb1">
+							<Label text="BackOffice" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.addFacalty"/>
 				</content>
 			</Page>
-			<Page id="fac2" title=" BackOffice" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+			<Page id="fac2" title=" BackOffice" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
 				enableScrolling="true">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="admin_vb1">
+							<Label text="BackOffice" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewFaculty"/>
 				</content>
 			</Page>
-			<Page id="add1" title=" Reminder" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+			<Page id="add1" title=" Reminder" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
 				enableScrolling="true">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="admin_vb1">
+							<Label text="Reminder" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.addReminder"/>
 				</content>
 			</Page>
-			<Page id="vwrmdr" title="View Reminder" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+			<Page id="vwrmdr" title="View Reminder" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
 				enableScrolling="true">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="admin_vb1">
+							<Label text="View Reminder" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.View_Reminder"/>
 				</content>
 			</Page>
-			<Page id="stupymnt" title="Student Payment" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+			<Page id="stupymnt" title="Student Payment" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
 				enableScrolling="true">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="admin_vb1">
+							<Label text="Student Payment" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.student_payment"/>
 				</content>
 			</Page>
-			<Page id="vstupymnt" title="View Student Payment" class="sapMPage" showNavButton="true" navButtonText="Back"
+			<Page id="vstupymnt" title="View Student Payment" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back"
 				navButtonPress="onPressDetailBack" enableScrolling="true">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="admin_vb1">
+							<Label text="Student Payment" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewStudent_Payment"/>
 				</content>
 			</Page>
-			<Page id="fclpymnt" title="Faculty Payment" class="sapMPage" showNavButton="true" navButtonText="Back" navButtonPress="onPressDetailBack"
+			<Page id="fclpymnt" title="Faculty Payment" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
 				enableScrolling="true">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="admin_vb1">
+							<Label text="Faculty Payment" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.Facalty_Payment"/>
 				</content>
 			</Page>
-			<Page id="vfclpymnt" title="View Faculty Payment" class="sapMPage" showNavButton="true" navButtonText="Back"
+			<Page id="vfclpymnt" title="View Faculty Payment" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back"
 				navButtonPress="onPressDetailBack" enableScrolling="true">
 				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="admin_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="admin_vb1">
+							<Label text="Faculty Payment" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="admin_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewFacalty_Payment"/>
 				</content>
 			</Page>
