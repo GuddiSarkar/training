@@ -40,35 +40,7 @@ sap.ui.define([
 		
 		formatPay: function(){
 			
-		},
-		onAfterRendering: function() {
-			var oTable = this.getView().byId("adCrsTable");
-			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.read("/tb_stud_payment", {
-				success: function(oData, oResponse) {
-					for (var i = 0; i < oData.results.length; i++) {
-						var val = oData.results[i].stud_payment_instal_1;
-						if (val === "0") {
-							 this.getView().byId("lnk").setEnabled(true);
-							
-							this.getView().byId("btn").setText("PAY NOW");
-							console.log("hello");
-							//oTable.getColumns()[4].setVisible(false);
-							//var link2 = this.getView().byId("lnk1").setEnabled(false);
-							//var col = this.getView().byId("ins1").data("mykey", link1);
-						} else {
-							this.getView().byId("lnk").setEnabled(false);
-							 this.getView().byId("lnk").setText(val);
-							//var link = this.getView().byId("lnk").setEnabled(false);
-							//var col = this.getView().byId("ins1").data("mykey", link4);
-							console.log(oData.results[i].stud_payment_instal_1);
-						}
-					}
-				}.bind(this)
-			});
 		}
-
-	
 		
 		
 });

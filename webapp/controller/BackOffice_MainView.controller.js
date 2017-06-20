@@ -3,8 +3,11 @@ sap.ui.define([
 	'sap/m/MessageToast',
 	'sap/ui/core/Fragment',
 	'sap/ui/core/mvc/Controller',
-	'sap/ui/model/json/JSONModel'
-], function(jQuery, MessageToast, Fragment, Controller, JSONModel) {
+	'sap/ui/model/json/JSONModel',
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"
+
+], function(jQuery, MessageToast, Fragment, Controller, JSONModel, Filter, FilterOperator) {
 	"use strict";
 	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.BackOffice_MainView", {
@@ -12,9 +15,44 @@ sap.ui.define([
 		_selectIndex: null,
 
 		onLogoffPress: function(oEvent) {
+			var uname =  window.sessionStorage.getItem("un");
+			var loginTime =  window.sessionStorage.getItem("dt");
+			var filterlt = new Filter("login_dtime", FilterOperator.EQ, loginTime);
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+			// oModel.read("/tb_ulginhstry", {
+			// 	filters: [filterlt],
+			// 	success: function(oData, oResponse) {
+			// 		var nm = oData.results[0].user_name;
+			// 		var id = oData.results.user_id;
+			// 		console.log(nm);
+			// 		cnsole.log(id);
+			// 	}.bind(this),
+			// 	error: function(error) {
+			// 		alert("error");
+			// 	}.bind(this)
+			// });
+			var dateTime = new Date();
+			var date = dateTime.toLocaleString();
+			var data = {
+				"logout_dtime": date
+			};
+			oModel.update("/tb_ulginhstry", data, {
+				filters: [filterlt],
+				success: function(oData, oResponse) {
+					console.log(oData);
+					console.log(oResponse);
+					console.log(oData.logout_dtime);
+					window.sessionStorage.removeItem("un");
+					this.getRouter().navTo("home");
 
-			//window.sessionStorage.removeItem("un");
-			this.getRouter().navTo("home");
+				}.bind(this),
+				error: function(err) {
+					console.log(err);
+				}.bind(this)
+			});
+			oModel.setRefreshAfterChange(true);
+
 
 		},
 		getRouter: function() {
