@@ -13,7 +13,7 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<Table id="Table" items="{course>/}" class="TableBorderTop" growing="true" growingThreshold="3" inset="false">
+								<Table id="Table" items="{course>/tb_ulginhstry}" class="TableBorderTop" growing="true" growingThreshold="3" inset="false">
 									<columns height="20px">
 										<!--<Column width="10%" minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
 											<Text text="ID"/>
@@ -37,11 +37,11 @@
 									<items>
 										<ColumnListItem>
 											<cells>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
+												<Text text="{course>user_id}"/>
+												<Text text="{course>user_name}"/>
+												<Text text="{course>user_role}"/>
+												<Text text="{course>login_dtime}"/>
+												<Text text="{course>logout_dtime}"/>
 											</cells>
 										</ColumnListItem>
 									</items>

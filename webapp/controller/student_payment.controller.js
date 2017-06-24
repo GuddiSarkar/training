@@ -51,7 +51,10 @@ sap.ui.define([
 						if (val === "0") {
 							 this.getView().byId("lnk").setEnabled(true);
 							
-							this.getView().byId("btn").setText("PAY NOW");
+							this.getView().byId("btn1").setVisible(true);
+							this.getView().byId("btn21").setVisible(true);
+							this.getView().byId("btn3").setVisible(true);
+							/*this.getView().byId("btn4").setVisible(true);*/
 							console.log("hello");
 							//oTable.getColumns()[4].setVisible(false);
 							//var link2 = this.getView().byId("lnk1").setEnabled(false);

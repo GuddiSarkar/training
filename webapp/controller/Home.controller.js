@@ -22,16 +22,40 @@ sap.ui.define([
 		},
 */		onPressAdmin: function()
 		{
+			// var oSelected = this.getView().byId("admin").getContentText();
+			// var data = {
+			// 	"role": oSelected
+			// };
+			// var oModel =new sap.ui.model.json.JSONModel();
+			// oModel.setData(data);
+			// sap.ui.getCore().setModel(oModel,"aModel");
+			// this.getRouter().navTo("login");
 			this.getRouter().navTo("admin");
 		},
 		
 		onPressBackOffice: function()
 		{
+			// var oSelected = this.getView().byId("backoffice").getContentText();
+			// var data = {
+			// 	"role": oSelected
+			// };
+			// var oModel =new sap.ui.model.json.JSONModel();
+			// oModel.setData(data);
+			// sap.ui.getCore().setModel(oModel,"bModel");
+			// this.getRouter().navTo("login");
 			this.getRouter().navTo("backoffice");
 		},
 
 		onPressTelecaller: function()
 		{
+			// var oSelected = this.getView().byId("telecaller").getContentText();
+			// var data = {
+			// 	"role": oSelected
+			// };
+			// var oModel =new sap.ui.model.json.JSONModel();
+			// oModel.setData(data);
+			// sap.ui.getCore().setModel(oModel,"tModel");
+			// this.getRouter().navTo("login");
 			this.getRouter().navTo("telecaller");
 		},
 		

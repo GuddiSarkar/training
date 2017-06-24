@@ -16,21 +16,45 @@ sap.ui.define([
 	return Controller.extend("com.demoTMS.controller.login", {
 
 		onInit: function() {
-			var oData = sap.ui.getCore().getModel("myModel").getData();
-			if (oData.role === "Admin") {
-				this.getView().byId("admin").setVisible(true);
-				this.getView().byId("BackOffice").setVisible(false);
-				this.getView().byId("Telecaller").setVisible(false);
-			} else if (oData.role === "BackOffice") {
-				this.getView().byId("admin").setVisible(false);
-				this.getView().byId("BackOffice").setVisible(true);
-				this.getView().byId("Telecaller").setVisible(false);
-			} else {
-				this.getView().byId("admin").setVisible(false);
-				this.getView().byId("BackOffice").setVisible(false);
-				this.getView().byId("Telecaller").setVisible(true);
-			}
 
+			var chkSel = sap.ui.getCore().getModel("myModel");
+			if (!chkSel) {
+				var aData = sap.ui.getCore().getModel("aModel").getData();
+				if (aData.role === "Admin") {
+					this.getView().byId("admin").setVisible(true);
+					this.getView().byId("BackOffice").setVisible(false);
+					this.getView().byId("Telecaller").setVisible(false);
+				} else {
+					var bData = sap.ui.getCore().getModel("bModel").getData();
+					if (bData.role === "Backoffice") {
+						this.getView().byId("admin").setVisible(false);
+						this.getView().byId("BackOffice").setVisible(true);
+						this.getView().byId("Telecaller").setVisible(false);
+					} else {
+						var tData = sap.ui.getCore().getModel("tModel").getData();
+						if (tData.role === "Telecaller") {
+							this.getView().byId("admin").setVisible(false);
+							this.getView().byId("BackOffice").setVisible(false);
+							this.getView().byId("Telecaller").setVisible(true);
+						}
+					}
+				}
+			} else {
+				var oData = sap.ui.getCore().getModel("myModel").getData();
+				if (oData.role === "Admin") {
+					this.getView().byId("admin").setVisible(true);
+					this.getView().byId("BackOffice").setVisible(false);
+					this.getView().byId("Telecaller").setVisible(false);
+				} else if (oData.role === "BackOffice") {
+					this.getView().byId("admin").setVisible(false);
+					this.getView().byId("BackOffice").setVisible(true);
+					this.getView().byId("Telecaller").setVisible(false);
+				} else {
+					this.getView().byId("admin").setVisible(false);
+					this.getView().byId("BackOffice").setVisible(false);
+					this.getView().byId("Telecaller").setVisible(true);
+				}
+			}
 			this.getView().setModel(new JSONModel({
 				username: "",
 				password: ""
@@ -53,11 +77,11 @@ sap.ui.define([
 			});
 
 		},
-		
+
 		getRouter: function() {
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},
-		
+
 		onPress: function(oEvent) {
 			var dateTime = new Date();
 			console.log(dateTime.toLocaleString());
@@ -66,75 +90,64 @@ sap.ui.define([
 			var Data = sap.ui.getCore().getModel("myModel").getData();
 			var uname = this.getView().byId("username").getValue();
 			var pwd = this.getView().byId("password").getValue();
-			var filtername = new Filter("user_username", FilterOperator.EQ, uname);
-			var filterpwd = new Filter("user_pwd", FilterOperator.EQ, pwd);
-			var filterrole = new Filter("user_role", FilterOperator.EQ, Data.role);
-			var oFilter = new Filter({
-				filters: [filtername, filterpwd, filterrole],
-				bAnd: true
-			});
-			
-			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.setUseBatch(false);
+			if (uname === "admin" && pwd === "admin") {
+				this.getRouter().navTo("admin");
+			} else {
 
-			oModel.read("/tb_user", {
-				filters: [oFilter],
-				success: function(oData, oResponse) {
-					window.sessionStorage.setItem("un", oData.results[0].user_username);
-					window.sessionStorage.setItem("dt", date);
-					if (Data.role === "BackOffice") 
-					{
-						this.getRouter().navTo("backoffice");
-					} 
-					else 
-					{
-						this.getRouter().navTo("telecaller");
-					}
-				}.bind(this),
-				error: function(error) {
-					var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
-					MessageBox.error(
-						"Invalid Credentials", {
-							styleClass: bCompact ? "sapUiSizeCompact" : ""
+				var filtername = new Filter("user_username", FilterOperator.EQ, uname);
+				var filterpwd = new Filter("user_pwd", FilterOperator.EQ, pwd);
+				var filterrole = new Filter("user_role", FilterOperator.EQ, Data.role);
+				var oFilter = new Filter({
+					filters: [filtername, filterpwd, filterrole],
+					bAnd: true
+				});
+
+				var oModel = this.getOwnerComponent().getModel("course");
+				oModel.setUseBatch(false);
+
+				oModel.read("/tb_user", {
+					filters: [oFilter],
+					success: function(oData, oResponse) {
+						window.sessionStorage.setItem("un", oData.results[0].user_username);
+						window.sessionStorage.setItem("dt", date);
+						if (Data.role === "BackOffice") {
+							this.getRouter().navTo("backoffice");
+						} else {
+							this.getRouter().navTo("telecaller");
 						}
-					);
-				}.bind(this)
+					}.bind(this),
+					error: function(error) {
+						var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
+						MessageBox.error(
+							"Invalid Credentials", {
+								styleClass: bCompact ? "sapUiSizeCompact" : ""
+							}
+						);
+					}.bind(this)
 
-			});
-			// if (uname === "admin" && pwd === "admin") {
-			// 	this.getRouter().navTo("admin");
-			// } 
-			// else 
-			// {
-			// 	var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
-			// 	MessageBox.error(
-			// 		"Invalid Credentials", {
-			// 			styleClass: bCompact ? "sapUiSizeCompact" : ""
-			// 		}
-			// 	);
-			// }
-			
-			var oEntry = {
-				"user_name": uname,
-				"login_dtime": date,
-				"user_role": Data.role
-			};
-			oModel.create("/tb_ulginhstry", oEntry, {
-				success: function(oData) {
-			
-				}.bind(this),
-				error: function(error) {
+				});
 
-				}.bind(this)
-			});
+				var oEntry = {
+					"user_name": uname,
+					"login_dtime": date,
+					"user_role": Data.role
+				};
+				oModel.create("/tb_ulginhstry", oEntry, {
+					success: function(oData) {
 
+					}.bind(this),
+					error: function(error) {
+
+					}.bind(this)
+				});
+			}
 
 		},
-		
+
 		handleLinkPress: function(evt) {
 			this.getRouter().navTo("complain");
 		},
-		
+
 		handleLinkPressAdmin: function(evt) {
 			this.getRouter().navTo("admin_home");
 		}

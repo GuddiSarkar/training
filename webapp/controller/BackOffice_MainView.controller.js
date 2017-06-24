@@ -6,7 +6,6 @@ sap.ui.define([
 	'sap/ui/model/json/JSONModel',
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator"
-
 ], function(jQuery, MessageToast, Fragment, Controller, JSONModel, Filter, FilterOperator) {
 	"use strict";
 	/*eslint linebreak-style: ["error", "windows"]*/
@@ -15,46 +14,65 @@ sap.ui.define([
 		_selectIndex: null,
 
 		onLogoffPress: function(oEvent) {
-			var uname =  window.sessionStorage.getItem("un");
-			var loginTime =  window.sessionStorage.getItem("dt");
+			var uname = window.sessionStorage.getItem("un");
+			var loginTime = window.sessionStorage.getItem("dt");
+			var filterun = new Filter("user_name", FilterOperator.EQ, uname);
 			var filterlt = new Filter("login_dtime", FilterOperator.EQ, loginTime);
+			//var id1 = null;
+			var oFilter = new Filter({
+				filters: [filterun, filterlt],
+				bAnd: true
+			});
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
-			// oModel.read("/tb_ulginhstry", {
-			// 	filters: [filterlt],
-			// 	success: function(oData, oResponse) {
-			// 		var nm = oData.results[0].user_name;
-			// 		var id = oData.results.user_id;
-			// 		console.log(nm);
-			// 		cnsole.log(id);
-			// 	}.bind(this),
-			// 	error: function(error) {
-			// 		alert("error");
-			// 	}.bind(this)
-			// });
-			var dateTime = new Date();
-			var date = dateTime.toLocaleString();
-			var data = {
-				"logout_dtime": date
-			};
-			oModel.update("/tb_ulginhstry", data, {
-				filters: [filterlt],
+			var oCatDef = $.Deferred();
+			oModel.read("/tb_ulginhstry", {
+				filters: [oFilter],
 				success: function(oData, oResponse) {
-					console.log(oData);
-					console.log(oResponse);
-					console.log(oData.logout_dtime);
-					window.sessionStorage.removeItem("un");
-					this.getRouter().navTo("home");
-
+					var nm = oData.results[0].user_name;
+					this.id = oData.results[0].user_id;
+					console.log(nm);
+					console.log(this.id);
+					var dateTime = new Date();
+					this.date = dateTime.toLocaleString();
+					oCatDef.resolve();
 				}.bind(this),
-				error: function(err) {
-					console.log(err);
+				error: function(oErr) 
+				{
+					console.log("we r in error block"+oErr);
+					oCatDef.reject();
 				}.bind(this)
 			});
-			oModel.setRefreshAfterChange(true);
 
+			$.when(oCatDef).then(
+				function() 
+				{
+		
+					var data = {
+						"logout_dtime": this.date
+					};
+					oModel.update("/tb_ulginhstry(" + this.id + ")", data, {
+						//filters: [filterlt],
+						success: function(dData, dResponse) {
+							console.log(dData);
+							console.log(dResponse);
+							//console.log(dData.results.logout_dtime);
+							window.sessionStorage.removeItem("un");
+							
+							
+						}.bind(this),
+						error: function(err) {
+							console.log(err);
+						}.bind(this)
+					});
+					this.getRouter().navTo("home");
+					oModel.setRefreshAfterChange(true);
+
+				}.bind(this)
+			);
 
 		},
+
 		getRouter: function() {
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},
@@ -162,7 +180,7 @@ sap.ui.define([
 
 		enableDisableButtons: function() {
 			//enable disable buttons
-			var l = this.getView().byId("idStatuslist").getItems().length;
+			var l = this.getView().byId("Tree").getItems().length;
 			if ((l - 1) === this._selectIndex) {
 				this.getView().byId("next").setEnabled(false);
 			} else {
@@ -285,12 +303,12 @@ sap.ui.define([
 			oModelStud.create("/tb_student", oEntryStud, {
 				success: function(oData) {
 
-					var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
-					MessageBox.success(
-						"Data Saved Successfully", {
-							styleClass: bCompact ? "sapUiSizeCompact" : ""
-						}
-					);
+					// var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
+					// MessageBox.success(
+					// 	"Data Saved Successfully", {
+					// 		styleClass: bCompact ? "sapUiSizeCompact" : ""
+					// 	}
+					// );
 					this.getView().byId("f_name").setValue("");
 					this.getView().byId("l_name").setValue("");
 					this.getView().byId("g_nder").setValue("");

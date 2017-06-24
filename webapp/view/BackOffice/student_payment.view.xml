@@ -87,15 +87,19 @@
 											<Button text="PAY NOW" id="bt" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel" visible="false"/>
 										</HBox>-->
 										<Text text="{course>stud_payment_instal_2}" />
+										<Button text="pay" visible="false" id="btn1"></Button>
 										<Text text="{course>stud_payment_instal_3}" />
+										<Button text="pay" visible="false" id="btn21"></Button>
 										<Text text="{course>stud_payment_instal_4}" />
+										<Button text="Pay" visible="false" id="btn3"></Button>
 										<Text text="{course>stud_payment_instal_5}" />
+										<!--<Button text="pay" visible="false" id="btn4"></Button>-->
 										<Text text="{course>stud_payment_fee}" />
 										<Toolbar class="tbBorder">
 											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
 											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
 										</Toolbar>
-										<Button text="PAY NOW" visible="false" id="btn"></Button>
+										
 										<Link text="" enabled="" emphasized="true" id="lnk1"></Link>
 										<!--<HBox id="in2" visible="false">
 											<Text text="" id="t1" />

@@ -40,16 +40,66 @@ sap.ui.define([
 			}
 			return result;
 		},
-		onLogoffPress: function(oEvent) {
 
-			//window.sessionStorage.removeItem("un");
-			this.getRouter().navTo("home");
-
-		},
 		getRouter: function() {
 			return sap.ui.core.UIComponent.getRouterFor(this);
+		},
+		
+		onLogoffPress: function(oEvent) {
+			var uname = window.sessionStorage.getItem("un");
+			var loginTime = window.sessionStorage.getItem("dt");
+			var filterun = new Filter("user_name", FilterOperator.EQ, uname);
+			var filterlt = new Filter("login_dtime", FilterOperator.EQ, loginTime);
+			//var id1 = null;
+			var oFilter = new Filter({
+				filters: [filterun, filterlt],
+				bAnd: true
+			});
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+			var oCatDef = $.Deferred();
+			oModel.read("/tb_ulginhstry", {
+				filters: [oFilter],
+				success: function(oData, oResponse) {
+					var nm = oData.results[0].user_name;
+					this.id = oData.results[0].user_id;
+					console.log(nm);
+					console.log(this.id);
+					var dateTime = new Date();
+					this.date = dateTime.toLocaleString();
+					oCatDef.resolve();
+				}.bind(this),
+				error: function(oErr) {
+					console.log("we r in error block" + oErr);
+					oCatDef.reject();
+				}.bind(this)
+			});
+
+			$.when(oCatDef).then(
+				function() {
+
+					var data = {
+						"logout_dtime": this.date
+					};
+					oModel.update("/tb_ulginhstry(" + this.id + ")", data, {
+						//filters: [filterlt],
+						success: function(dData, dResponse) {
+							console.log(dData);
+							console.log(dResponse);
+							//console.log(dData.results.logout_dtime);
+							window.sessionStorage.removeItem("un");
+
+						}.bind(this),
+						error: function(err) {
+							console.log(err);
+						}.bind(this)
+					});
+					this.getRouter().navTo("home");
+					oModel.setRefreshAfterChange(true);
+
+				}.bind(this)
+			);
 		}
-	
 	});
 
 });
