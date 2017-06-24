@@ -1,10 +1,12 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"sap/ui/core/mvc/Controller",
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"
+], function(Controller, Filter, FilterOperator) {
 	"use strict";
-/*eslint linebreak-style: ["error", "windows"]*/
+	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.TeleCaller_mainView", {
-			onPressDetailBack: function() {
+		onPressDetailBack: function() {
 			this.getSplitAppObj().backDetail();
 		},
 
@@ -30,7 +32,7 @@ sap.ui.define([
 				duration: 5000
 			});
 		},
-        
+
 		getSplitAppObj: function() {
 			var result = this.byId("split");
 			if (!result) {
@@ -38,20 +40,16 @@ sap.ui.define([
 			}
 			return result;
 		},
-			onLogoffPress: function(oEvent)
-		{
-		
-              //window.sessionStorage.removeItem("un");
-              this.getRouter().navTo("home");
-              
+		onLogoffPress: function(oEvent) {
+
+			//window.sessionStorage.removeItem("un");
+			this.getRouter().navTo("home");
 
 		},
-				getRouter: function(){
-			return sap.ui.core.UIComponent.getRouterFor(this);	
+		getRouter: function() {
+			return sap.ui.core.UIComponent.getRouterFor(this);
 		}
-
-
-
+	
 	});
 
 });

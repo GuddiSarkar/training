@@ -9,11 +9,11 @@
 							<headerToolbar>
 								<Toolbar class="pan">
 									<Title text="Follow Up" textAlign="Center"/>
-									<SearchField width="30%" class="sapUiSmallMargin srch" search="onSearch"/>
+									<SearchField width="30%" class="sapUiSmallMargin srch20" search="onSearch"/>
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<Table id="adCrsTable" items="{course>/}" class="TableBorderTop" growing="true" growingThreshold="1">
+								<Table id="adCrsTable" items="{course>/tb_lead}" class="TableBorderTop" growing="true" growingThreshold="1">
 									<columns>
 										<Column demandPopin="true" styleClass="cellBorderRight">
 											<Text text="Name"/>
@@ -37,28 +37,24 @@
 											<Text text="Follow UP"/>
 										</Column>
 										<Column demandPopin="true" styleClass="cellBorderRight">
-											<Text text="Remarks"/>
+											<Text text="Date"/>
 										</Column>
 										<Column demandPopin="true" styleClass="cellBorderRight">
-											<Text text="Action"/>
+											<Text text="Remarks"/>
 										</Column>
 									</columns>
 									<items>
 										<ColumnListItem>
 											<cells>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Toolbar class="tbBorder">
-													<Button icon="sap-icon://edit" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
-													<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
-												</Toolbar>
+												<Text text="{course>lead_name}"/>
+												<Text text="{course>lead_mobile}"/>
+												<Text text="{course>lead_gender}"/>
+												<Text text="{course>lead_email}"/>
+												<Text text="{course>lead_address}"/>
+												<Text text="{course>lead_course}"/>
+												<core:Icon src="sap-icon://appointment" press="onAppointment"/>
+												<Text text="{course>lead_date}"/>
+												<core:Icon src="sap-icon://create" press="onAddRemarks"/>
 											</cells>
 										</ColumnListItem>
 									</items>

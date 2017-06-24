@@ -232,7 +232,7 @@
 								<Toolbar class="tbBorder">
 									<ToolbarSpacer/>
 									<Button id="back" text="Prev" class="b11" press="onPressBack"/>
-									<Button text="Save" id="save" class="b1" press="onPressNavToDetail"/>
+									<Button text="Save" id="save" class="b1" press="addStudent"/>
 									<ToolbarSpacer/>
 								</Toolbar>
 							</l:VerticalLayout>

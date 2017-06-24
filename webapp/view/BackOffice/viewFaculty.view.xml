@@ -9,7 +9,7 @@
 							<headerToolbar>
 								<Toolbar class="pan">
 									<Title text="View Faculty" textAlign="Center"/>
-									<SearchField width="30%" class="sapUiSmallMargin srch" search="onSearch"/>
+									<SearchField width="30%" class="sapUiSmallMargin srch19" search="onSearch"/>
 								</Toolbar>
 							</headerToolbar>
 							<content>

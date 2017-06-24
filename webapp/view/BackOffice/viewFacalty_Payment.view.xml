@@ -5,7 +5,7 @@
 			<Page title="Training Management System" showHeader="false">
 				<content>
 					<HBox height="100%" class="bg">
-						<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
+						<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl" visible="false">
 							<headerToolbar>
 								<Toolbar class="pan">
 									<Title text="View Facalty Payment" textAlign="Center"/>
@@ -57,6 +57,36 @@
 										</ColumnListItem>
 									</items>
 								</Table>
+							</content>
+						</Panel>
+						<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl" visible="true">
+							<headerToolbar>
+								<Toolbar class="pan">
+									<Title text="Bill" textAlign="Center"/>
+								</Toolbar>
+							</headerToolbar>
+							<content>
+								<HBox>
+									<HBox class="billhb">
+										<VBox class="billLogo">
+											<Label text="PAYMENT RECEIPT" class="billText" design="Bold"></Label>
+										</VBox>
+									</HBox>
+									<HBox class="billhb1">
+										<VBox>
+											<Toolbar class="tbBorder">
+											<Label text="Bill No. "></Label>
+											<Text text="001"></Text>
+											</Toolbar>
+										</VBox>
+										<VBox>
+											<Toolbar class="tbBorder">
+											<Label text="Date "></Label>
+											<Text text="26/05/2017"></Text>
+											</Toolbar>
+										</VBox>
+									</HBox>
+								</HBox>
 							</content>
 						</Panel>
 					</HBox>

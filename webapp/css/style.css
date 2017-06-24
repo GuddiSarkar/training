@@ -25,7 +25,6 @@
 	padding-left:19%;
 	margin-left:20%;
 	padding-top:2%;
-
 }
 .admin_header_label{
 	text-align:center;
@@ -60,6 +59,9 @@
 .regLabel.sapMLabel{
 	padding-left:30%;
 	padding-top:5%;
+}
+.remLabel.sapMLabel{
+	padding-top:10%;
 }
 
 .header-text{
@@ -151,9 +153,11 @@
 /* add student css */
 
 .srch{
-	left:24.5%;
+	left:25%;
 }
-
+.srch0{
+	left:26%;
+}
 .srch1{
 	left:56%;
 }
@@ -163,7 +167,7 @@
 }
 
 .srch3{
-	left:29.5%;
+	left:19%;
 }
 
 .srch4{
@@ -179,7 +183,7 @@
 }
 
 .srch7{
-	left:30.5%;
+	left:31%;
 }
 
 .srch8{
@@ -192,7 +196,7 @@
 	left:30%;
 }
 .srch11{
-	left:22.5%;
+	left:24%;
 }
 .srch12{
 	left:21%;
@@ -205,6 +209,21 @@
 }
 .srch15{
 	left:16.5%;
+}
+.srch16{
+	left:30%;
+}
+.srch17{
+	left:26%;
+}
+.srch18{
+	left:25.5%;
+}
+.srch19{
+	left:26%;
+}
+.srch20{
+	left:28%;
 }
 
 
@@ -254,6 +273,66 @@
 	height:100%;
 }
 
+.lcHBox{
+	/*border: solid 1px;*/
+	margin-left:2%;
+	margin-right:2%;
+}
+
+.lcVBox{
+	left:31.5%;
+	border: solid 2px;
+	background-color:#ffffff;
+}
+
+.lcVBox2{
+	border: solid 2px;
+	background-color:#ffffff;
+	margin-left:12%;
+}
+
+.lcVBox3{
+	border: solid 2px;
+	background-color:#ffffff;
+	margin-top:5%;
+	margin-left:12%;
+}
+
+.arhb0{
+	padding-left:8%;
+}
+.arhb1{
+	padding-left:10%;
+}
+
+
+.leadTitle{
+	padding-top:5%;
+	padding-bottom:3%;
+	padding-left:38%;
+}
+
+.lead.sapUiCal{
+	width:28rem;
+}
+
+.billText
+{
+	text-decoration: underline;
+}
+
+.billhb{
+	border: solid 1px;
+}
+.billhb1{
+	border: solid 1px;
+	margin-top:5%;
+}
+
+.billLogo
+{
+	left:40%;
+}
 /*.asi .sapMInputBaseInner{*/
 /*	background:#E0E0E0;*/
 /*	border-radius:5px;*/

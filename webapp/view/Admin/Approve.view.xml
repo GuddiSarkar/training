@@ -4,43 +4,6 @@
 		<pages>
 			<Page title="Title" showHeader="false">
 				<content>
-					<!--<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">-->
-					<!--	<headerToolbar>-->
-					<!--		<Toolbar height="3rem" class="pan">-->
-					<!--			<Title text="Approve"/>-->
-					<!--		</Toolbar>-->
-					<!--	</headerToolbar>-->
-					<!--	<content>-->
-					<!--		<l:VerticalLayout id="containerLayout2" width="100%">-->
-					<!--			<HBox>-->
-					<!--				<VBox class="acr_vb2">-->
-					<!--					<HBox>-->
-					<!--						<Label text="Name" width="200px"/>-->
-					<!--						<Input value="" class="acr_inp" id="a_name"/>-->
-					<!--					</HBox>-->
-					<!--					<HBox>-->
-					<!--						<Label text="Role" width="200px"/>-->
-					<!--						<Input value="" class="acr_inp" id="a_role"/>-->
-					<!--					</HBox>-->
-					<!--				</VBox>-->
-					<!--				<VBox class="acr_vb22">-->
-					<!--					<HBox>-->
-					<!--						<Label text="Set UserName" width="200px"/>-->
-					<!--						<Input value="" class="acr_inp" id="a_uname"/>-->
-					<!--					</HBox>-->
-					<!--					<HBox>-->
-					<!--						<Label text="Set Password" width="200px"/>-->
-					<!--						<Input value="" class="acr_inp" id="a_pwd"/>-->
-					<!--					</HBox>-->
-					<!--				</VBox>-->
-					<!--			</HBox>-->
-					<!--		</l:VerticalLayout>-->
-					<!--		<Toolbar class="acr_tiny_margin" width="0px"></Toolbar>-->
-					<!--		<HBox class="btn1">-->
-					<!--			<Button text="Save" width="100px" class="b1" press="addSave"/>-->
-					<!--		</HBox>-->
-					<!--	</content>-->
-					<!--</Panel>-->
 					<Panel width="auto" class="sapUiResponsiveMargin hd2 acr_pnl">
 						<headerToolbar>
 							<Toolbar class="pan">
