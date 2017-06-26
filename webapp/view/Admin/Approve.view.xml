@@ -18,13 +18,22 @@
 										<Text text="Id"/>
 									</Column>
 									<Column demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
-										<Text text="Employee Name"/>
+										<Text text="Name"/>
 									</Column>
 									<Column demandPopin="true" styleClass="cellBorderRight">
-										<Text text="Employee Email"/>
+										<Text text="Email"/>
 									</Column>
 									<Column demandPopin="true" styleClass="cellBorderRight">
-										<Text text="Employee Role"/>
+										<Text text="Role"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="UserName"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Password"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Confirm Password"/>
 									</Column>
 									<Column demandPopin="true" styleClass="cellBorderRight">
 										<Text text="Action"/>
@@ -37,6 +46,9 @@
 											<Text text="{course>register_user_name}"/>
 											<Text text="{course>register_user_email}"/>
 											<Text text="{course>register_user_role}"/>
+											<Text text="{course>register_user_username}"/>
+											<Text text="{course>register_user_password}"/>
+											<Text text="{course>register_user_cnfPassword}"/>
 											<Button text="Approve"  class="b1" press="onClickApprove" ariaLabelledBy="editButtonLabel"/>
 										</cells>
 									</ColumnListItem>

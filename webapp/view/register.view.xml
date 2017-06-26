@@ -16,24 +16,36 @@
 						</VBox>
 					</HBox>
 					<HBox width="100%" height="60%">
-						<VBox class="vbreg" width="37%" height="50%" backgroundDesign="Solid">
+						<VBox class="vbreg" width="45%" height="62%" backgroundDesign="Solid">
 							<HBox class="sapUiMediumMarginTop sapUiMediumMarginEnd">
-								<Label text="Name" class="regLabel" width="38%" textAlign="Center" design="Bold"/>
+								<Label text="Name" class="regLabel" width="37%" textAlign="Center" design="Bold"/>
 								<Input id="name" width="75%" type="Text" placeholder="Enter Name" value=""/>
 							</HBox>
 							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
-								<Label text="Email" class="regLabel" width="27%" textAlign="Right" design="Bold"/>
+								<Label text="Email" class="regLabel" width="26%" textAlign="Right" design="Bold"/>
 								<Input id="email" width="75%" type="Email" placeholder="Enter Email" value=""/>
 							</HBox>
 							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
-								<Label text="Role" class="regLabel" width="24.5%" textAlign="Right" design="Bold"/>
+								<Label text="Role" class="regLabel" width="24%" textAlign="Right" design="Bold"/>
 								<Select width="75%" class="sel" id="role" selectedKey="">
-											<items class="itm">
-												<core:Item text="--Select--" key="0"/>
-												<core:Item text="BackOffice" key="1"/>
-												<core:Item text="Telecaller" key="2"/>
-											</items>
-										</Select>
+									<items class="itm">
+										<core:Item text="--Select--" key="0"/>
+										<core:Item text="BackOffice" key="1"/>
+										<core:Item text="Telecaller" key="2"/>
+									</items>
+								</Select>
+							</HBox>
+							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
+								<Label text="UserName" class="regLabel" width="52.5%" textAlign="Center" design="Bold"/>
+								<Input id="uname" width="75%" type="Text" placeholder="Enter Name" value=""/>
+							</HBox>
+							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
+								<Label text="Password" class="regLabel" width="52%" textAlign="Center" design="Bold"/>
+								<Input id="pwd" width="75%" type="Password" placeholder="Enter Name" value=""/>
+							</HBox>
+							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
+								<Label text="Confirm Password" class="regLabel" width="77%" textAlign="Center" design="Bold"/>
+								<Input id="cnfpwd" width="75%" type="Password" placeholder="Enter Name" value=""/>
 							</HBox>
 							<Button text="Register" type="Emphasized" press="onRegister" class="sapUiSmallMarginEnd sapUiSmallMarginTop login" width="20%"/>
 						</VBox>

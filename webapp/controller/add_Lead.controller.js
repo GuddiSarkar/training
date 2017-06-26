@@ -12,15 +12,16 @@ sap.ui.define([
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
 			this.oFormatDdmmyyyy = sap.ui.core.format.DateFormat.getInstance({
-			pattern: "dd-MM-yyyy", 
-			calendarType: sap.ui.core.CalendarType.Gregorian});
-			
+				pattern: "dd-MM-yyyy",
+				calendarType: sap.ui.core.CalendarType.Gregorian
+			});
+
 			var str = "26-05-1991 Hello,03-12-1991 Hiii,04-11-1993 Byyy"
 			var len = str.length;
 			var comma = str.lastIndexOf(",");
-			var newStr = str.slice(comma+1, len);
-			
-			var str1 = str-newStr;
+			var newStr = str.slice(comma + 1, len);
+
+			var str1 = str - newStr;
 
 		},
 
@@ -70,8 +71,7 @@ sap.ui.define([
 
 			oModel.setRefreshAfterChange(true);
 		},
-		onAppointment: function(oEvent)
-		{
+		onAppointment: function(oEvent) {
 			this.getView().byId("leadTitle").setVisible(true);
 			this.getView().byId("calTitle").setVisible(true);
 			this.getView().byId("remTitle").setVisible(false);
@@ -82,17 +82,15 @@ sap.ui.define([
 			this.getView().byId("addLead").setVisible(false);
 			this.getView().byId("leadCalls").setVisible(false);
 			this.getView().byId("addRem").setVisible(false);
-			
+
 			var oTable = this.getView().byId("adCrsTable");
 			var path = oEvent.getSource().getBindingContext("course").getPath();
 			var model = oTable.getModel("course");
 			var property = model.getProperty(path);
 			var id = this.getView().byId("id").setValue(property.lead_id);
-
 		},
-		
-		onAddRemarks: function(oEvent)
-		{
+
+		onAddRemarks: function(oEvent) {
 			this.getView().byId("addLead").setVisible(false);
 			this.getView().byId("leadCalls").setVisible(false);
 			this.getView().byId("back").setVisible(true);
@@ -103,16 +101,37 @@ sap.ui.define([
 			this.getView().byId("cal").setVisible(false);
 			this.getView().byId("addRem").setVisible(true);
 			this.getView().byId("addRemarks").setVisible(true);
-			
+
 			var oTable = this.getView().byId("adCrsTable");
 			var path = oEvent.getSource().getBindingContext("course").getPath();
 			var model = oTable.getModel("course");
 			var property = model.getProperty(path);
 			var id = this.getView().byId("lead_id").setValue(property.lead_id);
 			var date = this.getView().byId("rem_date").setValue(property.lead_date);
+			var name = this.getView().byId("rem_name").setValue(property.lead_name);
+			
+			var lid = this.getView().byId("lead_id").getValue()
+		    var filterid = new Filter("lead_id", FilterOperator.EQ, lid);
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+			oModel.read("/tb_remarks", {
+				filters: [filterid],
+				success: function(oData, oResponse) {
+				
+					var nModel = new sap.ui.model.json.JSONModel();
+					nModel.setData({remarks:oData.results});
+					this.getView().setModel(nModel,"remDet");  
+					
+				}.bind(this),
+				error: function(error) {
+					
+				}.bind(this)
+
+			});
+
 		},
-		
-		onBack: function(){
+
+		onBack: function() {
 			this.getView().byId("addLead").setVisible(true);
 			this.getView().byId("leadCalls").setVisible(true);
 			this.getView().byId("leadTitle").setVisible(false);
@@ -121,7 +140,7 @@ sap.ui.define([
 			this.getView().byId("addRem").setVisible(false);
 			this.getView().byId("back").setVisible(false);
 		},
-		
+
 		handleShowSpecialDays: function(oEvent) {
 			var oCal1 = this.getView().byId("calendar1");
 			var oLeg1 = this.getView().byId("legend1");
@@ -168,7 +187,7 @@ sap.ui.define([
 			var aSelectedDates = oCalendar.getSelectedDates();
 			var id = this.getView().byId("id").getValue();
 			var oDate;
-			
+
 			if (aSelectedDates.length > 0) {
 				oDate = aSelectedDates[0].getStartDate();
 			} else {
@@ -195,18 +214,33 @@ sap.ui.define([
 			this.getView().byId("leadCalls").setVisible(true);
 			this.getView().byId("back").setVisible(false);
 		},
-		
-		addRemarks: function()
-		{
+
+		addRemarks: function() {
 			var id = this.getView().byId("lead_id").getValue();
 			var date = this.getView().byId("rem_date").getValue();
 			var rem = this.getView().byId("add_rem").getValue();
+			var name = this.getView().byId("rem_name").getValue();
 			//var remarks = date+" "+rem+",";
 			var data = {
 				"lead_remarks": rem
 			};
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.update("/tb_lead(" + id + ")", data, {
+				success: function(oData, oResponse) {
+					console.log(oData);
+					console.log(oResponse);
+				}.bind(this),
+				error: function(err) {
+					console.log(err);
+				}.bind(this)
+			});
+			var remData = {
+				"lead_id": id,
+				"remarks_date": date,
+				"remarks": rem,
+				"stud_name":name
+			}
+			oModel.create("/tb_remarks", remData, {
 				success: function(oData, oResponse) {
 					console.log(oData);
 					console.log(oResponse);

@@ -22,9 +22,25 @@ sap.ui.define([
 			oModel.setUseBatch(false);
 
 			var today = new Date();
-			var someday = new Date(2100, 11, 24);
 			console.log(today);
-			console.log(someday);
+			var date = this.oFormatDdmmyyyy.format(today);
+		    var filterid = new sap.ui.model.Filter("reminder_date", sap.ui.model.FilterOperator.EQ, date);
+			oModel.read("/tb_reminder", {
+				filters: [filterid],
+				success: function(oData, oResponse) {
+				
+					var nModel = new sap.ui.model.json.JSONModel();
+					nModel.setData({reminder:oData.results});
+					this.getView().setModel(nModel,"currentDayRem");  
+					
+				}.bind(this),
+				error: function(error) {
+					
+				}.bind(this)
+
+			});
+			
+			oModel.setRefreshAfterChange(true);
 		},
 
 		formatDate: function(sValue) {

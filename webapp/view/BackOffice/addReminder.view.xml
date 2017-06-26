@@ -22,16 +22,18 @@
 										<u:Calendar id="calendar2" legend="legend2" select="handleCalendarSelect"/>
 									</l:BlockLayoutCell>
 									<l:BlockLayoutCell title="Today's Follow Up" titleAlignment="Center">
-										<l:content >
-											<List mode="None" items="{path: 'course>/tb_reminder'}" class="vbReminder" width="80%">
+										<l:content>
+											<!--<VBox height="30%" backgroundDesign="Solid">-->
+											<List mode="None" items="{path: 'currentDayRem>/reminder'}" class="vbReminder" width="80%">
 												<CustomListItem>
 													<HBox>
 														<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
-															<Link text="{path:'course>reminder_title', formatter:'.todaysEvent'}" id="title" emphasized="true" press="onPressEvent"/>
+															<Link text="{currentDayRem>reminder_title}" id="title" emphasized="true" press="onPressEvent"/>
 														</VBox>
 													</HBox>
 												</CustomListItem>
 											</List>
+											<!--</VBox>-->
 										</l:content>
 									</l:BlockLayoutCell>
 								</l:BlockLayoutRow>

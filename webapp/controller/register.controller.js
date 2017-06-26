@@ -14,10 +14,16 @@ sap.ui.define([
 			var eName = this.getView().byId("name").getValue();
 			var eEmail = this.getView().byId("email").getValue();
 			var eRole = this.getView().byId("role").getSelectedItem().getText();
+			var eUname = this.getView().byId("uname").getValue();
+			var ePass = this.getView().byId("pwd").getValue();
+			var eCnfPass = this.getView().byId("cnfpwd").getValue();
 			var oEntry = {
 				"register_user_name": eName,
 				"register_user_email": eEmail,
-				"register_user_role": eRole
+				"register_user_role": eRole,
+				"register_user_username": eUname,
+				"register_user_password": ePass,
+				"register_user_cnfPassword": eCnfPass
 			};
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);

@@ -42,7 +42,7 @@
 								<!--		</TileContent>-->
 								<!--	</tileContent>-->
 								<!--</GenericTile>-->
-								<GenericTile backgroundImage="images/Team-Office-Administration_23878_image.jpg" frameType="TwoByOne" press="onPressAdmin">
+								<GenericTile backgroundImage="images/Team-Office-Administration_23878_image.jpg"  frameType="TwoByOne">
 									<tileContent>
 										<TileContent footer="Innovador">
 											<content>

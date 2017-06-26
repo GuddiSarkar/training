@@ -142,9 +142,10 @@
 									<HBox>
 										<HBox class="acr_vb2">
 											<Input value="" id="lead_id" visible="false"/>
+											<Input value="" id="rem_name" visible="false"/>
 											<HBox class="arhb0">
 												<Label text="Date" class="remLabel"/>
-												<Input value="" id="rem_date"/>
+												<Input value="" id="rem_date" enabled="false"/>
 											</HBox>
 											<HBox class="arhb1">
 												<Label text="Remarks" class="remLabel"/>
@@ -160,10 +161,13 @@
 						</Panel>
 					</HBox>
 					<HBox width="75%" class="lcVBox3" id="addRemarks" visible="false">
-					<Table id="remTable" items="{course>/tb_lead}" class="TableBorderTop" growing="true" growingThreshold="1">
+					<Table id="remTable" items="{remDet>/remarks}" class="TableBorderTop" growing="true" growingThreshold="1">
 						<columns>
 							<Column demandPopin="true" styleClass="cellBorderRight">
 								<Text text="Date"/>
+							</Column>
+							<Column demandPopin="true" styleClass="cellBorderRight">
+								<Text text="Name"/>
 							</Column>
 							<Column demandPopin="true" styleClass="cellBorderRight">
 								<Text text="Remarks"/>
@@ -172,8 +176,9 @@
 						<items>
 							<ColumnListItem>
 								<cells>
-									<Text text="{course>tb_lead}"/>
-									<Text text="{course>lead_remarks}"/>
+									<Text text="{remDet>remarks_date}"/>
+									<Text text="{remDet>stud_name}"/>
+									<Text text="{remDet>remarks}"/>
 								</cells>
 							</ColumnListItem>
 						</items>

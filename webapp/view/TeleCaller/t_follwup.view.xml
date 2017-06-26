@@ -1,67 +1,138 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.t_follwup"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
 	<App>
 		<pages>
 			<Page title="Training Management System" showHeader="false">
 				<content>
-					<HBox height="93%" class="bg">
-						<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
-							<headerToolbar>
-								<Toolbar class="pan">
-									<Title text="Follow Up" textAlign="Center"/>
-									<SearchField width="30%" class="sapUiSmallMargin srch20" search="onSearch"/>
-								</Toolbar>
-							</headerToolbar>
+					<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl" id="leadCalls">
+						<headerToolbar>
+							<Toolbar class="pan">
+								<Title text="Follow Up" textAlign="Center"/>
+								<SearchField width="30%" class="sapUiSmallMargin srch20" search="onSearch"/>
+							</Toolbar>
+						</headerToolbar>
+						<content>
+							<Table id="adCrsTable" items="{TodaysRem>/folloUp}" class="TableBorderTop" growing="true" growingThreshold="1">
+								<columns>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Name"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Mobile"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Gender"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Email"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Address"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Course"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Follow UP"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Date"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Remarks"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{TodaysRem>lead_name}"/>
+											<Text text="{TodaysRem>lead_mobile}"/>
+											<Text text="{TodaysRem>lead_gender}"/>
+											<Text text="{TodaysRem>lead_email}"/>
+											<Text text="{TodaysRem>lead_address}"/>
+											<Text text="{TodaysRem>lead_course}"/>
+											<core:Icon src="sap-icon://appointment" press="onAppointment"/>
+											<Text text="{TodaysRem>lead_date}"/>
+											<core:Icon src="sap-icon://create" press="onAddRemarks"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</Panel>
+					<HBox visible="false" id="leadTitle">
+						<VBox class="leadTitle" id="calTitle" visible="false">
+							<Label text="Add Follow Up !" design="Bold" class="leadTitle"/>
+						</VBox>
+						<VBox class="leadTitle" id="remTitle" visible="false">
+							<Label text="Add Remarks !" design="Bold" class="leadTitle"/>
+						</VBox>
+					</HBox>
+					<HBox class="lcHBox" visible="false" id="leadCalndr">
+						<HBox width="37%" class="lcVBox" id="cal" visible="false">
+							<Input id="id" value="" visible="false"></Input>
+							<u:Calendar id="calendar2" legend="legend2" select="handleCalendarSelect"/>
+						</HBox>
+					</HBox>
+					<HBox width="75%" class="lcVBox2" id="addRem" visible="false">
+						<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl" id="addRemark">
+							<!--<headerToolbar>-->
+							<!--	<Toolbar height="3rem" class="pan">-->
+							<!--		<Title text="Add Lead calls"/>-->
+							<!--	</Toolbar>-->
+							<!--</headerToolbar>-->
 							<content>
-								<Table id="adCrsTable" items="{course>/tb_lead}" class="TableBorderTop" growing="true" growingThreshold="1">
-									<columns>
-										<Column demandPopin="true" styleClass="cellBorderRight">
-											<Text text="Name"/>
-										</Column>
-										<Column demandPopin="true" styleClass="cellBorderRight">
-											<Text text="Mobile"/>
-										</Column>
-										<Column demandPopin="true" styleClass="cellBorderRight">
-											<Text text="Gender"/>
-										</Column>
-										<Column demandPopin="true" styleClass="cellBorderRight">
-											<Text text="Email"/>
-										</Column>
-										<Column demandPopin="true" styleClass="cellBorderRight">
-											<Text text="Address"/>
-										</Column>
-										<Column demandPopin="true" styleClass="cellBorderRight">
-											<Text text="Course"/>
-										</Column>
-										<Column demandPopin="true" styleClass="cellBorderRight">
-											<Text text="Follow UP"/>
-										</Column>
-										<Column demandPopin="true" styleClass="cellBorderRight">
-											<Text text="Date"/>
-										</Column>
-										<Column demandPopin="true" styleClass="cellBorderRight">
-											<Text text="Remarks"/>
-										</Column>
-									</columns>
-									<items>
-										<ColumnListItem>
-											<cells>
-												<Text text="{course>lead_name}"/>
-												<Text text="{course>lead_mobile}"/>
-												<Text text="{course>lead_gender}"/>
-												<Text text="{course>lead_email}"/>
-												<Text text="{course>lead_address}"/>
-												<Text text="{course>lead_course}"/>
-												<core:Icon src="sap-icon://appointment" press="onAppointment"/>
-												<Text text="{course>lead_date}"/>
-												<core:Icon src="sap-icon://create" press="onAddRemarks"/>
-											</cells>
-										</ColumnListItem>
-									</items>
-								</Table>
+								<l:HorizontalLayout>
+									<HBox>
+										<HBox class="acr_vb2">
+											<Input value="" id="lead_id" visible="false"/>
+											<Input value="" id="rem_name" visible="false"/>
+											<HBox class="arhb0">
+												<Label text="Date" class="remLabel"/>
+												<Input value="" id="rem_date" enabled="false"/>
+											</HBox>
+											<HBox class="arhb1">
+												<Label text="Remarks" class="remLabel"/>
+												<Input value="" id="add_rem"/>
+											</HBox>
+											<HBox class="arhb1">
+												<Button text="Add" class="b1" press="addRemarks"/>
+											</HBox>
+										</HBox>
+									</HBox>
+								</l:HorizontalLayout>
 							</content>
 						</Panel>
 					</HBox>
+					<HBox width="75%" class="lcVBox3" id="addRemarks" visible="false">
+						<Table id="remTable" items="{remDet>/remarks}" class="TableBorderTop" growing="true" growingThreshold="1">
+							<columns>
+								<Column demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Date"/>
+								</Column>
+								<Column demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Name"/>
+								</Column>
+								<Column demandPopin="true" styleClass="cellBorderRight">
+									<Text text="Remarks"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{remDet>remarks_date}"/>
+										<Text text="{remDet>stud_name}"/>
+										<Text text="{remDet>remarks}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</HBox>
+					<Toolbar class="tbBorder">
+						<ToolbarSpacer/>
+						<Button text="Back" class="b1" press="onBack" visible="false" id="back"/>
+						<ToolbarSpacer/>
+					</Toolbar>
 				</content>
 			</Page>
 		</pages>
