@@ -1,0 +1,94 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.Bill_Generate"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="Title" showHeader="false">
+				<Panel  width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
+					<headerToolbar>
+						<Toolbar class="pan">
+							<Title text="Payment Receipt"  />
+							<HBox>
+							<Button icon="sap-icon://print" press="onPrint" width="80px" class="logo"></Button>
+							</HBox>
+						</Toolbar>
+					</headerToolbar>
+				<content  id="print">
+					<l:VerticalLayout id="containerLayout" width="100%">
+									<HBox>
+									<VBox>	
+									<HBox>
+									<Label text="Received From" width="200px" required="true" />
+									<Input value="" class="textbox" />
+									</HBox>
+									<!--<Toolbar class="tool"></Toolbar>-->
+									<HBox>
+									<Label text="Name Of The Course" width="200px"/>
+									<Input value="" class="textbox"/>
+									</HBox>
+									</VBox>
+								
+									<VBox class="vb007">
+									<HBox>									
+									<Label text="Date" width="200px"/>
+									<Input value="" type="Date" id="dt"/>
+									</HBox>
+									<!--<Toolbar class="tool"></Toolbar>-->
+									<HBox>
+									<Label text="Inr" width="200px"/>
+									<Input value="" class="textbox" />
+									</HBox>
+									</VBox>
+									</HBox>
+									<Toolbar class="tool"></Toolbar>
+									<HBox class=""  height="50px">
+									<CheckBox text="CASH" />
+									<CheckBox text="CHEQUE"/>
+									<CheckBox text="MONEY ORDER"/>
+									</HBox>
+									<Toolbar class="tool"></Toolbar>
+									<HBox>
+									<VBox>
+									<HBox>
+									<Label text="Amount Of Account" width="200px"/>
+									<Input value="" class="textbox" />
+									</HBox>
+									<HBox>
+									<Label text="This Payment" width="200px"/>
+									<Input value="" class="textbox" />
+									</HBox>
+									<HBox>
+									<Label text="Balance Due" width="200px"/>
+									<Input value="" class="textbox" />
+									</HBox>
+									</VBox>
+									<VBox class="vb007">
+									<HBox>
+									<Label text="CHEQUE No." width="200px"/>
+									<Input value="" class="textbox" />
+									</HBox>
+									<HBox>
+									<Label text="MONEY ORDER No." width="200px"/>
+									<Input value="" class="textbox" />
+									</HBox>
+									</VBox>
+									</HBox>
+										<Toolbar class="tool"></Toolbar>
+									<Toolbar class="tool00">
+										
+										
+										<HBox>
+										<Label text="RECEIVED BY: " width="200px"/>
+										</HBox>
+										<!--<HBox>-->
+										<!--	<Label Image="images/Team-Office-Administration_23878_image.jpg" width=""/>-->
+										<!--	</HBox>-->
+										<!--</VBox>-->
+										<!--</HBox>-->
+									</Toolbar>
+							</l:VerticalLayout>
+				</content>
+				</Panel>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

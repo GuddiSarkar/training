@@ -12,6 +12,13 @@
 						<VBox class="vb1">
 							<Label text="Training Management System" class="header-text" textAlign="Center"></Label>
 						</VBox>
+						<VBox class="com">
+							<HBox>
+								<VBox>
+									<Link text="Complain" id="link0" emphasized="true" press="handleLinkPress" class="linkText1"/>
+								</VBox>
+							</HBox>
+						</VBox>
 						<VBox class="link">
 							<HBox>
 								<!--<VBox class="icon">-->
@@ -98,7 +105,7 @@
 							</tiles>
 						</SlideTile>
 						<VBox class="vb01">
-							<Image src="images/inno2.png" densityAware="false" class="logo"></Image>
+							<Image src="images/I.png" densityAware="false" class="logo"></Image>
 						</VBox>
 					</l:VerticalLayout>
 					<!--<HBox class="hb1-header" height="10%">-->

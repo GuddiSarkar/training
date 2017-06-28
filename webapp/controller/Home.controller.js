@@ -107,6 +107,9 @@ sap.ui.define([
 			oModel.setData(data);
 			sap.ui.getCore().setModel(oModel,"regModel");
 			this.getRouter().navTo("register");
+		},
+		handleLinkPress: function(evt) {
+			this.getRouter().navTo("complain");
 		}
 
 		

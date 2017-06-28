@@ -55,8 +55,34 @@ sap.ui.define([
 			oBinding.filter(allFilter);
 		},
 	addFacalty: function(oEvent)
-		{
-			var FacaltyName = this.getView().byId("fac_name").getValue();
+				{
+	
+			var oView = this.getView();
+			var formInput = [
+				// oView.byId("select"),
+				oView.byId("fac_name"),
+				oView.byId("phn_num"),
+				oView.byId("s_lary"),
+				oView.byId("e_mil"),
+				oView.byId("crs_name"),
+				oView.byId("d_oj")
+			];
+			jQuery.each(formInput, function(i, input) {
+				if (!input.getValue()) {
+					input.setValueState("Error");
+				}
+			});
+			var forward = true;
+			jQuery.each(formInput, function(i, input) {
+				if ("Error" === input.getValueState()) {
+					forward = false;
+					return false;
+				}
+			});
+
+			// output result
+			if (forward) {
+				var FacaltyName = this.getView().byId("fac_name").getValue();
 			var PhoneNumber = this.getView().byId("phn_num").getValue();
 			var Salary = this.getView().byId("s_lary").getValue();
 			var Email = this.getView().byId("e_mil").getValue();
@@ -83,6 +109,11 @@ sap.ui.define([
 			}
 			);
 				oModel.setRefreshAfterChange(true);
+			
+			} else {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Please Enter all the fields");
+			}
 		},
 		
 		
@@ -183,7 +214,7 @@ sap.ui.define([
 			oModel.setRefreshAfterChange(true);
 			oDialog.close();
 		},
-		onChangePhone: function phonenumber(inputtxt) {
+		onChangePhone: function phonenumber() {
 			var x = this.getView().byId("phn_num").getValue();
 			var phoneno = /^\d{10}$/;
 			if (x.match(phoneno)) {

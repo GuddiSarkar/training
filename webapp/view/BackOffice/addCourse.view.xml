@@ -54,53 +54,55 @@
 							</HBox>
 						</content>
 					</Panel>
-					<!--<Panel width="auto" class="sapUiResponsiveMargin hd2 acr_pnl">-->
-					<!--	<headerToolbar>-->
-					<!--		<Toolbar class="pan">-->
-					<!--			<Title text="Courses"/>-->
-					<!--			<SearchField width="30%" class="sapUiSmallMargin srch16" search="onSearch"/>-->
-					<!--		</Toolbar>-->
-					<!--	</headerToolbar>-->
-					<!--	<content>-->
-					<!--		<Table id="adCrsTable" items="{course>/tb_course}" class="TableBorderTop" growing="true" growingThreshold="1">-->
-					<!--			<columns>-->
-					<!--				<Column demandPopin="true" styleClass="cellBorderRight cellBorderLeft">-->
-					<!--					<Text text="ID"/>-->
-					<!--				</Column>-->
-					<!--				<Column demandPopin="true" styleClass="cellBorderRight">-->
-					<!--					<Text text="Course Name"/>-->
-					<!--				</Column>-->
-					<!--				<Column demandPopin="true" styleClass="cellBorderRight">-->
-					<!--					<Text text="Course Type"/>-->
-					<!--				</Column>-->
-					<!--				<Column demandPopin="true" styleClass="cellBorderRight">-->
-					<!--					<Text text="Course Fee"/>-->
-					<!--				</Column>-->
-					<!--				<Column demandPopin="true" styleClass="cellBorderRight">-->
-					<!--					<Text text="Course Duration"/>-->
-					<!--				</Column>-->
-					<!--				<Column demandPopin="true" styleClass="cellBorderRight">-->
-					<!--					<Text text="Action"/>-->
-					<!--				</Column>-->
-					<!--			</columns>-->
-					<!--			<items>-->
-					<!--				<ColumnListItem>-->
-					<!--					<cells>-->
-					<!--						<Text text="{course>course_id}"/>-->
-					<!--						<Text text="{course>course_name}"/>-->
-					<!--						<Text text="{course>course_type}"/>-->
-					<!--						<Text text="{course>course_fee}"/>-->
-					<!--						<Text text="{course>course_duration}"/>-->
-					<!--						<Toolbar class="tbBorder">-->
-					<!--							<Button icon="sap-icon://edit" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>-->
-					<!--							<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>-->
-					<!--						</Toolbar>-->
-					<!--					</cells>-->
-					<!--				</ColumnListItem>-->
-					<!--			</items>-->
-					<!--		</Table>-->
-					<!--	</content>-->
-					<!--</Panel>-->
+					
+
+					<Panel width="auto" class="sapUiResponsiveMargin hd2 acr_pnl">
+						<headerToolbar>
+							<Toolbar class="pan">
+								<Title text="Courses"/>
+								<SearchField width="30%" class="sapUiSmallMargin srch16" search="onSearch"/>
+							</Toolbar>
+						</headerToolbar>
+						<content>
+							<Table id="adCrsTable" items="{course>/tb_course}" class="TableBorderTop" growing="true" growingThreshold="1">
+								<columns>
+									<Column demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+										<Text text="ID"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Course Name"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Course Type"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Course Fee"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Course Duration"/>
+									</Column>
+									<Column demandPopin="true" styleClass="cellBorderRight">
+										<Text text="Action"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{course>course_id}"/>
+											<Text text="{course>course_name}"/>
+											<Text text="{course>course_type}"/>
+											<Text text="{course>course_fee}"/>
+											<Text text="{course>course_duration}"/>
+											<Toolbar class="tbBorder">
+												<Button icon="sap-icon://edit" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
+												<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
+											</Toolbar>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</Panel>
 				</content>
 			</Page>
 		</pages>

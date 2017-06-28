@@ -2,32 +2,28 @@
 	<Dialog id="addFollowUp" title="Set Follow Up">
 		<content>
 			<l:VerticalLayout class="sapUiContentPadding" width="100%">
-							<HBox>
-								<VBox class="acr_vb2">
-									<HBox>
-										<Label text="Date" width="100px"/>
-										<Input value="{formatter: '.formatDate'}" class="acr_inp" id="date"/>
-									</HBox>
-									
-									<HBox>
-										<Label text="Title" width="100px"/>
-										<Input value="" class="acr_inp" id="title"/>
-									</HBox>
-									
-									<HBox>
-										<Label text="Description" width="100px"/>
-										<TextArea value="" growing="true" id="desc" growingMaxLines="3"/>
-									</HBox>
-								</VBox>
-							</HBox>
+				<HBox>
+					<VBox class="acr_vb2">
+						<HBox>
+							<Label text="Date" width="100px"/>
+							<Input value="{formatter: '.formatDate'}" class="acr_inp" id="date"/>
+						</HBox>
+						<HBox>
+							<Label text="Title" width="100px"/>
+							<Input value="" class="acr_inp" id="title"/>
+						</HBox>
+						<HBox>
+							<Label text="Description" width="100px"/>
+							<TextArea value="" growing="true" id="desc" growingMaxLines="12"/>
+						</HBox>
+					</VBox>
+				</HBox>
 			</l:VerticalLayout >
 		</content>
-	
-			<Toolbar>
-				<Button text="{i18n>Set}" press="OnClickSet"/>
-				<ToolbarSpacer></ToolbarSpacer>
-				<Button text="{i18n>Close}" press="onCloseFolowUp"/>
-			</Toolbar>
-	
+		<Toolbar>
+			<Button text="Set" press="OnClickSet"/>
+			<ToolbarSpacer/>
+			<Button text="Close" press="onCloseFolowUp"/>
+		</Toolbar>
 	</Dialog>
 </core:FragmentDefinition>

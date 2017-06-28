@@ -438,6 +438,12 @@
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.viewFacalty_Payment"/>
 				</content>
 			</Page>
+			<Page id="blpymnt" title="Payment Receipt" class="sapMPage" showNavButton="false"  navButtonText="Back"
+				navButtonPress="onPressDetailBack" enableScrolling="true">
+				<content>
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.Bill_Generate" />
+				</content>
+				</Page>
 		</detailPages>
 		<masterPages>
 			<Page id="master2" showHeader="true" title="BackOffice" class="sapUiStdPage">

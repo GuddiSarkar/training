@@ -12,6 +12,7 @@
 }
 */.hb1-header{
 	background: linear-gradient(to top, #990000 0%, #ff99cc 100%);
+	/*background-color:#D35400;*/
 	    font-size: 2.975rem;
 }
 .admin-header{
@@ -230,6 +231,7 @@
 
 .sapMFlexItemAlignAuto{
 	width:100%;
+	/*background-color: white;*/
 }
 
 .labl{
@@ -361,6 +363,9 @@ span.sapMBtnInner.sapMBtnAccept{
 	padding-left:28.6%;
 }
 
+/*.frg{*/
+/*		padding-left:9.5%;*/
+/*}*/
 .acr_vb22{
 	padding-left:9.5%;
 }
@@ -408,9 +413,9 @@ span.sapMBtnInner.sapMBtnAccept{
 	background-color:black;
 }
 
-.sapMIBar .sapMBarChild:first-child{
-	color:white;
-}
+/*.sapMIBar .sapMBarChild:first-child{*/
+/*	color:white;*/
+/*}*/
 .ur
 {
 	padding-bottom:15%;
@@ -506,7 +511,8 @@ span.sapMBtnInner.sapMBtnAccept{
 }
 
 .sapMPage>section{
-	background: linear-gradient(to top, #33ccff 0%, #ff99cc 100%);	
+	/*background: linear-gradient(to top, #33ccff 0%, #ff99cc 100%);	*/
+	background:  #45BFF1;
 }
 .acr_pnl .sapMPanelBGTranslucent{
 	background-color: #f5f5f0;
@@ -528,11 +534,15 @@ span.sapMBtnInner.sapMBtnAccept{
 
 .link{
 	padding-top:3.5%;
-	padding-left:10%;
+	padding-left:2%;
 }
 .link0{
 	padding-top:3.5%;
 	padding-left:2%;
+}
+.com{
+	padding-top:3.5%;
+	padding-left:3%;
 }
 
 .linkText1.sapMLnk:visited{
@@ -620,12 +630,12 @@ span.sapMBtnInner.sapMBtnAccept {
 /*    background-color: #a72121;*/
 /*    background: linear-gradient(to right, #7b82d4 0, #0bec91 100%);*/
 /*}*/
-.sapMIBar .sapMBarChild:first-child {
-    color: black; 
-    padding-right: 245px;
-    padding-left: 24%;
-    padding-bottom: 2%;
-}
+/*.sapMIBar .sapMBarChild:first-child {*/
+/*    color: black; */
+/*    padding-right: 245px;*/
+/*    padding-left: 24%;*/
+/*    padding-bottom: 2%;*/
+/*}*/
 /*sanjit*/
 /*.btnc.sapMBtn .sapMBtnContent {*/
 /*    display: block;*/
@@ -687,7 +697,7 @@ span.sapMBtnInner.sapMBtnAccept {
 /*sanjit*/
 .sapMIBar .sapMBarChild:first-child {
     color: black;
-    padding-right: 245px;
+    padding-left: 18px;
     padding-bottom:2%;
 }
 /*sanjit*/
@@ -717,4 +727,28 @@ span.sapMBtnInner.sapMBtnAccept {
     background-color: #092B66;
     box-shadow: inset 0 -1px #ebebeb;
     width: 100%;
+
 }
+.vb007{
+		padding-left:10%;
+}
+.logo{
+	    color: black;
+    padding-left: 430px;
+        
+}
+/*sanjit*/
+.sapMDialog.sapMPopup-CTX>header.sapMHeader-CTX, .sapMDialog.sapMPopup-CTX>header.sapMSubHeader-CTX {
+    background-color: #2196F3;
+}
+/*sanjit*/
+.sapMDialog>header.sapMDialogTitle .sapMTitle {
+    
+    color: black;
+}
+/*sanjit*/
+.sapMBtn .sapMBtnInner, .sapMBtn .sapMBtnContent {
+    display: block;
+    color: black;
+}
+/*sanjit*/

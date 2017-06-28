@@ -235,6 +235,7 @@ sap.ui.define([
 			var oView = this.getView();
 			var formInput = [
 				// oView.byId("select"),
+				oView.byId("course"),
 				oView.byId("c_fee"),
 				oView.byId("c_type"),
 				oView.byId("s_date")

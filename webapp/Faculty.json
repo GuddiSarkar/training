@@ -77,6 +77,11 @@
 		"text": "View Faculty payment",
 		"ref": "sap-icon://simple-payment",
 		"custom": "vfclpymnt"
+	},
+	{
+		"text": "Payment Receipt",
+		"ref": "sap-icon://money-bills",
+		"custom": "blpymnt"
 	}
 
 ]

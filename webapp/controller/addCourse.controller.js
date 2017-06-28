@@ -38,7 +38,34 @@ sap.ui.define([
 		},
 
 		addCourse: function(oEvent) {
-			var courseName = this.getView().byId("c_name").getValue();
+			var oView = this.getView();
+			var formInput = [
+				// oView.byId("select"),
+				oView.byId("c_name"),
+				oView.byId("c_fee"),
+				// oView.byId("c_type"),
+				// oView.byId("c_dur")
+			];
+			jQuery.each(formInput, function(i, input) {
+				if (!input.getValue()) {
+					input.setValueState("Error");
+				}
+			});
+			var forward = true;
+			jQuery.each(formInput, function(i, input) {
+				if ("Error" === input.getValueState()) {
+					forward = false;
+					return false;
+				}
+			});
+
+			// output result
+			if (forward) {
+				// jQuery.sap.require("sap.m.MessageBox");
+				// MessageBox.alert("Success");
+
+				// this.getRouter().navTo("stu_fac");
+				var courseName = this.getView().byId("c_name").getValue();
 			var courseFee = this.getView().byId("c_fee").getValue();
 			var courseType = this.getView().byId("c_type").getSelectedItem().getText();
 			var courseDuration = this.getView().byId("c_dur").getSelectedItem().getText();
@@ -63,6 +90,11 @@ sap.ui.define([
 			});
 
 			oModel.setRefreshAfterChange(true);
+		
+			} else {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Please Enter all the fields");
+			}
 		},
 
 		onClickEdit: function(oEvent) {
