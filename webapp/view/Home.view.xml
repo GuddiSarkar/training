@@ -1,14 +1,12 @@
 <mvc:View controllerName="com.demoTMS.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
-	<App>
+	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	xmlns:m="sap.suite.ui.microchart">
+	<App backgroundColor="#87CEEB">
 		<pages>
-			<Page title="Title" showHeader="false" class="page1">
+		<Page title="Title" showHeader="false" class="page1">
 				<content>
 					<HBox class="hb1-header" height="15%">
-						<!--<VBox class="vb00">-->
-						<!--<Button id="bt3" class="btnc" iconDensityAware="false" text="" type="Default" icon="sap-icon://account"-->
-						<!--iconFirst="true" width="auto" enabled="true" visible="true" press="handlePopoverPress"/>	-->
-						<!--</VBox>-->
+					
 						<VBox class="vb1">
 							<Label text="Training Management System" class="header-text" textAlign="Center"></Label>
 						</VBox>
@@ -21,9 +19,7 @@
 						</VBox>
 						<VBox class="link">
 							<HBox>
-								<!--<VBox class="icon">-->
-								<!--			<core:Icon src="sap-icon://visits"></core:Icon>-->
-								<!--		</VBox>-->
+							
 								<VBox>
 									<Link text="Register" id="link1" emphasized="true" press="onClickRegister" class="linkText1"/>
 								</VBox>
@@ -108,26 +104,11 @@
 							<Image src="images/I.png" densityAware="false" class="logo"></Image>
 						</VBox>
 					</l:VerticalLayout>
-					<!--<HBox class="hb1-header" height="10%">-->
-					<!--	<VBox>-->
-					<!--		<Label text="@Copyright: Innovador IT Solution" class="footer-text" textAlign="Begin"></Label>-->
-					<!--	</VBox>-->
-					<!--</HBox>-->
+					
 				</content>
 				<footer>
 					<OverflowToolbar id="otbFooter" class="footer1">
-						<!--<ToolbarSpacer/>
-						<Button type="Accept" text="Accept" press="onAccept">
-							<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
-						</Button>
-						<Button type="Reject" text="Reject">
-							<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
-						</Button>
-						<OverflowToolbarButton text="Delete" icon="sap-icon://delete"/>
-						<OverflowToolbarButton text="Edit" icon="sap-icon://edit"/>
-						<OverflowToolbarButton text="Add" icon="sap-icon://add"/>
-						<OverflowToolbarButton text="Favorite" icon="sap-icon://favorite"/>
-						<OverflowToolbarButton text="Flag" icon="sap-icon://flag"/>-->
+					
 						<Label text="@Copyright: Innovador IT Solution" class="footer-text1" textAlign="Begin"></Label>
 					</OverflowToolbar>
 				</footer>
