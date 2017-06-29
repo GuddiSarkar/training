@@ -29,10 +29,10 @@
 									<Column demandPopin="true" styleClass="cellBorderRight">
 										<Text text="UserName"/>
 									</Column>
-									<Column demandPopin="true" styleClass="cellBorderRight">
+									<Column demandPopin="true" styleClass="cellBorderRight" visible="false">
 										<Text text="Password"/>
 									</Column>
-									<Column demandPopin="true" styleClass="cellBorderRight">
+									<Column demandPopin="true" styleClass="cellBorderRight" visible="false">
 										<Text text="Confirm Password"/>
 									</Column>
 									<Column demandPopin="true" styleClass="cellBorderRight">

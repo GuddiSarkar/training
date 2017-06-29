@@ -33,12 +33,12 @@
 					<HBox width="100%" height="60%">
 						<VBox class="vblog" width="32%" height="40%" backgroundDesign="Solid">
 							<HBox class="sapUiMediumMarginTop sapUiMediumMarginEnd">
-								<Label text="Name" class="regLabel" width="38%" textAlign="Center" design="Bold"/>
+								<Label text="Username" class="regLabel" width="43%" textAlign="Center" design="Bold"/>
 								<Input width="75%" id="username" type="Text" placeholder="Enter Username" valueStateText="Name must not be empty. Maximum 5 characters."
 									value="{ path : '/username', type : 'sap.ui.model.type.String', constraints : { minLength: 3, maxLength: 20 } }"/>
 							</HBox>
 							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
-								<Label text="Email" class="regLabel" width="27%" textAlign="Right" design="Bold"/>
+								<Label text="Password" class="regLabel" width="43%" textAlign="Right" design="Bold"/>
 								<Input width="75%" id="password" type="Password" placeholder="Enter Password" valueStateText="Password must not be empty"
 									value="{ path : '/password', type : 'sap.ui.model.type.String', constraints : { minLength: 3, maxLength: 20 } }"/>
 							</HBox>
@@ -46,6 +46,13 @@
 							<HBox class="frg_pwd">
 							<Link text="Forgot Password ?" id="frgpwd" emphasized="true" press="onClickForgotPassword"/>
 							</HBox>
+							<Toolbar class="tbBorder sapUiSmallMarginTop">
+									<ToolbarSpacer/>
+									<Button text="Log In" class="login1" press="onPressLogin"/>
+									<Button text="Back" class="back" width="16%" press="onPressBack"/>
+									<ToolbarSpacer/>
+							</Toolbar>
+							<!--<Button text="Log In" type="Emphasized" press="onPress" class="sapUiSmallMarginEnd sapUiSmallMarginTop login" width="20%"/>-->
 						</VBox>
 					</HBox>
 					<!--</l:VerticalLayout>-->

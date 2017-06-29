@@ -5,7 +5,7 @@
 			<Page title="Training Management System" showHeader="false">
 				<content>
 					<HBox height="93%" class="bg">
-						<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
+						<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
 							<headerToolbar>
 								<Toolbar class="pan">
 									<Title text="View Reminder" textAlign="Center"/>

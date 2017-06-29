@@ -296,6 +296,12 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["Forgot_Password"]
+			},{
+				"name": "tilelogin",
+				"pattern": "tl",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["tilelogin"]
 			}],
 			"targets": {
 				"home": {
@@ -527,6 +533,13 @@
 					"transition": "slide",
 					"clearAggregation": true,
 					"viewName": "Forgot_Password",
+					"viewLevel": 1
+				},
+				"tilelogin": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "tile_Login",
 					"viewLevel": 1
 				}
 			}

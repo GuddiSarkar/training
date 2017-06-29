@@ -3,7 +3,7 @@
 	<App>
 		<pages>
 			<Page title="Training Management System" showHeader="false">
-				<content>
+				<content class="sapUiResponsiveMargin">
 					<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
 						<headerToolbar>
 							<Toolbar height="3rem" class="pan">
@@ -54,8 +54,6 @@
 							</HBox>
 						</content>
 					</Panel>
-					
-
 					<Panel width="auto" class="sapUiResponsiveMargin hd2 acr_pnl">
 						<headerToolbar>
 							<Toolbar class="pan">

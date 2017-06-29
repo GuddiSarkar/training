@@ -10,6 +10,15 @@ sap.ui.define([
 			return sap.ui.core.UIComponent.getRouterFor(this);	
 		},
 		
+		onPressBack: function(){
+			this.getRouter().navTo("home");
+		},
+		
+		onInit: function(){
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+		},
+
 		onRegister: function(){
 			var oView = this.getView();
 			var formInput = [
@@ -55,8 +64,11 @@ sap.ui.define([
 				success: function(oData, response) {
 					this.getView().byId("name").setValue("");
 					this.getView().byId("email").setValue("");
-					this.getView().byId("role").setValue("");
-
+					this.getView().byId("role").setSelectedKey("");
+					this.getView().byId("uname").setValue();
+					this.getView().byId("pwd").setValue();
+					this.getView().byId("cnfpwd").setValue();
+					this.getRouter().navTo("home");
 					var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
 					MessageBox.success(
 						"You have Successfully. Wait for the approval from Admin.", {

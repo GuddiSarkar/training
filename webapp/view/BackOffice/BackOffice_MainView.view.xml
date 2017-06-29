@@ -6,10 +6,13 @@
 			<Page id="per_det" title=" Student" class="sapUiStdPage" showHeader="false">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb">
-							<Label text="Approve" textAlign="Center"></Label>
+						<VBox class="bo_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb">
+							<Label text="Student" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
@@ -119,10 +122,13 @@
 			<Page id="admn_det" title=" Student" class="sapUiStdPage" showHeader="false">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb">
-							<Label text="Approve" textAlign="Center"></Label>
+						<VBox class="bo_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb">
+							<Label text="Student" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
@@ -175,10 +181,13 @@
 			<Page id="fee_det" title=" Student" class="sapUiStdPage" showHeader="false">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb">
-							<Label text="Approve" textAlign="Center"></Label>
+						<VBox class="bo_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb">
+							<Label text="Student" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
@@ -244,14 +253,13 @@
 			<Page id="stu1" title=" Student" class="sapUiStdPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb_back">
-							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
-								ariaLabelledBy="editButtonLabel"/>
+						<VBox class="bo_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb1">
+						<VBox class="bo_vb">
 							<Label text="Student" textAlign="Center"></Label>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
@@ -262,14 +270,13 @@
 				enableScrolling="true">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb_back">
-							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
-								ariaLabelledBy="editButtonLabel"/>
+						<VBox class="bo_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb1">
+						<VBox class="bo_vb1">
 							<Label text="Course" textAlign="Center"></Label>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
@@ -280,14 +287,14 @@
 				enableScrolling="true">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb_back">
+						<VBox class="bo_vb_back">
 							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
 								ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb1">
+						<VBox class="bo_vb1">
 							<Label text="Course" textAlign="Center"></Label>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
@@ -298,14 +305,14 @@
 				enableScrolling="true">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb_back">
+						<VBox class="bo_vb_back">
 							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
 								ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb1">
-							<Label text="BackOffice" textAlign="Center"></Label>
+						<VBox class="bo_vb2">
+							<Label text="Faculty" textAlign="Center"></Label>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
@@ -316,14 +323,14 @@
 				enableScrolling="true">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb_back">
+						<VBox class="bo_vb_back">
 							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
 								ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb1">
-							<Label text="BackOffice" textAlign="Center"></Label>
+						<VBox class="bo_vb2">
+							<Label text="Faculty" textAlign="Center"></Label>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
@@ -334,14 +341,14 @@
 				enableScrolling="true">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb_back">
+						<VBox class="bo_vb_back">
 							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
 								ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb1">
+						<VBox class="bo_vb3">
 							<Label text="Reminder" textAlign="Center"></Label>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
@@ -352,14 +359,14 @@
 				enableScrolling="true">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb_back">
+						<VBox class="bo_vb_back">
 							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
 								ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb1">
-							<Label text="View Reminder" textAlign="Center"></Label>
+						<VBox class="bo_vb3">
+							<Label text="Reminder" textAlign="Center"></Label>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
@@ -370,14 +377,14 @@
 				enableScrolling="true">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb_back">
+						<VBox class="bo_vb_back">
 							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
 								ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb1">
-							<Label text="Student Payment" textAlign="Center"></Label>
+						<VBox class="bo_vb4">
+							<Label text="Payment" textAlign="Center"></Label>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
@@ -388,14 +395,14 @@
 				navButtonPress="onPressDetailBack" enableScrolling="true">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb_back">
+						<VBox class="bo_vb_back">
 							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
 								ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb1">
-							<Label text="Student Payment" textAlign="Center"></Label>
+						<VBox class="bo_vb4">
+							<Label text="Payment" textAlign="Center"></Label>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
@@ -406,14 +413,14 @@
 				enableScrolling="true">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb_back">
+						<VBox class="bo_vb_back">
 							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
 								ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb1">
-							<Label text="Faculty Payment" textAlign="Center"></Label>
+						<VBox class="bo_vb4">
+							<Label text="Payment" textAlign="Center"></Label>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>
@@ -424,14 +431,14 @@
 				navButtonPress="onPressDetailBack" enableScrolling="true">
 				<content>
 					<HBox class="admin-header" height="7.22%">
-						<VBox class="admin_vb_back">
+						<VBox class="bo_vb_back">
 							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
 								ariaLabelledBy="editButtonLabel"/>
 						</VBox>
-						<VBox class="admin_vb1">
-							<Label text="Faculty Payment" textAlign="Center"></Label>
+						<VBox class="bo_vb4">
+							<Label text="Payment" textAlign="Center"></Label>
 						</VBox>
-						<VBox class="admin_vb_logout">
+						<VBox class="bo_vb_logout">
 							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 					</HBox>

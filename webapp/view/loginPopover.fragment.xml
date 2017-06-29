@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
 	<ResponsivePopover class="p1popover" placement="Bottom" id="login">
 		<content>
-			<List id="loginList" itemPress="onItemSelect">
+			<List id="loginList" itemPress="onItemSelect" rememberSelections="false">
 				<items>
 					<StandardListItem title="Admin" type="Active"/>
 					<StandardListItem title="BackOffice" type="Active"/>

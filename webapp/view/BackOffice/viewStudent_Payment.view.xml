@@ -5,7 +5,7 @@
 			<Page title="Training Management System" showHeader="false">
 				<content>
 					<HBox height="100%" class="bg">
-						<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
+						<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
 							<headerToolbar>
 								<Toolbar class="pan">
 									<Title text="View Student Payment" textAlign="Center"/>
@@ -15,49 +15,49 @@
 							<content>
 								<Table id="adCrsTable" items="{course>/tb_stud_payment}" class="TableBorderTop" growing="true" growingThreshold="6">
 									<columns height="20px">
-										<Column width="8%" minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+										<Column width="8%" styleClass="cellBorderRight cellBorderLeft">
 											<Text text="ID"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Student Name"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Course Name"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Transaction Type"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="cheque Number"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Discount"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Amount"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Registration Fee"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Tax"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="1st Installment"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="2nd Installment"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="3rd Installment"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="4th Installment"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="5th Installment"/>
 										</Column>
-										<Column demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Action"/>
 										</Column>
 									</columns>

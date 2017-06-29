@@ -3,7 +3,6 @@
 		<content>
 			<List id="registerList" itemPress="onItemSelected">
 				<items>
-					<StandardListItem title="Admin" type="Active"/>
 					<StandardListItem title="BackOffice" type="Active"/>
 					<StandardListItem title="Telecaller" type="Active"/>
 				</items>

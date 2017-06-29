@@ -47,7 +47,13 @@
 								<Label text="Confirm Password" class="regLabel" width="77%" textAlign="Center" design="Bold"/>
 								<Input id="cnfpwd" width="75%" type="Password" placeholder="Enter Name" value=""/>
 							</HBox>
-							<Button text="Register" type="Emphasized" press="onRegister" class="sapUiSmallMarginEnd sapUiSmallMarginTop login" width="20%"/>
+							<Toolbar class="tbBorder sapUiSmallMarginTop">
+									<ToolbarSpacer/>
+									<Button text="Register" class="login1" press="onRegister"/>
+									<Button text="Back" class="back" width="15%" press="onPressBack"/>
+									<ToolbarSpacer/>
+							</Toolbar>
+							<!--<Button text="Register" type="Emphasized" press="onRegister" class="sapUiSmallMarginEnd sapUiSmallMarginTop login" width="20%"/>-->
 						</VBox>
 					</HBox>
 					<HBox class="hb1-header" height="10%">

@@ -55,13 +55,15 @@ sap.ui.define([
 			var eRole = property.register_user_role;
 			var eName = property.register_user_name;
 			var eCnfPass = property.register_user_cnfPassword;
+			var email = property.register_user_email;
 			
 			var data = {
 				"user_username": eUname,
 				"user_pwd": ePass,
 				"user_role": eRole,
 				"user_name": eName,
-				"user_cnfpwd": eCnfPass
+				"user_cnfpwd": eCnfPass,
+				"user_email": email
 			};
 			
 			var oModel = this.getOwnerComponent().getModel("course");

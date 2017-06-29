@@ -18,44 +18,21 @@ sap.ui.define([
 	return Controller.extend("com.demoTMS.controller.login", {
 
 		onInit: function() {
-
-			var chkSel = sap.ui.getCore().getModel("myModel");
-			if (!chkSel) {
-				var aData = sap.ui.getCore().getModel("aModel").getData();
-				if (aData.role === "Admin") {
-					this.getView().byId("admin").setVisible(true);
-					this.getView().byId("BackOffice").setVisible(false);
-					this.getView().byId("Telecaller").setVisible(false);
-				} else {
-					var bData = sap.ui.getCore().getModel("bModel").getData();
-					if (bData.role === "Backoffice") {
-						this.getView().byId("admin").setVisible(false);
-						this.getView().byId("BackOffice").setVisible(true);
-						this.getView().byId("Telecaller").setVisible(false);
-					} else {
-						var tData = sap.ui.getCore().getModel("tModel").getData();
-						if (tData.role === "Telecaller") {
-							this.getView().byId("admin").setVisible(false);
-							this.getView().byId("BackOffice").setVisible(false);
-							this.getView().byId("Telecaller").setVisible(true);
-						}
-					}
-				}
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+			var oData = sap.ui.getCore().getModel("myModel").getData();
+			if (oData.role === "Admin") {
+				this.getView().byId("admin").setVisible(true);
+				this.getView().byId("BackOffice").setVisible(false);
+				this.getView().byId("Telecaller").setVisible(false);
+			} else if (oData.role === "BackOffice") {
+				this.getView().byId("admin").setVisible(false);
+				this.getView().byId("BackOffice").setVisible(true);
+				this.getView().byId("Telecaller").setVisible(false);
 			} else {
-				var oData = sap.ui.getCore().getModel("myModel").getData();
-				if (oData.role === "Admin") {
-					this.getView().byId("admin").setVisible(true);
-					this.getView().byId("BackOffice").setVisible(false);
-					this.getView().byId("Telecaller").setVisible(false);
-				} else if (oData.role === "BackOffice") {
-					this.getView().byId("admin").setVisible(false);
-					this.getView().byId("BackOffice").setVisible(true);
-					this.getView().byId("Telecaller").setVisible(false);
-				} else {
-					this.getView().byId("admin").setVisible(false);
-					this.getView().byId("BackOffice").setVisible(false);
-					this.getView().byId("Telecaller").setVisible(true);
-				}
+				this.getView().byId("admin").setVisible(false);
+				this.getView().byId("BackOffice").setVisible(false);
+				this.getView().byId("Telecaller").setVisible(true);
 			}
 			this.getView().setModel(new JSONModel({
 				username: "",
@@ -84,6 +61,14 @@ sap.ui.define([
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},
 
+		onPressBack: function() {
+			this.getRouter().navTo("home");
+			var oModel = sap.ui.getCore().getModel("myModel");
+			this.getView().byId("admin").setVisible(false);
+			this.getView().byId("BackOffice").setVisible(false);
+			this.getView().byId("Telecaller").setVisible(false);
+		},
+
 		onPress: function(oEvent) {
 			var oView = this.getView();
 			var formInput = [
@@ -102,7 +87,12 @@ sap.ui.define([
 					return false;
 				}
 			});
+		},
 
+		onPressLogin: function(oEvent) {
+			var dateTime = new Date();
+			console.log(dateTime.toLocaleString());
+			var date = dateTime.toLocaleString();
 			// output result
 			if (forward) {
 				var dateTime = new Date();
@@ -161,8 +151,9 @@ sap.ui.define([
 
 						}.bind(this)
 					});
-
+					oModel.setRefreshAfterChange(true);
 				}
+
 			}
 		},
 		onClickForgotPassword: function(oEvent) {
@@ -175,7 +166,7 @@ sap.ui.define([
 			// oDialog.open();
 			this.getRouter().navTo("Forgot_Password");
 		},
-		
+
 		onCloseEdit: function(oEvent) {
 			this.getView().byId("frgpwd").close();
 		},

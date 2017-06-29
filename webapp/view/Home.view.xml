@@ -53,7 +53,7 @@
 									<tileContent>
 										<TileContent footer="Innovador">
 											<content>
-												<NewsContent contentText="Admin" id="admin" subheader="Click here to go inside Admin Portal" press="onPressAdmin"></NewsContent>
+												<NewsContent contentText="Admin" id="admin" subheader="Click here to go inside Admin Portal" press="onPressTile"></NewsContent>
 											</content>
 										</TileContent>
 									</tileContent>
@@ -71,11 +71,11 @@
 								<!--		</TileContent>-->
 								<!--	</tileContent>-->
 								<!--</GenericTile>-->
-								<GenericTile backgroundImage="images/faculty2.jpg" frameType="TwoByOne" state="Loaded" press="onPressBackOffice">
+								<GenericTile backgroundImage="images/faculty2.jpg" frameType="TwoByOne">
 									<tileContent>
 										<TileContent footer="Innovador">
 											<content>
-												<NewsContent contentText="Backoffice" id="backoffice" subheader="Click here to go inside Faculty Portal" press="onPressBackOffice"></NewsContent>
+												<NewsContent contentText="Backoffice" id="backoffice" subheader="Click here to go inside Faculty Portal" press="onPressTile"></NewsContent>
 											</content>
 										</TileContent>
 									</tileContent>
@@ -93,11 +93,11 @@
 								<!--		</TileContent>-->
 								<!--	</tileContent>-->
 								<!--</GenericTile>-->
-								<GenericTile backgroundImage="images/images.jpg" frameType="TwoByOne" state="Loaded" press="onPressTelecaller">
+								<GenericTile backgroundImage="images/images.jpg" frameType="TwoByOne" state="Loaded">
 									<tileContent>
 										<TileContent footer="Innovador">
 											<content>
-												<NewsContent contentText="Telecaller" id="telecaller" subheader="Click here to go inside Staffs Portal" press="onPressTelecaller"></NewsContent>
+												<NewsContent contentText="Telecaller" id="telecaller" subheader="Click here to go inside Staffs Portal" press="onPressTile"></NewsContent>
 											</content>
 										</TileContent>
 									</tileContent>

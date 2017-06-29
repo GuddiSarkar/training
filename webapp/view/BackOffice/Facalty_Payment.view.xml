@@ -5,7 +5,7 @@
 			<Page title="Training Management System" showHeader="false">
 				<content>
 					<HBox height="100%" class="bg">
-						<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
+						<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
 							<headerToolbar>
 								<Toolbar class="pan">
 									<Title text="Facalty Payment" textAlign="Center"/>
@@ -15,28 +15,28 @@
 							<content>
 								<Table id="adCrsTable" items="{course>/}" class="TableBorderTop" growing="true" growingThreshold="1">
 									<columns height="20px">
-										<Column width="8%" minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+										<Column width="8%" styleClass="cellBorderRight cellBorderLeft">
 											<Text text="ID"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Facalty Name"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Payment Type"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Cheque Number"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Name of Bank"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Payment Date"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Amount"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Action"/>
 										</Column>
 									</columns>

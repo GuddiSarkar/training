@@ -5,7 +5,7 @@
 			<Page title="Training Management System" showHeader="false">
 				<content>
 					<HBox height="93%" class="bg">
-						<Panel  width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
+						<Panel  width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
 							<headerToolbar>
 								<Toolbar class="pan">
 									<Title text="View Course" textAlign="Center" />
@@ -19,32 +19,32 @@
 							<columns height="20px">	
 								<Column width="10%"
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+									styleClass="cellBorderRight cellBorderLeft">
 									<Text text="ID"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight">
+									styleClass="cellBorderRight">
 									<Text text="Course Name"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight">
+									styleClass="cellBorderRight">
 									<Text text="Course Type"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight">
+									styleClass="cellBorderRight">
 									<Text text="Course Fee"/>
 								</Column>
 								<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight">
+									styleClass="cellBorderRight">
 									<Text text="Course Duration"/>
 								</Column>
 								<!--<Column
 									minScreenWidth="Tablet"
-									demandPopin="true" styleClass="cellBorderRight">
+									styleClass="cellBorderRight">
 									<Text text="Action"/>
 								</Column>-->
 							</columns>

@@ -5,7 +5,7 @@ sap.ui.define([
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.MainView", {
 
-			onPressDetailBack: function() {
+		onPressDetailBack: function() {
 			this.getSplitAppObj().backDetail();
 		},
 

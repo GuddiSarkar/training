@@ -10,53 +10,20 @@ sap.ui.define([
 /*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.Home", {
 
+		onInit: function(){
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+			//this.getView().byId("loginList").setSelectedItem("");
+		},
+		
 		getRouter: function() {
 			return sap.ui.core.UIComponent.getRouterFor(this);
 		},
 		
-/*		onClickLogin: function(evt) {
-			this.getRouter().navTo("login");
-		},
-		onClickRegister: function(evt) {
-			this.getRouter().navTo("register");
-		},
-*/		onPressAdmin: function()
+		onPressTile: function()
 		{
-			// var oSelected = this.getView().byId("admin").getContentText();
-			// var data = {
-			// 	"role": oSelected
-			// };
-			// var oModel =new sap.ui.model.json.JSONModel();
-			// oModel.setData(data);
-			// sap.ui.getCore().setModel(oModel,"aModel");
-			// this.getRouter().navTo("login");
-			this.getRouter().navTo("admin");
-		},
-		
-		onPressBackOffice: function()
-		{
-			// var oSelected = this.getView().byId("backoffice").getContentText();
-			// var data = {
-			// 	"role": oSelected
-			// };
-			// var oModel =new sap.ui.model.json.JSONModel();
-			// oModel.setData(data);
-			// sap.ui.getCore().setModel(oModel,"bModel");
-			// this.getRouter().navTo("login");
-			this.getRouter().navTo("backoffice");
-		},
-
-		onPressTelecaller: function()
-		{
-			// var oSelected = this.getView().byId("telecaller").getContentText();
-			// var data = {
-			// 	"role": oSelected
-			// };
-			// var oModel =new sap.ui.model.json.JSONModel();
-			// oModel.setData(data);
-			// sap.ui.getCore().setModel(oModel,"tModel");
-			// this.getRouter().navTo("login");
-			this.getRouter().navTo("telecaller");
+			this.getRouter().navTo("tilelogin");
+			// this.getRouter().navTo("admin");
 		},
 		
 		onClickLogin: function(oEvent)

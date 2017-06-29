@@ -5,7 +5,7 @@
 			<Page title="Training Management System" showHeader="false">
 				<content>
 					<HBox height="100%" class="bg">
-						<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl" visible="false">
+						<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl" visible="true">
 							<headerToolbar>
 								<Toolbar class="pan">
 									<Title text="View Facalty Payment" textAlign="Center"/>
@@ -15,28 +15,28 @@
 							<content>
 								<Table id="adCrsTable" items="{course>/}" class="TableBorderTop" growing="true" growingThreshold="1">
 									<columns height="20px">
-										<Column width="8%" minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+										<Column width="8%" styleClass="cellBorderRight cellBorderLeft">
 											<Text text="ID"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Facalty Name"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Payment Type"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Cheque Number"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Name of Bank"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Payment Date"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Amount"/>
 										</Column>
-										<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight">
 											<Text text="Action"/>
 										</Column>
 									</columns>
@@ -59,36 +59,36 @@
 								</Table>
 							</content>
 						</Panel>
-						<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl" visible="true">
-							<headerToolbar>
-								<Toolbar class="pan">
-									<Title text="Bill" textAlign="Center"/>
-								</Toolbar>
-							</headerToolbar>
-							<content>
-								<HBox>
-									<HBox class="billhb">
-										<VBox class="billLogo">
-											<Label text="PAYMENT RECEIPT" class="billText" design="Bold"></Label>
-										</VBox>
-									</HBox>
-									<HBox class="billhb1">
-										<VBox>
-											<Toolbar class="tbBorder">
-											<Label text="Bill No. "></Label>
-											<Text text="001"></Text>
-											</Toolbar>
-										</VBox>
-										<VBox>
-											<Toolbar class="tbBorder">
-											<Label text="Date "></Label>
-											<Text text="26/05/2017"></Text>
-											</Toolbar>
-										</VBox>
-									</HBox>
-								</HBox>
-							</content>
-						</Panel>
+						<!--<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl" visible="true">-->
+						<!--	<headerToolbar>-->
+						<!--		<Toolbar class="pan">-->
+						<!--			<Title text="Bill" textAlign="Center"/>-->
+						<!--		</Toolbar>-->
+						<!--	</headerToolbar>-->
+						<!--	<content>-->
+						<!--		<HBox>-->
+						<!--			<HBox class="billhb">-->
+						<!--				<VBox class="billLogo">-->
+						<!--					<Label text="PAYMENT RECEIPT" class="billText" design="Bold"></Label>-->
+						<!--				</VBox>-->
+						<!--			</HBox>-->
+						<!--			<HBox class="billhb1">-->
+						<!--				<VBox>-->
+						<!--					<Toolbar class="tbBorder">-->
+						<!--					<Label text="Bill No. "></Label>-->
+						<!--					<Text text="001"></Text>-->
+						<!--					</Toolbar>-->
+						<!--				</VBox>-->
+						<!--				<VBox>-->
+						<!--					<Toolbar class="tbBorder">-->
+						<!--					<Label text="Date "></Label>-->
+						<!--					<Text text="26/05/2017"></Text>-->
+						<!--					</Toolbar>-->
+						<!--				</VBox>-->
+						<!--			</HBox>-->
+						<!--		</HBox>-->
+						<!--	</content>-->
+						<!--</Panel>-->
 					</HBox>
 				</content>
 			</Page>
