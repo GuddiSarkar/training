@@ -8,9 +8,11 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/routing/History",
 	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"
+	"sap/ui/model/FilterOperator",
+	'sap/ui/core/Fragment',
 
-], function(Controller, jQuery, MessageBox, MessageToast, SimpleType, ValidateException, JSONModel, History, Filter, FilterOperator) {
+], function(Controller, jQuery, MessageBox, MessageToast, SimpleType, ValidateException, JSONModel, History, Filter, FilterOperator,
+	Fragment) {
 	"use strict";
 	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.login", {
@@ -83,65 +85,99 @@ sap.ui.define([
 		},
 
 		onPress: function(oEvent) {
-			var dateTime = new Date();
-			console.log(dateTime.toLocaleString());
-			var date = dateTime.toLocaleString();
+			var oView = this.getView();
+			var formInput = [
+				oView.byId("username"),
+				oView.byId("password"),
+			];
+			jQuery.each(formInput, function(i, input) {
+				if (!input.getValue()) {
+					input.setValueState("Error");
+				}
+			});
+			var forward = true;
+			jQuery.each(formInput, function(i, input) {
+				if ("Error" === input.getValueState()) {
+					forward = false;
+					return false;
+				}
+			});
 
-			var Data = sap.ui.getCore().getModel("myModel").getData();
-			var uname = this.getView().byId("username").getValue();
-			var pwd = this.getView().byId("password").getValue();
-			if (uname === "admin" && pwd === "admin") {
-				this.getRouter().navTo("admin");
-			} else {
+			// output result
+			if (forward) {
+				var dateTime = new Date();
+				console.log(dateTime.toLocaleString());
+				var date = dateTime.toLocaleString();
 
-				var filtername = new Filter("user_username", FilterOperator.EQ, uname);
-				var filterpwd = new Filter("user_pwd", FilterOperator.EQ, pwd);
-				var filterrole = new Filter("user_role", FilterOperator.EQ, Data.role);
-				var oFilter = new Filter({
-					filters: [filtername, filterpwd, filterrole],
-					bAnd: true
-				});
+				var Data = sap.ui.getCore().getModel("myModel").getData();
+				var uname = this.getView().byId("username").getValue();
+				var pwd = this.getView().byId("password").getValue();
+				if (uname === "admin" && pwd === "admin") {
+					this.getRouter().navTo("admin");
+				} else {
 
-				var oModel = this.getOwnerComponent().getModel("course");
-				oModel.setUseBatch(false);
+					var filtername = new Filter("user_username", FilterOperator.EQ, uname);
+					var filterpwd = new Filter("user_pwd", FilterOperator.EQ, pwd);
+					var filterrole = new Filter("user_role", FilterOperator.EQ, Data.role);
+					var oFilter = new Filter({
+						filters: [filtername, filterpwd, filterrole],
+						bAnd: true
+					});
 
-				oModel.read("/tb_user", {
-					filters: [oFilter],
-					success: function(oData, oResponse) {
-						window.sessionStorage.setItem("un", oData.results[0].user_username);
-						window.sessionStorage.setItem("dt", date);
-						if (Data.role === "BackOffice") {
-							this.getRouter().navTo("backoffice");
-						} else {
-							this.getRouter().navTo("telecaller");
-						}
-					}.bind(this),
-					error: function(error) {
-						var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
-						MessageBox.error(
-							"Invalid Credentials", {
-								styleClass: bCompact ? "sapUiSizeCompact" : ""
+					var oModel = this.getOwnerComponent().getModel("course");
+					oModel.setUseBatch(false);
+
+					oModel.read("/tb_user", {
+						filters: [oFilter],
+						success: function(oData, oResponse) {
+							window.sessionStorage.setItem("un", oData.results[0].user_username);
+							window.sessionStorage.setItem("dt", date);
+							if (Data.role === "BackOffice") {
+								this.getRouter().navTo("backoffice");
+							} else {
+								this.getRouter().navTo("telecaller");
 							}
-						);
-					}.bind(this)
+						}.bind(this),
+						error: function(error) {
+							var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
+							MessageBox.error(
+								"Invalid Credentials", {
+									styleClass: bCompact ? "sapUiSizeCompact" : ""
+								}
+							);
+						}.bind(this)
+					});
 
-				});
+					var oEntry = {
+						"user_name": uname,
+						"login_dtime": date,
+						"user_role": Data.role
+					};
+					oModel.create("/tb_ulginhstry", oEntry, {
+						success: function(oData) {
 
-				var oEntry = {
-					"user_name": uname,
-					"login_dtime": date,
-					"user_role": Data.role
-				};
-				oModel.create("/tb_ulginhstry", oEntry, {
-					success: function(oData) {
+						}.bind(this),
+						error: function(error) {
 
-					}.bind(this),
-					error: function(error) {
+						}.bind(this)
+					});
 
-					}.bind(this)
-				});
+				}
 			}
-
+		},
+		onClickForgotPassword: function(oEvent) {
+			// var oView = this.getView();
+			// var oDialog = oView.byId("frgpwd");
+			// if (!oDialog) {
+			// 	oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.Forgot_Pwd", this);
+			// 	oView.addDependent(oDialog);
+			// }
+			// oDialog.open();
+			this.getRouter().navTo("Forgot_Password");
+		},
+		
+		onCloseEdit: function(oEvent) {
+			this.getView().byId("frgpwd").close();
 		},
 
 		handleLinkPress: function(evt) {

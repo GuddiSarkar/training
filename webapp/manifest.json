@@ -272,26 +272,30 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["register"]
-
-			},{	
+			}, {
 				"name": "admin",
 				"pattern": "splitApp",
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["admin"]
-			},{
+			}, {
 				"name": "backoffice",
 				"pattern": "split",
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["backoffice"]
-			},
-			{
+			}, {
 				"name": "telecaller",
 				"pattern": "splitapps",
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["telecaller"]
+			}, {
+				"name": "Forgot_Password",
+				"pattern": "frgpwd",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Forgot_Password"]
 			}],
 			"targets": {
 				"home": {
@@ -516,6 +520,13 @@
 					"transition": "slide",
 					"clearAggregation": true,
 					"viewName": "TeleCaller.TeleCaller_mainView",
+					"viewLevel": 1
+				},
+				"Forgot_Password": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Forgot_Password",
 					"viewLevel": 1
 				}
 			}

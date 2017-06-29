@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"
-], function(Controller, Filter, FilterOperator) {
+	"sap/ui/model/FilterOperator",
+	'sap/m/MessageBox'
+], function(Controller, Filter, FilterOperator,MessageBox) {
 	"use strict";
 	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.add_Lead", {
@@ -38,6 +39,29 @@ sap.ui.define([
 			oBinding.filter(allFilter);
 		},
 		addLeadCalls: function(oEvent) {
+			var oView = this.getView();
+			var formInput = [
+				oView.byId("Lc_name"),
+				oView.byId("Lc_mob"),
+				oView.byId("Lc_eml"),
+				oView.byId("Lc_add"),
+				oView.byId("Lc_crs")
+			];
+			jQuery.each(formInput, function(i, input) {
+				if (!input.getValue()) {
+					input.setValueState("Error");
+				}
+			});
+			var forward = true;
+			jQuery.each(formInput, function(i, input) {
+				if ("Error" === input.getValueState()) {
+					forward = false;
+					return false;
+				}
+			});
+
+			// output result
+			if (forward){
 			var Name = this.getView().byId("Lc_name").getValue();
 			var Gender = this.getView().byId("Lc_gnder").getSelectedItem().getText();
 			var Mobile = this.getView().byId("Lc_mob").getValue();
@@ -70,6 +94,13 @@ sap.ui.define([
 			});
 
 			oModel.setRefreshAfterChange(true);
+			jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Success");
+		
+			} else {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Please Enter all the fields");
+			}
 		},
 		onAppointment: function(oEvent) {
 			this.getView().byId("leadTitle").setVisible(true);

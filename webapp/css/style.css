@@ -61,6 +61,12 @@
 	padding-left:27%;
 	padding-top:5%;
 }
+/*sanjit*/
+.regLabel1.sapMLabel{
+	padding-left:20%;
+	padding-top:5%;
+}
+/*sanjit*/
 .remLabel.sapMLabel{
 	padding-top:10%;
 }
@@ -85,9 +91,9 @@
 	background-color:brown;
 }
 
-.bg{
-	background: linear-gradient(to top, #33ccff 0%, #ff99cc 100%);
-}
+/*.bg{*/
+/*	background: linear-gradient(to top, #33ccff 0%, #ff99cc 100%);*/
+/*}*/
 .footer-text{
 	padding-left:10%;
 	padding-top:10%;
@@ -168,7 +174,7 @@
 }
 
 .srch3{
-	left:19%;
+	left:25%;
 }
 
 .srch4{
@@ -734,7 +740,7 @@ span.sapMBtnInner.sapMBtnAccept {
 }
 .logo{
 	    color: black;
-    padding-left: 430px;
+    padding-left: 55px;
         
 }
 /*sanjit*/
@@ -752,3 +758,12 @@ span.sapMBtnInner.sapMBtnAccept {
     color: black;
 }
 /*sanjit*/
+.frg_pwd{
+	padding-left: 35%;
+	padding-top:4%;
+}
+.svpw{
+	padding-left: 35%;
+	padding-top: 6%;
+	    min-width: 10.5rem;
+}

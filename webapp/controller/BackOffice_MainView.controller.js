@@ -266,9 +266,7 @@ sap.ui.define([
 			var dob = this.getView().byId("d_ob").getValue();
 			var phone = this.getView().byId("p_hone").getValue();
 			var email = this.getView().byId("e_ml").getValue();
-			var addstreet1 = this.getView().byId("a_strt1").getValue();
-			var addstreet2 = this.getView().byId("a_strt2").getValue();
-			var address = addstreet1 + " " + addstreet2;
+			var address = this.getView().byId("a_strt1").getValue();
 			var city = this.getView().byId("c_ty").getValue();
 			var state = this.getView().byId("s_tate").getValue();
 			var zip = this.getView().byId("zip_code").getValue();

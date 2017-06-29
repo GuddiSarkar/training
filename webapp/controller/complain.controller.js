@@ -7,42 +7,67 @@ sap.ui.define([
 	return Controller.extend("com.demoTMS.controller.complain", {
 
 		onSubmit: function(oEvent) {
-
-			var name;
-			var issue = this.getView().byId("select").getSelectedItem().getText();
-			if (issue === "Student") {
-				name = this.getView().byId("s_name").getValue();
-			} else {
-				name = this.getView().byId("f_name").getValue();
-			}
-			var subject = this.getView().byId("sub").getValue();
-			var description = this.getView().byId("descriptn").getValue();
-
-			var oEntry = {
-				"name": name,
-				"issue_for": issue,
-				"subject": subject,
-				"description": description
-			};
-			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.setUseBatch(false);
-			oModel.create("/tb_complain", oEntry, {
-				success: function(oData) {
-					if (issue === "Student") {
-						this.getView().byId("s_name").setValue("");
-					} else {
-						this.getView().byId("f_name").setValue("");
-					}
-					//this.getView().byId("name").setValue("");
-					this.getView().byId("select").setSelectedKey("");
-					this.getView().byId("sub").setValue("");
-					this.getView().byId("descriptn").setValue("");
-				}.bind(this),
-				error: function(error) {
-
-				}.bind(this)
+			var oView = this.getView();
+			var formInput = [
+				oView.byId("sub"),
+				oView.byId("descriptn")
+			];
+			jQuery.each(formInput, function(i, input) {
+				if (!input.getValue()) {
+					input.setValueState("Error");
+				}
 			});
-			oModel.setRefreshAfterChange(true);
+			var forward = true;
+			jQuery.each(formInput, function(i, input) {
+				if ("Error" === input.getValueState()) {
+					forward = false;
+					return false;
+				}
+			});
+
+			// output result
+			if (forward) {
+				var name;
+				var issue = this.getView().byId("select").getSelectedItem().getText();
+				if (issue === "Student") {
+					name = this.getView().byId("s_name").getValue();
+				} else {
+					name = this.getView().byId("f_name").getValue();
+				}
+				var subject = this.getView().byId("sub").getValue();
+				var description = this.getView().byId("descriptn").getValue();
+
+				var oEntry = {
+					"name": name,
+					"issue_for": issue,
+					"subject": subject,
+					"description": description
+				};
+				var oModel = this.getOwnerComponent().getModel("course");
+				oModel.setUseBatch(false);
+				oModel.create("/tb_complain", oEntry, {
+					success: function(oData) {
+						if (issue === "Student") {
+							this.getView().byId("s_name").setValue("");
+						} else {
+							this.getView().byId("f_name").setValue("");
+						}
+						//this.getView().byId("name").setValue("");
+						this.getView().byId("select").setSelectedKey("");
+						this.getView().byId("sub").setValue("");
+						this.getView().byId("descriptn").setValue("");
+					}.bind(this),
+					error: function(error) {
+
+					}.bind(this)
+				});
+				oModel.setRefreshAfterChange(true);
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Success");
+			} else {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Please Enter all the fields");
+			}
 		},
 		onChange: function(evt) {
 			var oSelected = this.getView().byId("select").getSelectedItem().getText();

@@ -67,7 +67,7 @@
 								<HBox>
 									<VBox class="acr_vb2">
 										<HBox>
-											<Label text="Address Street 1" width="200px"/>
+											<Label text="Address Street" width="200px"/>
 											<Input value="" id="a_strt1"/>
 										</HBox>
 										

@@ -2,8 +2,9 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-	"sap/ui/core/routing/History"
-], function(Controller, Filter, FilterOperator, History) {
+	"sap/ui/core/routing/History",
+	'sap/m/MessageBox'
+], function(Controller, Filter, FilterOperator, History,MessageBox) {
 	"use strict";
 	/*eslint linebreak-style: ["error", "windows"]*/
 	var sPath;
@@ -65,7 +66,7 @@ sap.ui.define([
 				// MessageBox.alert("Success");
 
 				// this.getRouter().navTo("stu_fac");
-				var courseName = this.getView().byId("c_name").getValue();
+			var courseName = this.getView().byId("c_name").getValue();
 			var courseFee = this.getView().byId("c_fee").getValue();
 			var courseType = this.getView().byId("c_type").getSelectedItem().getText();
 			var courseDuration = this.getView().byId("c_dur").getSelectedItem().getText();
@@ -90,6 +91,8 @@ sap.ui.define([
 			});
 
 			oModel.setRefreshAfterChange(true);
+			jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Success");
 		
 			} else {
 				jQuery.sap.require("sap.m.MessageBox");

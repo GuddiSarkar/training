@@ -11,6 +11,30 @@ sap.ui.define([
 		},
 		
 		onRegister: function(){
+			var oView = this.getView();
+			var formInput = [
+				oView.byId("name"),
+				oView.byId("email"),
+				// oView.byId("role"),
+				oView.byId("uname"),
+				oView.byId("pwd"),
+				oView.byId("cnfpwd")
+			];
+			jQuery.each(formInput, function(i, input) {
+				if (!input.getValue()) {
+					input.setValueState("Error");
+				}
+			});
+			var forward = true;
+			jQuery.each(formInput, function(i, input) {
+				if ("Error" === input.getValueState()) {
+					forward = false;
+					return false;
+				}
+			});
+
+			// output result
+			if (forward) {
 			var eName = this.getView().byId("name").getValue();
 			var eEmail = this.getView().byId("email").getValue();
 			var eRole = this.getView().byId("role").getSelectedItem().getText();
@@ -47,6 +71,10 @@ sap.ui.define([
 			});
 
 			oModel.setRefreshAfterChange(true);
+			}	else {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Please Enter all the fields");
+			}
 		}
 	});
 
