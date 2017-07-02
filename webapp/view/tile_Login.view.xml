@@ -26,6 +26,9 @@
 								<Input width="75%" id="password" type="Password" placeholder="Enter Password" valueStateText="Password must not be empty"
 									value="{ path : '/password', type : 'sap.ui.model.type.String', constraints : { minLength: 3, maxLength: 20 } }"/>
 							</HBox>
+							<HBox class="frg_pwd">
+							<Link text="Forgot Password ?" id="frgpwd" emphasized="true" press="onClickForgotPassword"/>
+							</HBox>
 							<Toolbar class="tbBorder sapUiSmallMarginTop">
 								<ToolbarSpacer/>
 								<Button text="Log In" class="login1" press="onPressLogin"/>

@@ -30,6 +30,10 @@ sap.ui.define([
 			oModel.setUseBatch(false);
 		},
 
+		getRouter: function() {
+			return sap.ui.core.UIComponent.getRouterFor(this);
+		},
+
 		onPwdUpdate: function() {
 			var email = this.getView().byId("email").getValue();
 			var pwd = this.getView().byId("pwd").getValue();
@@ -39,13 +43,24 @@ sap.ui.define([
 				"user_pwd": pwd,
 				"user_cnfpwd": cnfPwd
 			};
-			var filterEmail = new Filter("user_email", FilterOperator.EQ, email);
+			var filterEmail = new sap.ui.model.Filter("user_email", sap.ui.model.FilterOperator.EQ, email);
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
 			oModel.read("/tb_user", {
-				filters: filterEmail,
+				filters: [filterEmail],
 				success: function(oData, oResponse) {
 					id = oData.results[0].user_id;
+					oModel.update("/tb_user(" + id + ")", data, {
+						success: function(oData, oResponse) {
+							console.log(oData);
+							console.log(oResponse);
+							this.getRouter().navTo("home");
+						}.bind(this),
+						error: function(err) {
+							console.log(err);
+						}.bind(this)
+					});
+					oModel.setRefreshAfterChange(true);
 				}.bind(this),
 				error: function(error) {
 					var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
@@ -56,17 +71,7 @@ sap.ui.define([
 					);
 				}.bind(this)
 			});
-			oModel.update("/tb_user(" + id + ")", data, {
-				success: function(oData, oResponse) {
-					console.log(oData);
-					console.log(oResponse);
-					this.getRouter().navTo("home");
-				}.bind(this),
-				error: function(err) {
-					console.log(err);
-				}.bind(this)
-			});
-			oModel.setRefreshAfterChange(true);
+
 		}
 
 	});

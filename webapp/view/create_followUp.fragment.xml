@@ -10,11 +10,11 @@
 						</HBox>
 						<HBox>
 							<Label text="Title" width="100px"/>
-							<Input value="" class="acr_inp" id="title"/>
+							<Input value="" class="acr_inp" id="rtitle"/>
 						</HBox>
 						<HBox>
 							<Label text="Description" width="100px"/>
-							<TextArea value="" growing="true" id="desc" growingMaxLines="12"/>
+							<TextArea value=""  id="desc" />
 						</HBox>
 					</VBox>
 				</HBox>

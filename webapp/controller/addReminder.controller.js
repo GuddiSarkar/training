@@ -24,22 +24,24 @@ sap.ui.define([
 			var today = new Date();
 			console.log(today);
 			var date = this.oFormatDdmmyyyy.format(today);
-		    var filterid = new sap.ui.model.Filter("reminder_date", sap.ui.model.FilterOperator.EQ, date);
+			var filterid = new sap.ui.model.Filter("reminder_date", sap.ui.model.FilterOperator.EQ, date);
 			oModel.read("/tb_reminder", {
 				filters: [filterid],
 				success: function(oData, oResponse) {
-				
+
 					var nModel = new sap.ui.model.json.JSONModel();
-					nModel.setData({reminder:oData.results});
-					this.getView().setModel(nModel,"currentDayRem");  
-					
+					nModel.setData({
+						reminder: oData.results
+					});
+					this.getView().setModel(nModel, "currentDayRem");
+
 				}.bind(this),
 				error: function(error) {
-					
+
 				}.bind(this)
 
 			});
-			
+
 			oModel.setRefreshAfterChange(true);
 		},
 
@@ -54,39 +56,6 @@ sap.ui.define([
 			console.log(oDateFormat.format(new Date(Number(value)))); // 2013/08/11
 			var date = oDateFormat.format(new Date(Number(value)));
 			return date;
-		},
-
-		todaysEvent: function() {
-			var today = new Date();
-			var remdata;
-			jQuery.sap.require("sap.ui.core.format.DateFormat");
-			var oDateFormat = sap.ui.core.format.DateFormat.getDateInstance({
-				pattern: "yyyy-MM-dd"
-			});
-			console.log(oDateFormat.format(new Date(Number(today)))); // 2013/08/11
-			var date = oDateFormat.format(new Date(Number(today)));
-			var filterTitle = new sap.ui.model.Filter("reminder_date", sap.ui.model.FilterOperator.EQ, date);
-			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.setUseBatch(false);
-			oModel.read("/tb_reminder", {
-				filters: [filterTitle],
-				success: function(oData, oResponse) {
-					// for(var i = 0; i<oData.results.length; i++){
-					// 	var val = oData.results[i].reminder_title;
-					// 	var link = this.getView().byId("title").setText(true);
-					// }
-					var nModel = new sap.ui.model.json.JSONModel();
-					nModel.setData({
-						title: oData.reminder_title
-					});
-					sap.ui.getCore().setModel(nModel, "remTitle");
-					remdata = sap.ui.getCore().getModel("remTitle").getData();
-				}.bind(this),
-				error: function(error) {
-					alert("in error block");
-				}.bind(this)
-			});
-			return remdata.title;
 		},
 
 		onPressBack: function(oEvent) {
@@ -167,7 +136,7 @@ sap.ui.define([
 
 		OnClickSet: function() {
 			var sDate = this.getView().byId("date").getValue();
-			var sTitle = this.getView().byId("title").getValue();
+			var sTitle = this.getView().byId("rtitle").getValue();
 			var sDesc = this.getView().byId("desc").getValue();
 			var oEntry = {
 				"reminder_description": sDesc,
@@ -179,7 +148,7 @@ sap.ui.define([
 			oModel.create("/tb_reminder", oEntry, {
 				success: function(oData, response) {
 					this.getView().byId("date").setValue("");
-					this.getView().byId("title").setValue("");
+					this.getView().byId("rtitle").setValue("");
 					this.getView().byId("desc").setValue("");
 
 					var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
@@ -199,13 +168,14 @@ sap.ui.define([
 		},
 		onPressEvent: function(oEvent) {
 			//var sSrc = oEvent.getSource().getTarget();
+			var id = this.getView().byId("rem_id").getValue();
 			var title = oEvent.getSource().getText();
 			var remdata;
-			var path = oEvent.getSource().getBindingContext("course").getPath();
+			var path = oEvent.getSource().getBindingContext("currentDayRem").getPath();
 			var filterTitle = new sap.ui.model.Filter("reminder_title", sap.ui.model.FilterOperator.EQ, title);
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
-			oModel.read(path, {
+			oModel.read("/tb_reminder", {
 				filters: [filterTitle],
 				success: function(oData, oResponse) {
 					//oData.results;

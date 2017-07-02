@@ -1,13 +1,13 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.BackOffice_MainView"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
-	<SplitApp id="split" initialDetail="stu" initialMaster="master2" backgroundColor="White">
+	<SplitApp id="split" initialDetail="per_det" initialMaster="master2" backgroundColor="White">
 		<detailPages>
 			<Page id="per_det" title=" Student" class="sapUiStdPage" showHeader="false">
 				<content>
 					<HBox class="admin-header" height="7.22%">
 						<VBox class="bo_vb_back">
-							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onPressDetailBack" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 						<VBox class="bo_vb">
 							<Label text="Student" textAlign="Center"></Label>
@@ -123,7 +123,7 @@
 				<content>
 					<HBox class="admin-header" height="7.22%">
 						<VBox class="bo_vb_back">
-							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onPressDetailBack" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 						<VBox class="bo_vb">
 							<Label text="Student" textAlign="Center"></Label>
@@ -182,7 +182,7 @@
 				<content>
 					<HBox class="admin-header" height="7.22%">
 						<VBox class="bo_vb_back">
-							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onPressDetailBack" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 						<VBox class="bo_vb">
 							<Label text="Student" textAlign="Center"></Label>
@@ -254,7 +254,7 @@
 				<content>
 					<HBox class="admin-header" height="7.22%">
 						<VBox class="bo_vb_back">
-							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onPressDetailBack" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 						<VBox class="bo_vb">
 							<Label text="Student" textAlign="Center"></Label>
@@ -271,7 +271,7 @@
 				<content>
 					<HBox class="admin-header" height="7.22%">
 						<VBox class="bo_vb_back">
-							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+							<Button icon="sap-icon://nav-back" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onPressDetailBack" ariaLabelledBy="editButtonLabel"/>
 						</VBox>
 						<VBox class="bo_vb1">
 							<Label text="Course" textAlign="Center"></Label>

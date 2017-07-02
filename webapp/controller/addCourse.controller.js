@@ -4,7 +4,7 @@ sap.ui.define([
 	"sap/ui/model/FilterOperator",
 	"sap/ui/core/routing/History",
 	'sap/m/MessageBox'
-], function(Controller, Filter, FilterOperator, History,MessageBox) {
+], function(Controller, Filter, FilterOperator, History, MessageBox) {
 	"use strict";
 	/*eslint linebreak-style: ["error", "windows"]*/
 	var sPath;
@@ -62,38 +62,32 @@ sap.ui.define([
 
 			// output result
 			if (forward) {
-				// jQuery.sap.require("sap.m.MessageBox");
-				// MessageBox.alert("Success");
+				var courseName = this.getView().byId("c_name").getValue();
+				var courseFee = this.getView().byId("c_fee").getValue();
+				var courseType = this.getView().byId("c_type").getSelectedItem().getText();
+				var courseDuration = this.getView().byId("c_dur").getSelectedItem().getText();
+				var oEntry = {
+					"course_name": courseName,
+					"course_type": courseType,
+					"course_fee": courseFee,
+					"course_duration": courseDuration
+				};
+				var oModel = this.getOwnerComponent().getModel("course");
+				oModel.setUseBatch(false);
+				oModel.create("/tb_course", oEntry, {
+					success: function(oData) {
+						this.getView().byId("c_name").setValue("");
+						this.getView().byId("c_type").setSelectedKey("");
+						this.getView().byId("c_fee").setValue("");
+						this.getView().byId("c_dur").setSelectedKey("");
+					}.bind(this),
+					error: function(error) {
 
-				// this.getRouter().navTo("stu_fac");
-			var courseName = this.getView().byId("c_name").getValue();
-			var courseFee = this.getView().byId("c_fee").getValue();
-			var courseType = this.getView().byId("c_type").getSelectedItem().getText();
-			var courseDuration = this.getView().byId("c_dur").getSelectedItem().getText();
-			var oEntry = {
-				"course_name": courseName,
-				"course_type": courseType,
-				"course_fee": courseFee,
-				"course_duration": courseDuration
-			};
-			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.setUseBatch(false);
-			oModel.create("/tb_course", oEntry, {
-				success: function(oData) {
-					this.getView().byId("c_name").setValue("");
-					this.getView().byId("c_type").setSelectedKey("");
-					this.getView().byId("c_fee").setValue("");
-					this.getView().byId("c_dur").setSelectedKey("");
-				}.bind(this),
-				error: function(error) {
+					}.bind(this)
+				});
 
-				}.bind(this)
-			});
+				oModel.setRefreshAfterChange(true);
 
-			oModel.setRefreshAfterChange(true);
-			jQuery.sap.require("sap.m.MessageBox");
-				MessageBox.alert("Success");
-		
 			} else {
 				jQuery.sap.require("sap.m.MessageBox");
 				MessageBox.alert("Please Enter all the fields");
@@ -132,9 +126,9 @@ sap.ui.define([
 			}
 
 			oDialog.open();
-		/*	var CourseType = this.getView().byId("c_typeEd").setSelectedItem(property.course_type);
-			var CourseDuration = this.getView().byId("c_durEd").setSelectedItem(property.course_duration);
-			oDialog.open();*/
+			/*	var CourseType = this.getView().byId("c_typeEd").setSelectedItem(property.course_type);
+				var CourseDuration = this.getView().byId("c_durEd").setSelectedItem(property.course_duration);
+				oDialog.open();*/
 		},
 
 		onCloseEdit: function(oEvent) {

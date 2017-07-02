@@ -157,13 +157,6 @@ sap.ui.define([
 			}
 		},
 		onClickForgotPassword: function(oEvent) {
-			// var oView = this.getView();
-			// var oDialog = oView.byId("frgpwd");
-			// if (!oDialog) {
-			// 	oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.Forgot_Pwd", this);
-			// 	oView.addDependent(oDialog);
-			// }
-			// oDialog.open();
 			this.getRouter().navTo("Forgot_Password");
 		},
 

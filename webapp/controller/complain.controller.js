@@ -5,7 +5,9 @@ sap.ui.define([
 	"use strict";
 	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.complain", {
-
+	getRouter: function(){
+			return sap.ui.core.UIComponent.getRouterFor(this);	
+		},
 		onSubmit: function(oEvent) {
 			var oView = this.getView();
 			var formInput = [
@@ -48,8 +50,11 @@ sap.ui.define([
 				oModel.create("/tb_complain", oEntry, {
 					success: function(oData) {
 						if (issue === "Student") {
+							this.getRouter().navTo("home");
 							this.getView().byId("s_name").setValue("");
+						
 						} else {
+							this.getRouter().navTo("home");
 							this.getView().byId("f_name").setValue("");
 						}
 						//this.getView().byId("name").setValue("");
@@ -62,12 +67,16 @@ sap.ui.define([
 					}.bind(this)
 				});
 				oModel.setRefreshAfterChange(true);
-				jQuery.sap.require("sap.m.MessageBox");
-				MessageBox.alert("Success");
+				/*jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Success");*/
 			} else {
 				jQuery.sap.require("sap.m.MessageBox");
 				MessageBox.alert("Please Enter all the fields");
 			}
+		},
+
+		onPressBack: function() {
+			this.getRouter().navTo("home");
 		},
 		onChange: function(evt) {
 			var oSelected = this.getView().byId("select").getSelectedItem().getText();

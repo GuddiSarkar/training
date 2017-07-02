@@ -4,8 +4,7 @@
 		<pages>
 			<Page title="Training Management System" showHeader="false">
 				<content>
-					<HBox height="93%" class="bg">
-						<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl">
+						<Panel width="auto" height="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
 							<headerToolbar>
 								<Toolbar class="pan">
 									<Title text="Manage Staff" textAlign="Center"/>
@@ -13,9 +12,9 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<Table id="Table" items="{course>/tb_user}" class="TableBorderTop" growing="true" growingThreshold="3" inset="false">
+								<Table id="Table" items="{course>/tb_user}" class="TableBorderTop" growing="true" growingThreshold="10" inset="false">
 									<columns height="20px">
-										<Column demandPopin="true" styleClass="cellBorderRight">
+										<Column demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
 											<Text text="Name"/>
 										</Column>
 										<Column demandPopin="true" styleClass="cellBorderRight">
@@ -43,7 +42,6 @@
 								</Table>
 							</content>
 						</Panel>
-					</HBox>
 				</content>
 			</Page>
 		</pages>

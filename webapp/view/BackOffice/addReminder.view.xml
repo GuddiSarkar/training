@@ -19,7 +19,8 @@
 												<CustomListItem>
 													<HBox>
 														<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
-															<Link text="{currentDayRem>reminder_title}" id="title" emphasized="true" press="onPressEvent"/>
+															<Input value="{currentDayRem>reminder_id}" id="rem_id" visible="false"></Input>
+															<Link text="{currentDayRem>reminder_title}"  id="title" emphasized="true" press="onPressEvent"/>
 														</VBox>
 													</HBox>
 												</CustomListItem>

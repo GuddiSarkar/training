@@ -17,7 +17,11 @@ sap.ui.define([
 		onPressBack: function(){
 			this.getRouter().navTo("home");
 		},
-
+		
+		onClickForgotPassword: function(oEvent) {
+			this.getRouter().navTo("Forgot_Password");
+		},
+		
 		onInit: function() {
 
 			// attach handlers for validation errors

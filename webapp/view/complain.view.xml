@@ -44,7 +44,8 @@
 									</HBox>
 									<Toolbar class="tool"><ToolbarSpacer/>
 										<HBox>
-											<Button type="Accept" text="Submit" press="onSubmit" width="100px"></Button>
+											<Button type="Accept" text="Submit" press="onSubmit"  class= "cmpln" width="100px"></Button>
+											<Button text="Back" class= "back" press="onPressBack"/>
 										</HBox>
 									</Toolbar>
 								</VBox>

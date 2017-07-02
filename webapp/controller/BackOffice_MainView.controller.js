@@ -5,8 +5,9 @@ sap.ui.define([
 	'sap/ui/core/mvc/Controller',
 	'sap/ui/model/json/JSONModel',
 	"sap/ui/model/Filter",
+	"sap/m/MessageBox",
 	"sap/ui/model/FilterOperator"
-], function(jQuery, MessageToast, Fragment, Controller, JSONModel, Filter, FilterOperator) {
+], function(jQuery, MessageToast, Fragment, Controller, JSONModel, Filter, MessageBox, FilterOperator) {
 	"use strict";
 	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.BackOffice_MainView", {
@@ -37,17 +38,15 @@ sap.ui.define([
 					this.date = dateTime.toLocaleString();
 					oCatDef.resolve();
 				}.bind(this),
-				error: function(oErr) 
-				{
-					console.log("we r in error block"+oErr);
+				error: function(oErr) {
+					console.log("we r in error block" + oErr);
 					oCatDef.reject();
 				}.bind(this)
 			});
 
 			$.when(oCatDef).then(
-				function() 
-				{
-		
+				function() {
+
 					var data = {
 						"logout_dtime": this.date
 					};
@@ -58,8 +57,7 @@ sap.ui.define([
 							console.log(dResponse);
 							//console.log(dData.results.logout_dtime);
 							window.sessionStorage.removeItem("un");
-							
-							
+
 						}.bind(this),
 						error: function(err) {
 							console.log(err);
@@ -124,31 +122,78 @@ sap.ui.define([
 		},
 
 		onPressNext1: function(oEvent) {
-			this.getSplitAppObj().to(this.createId("admn_det"));
-			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.setData('1');
-			this.getView().setModel(oModel, "navType");
-			this.getNextPrev();
-			this.enableDisableButtons();
-			// this.getView().byId("v2").setVisible(true);
-			// this.getView().byId("v1").setVisible(false);
-			if (oEvent) {
+			var oView = this.getView();
+			var formInput = [
+				// oView.byId("select"),
+				oView.byId("f_name"),
+				oView.byId("l_name"),
+				//oView.byId("g_nder"),
+				//oView.byId("d_ob"),
+				oView.byId("p_hone"),
+				oView.byId("e_ml"),
+				oView.byId("a_strt1"),
+				oView.byId("c_ty"),
+				oView.byId("zip_code"),
+				oView.byId("s_tate")
+			];
+			jQuery.each(formInput, function(i, input) {
+				if (!input.getValue()) {
+					input.setValueState("Error");
+				}
+			});
+			var forward = true;
+			jQuery.each(formInput, function(i, input) {
+				if ("Error" === input.getValueState()) {
+					forward = false;
+					return false;
+				}
+			});
 
+			// output result
+			if (forward) {
+				this.getSplitAppObj().to(this.createId("admn_det"));
+				var oModel = new sap.ui.model.json.JSONModel();
+				oModel.setData('1');
+				this.getView().setModel(oModel, "navType");
+				this.getNextPrev();
+				this.enableDisableButtons();
+			} else {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Please Enter all the fields");
 			}
 
 		},
 
 		onPressNext2: function(oEvent) {
-			this.getSplitAppObj().to(this.createId("fee_det"));
-			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.setData('1');
-			this.getView().setModel(oModel, "navType");
-			this.getNextPrev();
-			this.enableDisableButtons();
-			// this.getView().byId("v2").setVisible(true);
-			// this.getView().byId("v1").setVisible(false);
-			if (oEvent) {
-
+			var oView = this.getView();
+			var formInput = [
+				//oView.byId("c_name"),
+				oView.byId("c_fee"),
+				oView.byId("c_type"),
+				//oView.byId("s_date")
+			];
+			jQuery.each(formInput, function(i, input) {
+				if (!input.getValue()) {
+					input.setValueState("Error");
+				}
+			});
+			var forward = true;
+			jQuery.each(formInput, function(i, input) {
+				if ("Error" === input.getValueState()) {
+					forward = false;
+					return false;
+				}
+			});
+			if (forward) {
+				this.getSplitAppObj().to(this.createId("fee_det"));
+				var oModel = new sap.ui.model.json.JSONModel();
+				oModel.setData('1');
+				this.getView().setModel(oModel, "navType");
+				this.getNextPrev();
+				this.enableDisableButtons();
+			} else {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Please Enter all the fields");
 			}
 
 		},
@@ -259,106 +304,133 @@ sap.ui.define([
 		},
 
 		addStudent: function(oEvent) {
-			var firstName = this.getView().byId("f_name").getValue();
-			var lastName = this.getView().byId("l_name").getValue();
-			var name = firstName + " " + lastName;
-			var gender = this.getView().byId("g_nder").getSelectedButton().getText();
-			var dob = this.getView().byId("d_ob").getValue();
-			var phone = this.getView().byId("p_hone").getValue();
-			var email = this.getView().byId("e_ml").getValue();
-			var address = this.getView().byId("a_strt1").getValue();
-			var city = this.getView().byId("c_ty").getValue();
-			var state = this.getView().byId("s_tate").getValue();
-			var zip = this.getView().byId("zip_code").getValue();
-			var crs_name = this.getView().byId("c_name").getSelectedItem().getText();
-			var startDate = this.getView().byId("s_date").getValue();
-			var discount = this.getView().byId("d_scunt").getValue();
-			var tax = this.getView().byId("t_ax").getValue();
-			var totalPaybleAmount = this.getView().byId("tp_amnt").getValue();
-			var registrationFee = this.getView().byId("r_fee").getValue();
-			var installments = this.getView().byId("noi").getSelectedItem().getText();
-			var paidAmnt = registrationFee;
-			var dueAmnt = totalPaybleAmount - paidAmnt;
-			var image = "";
-
-			var oEntryStud = {
-				"stud_name": name,
-				"stud_gender": gender,
-				"stud_dob": dob,
-				"stud_mob": phone,
-				"stud_email": email,
-				"stud_photo": image,
-				"stud_strt_date": startDate,
-				"stud_course_name": crs_name,
-				"stud_street": address,
-				"stud_city": city,
-				"stud_zip": zip,
-				"stud_state": state,
-				"stud_installment": installments
-			};
-			var oModelStud = this.getOwnerComponent().getModel("course");
-			oModelStud.setUseBatch(false);
-			oModelStud.create("/tb_student", oEntryStud, {
-				success: function(oData) {
-
-					// var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
-					// MessageBox.success(
-					// 	"Data Saved Successfully", {
-					// 		styleClass: bCompact ? "sapUiSizeCompact" : ""
-					// 	}
-					// );
-					this.getView().byId("f_name").setValue("");
-					this.getView().byId("l_name").setValue("");
-					this.getView().byId("g_nder").setValue("");
-					this.getView().byId("d_ob").setValue("");
-					this.getView().byId("p_hone").setValue("");
-					this.getView().byId("e_ml").setValue("");
-					this.getView().byId("a_strt1").setValue("");
-					this.getView().byId("a_strt2").setValue("");
-					this.getView().byId("c_ty").setValue("");
-					this.getView().byId("s_tate").setValue("");
-					this.getView().byId("zip_code").setValue("");
-					this.getView().byId("c_name").setSelectedKey("");
-					this.getView().byId("noi").setSelectedKey("");
-				}.bind(this),
-				error: function(error) {
-
-				}.bind(this)
-
+			var oView = this.getView();
+			var formInput = [
+				// oView.byId("select"),
+				oView.byId("c_fee1"),
+				oView.byId("d_scunt"),
+				oView.byId("tp_amnt"),
+			];
+			jQuery.each(formInput, function(i, input) {
+				if (!input.getValue()) {
+					input.setValueState("Error");
+				}
 			});
-			oModelStud.setRefreshAfterChange(true);
-
-			var oEntryStudPay = {
-				"stud_payment_name": name,
-				"stud_payment_course": crs_name,
-				"stud_payment_disc": discount,
-				"stud_payment_tax": tax,
-				"stud_payment_reg_fee": registrationFee,
-				"stud_payment_instal_1": "0",
-				"stud_payment_instal_2": "0",
-				"stud_payment_instal_3": "0",
-				"stud_payment_instal_4": "0",
-				"stud_payment_instal_5": "0",
-				"stud_payment_fee": totalPaybleAmount,
-				"stud_payment_paid": paidAmnt,
-				"stud_payment_due": dueAmnt,
-				"stud_payment_installment": installments
-			};
-			var oModelStudPay = this.getOwnerComponent().getModel("course");
-			oModelStudPay.setUseBatch(false);
-			oModelStudPay.create("/tb_stud_payment", oEntryStudPay, {
-				success: function(oData) {
-
-					this.getView().byId("d_scunt").setValue("");
-					this.getView().byId("tp_amnt").setValue("");
-					this.getView().byId("r_fee").setValue("");
-
-				}.bind(this),
-				error: function(error) {
-
-				}.bind(this)
+			var forward = true;
+			jQuery.each(formInput, function(i, input) {
+				if ("Error" === input.getValueState()) {
+					forward = false;
+					return false;
+				}
 			});
-			oModelStudPay.setRefreshAfterChange(true);
+
+			// output result
+			if (forward) {
+				var firstName = this.getView().byId("f_name").getValue();
+				var lastName = this.getView().byId("l_name").getValue();
+				var name = firstName + " " + lastName;
+				var gender = this.getView().byId("g_nder").getSelectedButton().getText();
+				var dob = this.getView().byId("d_ob").getValue();
+				var phone = this.getView().byId("p_hone").getValue();
+				var email = this.getView().byId("e_ml").getValue();
+				var address = this.getView().byId("a_strt1").getValue();
+				var city = this.getView().byId("c_ty").getValue();
+				var state = this.getView().byId("s_tate").getValue();
+				var zip = this.getView().byId("zip_code").getValue();
+				var crs_name = this.getView().byId("c_name").getSelectedItem().getText();
+				var startDate = this.getView().byId("s_date").getValue();
+				var discount = this.getView().byId("d_scunt").getValue();
+				var tax = this.getView().byId("t_ax").getValue();
+				var totalPaybleAmount = this.getView().byId("tp_amnt").getValue();
+				var registrationFee = this.getView().byId("r_fee").getValue();
+				var installments = this.getView().byId("noi").getSelectedItem().getText();
+				var paidAmnt = registrationFee;
+				var dueAmnt = totalPaybleAmount - paidAmnt;
+				var image = "";
+
+				var oEntryStud = {
+					"stud_name": name,
+					"stud_gender": gender,
+					"stud_dob": dob,
+					"stud_mob": phone,
+					"stud_email": email,
+					"stud_photo": image,
+					"stud_strt_date": startDate,
+					"stud_course_name": crs_name,
+					"stud_street": address,
+					"stud_city": city,
+					"stud_zip": zip,
+					"stud_state": state,
+					"stud_installment": installments
+				};
+				var oModelStud = this.getOwnerComponent().getModel("course");
+				oModelStud.setUseBatch(false);
+				oModelStud.create("/tb_student", oEntryStud, {
+					success: function(oData) {
+
+						// var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
+						// MessageBox.success(
+						// 	"Data Saved Successfully", {
+						// 		styleClass: bCompact ? "sapUiSizeCompact" : ""
+						// 	}
+						// );
+						this.getView().byId("f_name").setValue("");
+						this.getView().byId("l_name").setValue("");
+						this.getView().byId("g_nder").setValue("");
+						this.getView().byId("d_ob").setValue("");
+						this.getView().byId("p_hone").setValue("");
+						this.getView().byId("e_ml").setValue("");
+						this.getView().byId("a_strt1").setValue("");
+						this.getView().byId("a_strt2").setValue("");
+						this.getView().byId("c_ty").setValue("");
+						this.getView().byId("s_tate").setValue("");
+						this.getView().byId("zip_code").setValue("");
+						this.getView().byId("c_name").setSelectedKey("");
+						this.getView().byId("noi").setSelectedKey("");
+					}.bind(this),
+					error: function(error) {
+
+					}.bind(this)
+
+				});
+				oModelStud.setRefreshAfterChange(true);
+
+				var oEntryStudPay = {
+					"stud_payment_name": name,
+					"stud_payment_course": crs_name,
+					"stud_payment_disc": discount,
+					"stud_payment_tax": tax,
+					"stud_payment_reg_fee": registrationFee,
+					"stud_payment_instal_1": "0",
+					"stud_payment_instal_2": "0",
+					"stud_payment_instal_3": "0",
+					"stud_payment_instal_4": "0",
+					"stud_payment_instal_5": "0",
+					"stud_payment_fee": totalPaybleAmount,
+					"stud_payment_paid": paidAmnt,
+					"stud_payment_due": dueAmnt,
+					"stud_payment_installment": installments
+				};
+				var oModelStudPay = this.getOwnerComponent().getModel("course");
+				oModelStudPay.setUseBatch(false);
+				oModelStudPay.create("/tb_stud_payment", oEntryStudPay, {
+					success: function(oData) {
+
+						this.getView().byId("d_scunt").setValue("");
+						this.getView().byId("tp_amnt").setValue("");
+						this.getView().byId("r_fee").setValue("");
+
+					}.bind(this),
+					error: function(error) {
+
+					}.bind(this)
+				});
+				oModelStudPay.setRefreshAfterChange(true);
+
+			} else {
+				jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Please Enter all the fields");
+			}
 
 		},
 		onSave: function(oEvent) {

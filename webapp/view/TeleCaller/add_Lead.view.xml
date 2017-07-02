@@ -68,7 +68,7 @@
 							</Toolbar>
 						</headerToolbar>
 						<content>
-							<Table id="adCrsTable" items="{course>/tb_lead}" class="TableBorderTop" growing="true" growingThreshold="1">
+							<Table id="adCrsTable" items="{course>/tb_lead}" class="TableBorderTop" growing="true" growingThreshold="5">
 								<columns>
 									<Column demandPopin="true" styleClass="cellBorderRight">
 										<Text text="Name"/>

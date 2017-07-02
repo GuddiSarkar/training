@@ -1,7 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator",
 	"sap/m/MessageBox"
-], function(Controller, MessageBox) {
+], function(Controller, Filter, FilterOperator, MessageBox) {
 	"use strict";
 	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.Approve", {
@@ -10,7 +12,17 @@ sap.ui.define([
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
 		},
-
+		onSearch: function(oEvent) {
+			var oTable = this.getView().byId("adCrsTable");
+			var oBinding = oTable.getBinding("items");
+			var value = oEvent.getParameter("query");
+			var oFilter1 = new Filter("register_user_name", FilterOperator.Contains, value);
+			var oFilter2 = new Filter("register_user_email", FilterOperator.Contains, value);
+			var oFilter3 = new Filter("register_user_role", FilterOperator.Contains, value);
+			var oFilter4 = new Filter("register_user_username", FilterOperator.Contains, value);
+			var allFilter = new Filter([oFilter1, oFilter2, oFilter3,oFilter4], false);
+			oBinding.filter(allFilter);
+		},
 
 		// addSave: function(oEvent) {
 		// 	var Name = this.getView().byId("a_name").getValue();

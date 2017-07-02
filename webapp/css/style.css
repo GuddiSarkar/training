@@ -1,4 +1,9 @@
 /* Enter your custom styles here */
+
+.cmpln
+{
+		padding-right:30%;
+}
  .sapMPanel
 {
 	border: 2px solid black;
@@ -215,6 +220,10 @@
   background-color: red;
   color:white;
 }
+.back1 .sapMBtnInner {
+  background-color: red;
+  color:white;
+}
 
 .sapUiBlockCellTitle{
 	color:white;
@@ -224,10 +233,10 @@
 /* add student css */
 
 .srch{
-	left:25%;
+	left:52%;
 }
 .srch0{
-	left:26%;
+	left:53%;
 }
 .srch1{
 	left:56%;
@@ -238,7 +247,7 @@
 }
 
 .srch3{
-	left:25%;
+	left:46%;
 }
 
 .srch4{
@@ -261,7 +270,7 @@
 	left:58.3%;
 }
 .srch9{
-	left:28%;
+	left:55%;
 }
 .srch10{
 	left:30%;
@@ -294,7 +303,7 @@
 	left:26%;
 }
 .srch20{
-	left:28%;
+	left:55%;
 }
 
 
