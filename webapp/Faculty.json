@@ -1,49 +1,49 @@
 [{
 	"text": "Student",
-	"ref": "sap-icon://crm-service-manager",
+	"ref": "sap-icon://study-leave",
 	"nodes": [{
 		"text": "Add Student",
-		"ref": "sap-icon://study-leave",
+		"ref": "sap-icon://add-contact",
 		"nodes": [{
 			"text": "Personal Details",
 			"ref": "sap-icon://business-card",
 			"custom": "per_det"
 		}, {
 			"text": "Admission Details",
-			"ref": "sap-icon://switch-classes",
+			"ref": "sap-icon://user-edit",
 			"custom": "admn_det"
 		}, {
 			"text": "Fee Details",
-			"ref": "sap-icon://switch-classes",
+			"ref": "sap-icon://payment-approval",
 			"custom": "fee_det"
 		}]
 	}, {
 		"text": "View Student",
-		"ref": "sap-icon://my-view",
+		"ref": "sap-icon://personnel-view",
 		"custom": "stu1"
 	}]
 }, {
 	"text": "Course",
-	"ref": "sap-icon://overview-chart",
+	"ref": "sap-icon://course-book",
 	"nodes": [{
 		"text": "Add Course",
-		"ref": "sap-icon://business-card",
+		"ref": "sap-icon://add-coursebook",
 		"custom": "course1"
 	}, {
 		"text": "View Course",
-		"ref": "sap-icon://switch-classes",
+		"ref": "sap-icon://detail-view",
 		"custom": "course2"
 	}]
 }, {
 	"text": "Faculty",
-	"ref": "sap-icon://factory",
+	"ref": "sap-icon://employee",
 	"nodes": [{
 		"text": "Add Faculty",
-		"ref": "sap-icon://message-information",
+		"ref": "sap-icon://employee-approvals",
 		"custom": "fac1"
 	}, {
 		"text": "View Faculty",
-		"ref": "sap-icon://payment-approval",
+		"ref": "sap-icon://employee-lookup",
 		"custom": "fac2"
 	}]
 }, {
@@ -51,50 +51,50 @@
 	"ref": "sap-icon://pushpin-off",
 	"nodes": [{
 		"text": "Add Reminder",
-		"ref": "sap-icon://pushpin-on",
+		"ref": "sap-icon://create-entry-time",
 		"custom": "add1"
 	}, {
 		"text": "View Reminder",
-		"ref": "sap-icon://education",
+		"ref": "sap-icon://detail-view",
 		"custom": "vwrmdr"
 	}]
 }, {
 	"text": "Payment",
-	"ref": "sap-icon://study-leave",
+	"ref": "sap-icon://lead",
 	"nodes": [{
 			"text": "Student",
-			"ref": "sap-icon://lead",
+			"ref": "sap-icon://study-leave",
 			"nodes": [{
 				"text": "Registration Fee",
-				"ref": "sap-icon://business-card",
+				"ref": "sap-icon://simple-payment",
 				"custom": "rgstrnfee"
 			}, {
 				"text": "1st Installment",
-				"ref": "sap-icon://switch-classes",
+				"ref": "sap-icon://sales-quote",
 				"custom": "fstInstlment"
 			}, {
 				"text": "2nd Installment",
-				"ref": "sap-icon://switch-classes",
+				"ref": "sap-icon://sales-order-item",
 				"custom": "secInstlment"
 			}, {
 				"text": "3rd Installment",
-				"ref": "sap-icon://switch-classes",
+				"ref": "sap-icon://sales-document",
 				"custom": "thrdInstlment"
 			}, {
 				"text": "View Student Payment",
-				"ref": "sap-icon://customer-view",
+				"ref": "sap-icon://detail-view",
 				"custom": "vstupymnt"
 			}]
 		}, {
 			"text": "Faculty",
-			"ref": "sap-icon://batch-payments",
+			"ref": "sap-icon://employee",
 			"nodes": [{
 				"text": "Faculty payment",
-				"ref": "sap-icon://business-card",
+				"ref": "sap-icon://batch-payments",
 				"custom": "fclpymnt"
 			}, {
 				"text": "View Faculty payment",
-				"ref": "sap-icon://simple-payment",
+				"ref": "sap-icon://detail-view",
 				"custom": "vfclpymnt"
 			}]
 		}, {
