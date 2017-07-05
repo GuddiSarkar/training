@@ -204,12 +204,12 @@ sap.ui.define([
 						this.getView().byId("hbremnull").setVisible(true);
 						this.getView().byId("hbrem").setVisible(false);
 						this.getView().byId("save").setVisible(true);
-						//this.getView().byId("ok").setVisible(false);
+						this.getView().byId("ok").setVisible(false);
 					} else {
 						this.getView().byId("hbremnull").setVisible(false);
 						this.getView().byId("hbrem").setVisible(true);
 						this.getView().byId("save").setVisible(false);
-						//this.getView().byId("ok").setVisible(true);
+						this.getView().byId("ok").setVisible(true);
 						this.getView().byId("rem").setText(remdata.rem);
 					}
 				}.bind(this),
@@ -224,9 +224,14 @@ sap.ui.define([
 				oView.addDependent(oDialog);
 			}
 
-			oDialog.openBy(oEvent.getSource());
+			// oDialog.openBy(oEvent.getSource());
+			oDialog.open();
 		},
-
+		
+		handleCloseButton: function(){
+			this.getView().byId("set_rem").close();
+		},
+		
 		onPressSave: function(oEvent) {
 			var id = this.getView().byId("id").getText();
 			var atnd = this.getView().byId("atnd").getSelectedButton().getText();

@@ -1,56 +1,65 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-	<ResponsivePopover title="Today's Follow Up" class="sapUiPopupWithPadding p1popover" placement="Auto" id="set_rem">
-		<beginButton>
-			<Button text="Save" press="onPressSave" id="save" visible="false"/>
-			<!--<Button text="Ok" press="handleCloseButton" id="ok" visible="false"/>-->
-		</beginButton>
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" displayBlock="true" xmlns:l="sap.ui.layout">
+	<Dialog id="set_rem" title="Today's Follow Up">
+		<!--<ResponsivePopover title="Today's Follow Up" class="sapUiResponsiveMargin p1popover" width="100%"  id="set_rem">-->
+		<!--<beginButton>-->
+		<!--	<Button text="Save" press="onPressSave" id="save" visible="false"/>-->
+		<!--	<Button text="Ok" press="handleCloseButton" id="ok" visible="false"/>-->
+		<!--</beginButton>-->
 		<content>
-			<HBox>
-				<Text text="" id="id" visible="false"/>
-				<VBox>
-					<Label text="Title:" design="Bold"/>
-				</VBox>
-				<VBox>
-					<Text text="" id="tit"/>
-				</VBox>
-			</HBox>
-			<HBox>
-				<VBox>
-					<Label text="Description:" design="Bold"/>
-				</VBox>
-				<VBox>
-					<Text text="" id="des"/>
-				</VBox>
-			</HBox>
-			<HBox>
-				<VBox>
-					<Label text="Attended:" design="Bold"/>
-				</VBox>
-				<VBox>
-					<RadioButtonGroup columns="2" width="200px" class="sapUiMediumMarginBottom" id="atnd">
-						<buttons>
-							<RadioButton id="RB1" text="No"/>
-							<RadioButton id="RB2" text="Yes"/>
-						</buttons>
-					</RadioButtonGroup>
-				</VBox>
-			</HBox>
-			<HBox id="hbremnull" visible="false">
-				<VBox>
-					<Label text="Remarks:" design="Bold"/>
-				</VBox>
-				<VBox>
-					<Input value="" id="remnull"/>
-				</VBox>
-			</HBox>
-			<HBox id="hbrem" visible="false">
-				<VBox>
-					<Label text="Remarks:" design="Bold"/>
-				</VBox>
-				<VBox>
-					<Text text="" id="rem"/>
-				</VBox>
-			</HBox>
+			<l:VerticalLayout class="sapUiContentPadding p1popover" width="100%">
+				<HBox>
+					<Text text="" id="id" visible="false"/>
+					<VBox>
+						<Label text="Title:" design="Bold"/>
+					</VBox>
+					<VBox>
+						<Text text="" id="tit"/>
+					</VBox>
+				</HBox>
+				<HBox>
+					<VBox>
+						<Label text="Description:" design="Bold"/>
+					</VBox>
+					<VBox>
+						<Text text="" id="des"/>
+					</VBox>
+				</HBox>
+				<HBox>
+					<VBox>
+						<Label text="Attended:" design="Bold"/>
+					</VBox>
+					<VBox>
+						<RadioButtonGroup columns="2" width="200px" class="sapUiMediumMarginBottom" id="atnd">
+							<buttons>
+								<RadioButton id="RB1" text="No"/>
+								<RadioButton id="RB2" text="Yes"/>
+							</buttons>
+						</RadioButtonGroup>
+					</VBox>
+				</HBox>
+				<HBox id="hbremnull" visible="false">
+					<VBox>
+						<Label text="Remarks:" design="Bold"/>
+					</VBox>
+					<VBox>
+						<Input value="" id="remnull"/>
+					</VBox>
+				</HBox>
+				<HBox id="hbrem" visible="false">
+					<VBox>
+						<Label text="Remarks:" design="Bold"/>
+					</VBox>
+					<VBox>
+						<Text text="" id="rem"/>
+					</VBox>
+				</HBox>
+			</l:VerticalLayout >
 		</content>
-	</ResponsivePopover>
+		<Toolbar>
+		<Button text="Save" press="onPressSave" id="save" visible="false"/>
+			<ToolbarSpacer></ToolbarSpacer>
+			<Button text="Ok" press="handleCloseButton" id="ok" visible="false"/>
+			</Toolbar>
+		<!--</ResponsivePopover>-->
+	</Dialog>
 </core:FragmentDefinition>
