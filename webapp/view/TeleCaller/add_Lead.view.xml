@@ -36,11 +36,11 @@
 									<VBox class="acr_vb22">
 										<HBox>
 											<Label text="Mobile" width="200px"/>
-											<Input value="" class="acr_inp" id="Lc_mob"/>
+											<Input value="" class="acr_inp" id="Lc_mob" change="onChangePhone"/>
 										</HBox>
 										<HBox>
 											<Label text="Email" width="200px"/>
-											<Input value="" class="acr_inp" id="Lc_eml"/>
+											<Input value="" class="acr_inp" id="Lc_eml" change="onChangeEmail"/>
 										</HBox>
 										<HBox>
 											<Label text="Course" width="200px"/>

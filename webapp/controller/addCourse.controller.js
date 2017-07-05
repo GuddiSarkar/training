@@ -196,7 +196,7 @@ sap.ui.define([
 			});
 			oModel.setRefreshAfterChange(true);
 			oDialog.close();
-		},
+		}
 
 		/*onLogin: function(oEvent) {
 				var name=this.byId("name").getValue();

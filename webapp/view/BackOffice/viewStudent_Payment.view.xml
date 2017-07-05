@@ -13,24 +13,24 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<Table id="adCrsTable" items="{course>/tb_stud_payment}" class="TableBorderTop" growing="true" growingThreshold="6">
+								<Table id="adCrsTable" items="{course>/tb_stud_payment}" class="TableBorderTop" growing="true" growingThreshold="10">
 									<columns height="20px">
-										<Column width="8%" styleClass="cellBorderRight cellBorderLeft">
+										<Column width="8%" styleClass="cellBorderRight" visible="false">
 											<Text text="ID"/>
 										</Column>
-										<Column styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight cellBorderLeft">
 											<Text text="Student Name"/>
 										</Column>
 										<Column styleClass="cellBorderRight">
 											<Text text="Course Name"/>
 										</Column>
-										<Column styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight" visible="false">
 											<Text text="Transaction Type"/>
 										</Column>
-										<Column styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight" visible="false">
 											<Text text="cheque Number"/>
 										</Column>
-										<Column styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight" visible="false">
 											<Text text="Discount"/>
 										</Column>
 										<Column styleClass="cellBorderRight">
@@ -39,7 +39,7 @@
 										<Column styleClass="cellBorderRight">
 											<Text text="Registration Fee"/>
 										</Column>
-										<Column styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight" visible="false">
 											<Text text="Tax"/>
 										</Column>
 										<Column styleClass="cellBorderRight">
@@ -52,12 +52,6 @@
 											<Text text="3rd Installment"/>
 										</Column>
 										<Column styleClass="cellBorderRight">
-											<Text text="4th Installment"/>
-										</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="5th Installment"/>
-										</Column>
-										<Column styleClass="cellBorderRight">
 											<Text text="Action"/>
 										</Column>
 									</columns>
@@ -67,17 +61,15 @@
 												<Text text="{course>stud_payment_id}"/>
 												<Text text="{course>stud_payment_name}"/>
 												<Text text="{course>stud_payment_course}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
+												<Text text="{course>stud_payment_type}"/>
+												<Text text="{course>tb_stud_payment_cheque_no}"/>
 												<Text text="{course>stud_payment_disc}"/>
 												<Text text="{course>stud_payment_fee}"/>
-												<Text text="{course>stud_payment_reg_fee}"/>
+												<Text text="{path:'course>stud_payment_reg_fee', formatter:'.formatAmount'}"/>
 												<Text text="{course>stud_payment_tax}"/>
-												<Text text="{course>stud_payment_instal_1}"/>
-												<Text text="{course>stud_payment_instal_2}"/>
-												<Text text="{course>stud_payment_instal_3}"/>
-												<Text text="{course>stud_payment_instal_4}"/>
-												<Text text="{course>stud_payment_instal_5}"/>
+												<Text text="{path:'course>stud_payment_instal_1', formatter:'.formatAmount'}"/>
+												<Text text="{path:'course>stud_payment_instal_2', formatter:'.formatAmount'}"/>
+												<Text text="{path:'course>stud_payment_instal_3', formatter:'.formatAmount'}"/>
 												<Toolbar class="tbBorder">
 													<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
 												</Toolbar>

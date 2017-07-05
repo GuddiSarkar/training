@@ -5,76 +5,73 @@
 			<Page title="Training Management System" showHeader="false">
 				<content>
 					<HBox height="100%" class="bg">
-						<Panel  width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
+						<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
 							<headerToolbar>
 								<Toolbar class="pan">
-									<Title text="Student Payment" textAlign="Center" />
-									<SearchField width="30%" class="sapUiSmallMargin srch12" search="onSearch" />
+									<Title text="Student Payment" textAlign="Center"/>
+									<SearchField width="30%" class="sapUiSmallMargin srch12" search="onSearch"/>
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<Table id="adCrsTable" items= "{course>/tb_stud_payment}" class="TableBorderTop" growing="true" 
-								growingThreshold="1">
-							
-								<columns height="20px">	
-								<Column width="8%" styleClass="cellBorderRight cellBorderLeft">
-									<Text text="ID"/>
-								</Column>
-								<Column styleClass="cellBorderRight">
-									<Text text="Student Name"/>
-								</Column>
-								<Column styleClass="cellBorderRight">
-									<Text text="Course Name"/>
-								</Column>
-								<Column styleClass="cellBorderRight">
-									<Text text="Registration Fee"/>
-								</Column>
-								<Column styleClass="cellBorderRight" id="ins1">
-									<Text text="1st Installment"/>
-								</Column>
-								<Column styleClass="cellBorderRight">
-									<Text text="2nd Installment"/>
-								</Column>
-								<Column styleClass="cellBorderRight">
-									<Text text="3rd Installment"/>
-								</Column>
-								<Column styleClass="cellBorderRight">
-									<Text text="Amount"/>
-								</Column>
-								<Column styleClass="cellBorderRight">
-									<Text text="Action"/>
-								</Column>
-							</columns>
-							<items>
-								<ColumnListItem>
-									<cells>
-										<Text text="{course>stud_payment_id}" />
-						        		<Text text="{course>stud_payment_name}" />
-										<Text text="{course>stud_payment_course}" />
-										<Text text="{course>stud_payment_reg_fee}" />
-										<Link text="" enabled="true" emphasized="true" id="lnk"></Link>
-										<!--<HBox id="in1" visible="false">
+								<Table id="adCrsTable" items="{course>/tb_stud_payment}" class="TableBorderTop" growing="true" growingThreshold="1">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight cellBorderLeft">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Student Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Registration Fee"/>
+										</Column>
+										<Column styleClass="cellBorderRight" id="ins1">
+											<Text text="1st Installment"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="2nd Installment"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="3rd Installment"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Action"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>stud_payment_id}"/>
+												<Text text="{course>stud_payment_name}"/>
+												<Text text="{course>stud_payment_course}"/>
+												<Text text="{course>stud_payment_reg_fee}"/>
+												<Link text="" enabled="true" emphasized="true" id="lnk"></Link>
+												<!--<HBox id="in1" visible="false">
 											<Text text="" id="t1" visible="false"/>
 											<Button text="PAY NOW" id="bt" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel" visible="false"/>
 										</HBox>-->
-										<Text text="{course>stud_payment_instal_2}" />
-										<Button text="pay" visible="false" id="btn1"></Button>
-										<Text text="{course>stud_payment_instal_3}" />
-										<Button text="pay" visible="false" id="btn21"></Button>
-										<Text text="{course>stud_payment_fee}" />
-										<Toolbar class="tbBorder">
-											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
-											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
-										</Toolbar>
-										
-										<Link text="" enabled="" emphasized="true" id="lnk1"></Link>
-										<!--<HBox id="in2" visible="false">
+												<Text text="{course>stud_payment_instal_2}"/>
+												<Button text="pay" visible="false" id="btn1"></Button>
+												<Text text="{course>stud_payment_instal_3}"/>
+												<Button text="pay" visible="false" id="btn21"></Button>
+												<Text text="{course>stud_payment_fee}"/>
+												<Toolbar class="tbBorder">
+													<Button icon="sap-icon://edit" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
+													<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
+												</Toolbar>
+												<Link text="" enabled="" emphasized="true" id="lnk1"></Link>
+												<!--<HBox id="in2" visible="false">
 											<Text text="" id="t1" />
 										</HBox>-->
-									</cells>
-								</ColumnListItem>
-							</items>	
-						</Table>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
 							</content>
 						</Panel>
 					</HBox>

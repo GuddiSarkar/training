@@ -76,7 +76,7 @@
 										
 										<HBox>
 											<Label text="Zip/Postal Code" width="200px"/>
-											<Input value="" id="zip_code"/>
+											<Input value="" id="zip_code"  change="onChangeZip"/>
 										</HBox>
 									</VBox>
 									<VBox class="acr_vb22">
@@ -92,21 +92,7 @@
 											<Label text="State/Province" width="200px"/>
 											<Input value="" id="s_tate"/>
 										</HBox>
-										<!--<HBox>-->
-										<!--	<Label text="Image" width="200px"/>-->
-										<!--	<u:FileUploader id="fileUploader" name="myFileUpload" uploadUrl="upload/" width="200px" tooltip="Upload your file to the local server"-->
-										<!--		uploadComplete="handleUploadComplete" change="handleValueChange" typeMissmatch="handleTypeMissmatch" style="Emphasized"-->
-										<!--		fileType="jpg,jpeg,png" placeholder="Choose a file for Upload...">-->
-										<!--		<u:parameters>-->
-										<!--			<u:FileUploaderParameter name="param1" value="Foo"/>-->
-										<!--			<u:FileUploaderParameter name="param2" value="bar"/>-->
-										<!--		</u:parameters>-->
-										<!--		<u:headerParameters>-->
-										<!--			<u:FileUploaderParameter name="headerParam1" value="Foo"/>-->
-										<!--			<u:FileUploaderParameter name="headerParam2" value="bar"/>-->
-										<!--		</u:headerParameters>-->
-										<!--	</u:FileUploader>-->
-										<!--</HBox>-->
+									
 									</VBox>
 								</HBox>
 								<Toolbar class="tbBorder">
@@ -152,7 +138,7 @@
 										</HBox>
 										<HBox>
 											<Label text="Couse Fee" width="200px"/>
-											<Input value="" id="c_fee"/>
+											<Input type="Number" value="" id="c_fee"/>
 										</HBox>
 									</VBox>
 									<VBox class="acr_vb22">
@@ -203,38 +189,21 @@
 									<VBox class="acr_vb2">
 										<HBox>
 											<Label text="Course Fee" width="200px"/>
-											<Input value="" id="c_fee1"/>
+											<Input type="Number" value="" id="c_fee1"/>
 										</HBox>
 										<HBox>
 											<Label text="Discount" width="200px"/>
-											<Input value="" id="d_scunt" liveChange="onChangeInput"/>
-										</HBox>
-										<HBox>
-											<Label text="Registration Fee" width="200px"/>
-											<Input value="" editable="false" id="r_fee"/>
+											<Input type="Number" value="" id="d_scunt" liveChange="onChangeInput"/>
 										</HBox>
 									</VBox>
 									<VBox class="acr_vb22">
 										<HBox>
 											<Label text="Tax" width="200px"/>
-											<Input value="14.5%" editable="false" id="t_ax"/>
+											<Input value="14.5%"  id="t_ax"/>
 										</HBox>
 										<HBox>
 											<Label text="Total Payable Amount" width="200px"/>
-											<Input value="" id="tp_amnt"/>
-										</HBox>
-										<HBox>
-											<Label text="No. Of Installments" width="200px"/>
-											<Select width="195px" class="sel" id="noi" selectedKey="0">
-												<items class="itm">
-													<core:Item text="--Select--" key="0"/>
-													<core:Item text="1" key="1"/>
-													<core:Item text="2" key="2"/>
-													<core:Item text="3" key="3"/>
-													<core:Item text="4" key="4"/>
-													<core:Item text="5" key="5"/>
-												</items>
-											</Select>
+											<Input type="Number" value="" id="tp_amnt"/>
 										</HBox>
 									</VBox>
 								</HBox>
@@ -373,7 +342,7 @@
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.View_Reminder"/>
 				</content>
 			</Page>
-			<Page id="stupymnt" title="Student Payment" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
+			<!--<Page id="stupymnt" title="Student Payment" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
 				enableScrolling="true">
 				<content>
 					<HBox class="admin-header" height="7.22%">
@@ -389,6 +358,78 @@
 						</VBox>
 					</HBox>
 					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.student_payment"/>
+				</content>
+			</Page>-->
+			<Page id="rgstrnfee" title="Registration Fee" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
+				enableScrolling="true">
+				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="bo_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="bo_vb4">
+							<Label text="Payment" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="bo_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.registrationFee"/>
+				</content>
+			</Page>
+			<Page id="fstInstlment" title="1st Instalment" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
+				enableScrolling="true">
+				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="bo_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="bo_vb4">
+							<Label text="Payment" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="bo_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.firstInstalment"/>
+				</content>
+			</Page>
+			<Page id="secInstlment" title="1st Instalment" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
+				enableScrolling="true">
+				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="bo_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="bo_vb4">
+							<Label text="Payment" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="bo_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.secondInstalment"/>
+				</content>
+			</Page>
+			<Page id="thrdInstlment" title="1st Instalment" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back" navButtonPress="onPressDetailBack"
+				enableScrolling="true">
+				<content>
+					<HBox class="admin-header" height="7.22%">
+						<VBox class="bo_vb_back">
+							<Button icon="sap-icon://nav-back" tooltip="Back" class="ib sapUiMediumMarginBottom" press="onPressDetailBack"
+								ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+						<VBox class="bo_vb4">
+							<Label text="Payment" textAlign="Center"></Label>
+						</VBox>
+						<VBox class="bo_vb_logout">
+							<Button icon="sap-icon://log" tooltip="Logoff" class="ib sapUiMediumMarginBottom" press="onLogoffPress" ariaLabelledBy="editButtonLabel"/>
+						</VBox>
+					</HBox>
+					<mvc:XMLView viewName="com.demoTMS.view.BackOffice.thirdInstalment"/>
 				</content>
 			</Page>
 			<Page id="vstupymnt" title="View Student Payment" class="sapMPage" showNavButton="true" showHeader="false" navButtonText="Back"

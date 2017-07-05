@@ -13,9 +13,9 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<Table id="Table" items="{course>/tb_student}" class="TableBorderTop" growing="true" growingThreshold="1" inset="false">
+								<Table id="Table" items="{course>/tb_student}" class="TableBorderTop" growing="true" growingThreshold="10" inset="false">
 									<columns height="20px">
-										<Column width="10%" styleClass="cellBorderRight cellBorderLeft">
+										<Column width="10%" styleClass="cellBorderRight cellBorderLeft" visible="false">
 											<Text text="ID"/>
 										</Column>
 										<Column styleClass="cellBorderRight">

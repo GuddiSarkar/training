@@ -1,0 +1,105 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.thirdInstalment"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Training Management System" showHeader="false">
+				<content>
+					
+						<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
+							<headerToolbar>
+								<Toolbar class="pan">
+									<Title text="3rd Installment Unpaid" textAlign="Center"/>
+									<SearchField width="30%" class="sapUiSmallMargin srch24" search="onSearch"/>
+								</Toolbar>
+							</headerToolbar>
+							<content>
+								<Table id="adCrsTable" items="{unpaid>/insU}" class="TableBorderTop" growing="true" growingThreshold="10">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight cellBorderLeft" visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Student Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="3rd Installment"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<!--<Column styleClass="cellBorderRight">
+											<Text text="Action"/>
+										</Column>-->
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{unpaid>stud_payment_id}"/>
+												<Text text="{unpaid>stud_payment_name}"/>
+												<Text text="{unpaid>stud_payment_course}"/>
+												<Button text="Pay Now" class="b3" id="pay" press="onClickPayNow" ariaLabelledBy="editButtonLabel"/>
+												<Text text="{unpaid>stud_payment_fee}"/>
+												
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</content>
+						</Panel>
+						<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
+							<headerToolbar>
+								<Toolbar class="pan">
+									<Title text="3rd Installment Paid" textAlign="Center"/>
+									<SearchField width="30%" class="sapUiSmallMargin srch27" search="onSearch"/>
+								</Toolbar>
+							</headerToolbar>
+							<content>
+								<Table id="Table" items="{paid>/insP}" class="TableBorderTop" growing="true" growingThreshold="10">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight cellBorderLeft" visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Student Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="3rd Installment"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<!--<Column styleClass="cellBorderRight">
+											<Text text="Action"/>
+										</Column>-->
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{paid>stud_payment_id}"/>
+												<Text text="{paid>stud_payment_name}"/>
+												<Text text="{paid>stud_payment_course}"/>
+												<HBox>
+													<Toolbar class="tbBorder">
+														<Text text="{path:'paid>stud_payment_instal_3', formatter:'.formatAmount'}" id="amount"/>
+														<Button icon="sap-icon://receipt" class="b3" id="bill" press="onClickBill" ariaLabelledBy="editButtonLabel"/>
+													</Toolbar>
+												</HBox>
+												<Text text="{paid>stud_payment_fee}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</content>
+						</Panel>
+				
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

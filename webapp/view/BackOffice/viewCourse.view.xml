@@ -1,69 +1,57 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.viewCourse"
-	xmlns:html="http://www.w3.org/1999/xhtml"  xmlns:cores="sap.ui.core.Item">
-<App>
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:cores="sap.ui.core.Item">
+	<App>
 		<pages>
 			<Page title="Training Management System" showHeader="false">
 				<content>
 					<HBox height="93%" class="bg">
-						<Panel  width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
+						<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
 							<headerToolbar>
 								<Toolbar class="pan">
-									<Title text="View Course" textAlign="Center" />
-									<SearchField width="30%" class="sapUiSmallMargin srch17" search="onSearch" />
+									<Title text="View Course" textAlign="Center"/>
+									<SearchField width="30%" class="sapUiSmallMargin srch17" search="onSearch"/>
 								</Toolbar>
 							</headerToolbar>
 							<content>
-
-								<Table id="Table" items= "{course>/tb_course}" class="TableBorderTop" growing="true" 
-						 growingThreshold="3" inset="false">
-							<columns height="20px">	
-								<Column width="10%"
-									minScreenWidth="Tablet"
-									styleClass="cellBorderRight cellBorderLeft">
-									<Text text="ID"/>
-								</Column>
-								<Column
-									minScreenWidth="Tablet"
-									styleClass="cellBorderRight">
-									<Text text="Course Name"/>
-								</Column>
-								<Column
-									minScreenWidth="Tablet"
-									styleClass="cellBorderRight">
-									<Text text="Course Type"/>
-								</Column>
-								<Column
-									minScreenWidth="Tablet"
-									styleClass="cellBorderRight">
-									<Text text="Course Fee"/>
-								</Column>
-								<Column
-									minScreenWidth="Tablet"
-									styleClass="cellBorderRight">
-									<Text text="Course Duration"/>
-								</Column>
-								<!--<Column
+								<Table id="Table" items="{course>/tb_course}" class="TableBorderTop" growing="true" growingThreshold="10" inset="false">
+									<columns height="20px">
+										<Column width="10%" minScreenWidth="Tablet" styleClass="cellBorderRight cellBorderLeft" visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column minScreenWidth="Tablet" styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column minScreenWidth="Tablet" styleClass="cellBorderRight">
+											<Text text="Course Type"/>
+										</Column>
+										<Column minScreenWidth="Tablet" styleClass="cellBorderRight">
+											<Text text="Course Fee"/>
+										</Column>
+										<Column minScreenWidth="Tablet" styleClass="cellBorderRight">
+											<Text text="Course Duration"/>
+										</Column>
+										<!--<Column
 									minScreenWidth="Tablet"
 									styleClass="cellBorderRight">
 									<Text text="Action"/>
 								</Column>-->
-							</columns>
-							<items>
-								<ColumnListItem>
-									<cells>
-										<Text text="{course>course_id}" />
-						        		<Text text="{course>course_name}" />
-										<Text text="{course>course_type}" />
-										<Text text="{course>course_fee}" />
-										<Text text="{course>course_duration}" />
-										<!--<Toolbar class="tbBorder">
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>course_id}"/>
+												<Text text="{course>course_name}"/>
+												<Text text="{course>course_type}"/>
+												<Text text="{course>course_fee}"/>
+												<Text text="{course>course_duration}"/>
+												<!--<Toolbar class="tbBorder">
 											<Button icon="sap-icon://edit"  class="b3" press="onClickEdit"/>
 											<Button icon="sap-icon://delete"  class="b4 btn2" press="onClickDelete"/>
 										</Toolbar>-->
-									</cells>
-								</ColumnListItem>
-							</items>	
-						</Table>	
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
 							</content>
 						</Panel>
 					</HBox>

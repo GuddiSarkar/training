@@ -65,6 +65,29 @@ sap.ui.define([
 					});
 					this.getRouter().navTo("home");
 					oModel.setRefreshAfterChange(true);
+					$.ajax({
+						type: "GET",
+						url: " /sap/public / bc / icf / logoff", //Clear SSO cookies: SAP Provided service to do that 
+					}).done(function(data) { //Now clear the authentication header stored in the browser 
+						if (!document.execCommand("ClearAuthenticationCache")) {
+							//”ClearAuthenticationCache” will work only for IE. Below code for other browsers 
+							$.ajax({
+								type: "GET",
+								url: " /sap/opu / odata / SOME / SERVICE", //any URL to a Gateway service 
+								username: 'dummy', //dummy credentials: when request fails, will clear the authentication header 
+								password: 'dummy',
+								statusCode: {
+									401: function() {
+										//This empty handler function will prevent authentication pop-up in chrome/firefox 
+									}
+								},
+								error: function() {
+									alert('reached error of wrong username password');
+								}
+							});
+						}
+						window.location.reload(true); // Reloads page at same location
+					})
 
 				}.bind(this)
 			);
@@ -299,7 +322,7 @@ sap.ui.define([
 			var crs_fee = this.getView().byId("c_fee1").getValue();
 			var discount = this.getView().byId("d_scunt").getValue();
 			var net_fee = parseInt(crs_fee - ((crs_fee * discount) / 100));
-			this.getView().byId("r_fee").setValue(1000);
+			//this.getView().byId("r_fee").setValue(1000);
 			this.getView().byId("tp_amnt").setValue(net_fee);
 		},
 
@@ -342,11 +365,11 @@ sap.ui.define([
 				var discount = this.getView().byId("d_scunt").getValue();
 				var tax = this.getView().byId("t_ax").getValue();
 				var totalPaybleAmount = this.getView().byId("tp_amnt").getValue();
-				var registrationFee = this.getView().byId("r_fee").getValue();
-				var installments = this.getView().byId("noi").getSelectedItem().getText();
-				var paidAmnt = registrationFee;
+				//var registrationFee = this.getView().byId("r_fee").getValue();
+				//var installments = this.getView().byId("noi").getSelectedItem().getText();
+				var amnt = 0;
+				var paidAmnt = 0;
 				var dueAmnt = totalPaybleAmount - paidAmnt;
-				var image = "";
 
 				var oEntryStud = {
 					"stud_name": name,
@@ -354,14 +377,13 @@ sap.ui.define([
 					"stud_dob": dob,
 					"stud_mob": phone,
 					"stud_email": email,
-					"stud_photo": image,
 					"stud_strt_date": startDate,
 					"stud_course_name": crs_name,
 					"stud_street": address,
 					"stud_city": city,
 					"stud_zip": zip,
 					"stud_state": state,
-					"stud_installment": installments
+					//"stud_installment": installments
 				};
 				var oModelStud = this.getOwnerComponent().getModel("course");
 				oModelStud.setUseBatch(false);
@@ -376,7 +398,7 @@ sap.ui.define([
 						// );
 						this.getView().byId("f_name").setValue("");
 						this.getView().byId("l_name").setValue("");
-						this.getView().byId("g_nder").setValue("");
+						//this.getView().byId("g_nder").setValue("");
 						this.getView().byId("d_ob").setValue("");
 						this.getView().byId("p_hone").setValue("");
 						this.getView().byId("e_ml").setValue("");
@@ -386,7 +408,7 @@ sap.ui.define([
 						this.getView().byId("s_tate").setValue("");
 						this.getView().byId("zip_code").setValue("");
 						this.getView().byId("c_name").setSelectedKey("");
-						this.getView().byId("noi").setSelectedKey("");
+						//this.getView().byId("noi").setSelectedKey("");
 					}.bind(this),
 					error: function(error) {
 
@@ -400,16 +422,14 @@ sap.ui.define([
 					"stud_payment_course": crs_name,
 					"stud_payment_disc": discount,
 					"stud_payment_tax": tax,
-					"stud_payment_reg_fee": registrationFee,
-					"stud_payment_instal_1": "0",
-					"stud_payment_instal_2": "0",
-					"stud_payment_instal_3": "0",
-					"stud_payment_instal_4": "0",
-					"stud_payment_instal_5": "0",
+					"stud_payment_reg_fee": amnt,
+					"stud_payment_instal_1": amnt,
+					"stud_payment_instal_2": amnt,
+					"stud_payment_instal_3": amnt,
 					"stud_payment_fee": totalPaybleAmount,
 					"stud_payment_paid": paidAmnt,
 					"stud_payment_due": dueAmnt,
-					"stud_payment_installment": installments
+					//"stud_payment_installment": installments
 				};
 				var oModelStudPay = this.getOwnerComponent().getModel("course");
 				oModelStudPay.setUseBatch(false);
@@ -418,7 +438,7 @@ sap.ui.define([
 
 						this.getView().byId("d_scunt").setValue("");
 						this.getView().byId("tp_amnt").setValue("");
-						this.getView().byId("r_fee").setValue("");
+						//this.getView().byId("r_fee").setValue("");
 
 					}.bind(this),
 					error: function(error) {
@@ -544,6 +564,16 @@ sap.ui.define([
 				return true;
 			} else {
 				alert("Phone Number should contain only Number between 0-9");
+				return false;
+			}
+		},
+		onChangeZip: function zipcode(inputtxt) {
+			var x = this.getView().byId("zip_code").getValue();
+			var zipcode = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
+			if (x.match(zipcode)) {
+				return true;
+			} else {
+				alert("Zipcode should contain only Number between 0-6");
 				return false;
 			}
 		},

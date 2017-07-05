@@ -20,7 +20,7 @@
 										</HBox>
 										<HBox>
 											<Label text="Course Fee" width="200px"/>
-											<Input value="" class="acr_inp" id="c_fee"/>
+											<Input type="Number" value="" class="acr_inp" id="c_fee"/>
 										</HBox>
 									</VBox>
 									<VBox class="acr_vb22">
@@ -62,9 +62,9 @@
 							</Toolbar>
 						</headerToolbar>
 						<content>
-							<Table id="adCrsTable" items="{course>/tb_course}" class="TableBorderTop" growing="true" growingThreshold="1">
+							<Table id="adCrsTable" items="{course>/tb_course}" class="TableBorderTop" growing="true" growingThreshold="5">
 								<columns>
-									<Column demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+									<Column demandPopin="true" styleClass="cellBorderRight cellBorderLeft" visible= "false">
 										<Text text="ID"/>
 									</Column>
 									<Column demandPopin="true" styleClass="cellBorderRight">

@@ -24,7 +24,7 @@
 										</HBox>
 										<HBox>
 											<Label text="Salary" width="200px"/>
-											<Input value="" class="acr_inp" id="s_lary"/>
+											<Input type="Number" value="" class="acr_inp" id="s_lary"/>
 										</HBox>
 									</VBox>
 									<VBox class="acr_vb22">
@@ -57,9 +57,9 @@
 							</Toolbar>
 						</headerToolbar>
 						<content >
-							<Table id="adCrsTable" items="{course>/tb_faculty}" class="TableBorderTop" growing="true" growingThreshold="1">
+							<Table id="adCrsTable" items="{course>/tb_faculty}" class="TableBorderTop" growing="true" growingThreshold="5">
 								<columns height="20px">
-									<Column width="8%" minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight cellBorderLeft">
+									<Column width="8%" minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight cellBorderLeft" visible="false">
 										<Text text="ID"/>
 									</Column>
 									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
@@ -74,10 +74,10 @@
 									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
 										<Text text="Course Name"/>
 									</Column>
-									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight" visible="false">
 										<Text text="Salary"/>
 									</Column>
-									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">
+									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight" visible="flase">
 										<Text text="Date of Joining"/>
 									</Column>
 									<Column minScreenWidth="Tablet" demandPopin="true" styleClass="cellBorderRight">

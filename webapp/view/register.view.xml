@@ -26,6 +26,18 @@
 								<Input id="email" width="75%" type="Email" placeholder="Enter Email" value=""/>
 							</HBox>
 							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
+								<Label text="UserName" class="regLabel" width="52.5%" textAlign="Center" design="Bold"/>
+								<Input id="uname" width="75%" type="Text" placeholder="Enter Name" value=""/>
+							</HBox>
+							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
+								<Label text="Password" class="regLabel" width="52%" textAlign="Center" design="Bold"/>
+								<Input id="pwd" width="75%" type="Password" placeholder="Enter Name" value="" change="onChangePwd"/>
+							</HBox>
+							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
+								<Label text="Confirm Password" class="regLabel" width="77%" textAlign="Center" design="Bold"/>
+								<Input id="cnfpwd" width="75%" type="Password" placeholder="Enter Name" value="" change="onChangeCPwd"/>
+							</HBox>
+							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
 								<Label text="Role" class="regLabel" width="24%" textAlign="Right" design="Bold"/>
 								<Select width="75%" class="sel" id="role" selectedKey="">
 									<items class="itm">
@@ -35,23 +47,11 @@
 									</items>
 								</Select>
 							</HBox>
-							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
-								<Label text="UserName" class="regLabel" width="52.5%" textAlign="Center" design="Bold"/>
-								<Input id="uname" width="75%" type="Text" placeholder="Enter Name" value=""/>
-							</HBox>
-							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
-								<Label text="Password" class="regLabel" width="52%" textAlign="Center" design="Bold"/>
-								<Input id="pwd" width="75%" type="Password" placeholder="Enter Name" value=""/>
-							</HBox>
-							<HBox class="sapUiSmallMarginTop sapUiMediumMarginEnd">
-								<Label text="Confirm Password" class="regLabel" width="77%" textAlign="Center" design="Bold"/>
-								<Input id="cnfpwd" width="75%" type="Password" placeholder="Enter Name" value=""/>
-							</HBox>
 							<Toolbar class="tbBorder sapUiSmallMarginTop">
-									<ToolbarSpacer/>
-									<Button text="Register" class="login1" press="onRegister"/>
-									<Button text="Back" class="back" width="15%" press="onPressBack"/>
-									<ToolbarSpacer/>
+								<ToolbarSpacer/>
+								<Button text="Register" class="login1" press="onRegister"/>
+								<Button text="Back" class="back" width="15%" press="onPressBack"/>
+								<ToolbarSpacer/>
 							</Toolbar>
 							<!--<Button text="Register" type="Emphasized" press="onRegister" class="sapUiSmallMarginEnd sapUiSmallMarginTop login" width="20%"/>-->
 						</VBox>

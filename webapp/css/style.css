@@ -263,7 +263,7 @@
 }
 
 .srch7{
-	left:31%;
+	left:58%;
 }
 
 .srch8{
@@ -282,28 +282,52 @@
 	left:21%;
 }
 .srch13{
-	left:16%;
+	left:44%;
 }
 .srch14{
-	left:21%;
+	left:49%;
 }
 .srch15{
-	left:16.5%;
+	left:44%;
 }
 .srch16{
-	left:30%;
+	left:57%;
 }
 .srch17{
-	left:26%;
+	left:53%;
 }
 .srch18{
-	left:25.5%;
+	left:52%;
 }
 .srch19{
-	left:26%;
+	left:52.5%;
 }
 .srch20{
 	left:55%;
+}
+.srch21{
+	left:43%;
+}
+.srch22{
+	left:44%;
+}
+.srch23{
+	left:44%;
+}
+.srch24{
+	left:44%;
+}
+.srch25{
+	left:46.5%;
+}
+.srch26{
+	left:46%;
+}
+.srch27{
+	left:46.5%;
+}
+.srch28{
+	left:45%;
 }
 
 
@@ -530,7 +554,7 @@ span.sapMBtnInner.sapMBtnAccept{
 }
 
 .b3 .sapMBtnInner {
-  background-color: #F8F8F8;
+  background-color: green;
   color:white;
 }
 .b4 .sapMBtnInner {

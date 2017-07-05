@@ -28,7 +28,8 @@ sap.ui.define([
 					var nModel = new sap.ui.model.json.JSONModel();
 					nModel.setData({folloUp:oData.results});
 					this.getView().setModel(nModel,"TodaysRem");  
-					
+					var gModel = this.getView().getModel("TodaysRem");
+					gModel.setRefreshAfterChange(true);
 				}.bind(this),
 				error: function(error) {
 					

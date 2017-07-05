@@ -8,21 +8,15 @@ sap.ui.define([
 	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.add_Lead", {
 		oFormatDdmmyyyy: null,
-
+	
 		onInit: function() {
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
+			
 			this.oFormatDdmmyyyy = sap.ui.core.format.DateFormat.getInstance({
 				pattern: "dd-MM-yyyy",
 				calendarType: sap.ui.core.CalendarType.Gregorian
 			});
-
-			var str = "26-05-1991 Hello,03-12-1991 Hiii,04-11-1993 Byyy"
-			var len = str.length;
-			var comma = str.lastIndexOf(",");
-			var newStr = str.slice(comma + 1, len);
-
-			var str1 = str - newStr;
 
 		},
 
@@ -35,7 +29,8 @@ sap.ui.define([
 			var oFilter3 = new Filter("lead_email", FilterOperator.Contains, value);
 			var oFilter4 = new Filter("lead_course", FilterOperator.Contains, value);
 			var oFilter5 = new Filter("lead_address", FilterOperator.Contains, value);
-			var allFilter = new Filter([oFilter1, oFilter2, oFilter3, oFilter4, oFilter5], false);
+			var oFilter6 = new Filter("lead_gender", FilterOperator.Contains, value);
+			var allFilter = new Filter([oFilter1, oFilter2, oFilter3, oFilter4, oFilter5,oFilter6], false);
 			oBinding.filter(allFilter);
 		},
 		addLeadCalls: function(oEvent) {
@@ -68,13 +63,15 @@ sap.ui.define([
 			var Email = this.getView().byId("Lc_eml").getValue();
 			var Address = this.getView().byId("Lc_add").getValue();
 			var Course = this.getView().byId("Lc_crs").getValue();
+			var uname = window.sessionStorage.getItem("un");
 			var oEntry = {
 				"lead_name": Name,
 				"lead_gender": Gender,
 				"lead_mobile": Mobile,
 				"lead_email": Email,
 				"lead_address": Address,
-				"lead_course": Course
+				"lead_course": Course,
+				"lead_tc_name": uname
 			};
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
@@ -94,8 +91,8 @@ sap.ui.define([
 			});
 
 			oModel.setRefreshAfterChange(true);
-			jQuery.sap.require("sap.m.MessageBox");
-				MessageBox.alert("Success");
+		/*	jQuery.sap.require("sap.m.MessageBox");
+				MessageBox.alert("Success");*/
 		
 			} else {
 				jQuery.sap.require("sap.m.MessageBox");
@@ -140,7 +137,6 @@ sap.ui.define([
 			var id = this.getView().byId("lead_id").setValue(property.lead_id);
 			var date = this.getView().byId("rem_date").setValue(property.lead_date);
 			var name = this.getView().byId("rem_name").setValue(property.lead_name);
-			
 			var lid = this.getView().byId("lead_id").getValue()
 		    var filterid = new Filter("lead_id", FilterOperator.EQ, lid);
 			var oModel = this.getOwnerComponent().getModel("course");
@@ -286,6 +282,26 @@ sap.ui.define([
 			this.getView().byId("addLead").setVisible(true);
 			this.getView().byId("leadCalls").setVisible(true);
 			this.getView().byId("back").setVisible(false);
+			this.getView().byId("leadTitle").setVisible(false);
+		},
+		onChangePhone: function phonenumber(inputtxt) {
+			var x = this.getView().byId("Lc_mob").getValue();
+			var phoneno = /^\d{10}$/;
+			if (x.match(phoneno)) {
+				return true;
+			} else {
+				alert("Phone Number should contain only Number between 0-9");
+				return false;
+			}
+		},
+		onChangeEmail: function validateForm() {
+			var x = this.getView().byId("Lc_eml").getValue();
+			var atpos = x.indexOf("@");
+			var dotpos = x.lastIndexOf(".");
+			if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+				alert("Not a valid e-mail address");
+				return false;
+			}
 		}
 	});
 
