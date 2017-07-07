@@ -8,16 +8,14 @@ sap.ui.define([
 	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.secondInstalment", {
 		oFormatDdmmyyyy: null,
-		onPressBack: function(oEvent) {
-			var oHistory, sPreviousHash;
-			oHistory = History.getInstance();
-			sPreviousHash = oHistory.getPreviousHash();
-			if (sPreviousHash !== undefined) {
-				window.history.go(-1);
-			} else {
-				this.getRouter().navTo("course", {}, true /*no history*/ );
-			}
+			onPressBack: function(oEvent) {
+			this.getView().byId("unpaid").setVisible(true);
+			this.getView().byId("paid").setVisible(true);
+			this.getView().byId("receipt").setVisible(false);
+			this.getView().byId("prntbtn").setVisible(false);
+			this.getView().byId("backbtn").setVisible(false);
 		},
+
 		onInit: function() {
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
@@ -99,12 +97,25 @@ sap.ui.define([
 
 		OnClickSet: function() {
 			var id = this.getView().byId("tid").getValue();
+
 			var paid = this.getView().byId("paid").getValue();
 			var due = this.getView().byId("due").getValue();
 			var total = this.getView().byId("total").getValue();
 			var amount = this.getView().byId("amnt").getValue();
 			var newPaid = paid + amount;
 			var newDue = total - newPaid;
+
+			var paidamnt = this.getView().byId("paid").getValue();
+			var paid = parseInt(paidamnt);
+			var dueamnt = this.getView().byId("due").getValue();
+			var due = parseInt(paidamnt);
+			var totalamnt = this.getView().byId("total").getValue();
+			var total = parseInt(totalamnt);
+			var amnt = this.getView().byId("amnt").getValue();
+			var amount = parseInt(amnt);
+			var newPaid = paid+amount;
+			var newDue = total-newPaid;
+
 			var date = this.getView().byId("date").getValue();
 			var installment = amount + "," + date;
 			var tranType = this.getView().byId("tran_type").getSelectedItem().getText() + ",";
@@ -134,6 +145,7 @@ sap.ui.define([
 		},
 		onSearch: function(oEvent) {
 			var oTable = this.getView().byId("adCrsTable");
+
 			var oBinding = oTable.getBinding("items");
 			var value = oEvent.getParameter("query");
 			var oFilter1 = new Filter("stud_payment_name", FilterOperator.Contains, value);
@@ -143,17 +155,79 @@ sap.ui.define([
 			var allFilter = new Filter([oFilter1, oFilter2, oFilter3, oFilter4], false);
 			oBinding.filter(allFilter);
 		},
-		onSearch1: function(oEvent) {
+			onSearch1: function(oEvent) {
 			var oTable = this.getView().byId("Table");
+
 			var oBinding = oTable.getBinding("items");
 			var value = oEvent.getParameter("query");
 			var oFilter1 = new Filter("stud_payment_name", FilterOperator.Contains, value);
 			var oFilter2 = new Filter("stud_payment_course", FilterOperator.Contains, value);
 			var oFilter3 = new Filter("stud_payment_instal_2", FilterOperator.Contains, value);
-			var oFilter4 = new Filter("stud_payment_type", FilterOperator.Contains, value);
-			var oFilter5 = new Filter("stud_payment_fee", FilterOperator.Contains, value);
-			var allFilter = new Filter([oFilter1, oFilter2, oFilter3, oFilter4,oFilter5], false);
+			var oFilter4 = new Filter("stud_payment_fee", FilterOperator.Contains, value);
+			var allFilter = new Filter([oFilter1, oFilter2, oFilter3, oFilter4], false);
 			oBinding.filter(allFilter);
+		},
+
+
+		
+		onClickBill: function(oEvent) {
+			console.log("hello");
+			this.getView().byId("paid").setVisible(false);
+			this.getView().byId("unpaid").setVisible(false);
+			this.getView().byId("receipt").setVisible(true);
+			//this.getView().byId("prntbtn").setVisible(true);
+			//this.getView().byId("backbtn").setVisible(true);
+			//this.getRouter().navTo("Bill_Generate");
+
+			var oTable = this.getView().byId("Table");
+			var path = oEvent.getSource().getBindingContext("paid").getPath();
+			var model = oTable.getModel("paid");
+			var today = new Date();
+			var date = this.oFormatDdmmyyyy.format(today);
+			var property = model.getProperty(path);
+			var name = property.stud_payment_name;
+			var course = property.stud_payment_course;
+			var amnt = property.stud_payment_instal_2;
+			var res = amnt.split(",");
+			var amount = res[0];
+			var totalFee = property.stud_payment_fee;
+			var due = property.stud_payment_due;
+			var cheque = property.tb_stud_payment_cheque_no;
+			var chq = cheque.split(",");
+			var chequeNo = chq[3];
+
+			this.getView().byId("bill_date").setText(date);
+			this.getView().byId("bill_name").setText(name);
+			this.getView().byId("bill_crs").setText(course);
+			this.getView().byId("bill_inr").setText(amount);
+			this.getView().byId("total_fee").setText(totalFee);
+			this.getView().byId("amnt_paid").setText(amount);
+			this.getView().byId("amnt_due").setText(due);
+			this.getView().byId("bill_chq_no").setText(chequeNo);
+		},
+
+		onPrint: function(oEvent) {
+			// var header='<center><h3>Payment Receipt</h3></center>';
+			var oTarget = this.getView(),
+				// this.getView().byId("result").innerHTML = this.getView().byId('fname').value + " " + this.getView().byId('mname').value + " " + this.getView().byId('lname').value;
+				sTargetId = oEvent.getSource().data("prnt");
+
+			if (sTargetId) {
+				oTarget = oTarget.byId("prnt");
+			}
+
+			if (oTarget) {
+				var $domTarget = oTarget.$()[0],
+					sTargetContent = $domTarget.innerHTML,
+					sOriginalContent = document.body.innerHTML;
+
+				document.body.innerHTML = sTargetContent;
+				window.print();
+				document.body.innerHTML = sOriginalContent;
+			} else {
+				jQuery.sap.log.error("onPrint needs a valid target container [view|data:targetId=\"SID\"]");
+			}
+
 		}
 
 	});

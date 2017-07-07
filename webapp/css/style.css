@@ -876,3 +876,43 @@ span.sapMBtnInner.sapMBtnAccept {
 	padding-top: 6%;
 	    min-width: 10.5rem;
 }
+
+
+/*Bill Css*/
+
+.hb_bill{
+	border: solid 1px;
+}
+.hb_billdate{
+	margin-left:90%;
+}
+.vb_billdate{
+	margin-left:60%;
+}
+.vb_billinr{
+	margin-left:19%;
+}
+.vb_bill_pay_opt{
+	margin-left:3%;
+}
+.vb_bill_det{
+	margin-left:3%;
+}
+.vb_billrecv{
+	margin-left:42%;
+}
+.bill_header{
+	margin-left:39%;
+}
+.bill_header1{
+	margin-left:42%;
+}
+.hb_bill_back{
+	padding-left:60%;	
+}
+.bill_text{
+	text-decoration: underline;
+    -moz-text-decoration-color: black; /* Code for Firefox */
+    text-decoration-color: black;
+    text-decoration-style: solid;
+}

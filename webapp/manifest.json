@@ -300,12 +300,18 @@
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["Forgot_Password"]
-			},{
+			}, {
 				"name": "tilelogin",
 				"pattern": "tl",
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["tilelogin"]
+			}, {
+				"name": "Bill_Generate",
+				"pattern": "",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Bill_Generate"]
 			}],
 			"targets": {
 				"home": {
@@ -545,6 +551,13 @@
 					"clearAggregation": true,
 					"viewName": "tile_Login",
 					"viewLevel": 1
+				},
+				"Bill_Generate": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewLevel": 1,
+					"viewName": "Bill_Generate"
 				}
 			}
 		}

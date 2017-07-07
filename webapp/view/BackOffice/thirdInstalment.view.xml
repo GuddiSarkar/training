@@ -1,38 +1,38 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.demoTMS.controller.thirdInstalment"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout">
 	<App>
 		<pages>
 			<Page title="Training Management System" showHeader="false">
 				<content>
-					
-						<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
-							<headerToolbar>
-								<Toolbar class="pan">
-									<Title text="3rd Installment Unpaid" textAlign="Center"/>
-									<SearchField width="30%" class="sapUiSmallMargin srch24" search="onSearch"/>
-								</Toolbar>
-							</headerToolbar>
-							<content>
-								<Table id="adCrsTable" items="{unpaid>/insU}" class="TableBorderTop" growing="true" growingThreshold="10">
-									<columns height="20px">
-										<Column width="8%" styleClass="cellBorderRight cellBorderLeft" visible="false">
-											<Text text="ID"/>
-										</Column>
-										<Column styleClass="cellBorderRight cellBorderLeft">
-											<Text text="Student Name"/>
-										</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="Course Name"/>
-										</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="3rd Installment"/>
-										</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="Amount"/>
-										</Column>
-										<!--<Column styleClass="cellBorderRight">
+					<Panel width="auto" id="unpaid" class="sapUiResponsiveMargin hd1 acr_pnl" visible="true">
+						<headerToolbar>
+							<Toolbar class="pan">
+								<Title text="3rd Installment Unpaid" textAlign="Center"/>
+								<SearchField width="30%" class="sapUiSmallMargin srch24" search="onSearch"/>
+							</Toolbar>
+						</headerToolbar>
+						<content>
+							<Table id="adCrsTable" items="{unpaid>/insU}" class="TableBorderTop" growing="true" growingThreshold="10">
+								<columns height="20px">
+									<Column width="8%" styleClass="cellBorderRight cellBorderLeft" visible="false">
+										<Text text="ID"/>
+									</Column>
+									<Column styleClass="cellBorderRight cellBorderLeft">
+										<Text text="Student Name"/>
+									</Column>
+									<Column styleClass="cellBorderRight">
+										<Text text="Course Name"/>
+									</Column>
+									<Column styleClass="cellBorderRight">
+										<Text text="3rd Installment"/>
+									</Column>
+									<Column styleClass="cellBorderRight">
+										<Text text="Amount"/>
+									</Column>
+									<!--<Column styleClass="cellBorderRight">
 											<Text text="Action"/>
 										</Column>-->
+
 									</columns>
 									<items>
 										<ColumnListItem>
@@ -49,57 +49,179 @@
 								</Table>
 							</content>
 						</Panel>
-						<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl">
-							<headerToolbar>
-								<Toolbar class="pan">
-									<Title text="3rd Installment Paid" textAlign="Center"/>
-									<SearchField width="30%" class="sapUiSmallMargin srch27" search="onSearch1"/>
-								</Toolbar>
-							</headerToolbar>
-							<content>
-								<Table id="Table" items="{paid>/insP}" class="TableBorderTop" growing="true" growingThreshold="10">
-									<columns height="20px">
-										<Column width="8%" styleClass="cellBorderRight cellBorderLeft" visible="false">
-											<Text text="ID"/>
-										</Column>
-										<Column styleClass="cellBorderRight cellBorderLeft">
-											<Text text="Student Name"/>
-										</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="Course Name"/>
-										</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="3rd Installment"/>
-										</Column>
-										<Column styleClass="cellBorderRight ">
-										<Text text="Payment Type"/>
+						
+					<Panel width="auto" id="paid" class="sapUiResponsiveMargin hd1 acr_pnl" visible="true">
+						<headerToolbar>
+							<Toolbar class="pan">
+								<Title text="3rd Installment Paid" textAlign="Center"/>
+								<SearchField width="30%" class="sapUiSmallMargin srch27" search="onSearch"/>
+							</Toolbar>
+						</headerToolbar>
+						<content>
+							<Table id="Table" items="{paid>/insP}" class="TableBorderTop" growing="true" growingThreshold="10">
+								<columns height="20px">
+									<Column width="8%" styleClass="cellBorderRight cellBorderLeft" visible="false">
+										<Text text="ID"/>
 									</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="Amount"/>
-										</Column>
-									
-									</columns>
-									<items>
-										<ColumnListItem>
-											<cells>
-												<Text text="{paid>stud_payment_id}"/>
-												<Text text="{paid>stud_payment_name}"/>
-												<Text text="{paid>stud_payment_course}"/>
-												<HBox>
-													<Toolbar class="tbBorder">
-														<Text text="{path:'paid>stud_payment_instal_3', formatter:'.formatAmount'}" id="amount"/>
-														<Button icon="sap-icon://receipt" class="b3" id="bill" press="onClickBill" ariaLabelledBy="editButtonLabel"/>
-													</Toolbar>
+									<Column styleClass="cellBorderRight cellBorderLeft">
+										<Text text="Student Name"/>
+									</Column>
+									<Column styleClass="cellBorderRight">
+										<Text text="Course Name"/>
+									</Column>
+									<Column styleClass="cellBorderRight">
+										<Text text="3rd Installment"/>
+									</Column>
+									<Column styleClass="cellBorderRight">
+										<Text text="Amount"/>
+									</Column>
+									<!--<Column styleClass="cellBorderRight">
+											<Text text="Action"/>
+										</Column>-->
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{paid>stud_payment_id}"/>
+											<Text text="{paid>stud_payment_name}"/>
+											<Text text="{paid>stud_payment_course}"/>
+											<HBox>
+												<Toolbar class="tbBorder">
+													<Text text="{path:'paid>stud_payment_instal_3', formatter:'.formatAmount'}" id="amount"/>
+													<Button icon="sap-icon://receipt" class="b3" id="bill" press="onClickBill" ariaLabelledBy="editButtonLabel"/>
+												</Toolbar>
+											</HBox>
+											<Text text="{paid>stud_payment_fee}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</Panel>
+										<Panel width="auto" class="sapUiResponsiveMargin hd1 acr_pnl" id="receipt" visible="false">
+						<headerToolbar>
+							<Toolbar class="pan">
+								<Title text="Payment Receipt"/>
+								<HBox>
+									<Button icon="sap-icon://print" press="onPrint" width="80px" class="logo"></Button>
+								</HBox>
+								<HBox class="hb_bill_back">
+									<Button icon="sap-icon://arrow-left" press="onPressBack" id="bakbtn" class="logo"></Button>
+								</HBox>
+							</Toolbar>
+						</headerToolbar>
+						<content id="print">
+							<HBox class="hb_bill" id="prnt">
+								<l:VerticalLayout id="containerLayout" width="100%">
+									<HBox class="sapUiSmallMarginTop">
+										<VBox class="bill_header">
+											<Label text="INNOVADOR IT SOLUTION" class="bill_text"></Label>
+										</VBox>
+									</HBox>
+									<HBox class="sapUiTinyMarginTop">
+										<VBox class="bill_header1">
+											<Label text="PAYMENT RECEIPT" class="bill_text"></Label>
+										</VBox>
+									</HBox>
+									<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTop">
+										<VBox>
+											<HBox>
+												<Label text="BILL NO. " width="75px"/>
+												<Text text="007" class="bill_text" id="bill_no"/>
+											</HBox>
+										</VBox>
+										<VBox class="vb_billdate">
+											<HBox>
+												<Label text="DATE " width="75px"/>
+												<Text text="" class="bill_text" id="bill_date"/>
+											</HBox>
+										</VBox>
+									</HBox>
+									<HBox class="sapUiLargeMarginTop sapUiSmallMarginBegin">
+										<VBox>
+											<HBox class="sapUiSmallMarginTop">
+												<Label text="RECEIVED FROM" width="200px"/>
+												<Text text="" class="bill_text" id="bill_name"/>
+											</HBox>
+											<HBox class="sapUiMediumMarginTop">
+												<Label text="FOR" width="200px"/>
+												<Text text="" class="bill_text" id="bill_crs"/>
+											</HBox>
+										</VBox>
+										<VBox class="vb_billinr">
+											<HBox class="sapUiSmallMarginTop">
+												<Label text="INR" width="100px"/>
+												<Text text="" class="bill_text" id="bill_inr"/>
+											</HBox>
+										</VBox>
+									</HBox>
+									<HBox class="sapUiLargeMarginTop sapUiSmallMarginBegin">
+										<VBox>
+											<VBox class="hb_bill">
+												<HBox class="hb_bill">
+													<Label text="AMOUNT OF ACCOUNT" width="200px"/>
 												</HBox>
-												<Text text="{paid>stud_payment_type}"/>
-												<Text text="{paid>stud_payment_fee}"/>
-											</cells>
-										</ColumnListItem>
-									</items>
-								</Table>
-							</content>
-						</Panel>
-				
+												<HBox class="hb_bill">
+													<Label text="THIS PAYMENT" width="200px"/>
+												</HBox>
+												<HBox class="hb_bill">
+													<Label text="BALANCE DUE" width="200px"/>
+												</HBox>
+											</VBox>
+										</VBox>
+										<VBox>
+											<VBox class="hb_bill">
+												<HBox class="hb_bill">
+													<Label text="" id="total_fee"/>
+												</HBox>
+												<HBox class="hb_bill">
+													<Label text="" id="amnt_paid"/>
+												</HBox>
+												<HBox class="hb_bill">
+													<Label text="" id="amnt_due"/>
+												</HBox>
+											</VBox>
+										</VBox>
+										<VBox class="vb_bill_pay_opt">
+											<VBox>
+												<CheckBox text="CASH"/>
+												<CheckBox text="CHEQUE"/>
+												<CheckBox text="MONEY ORDER"/>
+											</VBox>
+										</VBox>
+										<VBox class="vb_bill_det">
+											<VBox>
+												<HBox>
+													<Label text="CHEQUE NO." width="100px"/>
+												</HBox>
+												<HBox>
+													<Label text="MONEY ORDER NO." width="155px"/>
+												</HBox>
+											</VBox>
+										</VBox>
+										<VBox>
+											<VBox class="hb_bill">
+												<HBox class="hb_bill">
+													<Label text="" id="bill_chq_no"/>
+												</HBox>
+												<HBox class="hb_bill">
+													<Label text="" id="bill_mony_ordr_no"/>
+												</HBox>
+											</VBox>
+										</VBox>
+									</HBox>
+									<HBox class="sapUiMediumMarginTop sapUiSmallMarginBegin">
+										<VBox class="vb_billrecv">
+											<HBox class="sapUiSmallMarginTop">
+												<Label text="RECEIVED FROM" width="200px"/>
+											</HBox>
+										</VBox>
+									</HBox>
+								</l:VerticalLayout>
+							</HBox>
+
+						</content>
+					</Panel>
 				</content>
 			</Page>
 		</pages>

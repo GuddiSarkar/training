@@ -97,10 +97,6 @@
 				"ref": "sap-icon://detail-view",
 				"custom": "vfclpymnt"
 			}]
-		}, {
-			"text": "Payment Receipt",
-			"ref": "sap-icon://money-bills",
-			"custom": "blpymnt"
 		}
 
 	]
