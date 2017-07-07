@@ -224,7 +224,7 @@ sap.ui.define([
 				document.body.innerHTML = sOriginalContent;
 			} else {
 				jQuery.sap.log.error("onPrint needs a valid target container [view|data:targetId=\"SID\"]");
-			} >>> >>> > 2 d87507 by sanjit
+			} 
 		}
 	});
 
