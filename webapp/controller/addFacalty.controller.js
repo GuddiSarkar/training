@@ -2,31 +2,30 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-	"sap/ui/core/routing/History"
-], function(Controller,Filter, FilterOperator,History) {
+	"sap/ui/core/routing/History",
+	'sap/m/MessageBox'
+], function(Controller, Filter, FilterOperator, History, MessageBox) {
 	"use strict";
-/*eslint linebreak-style: ["error", "windows"]*/
+	/*eslint linebreak-style: ["error", "windows"]*/
 	var sPath;
 	return Controller.extend("com.demoTMS.controller.addFacalty", {
-		
-		onPressBack: function(oEvent)
-		{
+
+		onPressBack: function(oEvent) {
 			var oHistory, sPreviousHash;
 			oHistory = History.getInstance();
 			sPreviousHash = oHistory.getPreviousHash();
 			if (sPreviousHash !== undefined) {
 				window.history.go(-1);
-			}
-			else {
-				this.getRouter().navTo("facalty", {}, true /*no history*/);
+			} else {
+				this.getRouter().navTo("facalty", {}, true /*no history*/ );
 			}
 		},
 
-		onInit: function(){
+		onInit: function() {
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
 		},
-		formatDate: function(sValue){
+		formatDate: function(sValue) {
 			//var dt = this.getView().byId("date").getText();
 			var value = sValue.substring(6, 19); // maybe it's safer to work with regular expressions
 			jQuery.sap.require("sap.ui.core.format.DateFormat");
@@ -34,16 +33,14 @@ sap.ui.define([
 			var oDateFormat = sap.ui.core.format.DateFormat.getDateInstance({
 				pattern: "dd-MMM-yyyy"
 			});
-            
+
 			console.log(oDateFormat.format(new Date(Number(value)))); // 2013/08/11
 			var date = oDateFormat.format(new Date(Number(value)));
 			return date;
-	},
-	
-	
+		},
 
-		onSearch: function(oEvent){
-		    var oTable = this.getView().byId("adCrsTable");
+		onSearch: function(oEvent) {
+			var oTable = this.getView().byId("adCrsTable");
 			var oBinding = oTable.getBinding("items");
 			var value = oEvent.getParameter("query");
 			var oFilter1 = new Filter("faculty_name", FilterOperator.Contains, value);
@@ -51,12 +48,11 @@ sap.ui.define([
 			var oFilter3 = new Filter("faculty_email", FilterOperator.Contains, value);
 			var oFilter4 = new Filter("faculty_course", FilterOperator.Contains, value);
 			var oFilter5 = new Filter("faculty_salary", FilterOperator.Contains, value);
-			var allFilter = new Filter([oFilter1, oFilter2,oFilter3,oFilter4,oFilter5], false); 
+			var allFilter = new Filter([oFilter1, oFilter2, oFilter3, oFilter4, oFilter5], false);
 			oBinding.filter(allFilter);
 		},
-	addFacalty: function(oEvent)
-				{
-	
+		addFacalty: function(oEvent) {
+
 			var oView = this.getView();
 			var formInput = [
 				// oView.byId("select"),
@@ -83,54 +79,73 @@ sap.ui.define([
 			// output result
 			if (forward) {
 				var FacaltyName = this.getView().byId("fac_name").getValue();
-			var PhoneNumber = this.getView().byId("phn_num").getValue();
-			var Salary = this.getView().byId("s_lary").getValue();
-			var Email = this.getView().byId("e_mil").getValue();
-			var CourseName = this.getView().byId("crs_name").getValue();
-			var DateofJoining = this.getView().byId("d_oj").getValue();
-			var oEntry = {"faculty_name": FacaltyName, "faculty_mob": PhoneNumber, "faculty_salary": Salary, "faculty_email": Email,"faculty_course":CourseName,"faculty_doj":DateofJoining};
-			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.setUseBatch(false);
-			oModel.create("/tb_faculty",oEntry,
-			{
-				success: function(oData)
-				{
-					this.getView().byId("fac_name").setValue("");
-					this.getView().byId("phn_num").setValue("");
-					this.getView().byId("s_lary").setValue("");
-					this.getView().byId("e_mil").setValue("");
-					this.getView().byId("crs_name").setValue("");
-					this.getView().byId("d_oj").setValue("");
-				}.bind(this),
-				error: function(error)
-				{
-					
-				}.bind(this)
-			}
-			);
+				var PhoneNumber = this.getView().byId("phn_num").getValue();
+				var Salary = this.getView().byId("s_lary").getValue();
+				var Email = this.getView().byId("e_mil").getValue();
+				var CourseName = this.getView().byId("crs_name").getValue();
+				var DateofJoining = this.getView().byId("d_oj").getValue();
+				var oEntry = {
+					"faculty_name": FacaltyName,
+					"faculty_mob": PhoneNumber,
+					"faculty_salary": Salary,
+					"faculty_email": Email,
+					"faculty_course": CourseName,
+					"faculty_doj": DateofJoining
+				};
+				var data = {
+					"facul_payment_name": FacaltyName,
+					"facul_payment_course": CourseName
+				}
+				var oModel = this.getOwnerComponent().getModel("course");
+				oModel.setUseBatch(false);
+				oModel.create("/tb_faculty", oEntry, {
+					success: function(oData) {
+						this.getView().byId("fac_name").setValue("");
+						this.getView().byId("phn_num").setValue("");
+						this.getView().byId("s_lary").setValue("");
+						this.getView().byId("e_mil").setValue("");
+						this.getView().byId("crs_name").setValue("");
+						this.getView().byId("d_oj").setValue("");
+						this.onInit();
+					}.bind(this),
+					error: function(error) {
+
+					}.bind(this)
+				});
+				
+				oModel.create("/tb_facul_payment", data, {
+					success: function(oData) {
+						/*var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
+						MessageBox.success(
+							"Faculty Added Successfully", {
+								styleClass: bCompact ? "sapUiSizeCompact" : ""
+							}
+						);*/
+					}.bind(this),
+					error: function(error) {
+
+					}.bind(this)
+				});
 				oModel.setRefreshAfterChange(true);
-			
+
 			} else {
 				jQuery.sap.require("sap.m.MessageBox");
 				MessageBox.alert("Please Enter all the fields");
 			}
 		},
-		
-		
-		onClickEdit: function(oEvent)
-		{
-		var oView = this.getView();
-		var oDialog = oView.byId("editFacalty");
-		var oTable = this.getView().byId("adCrsTable");
-		var path=oEvent.getSource().getBindingContext("course").getPath();
-		var model =oTable.getModel("course");
-		var property=model.getProperty(path);
-		if(!oDialog)
-		{
-			oDialog = sap.ui.xmlfragment(oView.getId(),"com.demoTMS.view.editFacalty",this);
-			oView.addDependent(oDialog);
-			
-		}
+
+		onClickEdit: function(oEvent) {
+			var oView = this.getView();
+			var oDialog = oView.byId("editFacalty");
+			var oTable = this.getView().byId("adCrsTable");
+			var path = oEvent.getSource().getBindingContext("course").getPath();
+			var model = oTable.getModel("course");
+			var property = model.getProperty(path);
+			if (!oDialog) {
+				oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.editFacalty", this);
+				oView.addDependent(oDialog);
+
+			}
 			var id = this.getView().byId("f_idEd").setValue(property.faculty_id);
 			var FacaltyName = this.getView().byId("f_nameEd").setValue(property.faculty_name);
 			var PhoneNumber = this.getView().byId("f_phneEd").setValue(property.faculty_mob);
@@ -138,15 +153,14 @@ sap.ui.define([
 			var Email = this.getView().byId("f_emlEd").setValue(property.faculty_email);
 			var CourseName = this.getView().byId("f_crsnmeEd").setValue(property.faculty_course);
 			var DateofJoining = this.getView().byId("f_dojEd").setValue(property.faculty_doj);
-		
-		oDialog.open();
+
+			oDialog.open();
 		},
 
 		onCloseEdit: function(oEvent) {
 			this.getView().byId("editFacalty").close();
 		},
-		onOkEdit:function(oEvent)
-		{
+		onOkEdit: function(oEvent) {
 			var id = this.getView().byId("f_idEd").getValue();
 			var FacaltyName = this.getView().byId("f_nameEd").getValue();
 			var PhoneNumber = this.getView().byId("f_phneEd").getValue();
@@ -164,7 +178,7 @@ sap.ui.define([
 				"faculty_doj": DateofJoining
 			};
 			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.update("/tb_faculty("+id+")", data, {
+			oModel.update("/tb_faculty(" + id + ")", data, {
 				success: function(oData, oResponse) {
 					console.log(oData);
 					console.log(oResponse);
@@ -173,17 +187,17 @@ sap.ui.define([
 					console.log(err);
 				}.bind(this)
 			});
-	oModel.setRefreshAfterChange(true);
-	this.getView().byId("editFacalty").close();
+			oModel.setRefreshAfterChange(true);
+			this.getView().byId("editFacalty").close();
 		},
-		
+
 		onClickDelete: function(oEvent) {
 			var oView = this.getView();
 			var oDialog = oView.byId("deleteFacalty");
 			var oTable = this.getView().byId("adCrsTable");
-			var path=oEvent.getSource().getBindingContext("course").getPath();
-			var model =oTable.getModel("course");
-			var property=model.getProperty(path);
+			var path = oEvent.getSource().getBindingContext("course").getPath();
+			var model = oTable.getModel("course");
+			var property = model.getProperty(path);
 			if (!oDialog) {
 				oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.deleteFacalty", this);
 				oView.addDependent(oDialog);
@@ -194,15 +208,13 @@ sap.ui.define([
 		onCloseDelete: function(oEvent) {
 			this.getView().byId("deleteFacalty").close();
 		},
-		
-		
-		onOkDelete: function(oEvent) 
-		{
+
+		onOkDelete: function(oEvent) {
 			var oView = this.getView();
 			var oDialog = oView.byId("deleteFacalty");
 			var id = this.getView().byId("c_idDel1").getValue();
 			var oModel = this.getOwnerComponent().getModel("course");
-			oModel.remove("/tb_faculty(" +id + ")", {
+			oModel.remove("/tb_faculty(" + id + ")", {
 				success: function(oData, oResponse) {
 					console.log(oData);
 					console.log(oResponse);
@@ -233,10 +245,10 @@ sap.ui.define([
 				return false;
 			}
 		},
-		
+
 		onChangeFName: function validateForm() {
 			var x = this.getView().byId("fac_name").getValue();
-			
+
 			if (x == "") {
 				alert("This field cannot be empty");
 				return false;

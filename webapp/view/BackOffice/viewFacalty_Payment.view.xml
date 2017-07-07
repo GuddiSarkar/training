@@ -10,85 +10,409 @@
 								<Toolbar class="pan">
 									<Title text="View Facalty Payment" textAlign="Center"/>
 									<SearchField width="30%" class="sapUiSmallMargin srch15" search="onSearch"/>
+									<Select id="sel" selectedKey="" class="fac_pay_sel" change="onSelectMonth">
+										<core:Item text="January" key="1"></core:Item>
+										<core:Item text="February" key="2"></core:Item>
+										<core:Item text="March" key="3"></core:Item>
+										<core:Item text="April" key="4"></core:Item>
+										<core:Item text="May" key="5"></core:Item>
+										<core:Item text="June" key="6"></core:Item>
+										<core:Item text="July" key="7"></core:Item>
+										<core:Item text="August" key="8"></core:Item>
+										<core:Item text="September" key="9"></core:Item>
+										<core:Item text="October" key="10"></core:Item>
+										<core:Item text="November" key="11"></core:Item>
+										<core:Item text="December" key="12"></core:Item>
+									</Select>
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<Table id="adCrsTable" items="{course>/}" class="TableBorderTop" growing="true" growingThreshold="1">
+								<Table id="Jan" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
 									<columns height="20px">
-										<Column width="8%" styleClass="cellBorderRight cellBorderLeft">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
 											<Text text="ID"/>
 										</Column>
-										<Column styleClass="cellBorderRight">
+										<Column styleClass="cellBorderRight cellBorderLeft">
 											<Text text="Facalty Name"/>
 										</Column>
 										<Column styleClass="cellBorderRight">
-											<Text text="Payment Type"/>
-										</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="Cheque Number"/>
-										</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="Name of Bank"/>
-										</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="Payment Date"/>
+											<Text text="Course Name"/>
 										</Column>
 										<Column styleClass="cellBorderRight">
 											<Text text="Amount"/>
 										</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="Action"/>
-										</Column>
+										<!--<Column styleClass="cellBorderRight">-->
+										<!--	<Text text="Action"/>-->
+										<!--</Column>-->
 									</columns>
 									<items>
 										<ColumnListItem>
 											<cells>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Toolbar class="tbBorder">
-													<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
-												</Toolbar>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Text text="{course>facul_payment_jan}"/>
+												<!--<Toolbar class="tbBorder">-->
+												<!--	<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>-->
+												<!--</Toolbar>-->
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Feb" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<!--<Column styleClass="cellBorderRight">-->
+										<!--	<Text text="Action"/>-->
+										<!--</Column>-->
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Text text="{course>facul_payment_feb}"/>
+												<!--<Toolbar class="tbBorder">-->
+												<!--	<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>-->
+												<!--</Toolbar>-->
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Mar" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<!--<Column styleClass="cellBorderRight">-->
+										<!--	<Text text="Action"/>-->
+										<!--</Column>-->
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Text text="{course>facul_payment_mar}"/>
+												<!--<Toolbar class="tbBorder">-->
+												<!--	<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>-->
+												<!--</Toolbar>-->
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Apr" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<!--<Column styleClass="cellBorderRight">-->
+										<!--	<Text text="Action"/>-->
+										<!--</Column>-->
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Text text="{course>facul_payment_apr}"/>
+												<!--<Toolbar class="tbBorder">-->
+												<!--	<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>-->
+												<!--</Toolbar>-->
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="May" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<!--<Column styleClass="cellBorderRight">-->
+										<!--	<Text text="Action"/>-->
+										<!--</Column>-->
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Text text="{course>facul_payment_may}"/>
+												<!--<Toolbar class="tbBorder">-->
+												<!--	<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>-->
+												<!--</Toolbar>-->
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Jun" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<!--<Column styleClass="cellBorderRight">-->
+										<!--	<Text text="Action"/>-->
+										<!--</Column>-->
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Text text="{course>facul_payment_jun}"/>
+												<!--<Toolbar class="tbBorder">-->
+												<!--	<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>-->
+												<!--</Toolbar>-->
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Jul" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight" visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<!--<Column styleClass="cellBorderRight">-->
+										<!--	<Text text="Action"/>-->
+										<!--</Column>-->
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Text text="{course>facul_payment_jul}"/>
+												<!--<Toolbar class="tbBorder">-->
+												<!--	<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>-->
+												<!--</Toolbar>-->
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Aug" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight" visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<!--<Column styleClass="cellBorderRight">-->
+										<!--	<Text text="Action"/>-->
+										<!--</Column>-->
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Text text="{course>facul_payment_aug}"/>
+												<!--<Toolbar class="tbBorder">-->
+												<!--	<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>-->
+												<!--</Toolbar>-->
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Sep" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight" visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<!--<Column styleClass="cellBorderRight">-->
+										<!--	<Text text="Action"/>-->
+										<!--</Column>-->
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Text text="{course>facul_payment_sep}"/>
+												<!--<Toolbar class="tbBorder">-->
+												<!--	<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>-->
+												<!--</Toolbar>-->
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Oct" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight" visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<!--<Column styleClass="cellBorderRight">-->
+										<!--	<Text text="Action"/>-->
+										<!--</Column>-->
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Text text="{course>facul_payment_oct}"/>
+												<!--<Toolbar class="tbBorder">-->
+												<!--	<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>-->
+												<!--</Toolbar>-->
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Nov" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight" visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<!--<Column styleClass="cellBorderRight">-->
+										<!--	<Text text="Action"/>-->
+										<!--</Column>-->
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Text text="{course>facul_payment_nov}"/>
+												<!--<Toolbar class="tbBorder">-->
+												<!--	<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>-->
+												<!--</Toolbar>-->
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Dec" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Course Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount"/>
+										</Column>
+										<!--<Column styleClass="cellBorderRight">-->
+										<!--	<Text text="Action"/>-->
+										<!--</Column>-->
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Text text="{course>facul_payment_dec}"/>
+												<!--<Toolbar class="tbBorder">-->
+												<!--	<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>-->
+												<!--</Toolbar>-->
 											</cells>
 										</ColumnListItem>
 									</items>
 								</Table>
 							</content>
 						</Panel>
-						<!--<Panel width="auto" height="93%" class="sapUiResponsiveMargin hd1 acr_pnl" visible="true">-->
-						<!--	<headerToolbar>-->
-						<!--		<Toolbar class="pan">-->
-						<!--			<Title text="Bill" textAlign="Center"/>-->
-						<!--		</Toolbar>-->
-						<!--	</headerToolbar>-->
-						<!--	<content>-->
-						<!--		<HBox>-->
-						<!--			<HBox class="billhb">-->
-						<!--				<VBox class="billLogo">-->
-						<!--					<Label text="PAYMENT RECEIPT" class="billText" design="Bold"></Label>-->
-						<!--				</VBox>-->
-						<!--			</HBox>-->
-						<!--			<HBox class="billhb1">-->
-						<!--				<VBox>-->
-						<!--					<Toolbar class="tbBorder">-->
-						<!--					<Label text="Bill No. "></Label>-->
-						<!--					<Text text="001"></Text>-->
-						<!--					</Toolbar>-->
-						<!--				</VBox>-->
-						<!--				<VBox>-->
-						<!--					<Toolbar class="tbBorder">-->
-						<!--					<Label text="Date "></Label>-->
-						<!--					<Text text="26/05/2017"></Text>-->
-						<!--					</Toolbar>-->
-						<!--				</VBox>-->
-						<!--			</HBox>-->
-						<!--		</HBox>-->
-						<!--	</content>-->
-						<!--</Panel>-->
 					</HBox>
 				</content>
 			</Page>

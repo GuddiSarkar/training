@@ -64,12 +64,11 @@ sap.ui.define([
 
 			});
 		},
-		formatAmount: function(sValue)
-		{
+		formatAmount: function(sValue) {
 			var str = sValue;
 			var res = str.split(",");
-    		var amount = res[0];
-    		return amount;
+			var amount = res[0];
+			return amount;
 		},
 		onClickPayNow: function(oEvent) {
 			var oView = this.getView();
@@ -92,27 +91,25 @@ sap.ui.define([
 			oDialog.open();
 		},
 		
-		onClose: function()
-		{
+		onClose: function() {
 			var oView = this.getView();
 			var oDialog = oView.byId("stud_pay");
 			oDialog.close();
 		},
-		
-		OnClickSet: function()
-		{
+
+		OnClickSet: function() {
 			var id = this.getView().byId("tid").getValue();
 			var paid = this.getView().byId("paid").getValue();
 			var due = this.getView().byId("due").getValue();
 			var total = this.getView().byId("total").getValue();
 			var amount = this.getView().byId("amnt").getValue();
-			var newPaid = paid+amount;
-			var newDue = total-newPaid;
+			var newPaid = paid + amount;
+			var newDue = total - newPaid;
 			var date = this.getView().byId("date").getValue();
-			var installment = amount+","+date;
-			var tranType = this.getView().byId("tran_type").getSelectedItem().getText()+",";
-			var chequeNo = this.getView().byId("chq_no").getValue()+",";
-			var bankName = this.getView().byId("bank_name").getValue()+",";
+			var installment = amount + "," + date;
+			var tranType = this.getView().byId("tran_type").getSelectedItem().getText() + ",";
+			var chequeNo = this.getView().byId("chq_no").getValue() + ",";
+			var bankName = this.getView().byId("bank_name").getValue() + ",";
 			var data = {
 				"stud_payment_instal_2": installment,
 				"stud_payment_paid": newPaid,
@@ -126,6 +123,7 @@ sap.ui.define([
 				success: function(oData, oResponse) {
 					console.log(oData);
 					console.log(oResponse);
+					this.onInit();
 				}.bind(this),
 				error: function(err) {
 					console.log(err);
@@ -135,7 +133,7 @@ sap.ui.define([
 			this.getView().byId("stud_pay").close();
 		},
 		onSearch: function(oEvent) {
-			var oTable = this.getView().byId("Table");
+			var oTable = this.getView().byId("adCrsTable");
 			var oBinding = oTable.getBinding("items");
 			var value = oEvent.getParameter("query");
 			var oFilter1 = new Filter("stud_payment_name", FilterOperator.Contains, value);
@@ -143,6 +141,18 @@ sap.ui.define([
 			var oFilter3 = new Filter("stud_payment_instal_2", FilterOperator.Contains, value);
 			var oFilter4 = new Filter("stud_payment_fee", FilterOperator.Contains, value);
 			var allFilter = new Filter([oFilter1, oFilter2, oFilter3, oFilter4], false);
+			oBinding.filter(allFilter);
+		},
+		onSearch1: function(oEvent) {
+			var oTable = this.getView().byId("Table");
+			var oBinding = oTable.getBinding("items");
+			var value = oEvent.getParameter("query");
+			var oFilter1 = new Filter("stud_payment_name", FilterOperator.Contains, value);
+			var oFilter2 = new Filter("stud_payment_course", FilterOperator.Contains, value);
+			var oFilter3 = new Filter("stud_payment_instal_2", FilterOperator.Contains, value);
+			var oFilter4 = new Filter("stud_payment_type", FilterOperator.Contains, value);
+			var oFilter5 = new Filter("stud_payment_fee", FilterOperator.Contains, value);
+			var allFilter = new Filter([oFilter1, oFilter2, oFilter3, oFilter4,oFilter5], false);
 			oBinding.filter(allFilter);
 		}
 

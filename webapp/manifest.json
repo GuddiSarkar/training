@@ -80,6 +80,10 @@
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "TeleCaller.json"
 			},
+			"months": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "month.json"
+			},
 			"course": {
 				"dataSource": "mainService"
 			}

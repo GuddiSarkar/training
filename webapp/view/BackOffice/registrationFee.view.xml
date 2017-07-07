@@ -51,7 +51,7 @@
 						<headerToolbar>
 							<Toolbar class="pan">
 								<Title text="Registration Fee Paid" textAlign="Center"/>
-								<SearchField width="30%" class="sapUiSmallMargin srch28" search="onSearch"/>
+								<SearchField width="30%" class="sapUiSmallMargin srch28" search="onSearch1"/>
 							</Toolbar>
 						</headerToolbar>
 						<content>
@@ -75,9 +75,7 @@
 									<Column styleClass="cellBorderRight">
 										<Text text="Amount"/>
 									</Column>
-									<!--<Column styleClass="cellBorderRight">
-											<Text text="Action"/>
-										</Column>-->
+								
 								</columns>
 								<items>
 									<ColumnListItem>

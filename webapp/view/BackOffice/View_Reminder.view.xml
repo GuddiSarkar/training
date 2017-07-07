@@ -15,12 +15,12 @@
 							<content>
 								<Table id="Table"
 									items="{path: 'course>/tb_reminder', sorter: { path: 'reminder_date', descending: false, group: true }, groupHeaderFactory: 'getGroupHeader'}"
-									class="TableBorderTop" growing="true" growingThreshold="3" inset="false">
+									class="TableBorderTop" growing="true" growingThreshold="10" inset="false">
 									<columns height="20px">
 										<Column styleClass="cellBorderRight" mergeDuplicates="true">
 											<Text text="Date"/>
 										</Column>
-										<Column width="10%" styleClass="cellBorderRight cellBorderLeft">
+										<Column width="10%" styleClass="cellBorderRight cellBorderLeft" visible="false">
 											<Text text="ID"/>
 										</Column>
 										<Column styleClass="cellBorderRight">

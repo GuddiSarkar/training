@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" displayBlock="true" xmlns:l="sap.ui.layout">
+	<Dialog id="dec_fac_pay" title="Pay Now">
+		<content>
+			<l:VerticalLayout class="sapUiContentPadding" width="100%">
+				<HBox>
+					<VBox class="acr_vb2">
+						<Input value="" class="acr_inp" id="dec_tid" visible="false"/>
+						<HBox>
+							<Label text="Amount"/>
+							<Input value="" class="acr_inp" id="dec_amnt"/>
+						</HBox>
+						<HBox>
+							<Label text="Date"/>
+							<Input value="" class="acr_inp" id="dec_date"/>
+						</HBox>
+						<HBox>
+							<Label text="Transaction Type"/>
+							<Select class="sel" id="dec_tran_type" selectedKey="">
+								<items class="itm">
+									<core:Item text="--Select--" key="0"/>
+									<core:Item text="Cash" key="1"/>
+									<core:Item text="Cheque" key="2"/>
+									<core:Item text="Demand Draft" key="3"/>
+								</items>
+							</Select>
+						</HBox>
+						<HBox>
+							<Label text="Cheque No."/>
+							<Input value="" class="acr_inp" id="dec_chq_no"/>
+						</HBox>
+						<HBox>
+							<Label text="Bank Name"/>
+							<Input value="" class="acr_inp" id="dec_bank_name"/>
+						</HBox>
+					</VBox>
+				</HBox>
+			</l:VerticalLayout >
+		</content>
+		<Toolbar>
+			<Button text="Set" press="OnClickSetdec"/>
+			<ToolbarSpacer/>
+			<Button text="Close" press="onClosedec"/>
+		</Toolbar>
+	</Dialog>
+</core:FragmentDefinition>

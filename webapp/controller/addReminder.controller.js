@@ -150,13 +150,14 @@ sap.ui.define([
 					this.getView().byId("date").setValue("");
 					this.getView().byId("rtitle").setValue("");
 					this.getView().byId("desc").setValue("");
-
+					this.onInit();
 					var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
 					MessageBox.success(
 						"Data Saved Successfully", {
 							styleClass: bCompact ? "sapUiSizeCompact" : ""
 						}
 					);
+					
 				}.bind(this),
 				error: function(error) {
 
@@ -227,6 +228,7 @@ sap.ui.define([
 			// oDialog.openBy(oEvent.getSource());
 			oDialog.open();
 		},
+		
 		
 		handleCloseButton: function(){
 			this.getView().byId("set_rem").close();

@@ -14,14 +14,14 @@ sap.ui.define([
 	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.tile_Login", {
 
-		onPressBack: function(){
+		onPressBack: function() {
 			this.getRouter().navTo("home");
 		},
-		
+
 		onClickForgotPassword: function(oEvent) {
 			this.getRouter().navTo("Forgot_Password");
 		},
-		
+
 		onInit: function() {
 
 			// attach handlers for validation errors
@@ -49,7 +49,7 @@ sap.ui.define([
 			var dateTime = new Date();
 			console.log(dateTime.toLocaleString());
 			var date = dateTime.toLocaleString();
-			var role;
+			//var role;
 			var uname = this.getView().byId("username").getValue();
 			var pwd = this.getView().byId("password").getValue();
 			if (uname === "admin" && pwd === "admin") {
@@ -68,39 +68,52 @@ sap.ui.define([
 				oModel.read("/tb_user", {
 					filters: [oFilter],
 					success: function(oData, oResponse) {
-						window.sessionStorage.setItem("un", oData.results[0].user_username);
-						window.sessionStorage.setItem("dt", date);
-						role = oData.results[0].user_role;
-						if (role === "BackOffice") {
-							this.getRouter().navTo("backoffice");
-							var oEntry = {
-								"user_name": uname,
-								"login_dtime": date,
-								"user_role": role
-							};
-							oModel.create("/tb_ulginhstry", oEntry, {
-								success: function(oData) {
-
-								}.bind(this),
-								error: function(error) {
-
-								}.bind(this)
-							});
+						if (!oData.results[0]) {
+							var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
+							MessageBox.alert(
+								"Invalid Credentials !", {
+									styleClass: bCompact ? "sapUiSizeCompact" : ""
+								}
+							);
 						} else {
-							this.getRouter().navTo("telecaller");
-							var oEntry = {
-								"user_name": uname,
-								"login_dtime": date,
-								"user_role": role
-							};
-							oModel.create("/tb_ulginhstry", oEntry, {
-								success: function(oData) {
+							var role = oData.results[0].user_role;
+							if (role === "BackOffice") {
+								window.sessionStorage.setItem("un", oData.results[0].user_username);
+								window.sessionStorage.setItem("dt", date);
+								this.getRouter().navTo("backoffice");
+								var oEntry = {
+									"user_name": uname,
+									"login_dtime": date,
+									"user_role": role
+								};
+								oModel.create("/tb_ulginhstry", oEntry, {
+									success: function(Data) {
 
-								}.bind(this),
-								error: function(error) {
+									}.bind(this),
+									error: function(err) {
 
-								}.bind(this)
-							});
+									}.bind(this)
+								});
+							} else if (role === "Telecaller") {
+								window.sessionStorage.setItem("un", oData.results[0].user_username);
+								window.sessionStorage.setItem("dt", date);
+								this.getRouter().navTo("telecaller");
+								var oEntry = {
+									"user_name": uname,
+									"login_dtime": date,
+									"user_role": roles
+								};
+								oModel.create("/tb_ulginhstry", oEntry, {
+									success: function(Data) {
+
+									}.bind(this),
+									error: function(err) {
+
+									}.bind(this)
+								});
+							} else {
+								alert("Invalid Credentials");
+							}
 						}
 					}.bind(this),
 					error: function(error) {
@@ -114,9 +127,7 @@ sap.ui.define([
 				});
 				oModel.setRefreshAfterChange(true);
 			}
-
 		}
-
 	});
 
 });

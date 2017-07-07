@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" displayBlock="true" xmlns:l="sap.ui.layout">
+	<Dialog id="sep_fac_pay" title="Pay Now">
+		<content>
+			<l:VerticalLayout class="sapUiContentPadding" width="100%">
+				<HBox>
+					<VBox class="acr_vb2">
+						<Input value="" class="acr_inp" id="sep_tid" visible="false"/>
+						<HBox>
+							<Label text="Amount"/>
+							<Input value="" class="acr_inp" id="sep_amnt"/>
+						</HBox>
+						<HBox>
+							<Label text="Date"/>
+							<Input value="" class="acr_inp" id="sep_date"/>
+						</HBox>
+						<HBox>
+							<Label text="Transaction Type"/>
+							<Select class="sel" id="sep_tran_type" selectedKey="">
+								<items class="itm">
+									<core:Item text="--Select--" key="0"/>
+									<core:Item text="Cash" key="1"/>
+									<core:Item text="Cheque" key="2"/>
+									<core:Item text="Demand Draft" key="3"/>
+								</items>
+							</Select>
+						</HBox>
+						<HBox>
+							<Label text="Cheque No."/>
+							<Input value="" class="acr_inp" id="sep_chq_no"/>
+						</HBox>
+						<HBox>
+							<Label text="Bank Name"/>
+							<Input value="" class="acr_inp" id="sep_bank_name"/>
+						</HBox>
+					</VBox>
+				</HBox>
+			</l:VerticalLayout >
+		</content>
+		<Toolbar>
+			<Button text="Set" press="OnClickSetsep"/>
+			<ToolbarSpacer/>
+			<Button text="Close" press="onClosesep"/>
+		</Toolbar>
+	</Dialog>
+</core:FragmentDefinition>

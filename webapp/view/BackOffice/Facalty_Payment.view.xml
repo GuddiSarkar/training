@@ -13,7 +13,7 @@
 								</Toolbar>
 							</headerToolbar>
 							<content>
-								<Table id="adCrsTable" items="{course>/}" class="TableBorderTop" growing="true" growingThreshold="1">
+								<Table id="Jan" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
 									<columns height="20px">
 										<Column width="8%" styleClass="cellBorderRight " visible="false">
 											<Text text="ID"/>
@@ -22,38 +22,353 @@
 											<Text text="Facalty Name"/>
 										</Column>
 										<Column styleClass="cellBorderRight">
-											<Text text="Payment Type"/>
+											<Text text="Faculty Course"/>
 										</Column>
 										<Column styleClass="cellBorderRight">
-											<Text text="Cheque Number"/>
+											<Text text="Pay Salary"/>
 										</Column>
 										<Column styleClass="cellBorderRight">
-											<Text text="Name of Bank"/>
-										</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="Payment Date"/>
-										</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="Amount"/>
-										</Column>
-										<Column styleClass="cellBorderRight">
-											<Text text="Action"/>
+											<Text text="Amount Paid"/>
 										</Column>
 									</columns>
 									<items>
 										<ColumnListItem>
 											<cells>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Text text="{course>}"/>
-												<Toolbar class="tbBorder">
-													<Button icon="sap-icon://edit" class="b3" press="onClickEdit" ariaLabelledBy="editButtonLabel"/>
-													<Button icon="sap-icon://delete" class="b4 btn2" press="onClickDelete" ariaLabelledBy="deleteButtonLabel"/>
-												</Toolbar>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Button text="Pay Now" class="b3" id="pay01" press="onPayJan" ariaLabelledBy="editButtonLabel"/>
+												<Text text="{course>facul_payment_jan}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Feb" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Faculty Course"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Pay Salary"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount Paid"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Button text="Pay Now" class="b3" id="pay02" press="onPayFeb" ariaLabelledBy="editButtonLabel"/>
+												<Text text="{course>facul_payment_feb}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Mar" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Faculty Course"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Pay Salary"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount Paid"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Button text="Pay Now" class="b3" id="pay03" press="onPayMar" ariaLabelledBy="editButtonLabel"/>
+												<Text text="{course>facul_payment_mar}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Apr" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Faculty Course"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Pay Salary"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount Paid"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+											<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Button text="Pay Now" class="b3" id="pay04" press="onPayApr" ariaLabelledBy="editButtonLabel"/>
+												<Text text="{course>facul_payment_apr}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="May" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Faculty Course"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Pay Salary"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount Paid"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Button text="Pay Now" class="b3" id="pay05" press="onPayMay" ariaLabelledBy="editButtonLabel"/>
+												<Text text="{course>facul_payment_may}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Jun" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Faculty Course"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Pay Salary"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount Paid"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Button text="Pay Now" class="b3" id="pay06" press="onPayJun" ariaLabelledBy="editButtonLabel"/>
+												<Text text="{course>facul_payment_jun}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Jul" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Faculty Course"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Pay Salary"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount Paid"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Button text="Pay Now" class="b3" id="pay07" press="onPayJul" ariaLabelledBy="editButtonLabel"/>
+												<Text text="{course>facul_payment_jul}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Aug" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Faculty Course"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Pay Salary"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount Paid"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Button text="Pay Now" class="b3" id="pay08" press="onPayAug" ariaLabelledBy="editButtonLabel"/>
+												<Text text="{course>facul_payment_aug}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Sep" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Faculty Course"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Pay Salary"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount Paid"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Button text="Pay Now" class="b3" id="pay09" press="onPaySep" ariaLabelledBy="editButtonLabel"/>
+												<Text text="{course>facul_payment_sep}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Oct" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Faculty Course"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Pay Salary"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount Paid"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Button text="Pay Now" class="b3" id="pay10" press="onPayOct" ariaLabelledBy="editButtonLabel"/>
+												<Text text="{course>facul_payment_oct}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Nov" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Faculty Course"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Pay Salary"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount Paid"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Button text="Pay Now" class="b3" id="pay11" press="onPayNov" ariaLabelledBy="editButtonLabel"/>
+												<Text text="{course>facul_payment_nov}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="Dec" items="{course>/tb_facul_payment}" class="TableBorderTop" growing="true" growingThreshold="10" visible="false">
+									<columns height="20px">
+										<Column width="8%" styleClass="cellBorderRight " visible="false">
+											<Text text="ID"/>
+										</Column>
+										<Column styleClass="cellBorderRight cellBorderLeft">
+											<Text text="Facalty Name"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Faculty Course"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Pay Salary"/>
+										</Column>
+										<Column styleClass="cellBorderRight">
+											<Text text="Amount Paid"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{course>facul_payment_id}"/>
+												<Text text="{course>facul_payment_name}"/>
+												<Text text="{course>facul_payment_course}"/>
+												<Button text="Pay Now" class="b3" id="pay12" press="onPayDec" ariaLabelledBy="editButtonLabel"/>
+												<Text text="{course>facul_payment_dec}"/>
 											</cells>
 										</ColumnListItem>
 									</items>

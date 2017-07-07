@@ -94,32 +94,40 @@ sap.ui.define([
 			console.log(dateTime.toLocaleString());
 			var date = dateTime.toLocaleString();
 			// output result
-			if (forward) {
-				var dateTime = new Date();
-				console.log(dateTime.toLocaleString());
-				var date = dateTime.toLocaleString();
 
-				var Data = sap.ui.getCore().getModel("myModel").getData();
-				var uname = this.getView().byId("username").getValue();
-				var pwd = this.getView().byId("password").getValue();
-				if (uname === "admin" && pwd === "admin") {
-					this.getRouter().navTo("admin");
-				} else {
+			var dateTime = new Date();
+			console.log(dateTime.toLocaleString());
+			var date = dateTime.toLocaleString();
 
-					var filtername = new Filter("user_username", FilterOperator.EQ, uname);
-					var filterpwd = new Filter("user_pwd", FilterOperator.EQ, pwd);
-					var filterrole = new Filter("user_role", FilterOperator.EQ, Data.role);
-					var oFilter = new Filter({
-						filters: [filtername, filterpwd, filterrole],
-						bAnd: true
-					});
+			var Data = sap.ui.getCore().getModel("myModel").getData();
+			var uname = this.getView().byId("username").getValue();
+			var pwd = this.getView().byId("password").getValue();
+			if (uname === "admin" && pwd === "admin") {
+				this.getRouter().navTo("admin");
+			} else {
 
-					var oModel = this.getOwnerComponent().getModel("course");
-					oModel.setUseBatch(false);
+				var filtername = new Filter("user_username", FilterOperator.EQ, uname);
+				var filterpwd = new Filter("user_pwd", FilterOperator.EQ, pwd);
+				var filterrole = new Filter("user_role", FilterOperator.EQ, Data.role);
+				var oFilter = new Filter({
+					filters: [filtername, filterpwd, filterrole],
+					bAnd: true
+				});
 
-					oModel.read("/tb_user", {
-						filters: [oFilter],
-						success: function(oData, oResponse) {
+				var oModel = this.getOwnerComponent().getModel("course");
+				oModel.setUseBatch(false);
+
+				oModel.read("/tb_user", {
+					filters: [oFilter],
+					success: function(oData, oResponse) {
+						if (!oData.results[0]) {
+							var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
+							MessageBox.alert(
+								"Invalid Credentials", {
+									styleClass: bCompact ? "sapUiSizeCompact" : ""
+								}
+							);
+						} else {
 							window.sessionStorage.setItem("un", oData.results[0].user_username);
 							window.sessionStorage.setItem("dt", date);
 							if (Data.role === "BackOffice") {
@@ -127,33 +135,33 @@ sap.ui.define([
 							} else {
 								this.getRouter().navTo("telecaller");
 							}
-						}.bind(this),
-						error: function(error) {
-							var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
-							MessageBox.error(
-								"Invalid Credentials", {
-									styleClass: bCompact ? "sapUiSizeCompact" : ""
-								}
-							);
-						}.bind(this)
-					});
+						}
+					}.bind(this),
+					error: function(error) {
+						// var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
+						// MessageBox.error(
+						// 	"Invalid Credentials", {
+						// 		styleClass: bCompact ? "sapUiSizeCompact" : ""
+						// 	}
+						// );
+						alert("Please Enter The Valid Credentials");
+					}.bind(this)
+				});
 
-					var oEntry = {
-						"user_name": uname,
-						"login_dtime": date,
-						"user_role": Data.role
-					};
-					oModel.create("/tb_ulginhstry", oEntry, {
-						success: function(oData) {
+				var oEntry = {
+					"user_name": uname,
+					"login_dtime": date,
+					"user_role": Data.role
+				};
+				oModel.create("/tb_ulginhstry", oEntry, {
+					success: function(oData) {
 
-						}.bind(this),
-						error: function(error) {
+					}.bind(this),
+					error: function(error) {
 
-						}.bind(this)
-					});
-					oModel.setRefreshAfterChange(true);
-				}
-
+					}.bind(this)
+				});
+				oModel.setRefreshAfterChange(true);
 			}
 		},
 		onClickForgotPassword: function(oEvent) {

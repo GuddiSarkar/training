@@ -53,7 +53,7 @@
 							<headerToolbar>
 								<Toolbar class="pan">
 									<Title text="3rd Installment Paid" textAlign="Center"/>
-									<SearchField width="30%" class="sapUiSmallMargin srch27" search="onSearch"/>
+									<SearchField width="30%" class="sapUiSmallMargin srch27" search="onSearch1"/>
 								</Toolbar>
 							</headerToolbar>
 							<content>
@@ -71,12 +71,13 @@
 										<Column styleClass="cellBorderRight">
 											<Text text="3rd Installment"/>
 										</Column>
+										<Column styleClass="cellBorderRight ">
+										<Text text="Payment Type"/>
+									</Column>
 										<Column styleClass="cellBorderRight">
 											<Text text="Amount"/>
 										</Column>
-										<!--<Column styleClass="cellBorderRight">
-											<Text text="Action"/>
-										</Column>-->
+									
 									</columns>
 									<items>
 										<ColumnListItem>
@@ -90,6 +91,7 @@
 														<Button icon="sap-icon://receipt" class="b3" id="bill" press="onClickBill" ariaLabelledBy="editButtonLabel"/>
 													</Toolbar>
 												</HBox>
+												<Text text="{paid>stud_payment_type}"/>
 												<Text text="{paid>stud_payment_fee}"/>
 											</cells>
 										</ColumnListItem>
