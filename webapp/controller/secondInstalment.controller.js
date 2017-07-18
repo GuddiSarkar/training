@@ -97,7 +97,6 @@ sap.ui.define([
 
 		OnClickSet: function() {
 			var id = this.getView().byId("tid").getValue();
-
 			var paid = this.getView().byId("paid").getValue();
 			var due = this.getView().byId("due").getValue();
 			var total = this.getView().byId("total").getValue();

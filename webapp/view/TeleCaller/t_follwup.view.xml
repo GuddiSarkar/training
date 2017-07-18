@@ -83,7 +83,7 @@
 							<!--</headerToolbar>-->
 							<content>
 								<l:HorizontalLayout>
-									<HBox>
+									<!--<HBox>-->
 										<HBox class="acr_vb2">
 											<Input value="" id="lead_id" visible="false"/>
 											<Input value="" id="rem_name" visible="false"/>
@@ -95,11 +95,11 @@
 												<Label text="Remarks" class="remLabel"/>
 												<Input value="" id="add_rem"/>
 											</HBox>
-											<HBox class="arhb1">
+											<HBox class="">
 												<Button text="Add" class="b1" press="addRemarks"/>
 											</HBox>
 										</HBox>
-									</HBox>
+									<!--</HBox>-->
 								</l:HorizontalLayout>
 							</content>
 						</Panel>

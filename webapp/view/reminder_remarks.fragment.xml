@@ -55,11 +55,12 @@
 				</HBox>
 			</l:VerticalLayout >
 		</content>
-		<Toolbar>
-		<Button text="Save" press="onPressSave" id="save" visible="false"/>
+		<Toolbar class="tbBorder">
+			<Button text="Save" press="onPressSave" id="save" visible="false"/>
 			<ToolbarSpacer></ToolbarSpacer>
 			<Button text="Ok" press="handleCloseButton" id="ok" visible="false"/>
-			</Toolbar>
+			<Button text="Cancel" press="handleCloseButton" id="cancel" visible="false"/>
+		</Toolbar>
 		<!--</ResponsivePopover>-->
 	</Dialog>
 </core:FragmentDefinition>

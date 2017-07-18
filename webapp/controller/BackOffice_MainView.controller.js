@@ -118,7 +118,6 @@ sap.ui.define([
 
 		onPressModeBtn: function(oEvent) {
 			var sSplitAppMode = oEvent.getSource().getSelectedButton().getCustomData()[0].getValue();
-
 			this.getSplitAppObj().setMode(sSplitAppMode);
 			MessageToast.show("Split Container mode is changed to: " + sSplitAppMode, {
 				duration: 5000
@@ -403,7 +402,7 @@ sap.ui.define([
 						this.getView().byId("p_hone").setValue("");
 						this.getView().byId("e_ml").setValue("");
 						this.getView().byId("a_strt1").setValue("");
-						this.getView().byId("a_strt2").setValue("");
+						//this.getView().byId("a_strt2").setValue("");
 						this.getView().byId("c_ty").setValue("");
 						this.getView().byId("s_tate").setValue("");
 						this.getView().byId("zip_code").setValue("");
@@ -439,7 +438,8 @@ sap.ui.define([
 						this.getView().byId("d_scunt").setValue("");
 						this.getView().byId("tp_amnt").setValue("");
 						//this.getView().byId("r_fee").setValue("");
-
+						//jQuery.sap.require("sap.m.MessageBox", fnCallbackConfirm);
+						MessageBox.alert("Student added successfully !");
 					}.bind(this),
 					error: function(error) {
 
@@ -453,6 +453,12 @@ sap.ui.define([
 			}
 
 		},
+		
+		fnCallbackConfirm: function(bResult) {
+			this.byId("split").toMaster(this.createId("master2"));
+		},
+
+		
 		onSave: function(oEvent) {
 			var oView = this.getView();
 			var formInput = [
@@ -573,7 +579,7 @@ sap.ui.define([
 			if (x.match(zipcode)) {
 				return true;
 			} else {
-				alert("Zipcode should contain only Number between 0-6");
+				alert("Zipcode should contain only Number between 0-5");
 				return false;
 			}
 		},

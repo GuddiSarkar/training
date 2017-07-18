@@ -148,7 +148,6 @@ sap.ui.define([
 					var nModel = new sap.ui.model.json.JSONModel();
 					nModel.setData({remarks:oData.results});
 					this.getView().setModel(nModel,"remDet");  
-					
 				}.bind(this),
 				error: function(error) {
 					
@@ -256,6 +255,8 @@ sap.ui.define([
 				success: function(oData, oResponse) {
 					console.log(oData);
 					console.log(oResponse);
+					this.getView().byId("rem_date").setValue("");
+					this.getView().byId("add_rem").setValue("");
 				}.bind(this),
 				error: function(err) {
 					console.log(err);
@@ -271,6 +272,8 @@ sap.ui.define([
 				success: function(oData, oResponse) {
 					console.log(oData);
 					console.log(oResponse);
+					this.getView().byId("rem_date").setValue("");
+					this.getView().byId("add_rem").setValue("");
 				}.bind(this),
 				error: function(err) {
 					console.log(err);

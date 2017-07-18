@@ -15,16 +15,46 @@
 									<l:BlockLayoutCell title="Today's Follow Up" titleAlignment="Center">
 										<l:content>
 											<!--<VBox height="30%" backgroundDesign="Solid">-->
-											<List mode="None" items="{path: 'currentDayRem>/reminder'}" class="vbReminder" width="80%">
-												<CustomListItem>
-													<HBox>
-														<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
-															<Input value="{currentDayRem>reminder_id}" id="rem_id" visible="false"></Input>
-															<Link text="{currentDayRem>reminder_title}"  id="title" emphasized="true" press="onPressEvent"/>
-														</VBox>
-													</HBox>
-												</CustomListItem>
+											<List items="{path: 'currentDayRem>/reminder'}" id="remList" class="vbReminder" width="80%" itemPress="onPressEvent">
+												<items>
+													<StandardListItem  title="{currentDayRem>reminder_title}"  type="Active"/>
+												</items>
+												<!--<CustomListItem>-->
+												<!--	<HBox>-->
+												<!--		<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">-->
+												<!--			<Input value="" id="rem_id" visible="false"></Input>-->
+												<!--			<Link text="{currentDayRem>reminder_title}" id="title" emphasized="true" press="onPressEvent"/>-->
+												<!--			<Table id="todayrem" items="{path: 'currentDayRem>/reminder'}" class="TableBorderTop" growing="true" growingThreshold="10">-->
+												<!--				<columns height="20px">-->
+												<!--					<Column width="8%" styleClass="cellBorderRight cellBorderLeft" visible="false">-->
+												<!--						<Text text=""/>-->
+												<!--					</Column>-->
+												<!--					<Column styleClass="cellBorderRight cellBorderLeft">-->
+												<!--						<Text text="" visible="false"/>-->
+												<!--					</Column>-->
+												<!--				</columns>-->
+												<!--				<items>-->
+												<!--					<ColumnListItem>-->
+												<!--						<cells>-->
+												<!--							<Link text="{currentDayRem>reminder_title}"  id="title" emphasized="true" press="onPressEvent"/>-->
+												<!--							<Text text="{unpaid>stud_payment_id}"/>-->
+												<!--						</cells>-->
+												<!--					</ColumnListItem>-->
+												<!--				</items>-->
+												<!--			</Table>-->
+												<!--		</VBox>-->
+												<!--	</HBox>-->
+												<!--</CustomListItem>-->
 											</List>
+											<!--<List mode="None" items="{path: 'currentDayRem>/reminder'}" class="vbReminder" width="80%" visible="false">-->
+											<!--	<CustomListItem>-->
+											<!--		<HBox>-->
+											<!--			<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">-->
+											<!--				<Input value="{currentDayRem>reminder_id}" id="rem_id" visible="false"></Input>-->
+											<!--			</VBox>-->
+											<!--		</HBox>-->
+											<!--	</CustomListItem>-->
+											<!--</List>-->
 											<!--</VBox>-->
 										</l:content>
 									</l:BlockLayoutCell>

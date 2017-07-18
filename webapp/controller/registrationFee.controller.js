@@ -18,6 +18,7 @@ sap.ui.define([
 		},
 
 		onInit: function() {
+
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
 
@@ -98,12 +99,12 @@ sap.ui.define([
 
 		OnClickSet: function() {
 			var id = this.getView().byId("tid").getValue();
-
 			var paid = this.getView().byId("paid").getValue();
 			var due = this.getView().byId("due").getValue();
 			var total = this.getView().byId("total").getValue();
 			var amount = this.getView().byId("amnt").getValue();
-
+			var newPaid = paid + amount;
+			var newDue = total - newPaid;
 			var paidamnt = this.getView().byId("paid").getValue();
 			var paid = parseInt(paidamnt);
 			var dueamnt = this.getView().byId("due").getValue();
@@ -167,7 +168,6 @@ sap.ui.define([
 			oBinding.filter(allFilter);
 		},
 
-		
 		onClickBill: function(oEvent) {
 			console.log("hello");
 			this.getView().byId("paid").setVisible(false);
@@ -224,7 +224,7 @@ sap.ui.define([
 				document.body.innerHTML = sOriginalContent;
 			} else {
 				jQuery.sap.log.error("onPrint needs a valid target container [view|data:targetId=\"SID\"]");
-			} 
+			}
 		}
 	});
 

@@ -90,6 +90,23 @@ sap.ui.define([
 			var id = this.getView().byId("lead_id").setValue(property.lead_id);
 			var date = this.getView().byId("rem_date").setValue(property.lead_date);
 			var name = this.getView().byId("rem_name").setValue(property.lead_name);
+			var lid = this.getView().byId("lead_id").getValue()
+		    var filterid = new Filter("lead_id", FilterOperator.EQ, lid);
+			var oModel = this.getOwnerComponent().getModel("course");
+			oModel.setUseBatch(false);
+			oModel.read("/tb_remarks", {
+				filters: [filterid],
+				success: function(oData, oResponse) {
+				
+					var nModel = new sap.ui.model.json.JSONModel();
+					nModel.setData({remarks:oData.results});
+					this.getView().setModel(nModel,"remDet");  
+				}.bind(this),
+				error: function(error) {
+					
+				}.bind(this)
+
+			});
 		},
 
 		onBack: function() {

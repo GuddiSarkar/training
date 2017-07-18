@@ -5,11 +5,6 @@
 			<Page title="Training Management System" showHeader="false">
 				<content>
 
-					<!--<Toolbar class="tbBorder">-->
-					<!--	<ToolbarSpacer/>-->
-					<!--		<Button icon="sap-icon://print" press="onPrint" width="80px"  class="logo"></Button>-->
-					<!--	<ToolbarSpacer/>     -->
-					<!--</Toolbar>-->
 					<Panel width="auto" id="unpaid" class="sapUiResponsiveMargin hd1 acr_pnl" visible="true">
 
 						<headerToolbar>

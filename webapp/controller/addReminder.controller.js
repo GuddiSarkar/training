@@ -7,7 +7,7 @@ sap.ui.define([
 	'sap/ui/core/Fragment',
 	"sap/m/MessageBox",
 	"sap/ui/core/routing/History"
-], function(Controller, CalendarLegendItem, DateTypeRange, History, MessageBox, Filter, FilterOperator, Fragment) {
+], function(Controller, CalendarLegendItem, DateTypeRange, Filter, FilterOperator, Fragment, MessageBox, History) {
 	"use strict";
 	/*eslint linebreak-style: ["error", "windows"]*/
 	return Controller.extend("com.demoTMS.controller.addReminder", {
@@ -157,7 +157,7 @@ sap.ui.define([
 							styleClass: bCompact ? "sapUiSizeCompact" : ""
 						}
 					);
-					
+
 				}.bind(this),
 				error: function(error) {
 
@@ -167,73 +167,60 @@ sap.ui.define([
 			oModel.setRefreshAfterChange(true);
 			this.getView().byId("addFollowUp").close();
 		},
+
 		onPressEvent: function(oEvent) {
 			//var sSrc = oEvent.getSource().getTarget();
-			var id = this.getView().byId("rem_id").getValue();
-			var title = oEvent.getSource().getText();
-			var remdata;
-			var path = oEvent.getSource().getBindingContext("currentDayRem").getPath();
-			var filterTitle = new sap.ui.model.Filter("reminder_title", sap.ui.model.FilterOperator.EQ, title);
+			var pathList = oEvent.getParameter("listItem").getBindingContext("currentDayRem").getPath();
+			var oItem = oEvent.getParameter("listItem");
+			var src = this.getView().byId("remList").getModel("currentDayRem").getProperty(pathList);
+			var id = src.reminder_id;
+			var title = src.reminder_title;
+			var desc = src.reminder_description;
+			var atnd = src.reminder_attended;
+			var rem = src.reminder_remarks;
 			var oModel = this.getOwnerComponent().getModel("course");
 			oModel.setUseBatch(false);
-			oModel.read("/tb_reminder", {
-				filters: [filterTitle],
-				success: function(oData, oResponse) {
-					//oData.results;
-					var nModel = new sap.ui.model.json.JSONModel();
-					nModel.setData({
-						id: oData.reminder_id,
-						title: oData.reminder_title,
-						desc: oData.reminder_description,
-						atnd: oData.reminder_attended,
-						rem: oData.reminder_remarks
-					});
-					sap.ui.getCore().setModel(nModel, "tip");
-					remdata = sap.ui.getCore().getModel("tip").getData();
-					this.getView().byId("tit").setText(remdata.title);
-					this.getView().byId("des").setText(remdata.desc);
-					this.getView().byId("id").setText(remdata.id);
-					if (remdata.atnd === "Yes") {
-						this.getView().byId("atnd").setSelectedIndex(1);
-					} else if (remdata.atnd === "No") {
-						this.getView().byId("atnd").setSelectedIndex(0);
-					} else {
-						this.getView().byId("atnd").setSelectedIndex(0);
-					}
-
-					if (remdata.rem === null && (remdata.atnd === null || remdata.atnd === "No")) {
-						this.getView().byId("hbremnull").setVisible(true);
-						this.getView().byId("hbrem").setVisible(false);
-						this.getView().byId("save").setVisible(true);
-						this.getView().byId("ok").setVisible(false);
-					} else {
-						this.getView().byId("hbremnull").setVisible(false);
-						this.getView().byId("hbrem").setVisible(true);
-						this.getView().byId("save").setVisible(false);
-						this.getView().byId("ok").setVisible(true);
-						this.getView().byId("rem").setText(remdata.rem);
-					}
-				}.bind(this),
-				error: function(error) {
-					alert("in error block");
-				}.bind(this)
-			});
+			var remdata;
 			var oView = this.getView();
 			var oDialog = oView.byId("set_rem");
 			if (!oDialog) {
 				oDialog = sap.ui.xmlfragment(oView.getId(), "com.demoTMS.view.reminder_remarks", this);
 				oView.addDependent(oDialog);
 			}
+			this.getView().byId("tit").setText(title);
+			this.getView().byId("des").setText(desc);
+			this.getView().byId("id").setText(id);
+			if (atnd === "Yes") {
+				this.getView().byId("atnd").setSelectedIndex(1);
+			} else if (atnd === "No") {
+				this.getView().byId("atnd").setSelectedIndex(0);
+			} else {
+				this.getView().byId("atnd").setSelectedIndex(0);
+			}
 
-			// oDialog.openBy(oEvent.getSource());
+			if (rem === null && (atnd === null || atnd === "No")) {
+				this.getView().byId("hbremnull").setVisible(true);
+				this.getView().byId("hbrem").setVisible(false);
+				this.getView().byId("save").setVisible(true);
+				this.getView().byId("ok").setVisible(false);
+				this.getView().byId("cancel").setVisible(true);
+			} else {
+				this.getView().byId("hbremnull").setVisible(false);
+				this.getView().byId("hbrem").setVisible(true);
+				this.getView().byId("save").setVisible(false);
+				this.getView().byId("ok").setVisible(true);
+				this.getView().byId("rem").setText(rem);
+				this.getView().byId("cancel").setVisible(false);
+			}
+			oModel.setRefreshAfterChange(true);
+			 //oDialog.openBy(oEvent.getSource());
 			oDialog.open();
 		},
-		
-		
-		handleCloseButton: function(){
+
+		handleCloseButton: function() {
 			this.getView().byId("set_rem").close();
 		},
-		
+
 		onPressSave: function(oEvent) {
 			var id = this.getView().byId("id").getText();
 			var atnd = this.getView().byId("atnd").getSelectedButton().getText();
@@ -253,6 +240,7 @@ sap.ui.define([
 							styleClass: bCompact ? "sapUiSizeCompact" : ""
 						}
 					);
+					this.onInit();
 				}.bind(this),
 				error: function(err) {
 					console.log(err);
